@@ -221,7 +221,7 @@ const TMSLandingPage = () => {
                                     maxWidth={{ xs: '100%', md: '23%' }}
                                     boxSizing="border-box"
                                     height="100%"
-                                    borderRadius={3}>
+                                    borderRadius={3} overflow={'hidden'}>
                                     <Card elevation={3} >
                                         <CardContent>
                                             <Typography variant="h3" component="div" gutterBottom>
