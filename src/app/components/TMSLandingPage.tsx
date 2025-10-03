@@ -22,7 +22,8 @@ import {
     Divider,
     Stack,
     useTheme,
-    useMediaQuery
+    useMediaQuery,
+    CardMedia
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import {
@@ -43,7 +44,7 @@ import {
     Smartphone,
     Public,
     Speed
-} from '@mui/icons-material';
+} from '@mui/icons-material'; 
 
 const TMSLandingPage = () => {
     const theme = useTheme();
@@ -51,103 +52,62 @@ const TMSLandingPage = () => {
 
     return (
         <Box>
-            <AppBar position="static">
+            <AppBar color="default" elevation={0}>
                 <Container maxWidth="lg">
                     <Toolbar>
-                        <Typography variant="h5" component="div" color="inherit">
+                        <Typography variant="h5" component="div" >
                             instalanes
                         </Typography>
                         <Box flexGrow={1} display={{ xs: 'none', md: 'block' }} textAlign="center">
-                            <Button color="inherit">TMS solutions</Button>
-                            <Button color="inherit">Resources</Button>
-                            <Button color="inherit">Pricing</Button>
-                            <Button color="inherit">Contact us</Button>
+                            <Button>TMS solutions</Button>
+                            <Button>Resources</Button>
+                            <Button>Pricing</Button>
+                            <Button>Contact us</Button>
                         </Box>
                         <Box>
-                            <Button variant="contained" color="secondary">
+                            <Button variant="contained" >
                                 Get Demo
                             </Button>
                         </Box>
                     </Toolbar>
                 </Container>
             </AppBar>
-            <Box
-                position="relative"
-                height="70vh"
-                overflow="hidden"
-                color="white"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-            >
-                <Box
-                    position="absolute"
-                    top={0}
-                    left={0}
-                    right={0}
-                    bottom={0}
-                    zIndex={1}
-                />
-                <Box
-                    position="absolute"
-                    top={0}
-                    left={0}
-                    right={0}
-                    bottom={0}
-                    sx={{
-                        backgroundImage: 'url(/img/Banner.jpg)',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                    zIndex={0}
-                />
-                <Container maxWidth="lg">
-                    <Box
-                        display="flex"
-                        flexDirection={{ xs: 'column', md: 'row' }}
-                        alignItems="center"
-                        justifyContent="space-between"
-                        gap={4}
-                    >
-                        <Box
-                            display="flex"
-                            flexDirection="column"
-                            justifyContent="center"
-                            zIndex={2}
-                        >
-                            <Typography variant="h4" component="h4" gutterBottom color="primary">
-                                Switch to Instalanes
-                            </Typography>
-                            <Typography variant="h3" component="h1" gutterBottom fontWeight="bold">
-                                Transport management system
-                            </Typography>
-                            <Typography variant="body1" paragraph color="inherit">
-                                Cloud-based SaaS TMS and visibility platform for 3PLs, Shippers, LSPs, Transporters, and Carriers,
-                                enabling end-to-end efficient transportation logistics operations and collaboration
-                            </Typography>
-                            <Box display={'inline-flex'} gap={2} mt={2}>
-                                <Button variant="contained">
+            <Paper elevation={0} square>
+                <Box height="60vh" display="flex" alignItems="center" justifyContent="center">
+                    <Container maxWidth="lg">
+                        <Grid container spacing={4} alignItems="center">
+                            <Grid>
+                                <Typography variant="h4" component="h4" gutterBottom >
+                                    Switch to Instalanes
+                                </Typography>
+                                <Typography variant="h3" component="h1" gutterBottom>
+                                    Transport management system
+                                </Typography>
+                                <Typography variant="body1" paragraph>
+                                    Cloud-based SaaS TMS and visibility platform for 3PLs, Shippers, LSPs, Transporters, and Carriers,
+                                    enabling end-to-end efficient transportation logistics operations and collaboration
+                                </Typography>
+                                <Button variant="contained" size="large">
                                     Schedule a Demo
                                 </Button>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Container>
-            </Box>
-            <Box bgcolor="grey.300">
+                            </Grid>
+                        </Grid>
+                    </Container>
+                </Box>
+            </Paper>
+            <Paper elevation={0} square>
                 <Container maxWidth="lg">
                     <Box py={8}>
-                        <Box mb={4}>
-                            <Typography variant="h5" gutterBottom color="primary">
+                        <Box >
+                            <Typography variant="h5" gutterBottom >
                                 Instalanes TMS - the all-in-one unified platform for transportation logistics
                             </Typography>
-                            <Typography variant="h4" mb={2}>
+                            <Typography variant="h6" paragraph>
                                 Simplify and digitize FCL, FTL, PTL, ODC, and warehouse shipments with a unified
                                 TMS for Shippers, Carriers, 3PLs, and LSPs
                             </Typography>
                         </Box>
-                        <Box display="flex" flexDirection="row" flexWrap="wrap" gap={1} justifyContent="center">
+                        <Grid container spacing={2}>
                             {[
                                 { number: 1, title: 'Dispatch planner', icon: <Dashboard /> },
                                 { number: 2, title: 'Transport order', icon: <Receipt /> },
@@ -156,42 +116,36 @@ const TMSLandingPage = () => {
                                 { number: 5, title: 'PoD and Billing', icon: <DocumentScanner /> },
                                 { number: 6, title: 'Reporting Intelligence', icon: <DataUsage /> }
                             ].map((feature, index) => (
-                                <Box
-                                    key={index}
-                                    flex="1 1 calc(16.666% - 8px)"
-                                    minWidth={{ xs: 'calc(50% - 8px)', sm: 'calc(33.333% - 8px)', md: 'calc(16.666% - 8px)' }}
-                                    maxWidth={{ xs: 'calc(50% - 8px)', sm: 'calc(33.333% - 8px)', md: 'calc(16.666% - 8px)' }}
-                                    textAlign={"center"}
-                                >
-                                    <Card elevation={2} >
-                                        <CardContent>
-                                            <Typography variant="h4" gutterBottom color="black.700">
+                                <Grid key={index} size={{ xs: 12, sm: 6, md: 4, lg: 2 }} >
+                                    <Card elevation={2}>
+                                        <CardContent sx={{ textAlign: 'center' }}>
+                                            <Typography variant="h4" gutterBottom color="text.primary">
                                                 {feature.number}
                                             </Typography>
-                                            <Typography variant="h5" color="black.700">
+                                            <Typography variant="body1" color="text.primary">
                                                 {feature.title}
                                             </Typography>
                                         </CardContent>
                                     </Card>
-                                </Box>
+                                </Grid>
                             ))}
-                        </Box>
+                        </Grid>
                     </Box>
                 </Container>
-            </Box>
+            </Paper>
 
-            <Box bgcolor="grey.100">
+            <Paper elevation={0} square>
                 <Container maxWidth="lg">
                     <Box py={8}>
                         <Box mb={6}>
                             <Typography variant="h5" component="h2" gutterBottom color="primary">
                                 Why Instalanes platform
                             </Typography>
-                            <Typography variant="h4">
+                            <Typography variant="h6">
                                 Instalanes is a Collaborative TMS platform that helps Business leaders generate real business outcomes, they care for!
                             </Typography>
                         </Box>
-                        <Box display="flex" flexWrap="wrap" justifyContent="space-between" gap={3}>
+                        <Grid container spacing={3}>
                             {[
                                 {
                                     value: '9x',
@@ -214,20 +168,13 @@ const TMSLandingPage = () => {
                                     description: 'The network provides opportunities for businesses to expand quickly and help businesses grow rapidly in new geographic areas.'
                                 },
                             ].map((stat, index) => (
-                                <Box
-                                    key={index}
-                                    flex={{ xs: '1 1 100%', md: '1 1 23%' }}
-                                    minWidth={{ xs: '100%', md: 0 }}
-                                    maxWidth={{ xs: '100%', md: '23%' }}
-                                    boxSizing="border-box"
-                                    height="100%"
-                                    borderRadius={3} overflow={'hidden'}>
-                                    <Card elevation={3} >
-                                        <CardContent>
+                                <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>
+                                    <Card elevation={3}>
+                                        <CardContent sx={{ textAlign: 'center' }}>
                                             <Typography variant="h3" component="div" gutterBottom>
                                                 {stat.value}
                                             </Typography>
-                                            <Typography variant="h6" component="h3" gutterBottom fontWeight="medium">
+                                            <Typography variant="h6" component="h3" gutterBottom>
                                                 {stat.title}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
@@ -235,12 +182,12 @@ const TMSLandingPage = () => {
                                             </Typography>
                                         </CardContent>
                                     </Card>
-                                </Box>
+                                </Grid>
                             ))}
-                        </Box>
+                        </Grid>
                     </Box>
                 </Container>
-            </Box>
+            </Paper>
 
             <Container maxWidth="lg">
                 <Box py={8}>
@@ -250,16 +197,16 @@ const TMSLandingPage = () => {
                     <Typography variant="h4" component="h4" gutterBottom>
                         Simplifying the complex manual chaos, digitally
                     </Typography>
-                    <Typography variant="h4" component="h1" gutterBottom fontWeight="bold">
+                    <Typography variant="h4" component="h1" gutterBottom>
                         What Supply Chain leaders want .. ?
                     </Typography>
                     <Typography variant="body1" paragraph>
                         Efficient and visible supply chain management is the goal of every business leader. Having a clear understanding of the supply chain and being able to track it in real time is critical for running a successful operation and expanding the business.
                     </Typography>
 
-                    <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} gap={4} width="100%" alignItems="center" justifyContent="center" mt={4}>
-                        <Box flex={1}>
-                            <Typography variant="h4" component="h1" gutterBottom fontWeight="bold">
+                    <Grid container spacing={4} alignItems="center" mt={4}>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Typography variant="h4" component="h2" gutterBottom>
                                 The challenge
                             </Typography>
                             <Typography variant="body1" paragraph>
@@ -268,28 +215,30 @@ const TMSLandingPage = () => {
                             <Typography variant="body1" paragraph>
                                 This leads to a complex way of working, additional logistics costs, poor experience, and low operational control.
                             </Typography>
-                        </Box>
-                        <Box flex={1}>
-                            <Box component={'img'}
-                                src="/img/before.png"
-                                alt="TMS Illustration"
-                                height={"100%"}
-                                width={"100%"}
-                            />
-                        </Box>
-                    </Box>
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Card>
+                                <CardMedia
+                                    component="img"
+                                    image="/img/before.png"
+                                    alt="TMS Illustration"
+                                />
+                            </Card>
+                        </Grid>
+                    </Grid>
 
-                    <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} gap={4} width="100%" alignItems="center" justifyContent="center" mt={4}>
-                        <Box flex={1}>
-                            <Box component={'img'}
-                                src="/img/after.png"
-                                alt="TMS Illustration"
-                                height={"100%"}
-                                width={"100%"}
-                            />
-                        </Box>
-                        <Box flex={1}>
-                            <Typography variant="h4" component="h1" gutterBottom fontWeight="bold">
+                    <Grid container spacing={4} alignItems="center" mt={4}>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Card>
+                                <CardMedia
+                                    component="img"
+                                    image="/img/after.png"
+                                    alt="TMS Illustration"
+                                />
+                            </Card>
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Typography variant="h4" component="h2" gutterBottom>
                                 The Digital Solution
                             </Typography>
                             <Typography variant="body1" paragraph>
@@ -298,12 +247,12 @@ const TMSLandingPage = () => {
                             <Typography variant="body1" paragraph>
                                 Instalanes platform enhances the ability of supply chain leaders and their teams to make transportation logistics a competitive advantage. With the value proposition offered, your teams can deliver real impact on business outcomes
                             </Typography>
-                        </Box>
-                    </Box>
+                        </Grid>
+                    </Grid>
                 </Box>
             </Container>
 
-            <Box bgcolor="grey.100">
+            <Paper elevation={0} square>
                 <Container maxWidth="lg">
                     <Box py={8}>
                         <Typography variant="h5" component="h2" gutterBottom color="primary" mb={2}>
@@ -313,90 +262,91 @@ const TMSLandingPage = () => {
                             Instalanes digitizes your entire transportation process, solving real industry challenges
                         </Typography>
                         <Box mt={2}>
-                            <Box component={'img'}
-                                src="/img/Instalanes-TMS-Process.svg"
-                                alt="TMS Illustration"
-                                height={"100%"}
-                                width={"100%"}
-                            />
+                            <Card>
+                                <CardMedia
+                                    component="img"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </Card>
                         </Box>
                     </Box>
                 </Container>
-            </Box>
+            </Paper>
 
-            <Box bgcolor="black" color="white" py={6}>
+            <Paper component="footer" elevation={0} square>
                 <Container maxWidth="lg">
                     <Box mb={4}>
-                        <Typography variant="h4" gutterBottom color="inherit">
+                        <Typography variant="h5" gutterBottom>
                             Installanes
                         </Typography>
-                        <Typography variant="body2" color="inherit" mb={2}>
-                            Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency. The platform helps users to manage and track their supply chain, as well as to access performance insights that help teams make better decisions.
+                        <Typography variant="body2" paragraph>
+                            Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
                         </Typography>
                     </Box>
-                    <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} gap={4} mb={0} color="inherit">
-                        <Box flex={1} color="inherit">
-                            <Typography variant="body2" mb={2} gutterBottom color="inherit">
+
+                    <Grid container spacing={4}>
+                        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                            <Typography variant="subtitle1" gutterBottom>
                                 Company
                             </Typography>
-                            <Box display="flex" flexDirection="column" gap={1} color="inherit">
+                            <List dense disablePadding>
                                 {['About', 'Careers', 'Terms', 'Privacy policy'].map((item) => (
-                                    <Typography key={item} variant="body2" color="inherit">
-                                        {item}
-                                    </Typography>
+                                    <ListItem key={item} disablePadding>
+                                        <ListItemText primary={item} />
+                                    </ListItem>
                                 ))}
-                            </Box>
-                        </Box>
+                            </List>
+                        </Grid>
 
-                        <Box flex={1}>
-                            <Typography variant="body2" mb={2} gutterBottom color="inherit">
+                        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                            <Typography variant="subtitle1" gutterBottom>
                                 TMS Capabilities
                             </Typography>
-                            <Box display="flex" flexDirection="column" gap={1} color="inherit">
+                            <List dense disablePadding>
                                 {['Consulting', 'Data analytics', 'Business intelligence', 'Process automation'].map((item) => (
-                                    <Typography key={item} variant="body2" color="inherit">
-                                        {item}
-                                    </Typography>
+                                    <ListItem key={item} disablePadding>
+                                        <ListItemText primary={item} />
+                                    </ListItem>
                                 ))}
-                            </Box>
-                        </Box>
+                            </List>
+                        </Grid>
 
-                        <Box flex={1}>
-                            <Typography variant="body2" mb={2} gutterBottom color="inherit">
+                        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                            <Typography variant="subtitle1" gutterBottom>
                                 Resources
                             </Typography>
-                            <Box display="flex" flexDirection="column" gap={1} mb={3} color="inherit">
+                            <List dense disablePadding>
                                 {['Blogs', 'Partnering', 'Pricing - Get Quote', 'Pay here'].map((item) => (
-                                    <Typography key={item} variant="body2" color="inherit">
-                                        {item}
-                                    </Typography>
+                                    <ListItem key={item} disablePadding>
+                                        <ListItemText primary={item} />
+                                    </ListItem>
                                 ))}
-                            </Box>
-                        </Box>
+                            </List>
+                        </Grid>
 
-                        <Box flex={1}>
-                            <Typography variant="body2" mb={2} gutterBottom color="inherit">
+                        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                            <Typography variant="subtitle1" gutterBottom>
                                 Contact
                             </Typography>
-                            <Box display="flex" flexDirection="column" gap={1} color="inherit">
+                            <List dense disablePadding>
                                 {['Email', 'Phone'].map((item) => (
-                                    <Typography key={item} variant="body2" color="inherit">
-                                        {item}
-                                    </Typography>
+                                    <ListItem key={item} disablePadding>
+                                        <ListItemText primary={item} />
+                                    </ListItem>
                                 ))}
-                            </Box>
-                        </Box>
-                    </Box>
-                    <Box color="inherit" display="flex" flexDirection={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ xs: 'flex-start', sm: 'center' }} gap={2} pt={3} borderTop={1} borderColor="divider">
-                        <Box display="flex" flexDirection="column" gap={1}>
-                            <Typography variant="body2" color="inherit">
-                                Gravity44/ Copyright © 2024 Installanes.com. All rights reserved.
-                            </Typography>
-                        </Box>
-                    </Box>
+                            </List>
+                        </Grid>
+                    </Grid>
+
+                    <Divider sx={{ my: 4, bgcolor: 'grey.700' }} />
+
+                    <Typography variant="body2" textAlign="center">
+                        Gravity44/ Copyright © 2024 Installanes.com. All rights reserved.
+                    </Typography>
                 </Container>
-            </Box>
-        </Box >
+            </Paper>
+        </Box>
     );
 };
 
