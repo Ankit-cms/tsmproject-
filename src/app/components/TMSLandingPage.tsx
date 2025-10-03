@@ -44,18 +44,18 @@ import {
     Smartphone,
     Public,
     Speed
-} from '@mui/icons-material'; 
+} from '@mui/icons-material';
 
 const TMSLandingPage = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <Box>
-            <AppBar color="default" elevation={0}>
+        <Box component="main">
+            <AppBar color="default" position="static" elevation={0}>
                 <Container maxWidth="lg">
                     <Toolbar>
-                        <Typography variant="h5" component="div" >
+                        <Typography variant="h5" component="h5" >
                             instalanes
                         </Typography>
                         <Box flexGrow={1} display={{ xs: 'none', md: 'block' }} textAlign="center">
@@ -73,21 +73,21 @@ const TMSLandingPage = () => {
                 </Container>
             </AppBar>
             <Paper elevation={0} square>
-                <Box height="60vh" display="flex" alignItems="center" justifyContent="center">
+                <Box py={8} display="flex" alignItems="center" justifyContent="center">
                     <Container maxWidth="lg">
                         <Grid container spacing={4} alignItems="center">
                             <Grid>
-                                <Typography variant="h4" component="h4" gutterBottom >
+                                <Typography variant="h4" component="h4" gutterBottom  >
                                     Switch to Instalanes
                                 </Typography>
-                                <Typography variant="h3" component="h1" gutterBottom>
+                                <Typography variant="h3" component="h1" gutterBottom >
                                     Transport management system
                                 </Typography>
-                                <Typography variant="body1" paragraph>
+                                <Typography variant="body1" paragraph >
                                     Cloud-based SaaS TMS and visibility platform for 3PLs, Shippers, LSPs, Transporters, and Carriers,
                                     enabling end-to-end efficient transportation logistics operations and collaboration
                                 </Typography>
-                                <Button variant="contained" size="large">
+                                <Button variant="contained" size="large" >
                                     Schedule a Demo
                                 </Button>
                             </Grid>
