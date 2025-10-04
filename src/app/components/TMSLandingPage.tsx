@@ -23,7 +23,8 @@ import {
     Stack,
     useTheme,
     useMediaQuery,
-    CardMedia
+    CardMedia,
+    Checkbox
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import {
@@ -51,6 +52,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import FlareIcon from '@mui/icons-material/Flare';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import ComputerIcon from '@mui/icons-material/Computer';
+import OutgoingMailIcon from '@mui/icons-material/OutgoingMail';
+
+import Link from 'next/link';
 
 const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -93,7 +102,7 @@ const TMSLandingPage = () => {
                                 display: { xs: 'none', md: 'flex' },
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
-                                letterSpacing: '.3rem',
+                                letterSpacing: '2px',
                                 color: 'inherit',
                                 textDecoration: 'none',
                                 textTransform: 'uppercase',
@@ -165,9 +174,10 @@ const TMSLandingPage = () => {
                             ))}
                         </Box>
                         <Box sx={{ flexGrow: 0 }}>
-                            <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                            <Tooltip title="Open Profile">
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, borderRadius: '50%', border: '1px solid white' }}>
+                                    {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                                    <PersonOutlineIcon sx={{ color: 'white' }} />
                                 </IconButton>
                             </Tooltip>
                             <Menu
@@ -254,7 +264,7 @@ const TMSLandingPage = () => {
                                 { number: 6, title: 'Reporting Intelligence', icon: <DataUsage /> }
                             ].map((feature, index) => (
                                 <Grid key={index} size={{ xs: 12, sm: 6, md: 4, lg: 2 }} >
-                                    <Card elevation={2} sx={{ height: '100%' }}>
+                                    <Card elevation={2} variant="outlined" sx={{ height: '100%' }}>
                                         <CardContent sx={{ textAlign: 'center' }}>
                                             <Typography variant="h4" gutterBottom color="text.primary">
                                                 {feature.number}
@@ -308,7 +318,7 @@ const TMSLandingPage = () => {
                                 },
                             ].map((stat, index) => (
                                 <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>
-                                    <Card elevation={3} sx={{ height: '100%' }}>
+                                    <Card variant="outlined" elevation={3} sx={{ height: '100%' }}>
                                         <CardContent sx={{ textAlign: 'center' }}>
                                             <Typography variant="h3" component="div" gutterBottom>
                                                 {stat.value}
@@ -412,66 +422,56 @@ const TMSLandingPage = () => {
             <Divider sx={{ my: 2 }} />
 
             <Paper elevation={0} square>
-                <Box py={8}>
-                    <Container maxWidth="lg">
-                        <Grid container spacing={4} mt={4}>
-                            <Grid size={{ xs: 12 }}>
-                                <Typography variant="h4" component="h2" gutterBottom textAlign="center">
-                                    What our Customer says
-                                </Typography>
-                            </Grid>
-                            {[
-                                {
-                                    title: 'Fast Implementation',
-                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
-                                    name: 'John Doe',
-                                    role: 'Logistics Director at Hewells'
-                                },
-                                {
-                                    title: 'Fast Implementation',
-                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
-                                    name: 'John Doe',
-                                    role: 'Logistics Director at Hewells'
-                                },
-                                {
-                                    title: 'Fast Implementation',
-                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
-                                    name: 'John Doe',
-                                    role: 'Logistics Director at Hewells'
-                                },
-                                {
-                                    title: 'Fast Implementation',
-                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
-                                    name: 'John Doe',
-                                    role: 'Logistics Director at Hewells'
-                                },
-                            ].map((stat, index) => (
-                                <Grid key={index} size={{ xs: 12, md: 6 }}>
-                                    <Card elevation={3} sx={{ height: '100%' }}>
-                                        <CardContent>
-                                            <Typography variant="h6" component="h3" gutterBottom color="primary">
-                                                {stat.title}
-                                            </Typography>
-                                            <Typography variant="body1" paragraph fontStyle="italic">
-                                                {stat.description}
-                                            </Typography>
-                                            <Box display={'flex'} alignItems="center" gap={2} mt={2}>
-                                                <Avatar alt={stat.name} src="/static/images/avatar/1.jpg" sx={{ width: 56, height: 56 }} />
-                                                <Box>
-                                                    <Typography variant="subtitle1" fontWeight="bold">
-                                                        {stat.name}
-                                                    </Typography>
-                                                    <Typography variant="body2" color="text.secondary">
-                                                        {stat.role}
-                                                    </Typography>
-                                                </Box>
-                                            </Box>
-                                        </CardContent>
-                                    </Card>
-                                </Grid>
-                            ))}
+                <Box py={8} px={4}>
+                    <Grid container spacing={4} mt={4}>
+                        <Grid size={{ xs: 12 }}>
+                            <Typography variant="h4" component="h2" gutterBottom textAlign="center">
+                                What our Customer says
+                            </Typography>
                         </Grid>
-                    </Container>
+                        {[
+                            {
+                                title: 'Fast Implementation',
+                                description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
+                                name: 'John Doe',
+                                role: 'Logistics Director at Hewells'
+                            },
+                            {
+                                title: 'Fast Implementation',
+                                description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
+                                name: 'John Doe',
+                                role: 'Logistics Director at Hewells'
+                            },
+                            {
+                                title: 'Fast Implementation',
+                                description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
+                                name: 'John Doe',
+                                role: 'Logistics Director at Hewells'
+                            },
+                        ].map((stat, index) => (
+                            <Grid key={index} size={{ xs: 12, md: 4 }}>
+                                <Card elevation={3} variant="outlined" sx={{ height: '100%' }}>
+                                    <CardContent>
+                                        <Chip label={stat.title} variant="outlined" color="primary" />
+                                        <Typography variant="body1" paragraph fontStyle="italic" mt={1}>
+                                            {stat.description}
+                                        </Typography>
+                                        <Box display={'flex'} alignItems="center" gap={2} mt={2}>
+                                            <Avatar alt={stat.name} src="/static/images/avatar/1.jpg" sx={{ width: 50, height: 50 }} />
+                                            <Box>
+                                                <Typography variant="subtitle1" fontWeight="bold">
+                                                    {stat.name}
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary">
+                                                    {stat.role}
+                                                </Typography>
+                                            </Box>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
                 </Box>
             </Paper>
 
@@ -507,10 +507,28 @@ const TMSLandingPage = () => {
                                     title: 'Freight market update: Q3 – August 2024',
                                     date: 'August 19, 2024',
                                     img: '/img/before.png'
+                                },
+                                {
+                                    category: 'FREIGHT',
+                                    title: 'Deliver 2024 fostering innovation and impact',
+                                    date: 'September 11, 2024',
+                                    img: '/img/before.png',
+                                },
+                                {
+                                    category: 'FREIGHT',
+                                    title: 'Embracing efficiency with TMS implementation',
+                                    date: 'August 19, 2024',
+                                    img: '/img/before.png'
+                                },
+                                {
+                                    category: 'FREIGHT',
+                                    title: 'Freight market update: Q3 – August 2024',
+                                    date: 'August 19, 2024',
+                                    img: '/img/before.png'
                                 }
                             ].map((blog, index) => (
                                 <Grid key={index} size={{ xs: 12, md: 4 }}>
-                                    <Card elevation={2}>
+                                    <Card elevation={2}  variant="outlined">
                                         <CardContent>
                                             <CardMedia
                                                 component="img"
@@ -518,15 +536,18 @@ const TMSLandingPage = () => {
                                                 image={blog.img}
                                                 alt="green iguana"
                                             />
-                                            <Typography variant="overline" color="primary" display="block" gutterBottom>
-                                                {blog.category}
-                                            </Typography>
+                                            <Chip label={blog.category} variant="outlined" color="primary" sx={{ my: 1 }}/>
                                             <Typography variant="h6" component="h3" gutterBottom>
                                                 {blog.title}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {blog.date}
-                                            </Typography>
+                                            <Box display={'flex'} justifyContent="space-between" alignItems="center">
+                                                <Typography variant="body2" color="text.secondary">
+                                                    {blog.date}
+                                                </Typography>
+                                                <Link href="#">
+                                                    <ArrowRightAltIcon />
+                                                </Link>
+                                            </Box>
                                         </CardContent>
                                     </Card>
                                 </Grid>
@@ -540,17 +561,21 @@ const TMSLandingPage = () => {
 
             <Paper elevation={0} square>
                 <Container maxWidth="lg">
-                    <Box py={8} textAlign={"center"}>
-                        <Typography variant="h4" component="h2" gutterBottom color="primary" mb={2} >
-                            Streamline your transportation process and scale with ease — elevate your business performance with Instalanes TMS !
-                        </Typography>
-                        <Typography variant="body1" paragraph>
-                            Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
-                        </Typography>
-                        <Button variant="contained" size="large" >
-                            Contact our experts
-                        </Button>
-                    </Box>
+                    <Grid container spacing={4} alignItems="center" py={8}>
+                        <Grid size={{ xs: 12, md: 8 }}>
+                            <Typography variant="h4" component="h2" gutterBottom color="primary" mb={2} >
+                                Streamline your transportation
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
+                            </Typography>
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 4 }} textAlign="end">
+                            <Button variant="contained" size="large" >
+                                Contact our experts
+                            </Button>
+                        </Grid>
+                    </Grid>
                 </Container>
             </Paper>
 
@@ -569,33 +594,157 @@ const TMSLandingPage = () => {
                         </Box>
                         <Grid container spacing={4} mt={4}>
                             <Grid size={{ xs: 12, md: 6 }}>
-                                <Typography variant="h4" component="h2" gutterBottom>
+                                <Typography variant="h4" component="h4" gutterBottom>
                                     Talk to us
                                 </Typography>
-                                <Box mb={3}>
-                                    <Typography variant="h6" gutterBottom>
-                                        Sales Manager
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Priyanka S
-                                    </Typography>
-                                </Box>
-                                <Box>
-                                    <Typography variant="h6" gutterBottom>
-                                        Sales Manager
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Lucky S
-                                    </Typography>
-                                </Box>
+                                <Grid container spacing={3}>
+                                    <Grid size={{ xs: 12, sm: 6 }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent>
+                                                <Typography variant="h6" gutterBottom>
+                                                    Email
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" paragraph>
+                                                    Get a response within 24 hours
+                                                </Typography>
+                                                <Typography variant="body1" color="primary">
+                                                    hello@company.com
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+
+                                    <Grid size={{ xs: 12, sm: 6 }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent>
+                                                <Typography variant="h6" gutterBottom>
+                                                    Live Chat
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" paragraph>
+                                                    Instant support available now
+                                                </Typography>
+                                                <Button variant="contained" size="small">
+                                                    Start chatting
+                                                </Button>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+
+                                    <Grid size={{ xs: 12, sm: 6 }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent>
+                                                <Typography variant="h6" gutterBottom>
+                                                    Phone
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" paragraph>
+                                                    Mon-Fri, 9AM-6PM EST
+                                                </Typography>
+                                                <Typography variant="body1" color="primary">
+                                                    +1 (555) 123-4567
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+
+                                    <Grid size={{ xs: 12, sm: 6 }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent>
+                                                <Typography variant="h6" gutterBottom>
+                                                    Office
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" paragraph>
+                                                    Schedule an in-person meeting
+                                                </Typography>
+                                                <Typography variant="body1" color="primary">
+                                                    123 Innovation St, Tech City
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                </Grid>
+                                {/* <Grid container spacing={3}>
+                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+                                        <Card elevation={2} variant="outlined" >
+                                            <CardContent sx={{ textAlign: 'center' }}>
+                                                <OutgoingMailIcon fontSize="large" />
+                                                <Typography variant="h6" gutterBottom>
+                                                    Send Enquiry
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent sx={{ textAlign: 'center' }}>
+                                                <WhatsAppIcon fontSize="large" />
+                                                <Typography variant="h6" gutterBottom>
+                                                    Message
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent sx={{ textAlign: 'center' }}>
+                                                <MonetizationOnIcon fontSize="large" />
+                                                <Typography variant="h6" gutterBottom>
+                                                    Pricing
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent sx={{ textAlign: 'center' }}>
+                                                <ComputerIcon fontSize="large" />
+                                                <Typography variant="h6" gutterBottom>
+                                                    Demo
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                                                <Avatar alt="Priyanka S" src="/static/images/avatar/1.jpg" />
+                                                <Box>
+                                                    <Typography variant="h6" gutterBottom>
+                                                        Sales Manager
+                                                    </Typography>
+                                                    <Typography variant="body2" color="text.secondary" paragraph>
+                                                        Priyanka S
+                                                    </Typography>
+                                                </Box>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+                                        <Card elevation={2} variant="outlined">
+                                            <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                                                <Avatar alt="Lucky S" src="/static/images/avatar/1.jpg" />
+                                                <Box>
+                                                    <Typography variant="h6" gutterBottom>
+                                                        Sales Manager
+                                                    </Typography>
+                                                    <Typography variant="body2" color="text.secondary" paragraph>
+                                                        Lucky S
+                                                    </Typography>
+                                                </Box>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                </Grid> */}
                             </Grid>
                             <Grid size={{ xs: 12, md: 6 }}>
                                 <Typography variant="h4" component="h2" gutterBottom>
                                     Submit your details
                                 </Typography>
                                 <Grid container spacing={2}>
-                                    <Grid size={{ xs: 12 }}>
-                                        <TextField fullWidth label="Full name" variant="outlined" />
+                                    <Grid size={{ xs: 6 }}>
+                                        <TextField fullWidth label="First name" variant="outlined" />
+                                    </Grid>
+                                    <Grid size={{ xs: 6 }}>
+                                        <TextField fullWidth label="Last name" variant="outlined" />
                                     </Grid>
                                     <Grid size={{ xs: 12 }}>
                                         <TextField fullWidth label="Email" variant="outlined" />
@@ -608,6 +757,30 @@ const TMSLandingPage = () => {
                                     </Grid>
                                     <Grid size={{ xs: 12 }}>
                                         <TextField fullWidth label="Message" multiline rows={4} variant="outlined" />
+                                    </Grid>
+                                    <Grid size={{ xs: 12 }}>
+                                        <Box display="flex" alignItems="center" gap={2} p={2} border={1} borderColor="grey.300" borderRadius={1}>
+                                            <Checkbox size='large' />
+                                            <Box>
+                                                <Typography variant="body2">
+                                                    I'm not a robot
+                                                </Typography>
+                                                <Box display="flex" gap={1}>
+                                                    <Typography variant="caption" color="text.secondary">
+                                                        reCAPTCHA
+                                                    </Typography>
+                                                    <Typography variant="caption" color="text.secondary">
+                                                        Privacy
+                                                    </Typography>
+                                                    <Typography variant="caption" color="text.secondary">
+                                                        -
+                                                    </Typography>
+                                                    <Typography variant="caption" color="text.secondary">
+                                                        Terms
+                                                    </Typography>
+                                                </Box>
+                                            </Box>
+                                        </Box>
                                     </Grid>
                                     <Grid size={{ xs: 12 }}>
                                         <Button variant="contained" size="large" fullWidth>
@@ -630,8 +803,8 @@ const TMSLandingPage = () => {
                             <Grid size={{ md: 4 }}>
                                 <Box mb={2} display={'flex'} gap={1} alignItems="center">
                                     <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                                    <Typography variant="h5" gutterBottom mb={0}>
-                                        Installanes
+                                    <Typography variant="h4" gutterBottom mb={0}>
+                                        Instalanes
                                     </Typography>
                                 </Box>
                                 <Typography variant="body2" paragraph>
@@ -641,7 +814,7 @@ const TMSLandingPage = () => {
                             <Grid size={{ md: 8 }}>
                                 <Grid container spacing={4} mb={2}>
                                     <Grid size={{ sm: 6, md: 3 }}>
-                                        <Typography variant="subtitle1" gutterBottom>
+                                        <Typography variant="h6" fontWeight="600" gutterBottom>
                                             Company
                                         </Typography>
                                         <List dense disablePadding>
@@ -653,7 +826,7 @@ const TMSLandingPage = () => {
                                         </List>
                                     </Grid>
                                     <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                        <Typography variant="subtitle1" gutterBottom>
+                                        <Typography variant="h6" fontWeight="600" gutterBottom>
                                             TMS Capabilities
                                         </Typography>
                                         <List dense disablePadding>
@@ -665,7 +838,7 @@ const TMSLandingPage = () => {
                                         </List>
                                     </Grid>
                                     <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                        <Typography variant="subtitle1" gutterBottom>
+                                        <Typography variant="h6" fontWeight="600" gutterBottom>
                                             Resources
                                         </Typography>
                                         <List dense disablePadding>
@@ -677,7 +850,7 @@ const TMSLandingPage = () => {
                                         </List>
                                     </Grid>
                                     <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                        <Typography variant="subtitle1" gutterBottom>
+                                        <Typography variant="h6" fontWeight="600" gutterBottom>
                                             Contact
                                         </Typography>
                                         <List dense disablePadding>
@@ -697,13 +870,11 @@ const TMSLandingPage = () => {
                 <Container maxWidth="lg" >
                     <Grid container spacing={4}>
                         <Grid size={{ xs: 12, md: 6 }}>
-
-                        </Grid>
-                        <Grid size={{ xs: 12, md: 6 }}>
-                            <Typography variant="body2" textAlign="center" my={3}>
+                            <Typography variant="body2" my={3}>
                                 Gravity44/ Copyright © 2024 Installanes.com. All rights reserved.
                             </Typography>
                         </Grid>
+                        <Grid size={{ xs: 12, md: 6 }}></Grid>
                     </Grid>
                 </Container>
             </Paper>
