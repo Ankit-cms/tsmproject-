@@ -50,14 +50,14 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+// import AdbIcon from '@mui/icons-material/Adb';
 import FlareIcon from '@mui/icons-material/Flare';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import ComputerIcon from '@mui/icons-material/Computer';
-import OutgoingMailIcon from '@mui/icons-material/OutgoingMail';
+// import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+// import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+// import ComputerIcon from '@mui/icons-material/Computer';
+// import OutgoingMailIcon from '@mui/icons-material/OutgoingMail';
 
 import Link from 'next/link';
 
@@ -763,7 +763,7 @@ const TMSLandingPage = () => {
                                             <Checkbox size='large' />
                                             <Box>
                                                 <Typography variant="body2">
-                                                    I'm not a robot
+                                                    I am not a robot
                                                 </Typography>
                                                 <Box display="flex" gap={1}>
                                                     <Typography variant="caption" color="text.secondary">
