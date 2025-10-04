@@ -453,7 +453,7 @@ const TMSLandingPage = () => {
                                                 {stat.title}
                                             </Typography>
                                             <Typography variant="body1" paragraph fontStyle="italic">
-                                                "{stat.description}"
+                                                {stat.description}
                                             </Typography>
                                             <Box display={'flex'} alignItems="center" gap={2} mt={2}>
                                                 <Avatar alt={stat.name} src="/static/images/avatar/1.jpg" sx={{ width: 56, height: 56 }} />
@@ -564,7 +564,7 @@ const TMSLandingPage = () => {
                                 Get in touch with us
                             </Typography>
                             <Typography variant="body1" paragraph>
-                                Interested in learning more about our Transport Management System (TMS) and how it can benefit your business? We'd love to hear from you! Whether you have questions about our features, pricing, or implementation process, our team is here to help.
+                                Interested in learning more about our Transport Management System (TMS) and how it can benefit your business? We would love to hear from you! Whether you have questions about our features, pricing, or implementation process, our team is here to help.
                             </Typography>
                         </Box>
                         <Grid container spacing={4} mt={4}>
