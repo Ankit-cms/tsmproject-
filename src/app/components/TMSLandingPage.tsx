@@ -357,24 +357,20 @@ const TMSLandingPage = () => {
                             </Typography>
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }}>
-                            <Card>
-                                <CardMedia
-                                    component="img"
-                                    image="/img/before.png"
-                                    alt="TMS Illustration"
-                                />
-                            </Card>
+                            <CardMedia
+                                component="img"
+                                image="/img/before.png"
+                                alt="TMS Illustration"
+                            />
                         </Grid>
                     </Grid>
                     <Grid container spacing={4} alignItems="center" mt={4}>
                         <Grid size={{ xs: 12, md: 6 }}>
-                            <Card>
-                                <CardMedia
-                                    component="img"
-                                    image="/img/after.png"
-                                    alt="TMS Illustration"
-                                />
-                            </Card>
+                            <CardMedia
+                                component="img"
+                                image="/img/after.png"
+                                alt="TMS Illustration"
+                            />
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="h4" component="h2" gutterBottom>
@@ -403,17 +399,228 @@ const TMSLandingPage = () => {
                             Instalanes digitizes your entire transportation process, solving real industry challenges
                         </Typography>
                         <Box mt={2}>
-                            <Card>
-                                <CardMedia
-                                    component="img"
-                                    image="/img/Instalanes-TMS-Process.svg"
-                                    alt="TMS Illustration"
-                                />
-                            </Card>
+                            <CardMedia
+                                component="img"
+                                image="/img/Instalanes-TMS-Process.svg"
+                                alt="TMS Illustration"
+                            />
                         </Box>
                     </Box>
                 </Container>
             </Paper>
+
+            <Divider sx={{ my: 2 }} />
+
+            <Paper elevation={0} square>
+                <Box py={8}>
+                    <Container maxWidth="lg">
+                        <Grid container spacing={4} mt={4}>
+                            <Grid size={{ xs: 12 }}>
+                                <Typography variant="h4" component="h2" gutterBottom textAlign="center">
+                                    What our Customer says
+                                </Typography>
+                            </Grid>
+                            {[
+                                {
+                                    title: 'Fast Implementation',
+                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
+                                    name: 'John Doe',
+                                    role: 'Logistics Director at Hewells'
+                                },
+                                {
+                                    title: 'Fast Implementation',
+                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
+                                    name: 'John Doe',
+                                    role: 'Logistics Director at Hewells'
+                                },
+                                {
+                                    title: 'Fast Implementation',
+                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
+                                    name: 'John Doe',
+                                    role: 'Logistics Director at Hewells'
+                                },
+                                {
+                                    title: 'Fast Implementation',
+                                    description: "It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough",
+                                    name: 'John Doe',
+                                    role: 'Logistics Director at Hewells'
+                                },
+                            ].map((stat, index) => (
+                                <Grid key={index} size={{ xs: 12, md: 6 }}>
+                                    <Card elevation={3} sx={{ height: '100%' }}>
+                                        <CardContent>
+                                            <Typography variant="h6" component="h3" gutterBottom color="primary">
+                                                {stat.title}
+                                            </Typography>
+                                            <Typography variant="body1" paragraph fontStyle="italic">
+                                                "{stat.description}"
+                                            </Typography>
+                                            <Box display={'flex'} alignItems="center" gap={2} mt={2}>
+                                                <Avatar alt={stat.name} src="/static/images/avatar/1.jpg" sx={{ width: 56, height: 56 }} />
+                                                <Box>
+                                                    <Typography variant="subtitle1" fontWeight="bold">
+                                                        {stat.name}
+                                                    </Typography>
+                                                    <Typography variant="body2" color="text.secondary">
+                                                        {stat.role}
+                                                    </Typography>
+                                                </Box>
+                                            </Box>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Container>
+                </Box>
+            </Paper>
+
+            <Divider sx={{ my: 2 }} />
+
+            <Paper elevation={0} square>
+                <Box py={8}>
+                    <Container maxWidth="lg">
+                        <Grid container spacing={4}>
+                            <Grid size={{ xs: 12 }}>
+                                <Typography variant="h4" component="h2" gutterBottom>
+                                    Featured Blogs
+                                </Typography>
+                                <Typography variant="h6" component="h3" gutterBottom color="primary">
+                                    Industries
+                                </Typography>
+                            </Grid>
+                            {[
+                                {
+                                    category: 'FREIGHT',
+                                    title: 'Deliver 2024 fostering innovation and impact',
+                                    date: 'September 11, 2024',
+                                    img: '/img/before.png',
+                                },
+                                {
+                                    category: 'FREIGHT',
+                                    title: 'Embracing efficiency with TMS implementation',
+                                    date: 'August 19, 2024',
+                                    img: '/img/before.png'
+                                },
+                                {
+                                    category: 'FREIGHT',
+                                    title: 'Freight market update: Q3 – August 2024',
+                                    date: 'August 19, 2024',
+                                    img: '/img/before.png'
+                                }
+                            ].map((blog, index) => (
+                                <Grid key={index} size={{ xs: 12, md: 4 }}>
+                                    <Card elevation={2}>
+                                        <CardContent>
+                                            <CardMedia
+                                                component="img"
+                                                height="180"
+                                                image={blog.img}
+                                                alt="green iguana"
+                                            />
+                                            <Typography variant="overline" color="primary" display="block" gutterBottom>
+                                                {blog.category}
+                                            </Typography>
+                                            <Typography variant="h6" component="h3" gutterBottom>
+                                                {blog.title}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {blog.date}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Container>
+                </Box>
+            </Paper>
+
+            <Divider sx={{ my: 2 }} />
+
+            <Paper elevation={0} square>
+                <Container maxWidth="lg">
+                    <Box py={8} textAlign={"center"}>
+                        <Typography variant="h4" component="h2" gutterBottom color="primary" mb={2} >
+                            Streamline your transportation process and scale with ease — elevate your business performance with Instalanes TMS !
+                        </Typography>
+                        <Typography variant="body1" paragraph>
+                            Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
+                        </Typography>
+                        <Button variant="contained" size="large" >
+                            Contact our experts
+                        </Button>
+                    </Box>
+                </Container>
+            </Paper>
+
+            <Divider sx={{ my: 2 }} />
+
+            <Paper elevation={0} square>
+                <Container maxWidth="lg">
+                    <Box py={8}>
+                        <Box mb={4} textAlign="center">
+                            <Typography variant="h4" component="h2" gutterBottom>
+                                Get in touch with us
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                Interested in learning more about our Transport Management System (TMS) and how it can benefit your business? We'd love to hear from you! Whether you have questions about our features, pricing, or implementation process, our team is here to help.
+                            </Typography>
+                        </Box>
+                        <Grid container spacing={4} mt={4}>
+                            <Grid size={{ xs: 12, md: 6 }}>
+                                <Typography variant="h4" component="h2" gutterBottom>
+                                    Talk to us
+                                </Typography>
+                                <Box mb={3}>
+                                    <Typography variant="h6" gutterBottom>
+                                        Sales Manager
+                                    </Typography>
+                                    <Typography variant="body1">
+                                        Priyanka S
+                                    </Typography>
+                                </Box>
+                                <Box>
+                                    <Typography variant="h6" gutterBottom>
+                                        Sales Manager
+                                    </Typography>
+                                    <Typography variant="body1">
+                                        Lucky S
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid size={{ xs: 12, md: 6 }}>
+                                <Typography variant="h4" component="h2" gutterBottom>
+                                    Submit your details
+                                </Typography>
+                                <Grid container spacing={2}>
+                                    <Grid size={{ xs: 12 }}>
+                                        <TextField fullWidth label="Full name" variant="outlined" />
+                                    </Grid>
+                                    <Grid size={{ xs: 12 }}>
+                                        <TextField fullWidth label="Email" variant="outlined" />
+                                    </Grid>
+                                    <Grid size={{ xs: 12 }}>
+                                        <TextField fullWidth label="+91 Mobile number" variant="outlined" />
+                                    </Grid>
+                                    <Grid size={{ xs: 12 }}>
+                                        <TextField fullWidth label="Platform demo" variant="outlined" />
+                                    </Grid>
+                                    <Grid size={{ xs: 12 }}>
+                                        <TextField fullWidth label="Message" multiline rows={4} variant="outlined" />
+                                    </Grid>
+                                    <Grid size={{ xs: 12 }}>
+                                        <Button variant="contained" size="large" fullWidth>
+                                            Submit
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Container>
+            </Paper>
+
 
             <Divider sx={{ my: 2 }} />
             <Paper component="footer" elevation={0} square>
@@ -433,7 +640,7 @@ const TMSLandingPage = () => {
                             </Grid>
                             <Grid size={{ md: 8 }}>
                                 <Grid container spacing={4} mb={2}>
-                                    <Grid size={{  sm: 6, md: 3 }}>
+                                    <Grid size={{ sm: 6, md: 3 }}>
                                         <Typography variant="subtitle1" gutterBottom>
                                             Company
                                         </Typography>
@@ -490,7 +697,7 @@ const TMSLandingPage = () => {
                 <Container maxWidth="lg" >
                     <Grid container spacing={4}>
                         <Grid size={{ xs: 12, md: 6 }}>
-                            
+
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }}>
                             <Typography variant="body2" textAlign="center" my={3}>
