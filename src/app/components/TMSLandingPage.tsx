@@ -54,18 +54,63 @@ import MenuItem from '@mui/material/MenuItem';
 import FlareIcon from '@mui/icons-material/Flare';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-// import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-// import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-// import ComputerIcon from '@mui/icons-material/Computer';
-// import OutgoingMailIcon from '@mui/icons-material/OutgoingMail';
+// import InsightsIcon from '@mui/icons-material/Insights';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import ComputerIcon from '@mui/icons-material/Computer';
+import OutgoingMailIcon from '@mui/icons-material/OutgoingMail';
+
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 import Link from 'next/link';
 
 const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+
+interface TabPanelProps {
+    children?: React.ReactNode;
+    index: number;
+    value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`vertical-tabpanel-${index}`}
+            aria-labelledby={`vertical-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
+
+function a11yProps(index: number) {
+    return {
+        id: `vertical-tab-${index}`,
+        'aria-controls': `vertical-tabpanel-${index}`,
+    };
+}
+
 const TMSLandingPage = () => {
     // const theme = useTheme();
+
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        setValue(newValue);
+    };
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -213,18 +258,15 @@ const TMSLandingPage = () => {
                     <Container maxWidth="lg">
                         <Grid container spacing={4} alignItems="center" mt={4}>
                             <Grid size={{ xs: 12, md: 6 }}>
-                                <Typography variant="h4" component="h4" gutterBottom sx={{ fontSize: { xs: "1rem", md: "2rem" } }}  >
-                                    Switch to Instalanes
-                                </Typography>
-                                <Typography variant="h3" component="h1" gutterBottom sx={{ fontSize: { xs: "2rem", md: "3rem" } }} >
+                                <Chip icon={<AutoAwesomeIcon />} label="Switch to Instalanes" variant='outlined' color="primary" sx={{ px: 1 }} />
+                                <Typography variant="h3" component="h1" gutterBottom sx={{ fontSize: { xs: "2rem", md: "3.5rem" } }} mt={2}>
                                     Transport management system
                                 </Typography>
                                 <Typography variant="body1" paragraph >
-                                    Cloud-based SaaS TMS and visibility platform for 3PLs, Shippers, LSPs, Transporters, and Carriers,
-                                    enabling end-to-end efficient transportation logistics operations and collaboration
+                                    Powering smarter, faster logistics with a cloud TMS & visibility platform built for 3PLs, shippers, and carriers
                                 </Typography>
-                                <Button variant="contained" size="large" >
-                                    Schedule a Demo
+                                <Button variant="contained" size="small" >
+                                    <ComputerIcon sx={{ mr: 1 }} fontSize='small' />    Get Demo
                                 </Button>
                             </Grid>
                             <Grid size={{ xs: 12, md: 6 }}>
@@ -246,36 +288,138 @@ const TMSLandingPage = () => {
                 <Container maxWidth="lg">
                     <Box py={8}>
                         <Box >
-                            <Typography variant="h5" gutterBottom >
-                                Instalanes TMS - the all-in-one unified platform for transportation logistics
+                            <Typography variant="h3" gutterBottom >
+                                Instalanes TMS — how it works
                             </Typography>
-                            <Typography variant="h6" paragraph>
-                                Simplify and digitize FCL, FTL, PTL, ODC, and warehouse shipments with a unified
-                                TMS for Shippers, Carriers, 3PLs, and LSPs
+                            <Typography variant="h5" paragraph>
+                                Your all-in-one logistics platform. Digitize and simplify FCL, FTL, PTL, ODC, and warehouse shipments in one unified system for shippers, carriers, 3PLs, and LSPs
                             </Typography>
                         </Box>
-                        <Grid container spacing={2}>
-                            {[
-                                { number: 1, title: 'Dispatch planner', icon: <Dashboard /> },
-                                { number: 2, title: 'Transport order', icon: <Receipt /> },
-                                { number: 3, title: 'Rates and Carrier', icon: <Analytics /> },
-                                { number: 4, title: 'Shipments and tracking', icon: <Visibility /> },
-                                { number: 5, title: 'PoD and Billing', icon: <DocumentScanner /> },
-                                { number: 6, title: 'Reporting Intelligence', icon: <DataUsage /> }
-                            ].map((feature, index) => (
-                                <Grid key={index} size={{ xs: 12, sm: 6, md: 4, lg: 2 }} >
-                                    <Card elevation={2} variant="outlined" sx={{ height: '100%' }}>
-                                        <CardContent sx={{ textAlign: 'center' }}>
-                                            <Typography variant="h4" gutterBottom color="text.primary">
-                                                {feature.number}
-                                            </Typography>
-                                            <Typography variant="body1" color="text.primary">
-                                                {feature.title}
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
+                        <Box>
+                            <Tabs
+                                value={value}
+                                onChange={handleChange}
+                                variant="scrollable"
+                                scrollButtons="auto"
+                                aria-label="scrollable auto tabs example"
+                            >
+                                <Tab label="Plan Load" {...a11yProps(0)} />
+                                <Tab label="Transport Request" {...a11yProps(1)} />
+                                <Tab label="Rate – Buy/Sell" {...a11yProps(2)} />
+                                <Tab label="Allocate" {...a11yProps(3)} />
+                                <Tab label="Load" {...a11yProps(4)} />
+                                <Tab label="Track"  {...a11yProps(5)} />
+                                <Tab label="Unload & PoD" {...a11yProps(6)} />
+                                <Tab label="Bill " {...a11yProps(7)} />
+                                <Tab label="Analyze " {...a11yProps(8)} />
+                            </Tabs>
+                            <TabPanel value={value} index={0}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={1}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={2}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={3}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={4}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={5}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={6}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={7}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                            <TabPanel value={value} index={8}>
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </TabPanel>
+                        </Box>
+                        <Grid container spacing={4} alignItems="center">
+                            {/* <Grid size={{ xs: 12, sm: 6 }} >
+                                <Grid container spacing={2}>
+                                    {[
+                                        { number: 1, title: 'Dispatch planner', icon: <Dashboard /> },
+                                        { number: 2, title: 'Transport order', icon: <Receipt /> },
+                                        { number: 3, title: 'Rates and Carrier', icon: <Analytics /> },
+                                        { number: 4, title: 'Shipments and tracking', icon: <Visibility /> },
+                                        { number: 5, title: 'PoD and Billing', icon: <DocumentScanner /> },
+                                        { number: 6, title: 'Reporting Intelligence', icon: <DataUsage /> }, 
+                                    ].map((feature, index) => (
+                                        <Grid key={index} size={{ xs: 12, sm: 4 }} >
+                                            <Card elevation={2} variant="outlined" sx={{ height: '100%' }}>
+                                                <CardContent sx={{ textAlign: 'center' }}>
+                                                    <Typography variant="h4" gutterBottom color="text.primary">
+                                                        {feature.number}
+                                                    </Typography>
+                                                    <Typography variant="body1" color="text.primary">
+                                                        {feature.title}
+                                                    </Typography>
+                                                </CardContent>
+                                            </Card>
+                                        </Grid>
+                                    ))}
                                 </Grid>
-                            ))}
+                            </Grid> */}
+                            {/* <Grid size={{ xs: 12, sm: 12 }} >
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/Instalanes-TMS-Process.svg"
+                                    alt="TMS Illustration"
+                                />
+                            </Grid> */}
                         </Grid>
                     </Box>
                 </Container>
@@ -287,11 +431,11 @@ const TMSLandingPage = () => {
                 <Container maxWidth="lg">
                     <Box py={8}>
                         <Box mb={6}>
-                            <Typography variant="h5" component="h2" gutterBottom color="primary">
-                                Why Instalanes platform
+                            <Typography variant="h3" gutterBottom >
+                                Why Instalanes?
                             </Typography>
-                            <Typography variant="h6">
-                                Instalanes is a Collaborative TMS platform that helps Business leaders generate real business outcomes, they care for!
+                            <Typography variant="h5" paragraph>
+                                A collaborative TMS platform built to deliver the business outcomes that matter to you
                             </Typography>
                         </Box>
                         <Grid container spacing={3}>
@@ -342,13 +486,13 @@ const TMSLandingPage = () => {
 
             <Container maxWidth="lg">
                 <Box py={8}>
-                    <Typography variant="h5" component="h6" gutterBottom color="primary">
+                    <Typography variant="h3" gutterBottom >
                         Solving the big challenge
                     </Typography>
-                    <Typography variant="h4" component="h4" gutterBottom>
+                    <Typography variant="h5" paragraph>
                         Simplifying the complex manual chaos, digitally
                     </Typography>
-                    <Typography variant="h4" component="h1" gutterBottom>
+                    <Typography variant="h5" paragraph>
                         What Supply Chain leaders want .. ?
                     </Typography>
                     <Typography variant="body1" paragraph>
@@ -402,13 +546,13 @@ const TMSLandingPage = () => {
             <Paper elevation={0} square>
                 <Container maxWidth="lg">
                     <Box py={8}>
-                        <Typography variant="h5" component="h2" gutterBottom color="primary" mb={2}>
+                        <Typography variant="h3" gutterBottom >
                             Digital TMS platform solutions
                         </Typography>
-                        <Typography variant="h4" component="h2" gutterBottom mb={4}>
+                        <Typography variant="h5" paragraph>
                             Instalanes digitizes your entire transportation process, solving real industry challenges
                         </Typography>
-                        <Box mt={2}>
+                        <Box mt={5}>
                             <CardMedia
                                 component="img"
                                 image="/img/Instalanes-TMS-Process.svg"
@@ -424,9 +568,12 @@ const TMSLandingPage = () => {
             <Paper elevation={0} square>
                 <Box py={8} px={4}>
                     <Grid container spacing={4} mt={4}>
-                        <Grid size={{ xs: 12 }}>
-                            <Typography variant="h4" component="h2" gutterBottom textAlign="center">
-                                What our Customer says
+                        <Grid size={{ xs: 12 }} textAlign="center">
+                            <Typography variant="h3" gutterBottom>
+                                Trusted by Logistics Leaders
+                            </Typography>
+                            <Typography variant="h5" paragraph>
+                                Discover how Instalanes TMS helps shippers, carriers, and 3PLs streamline operations, reduce costs, and gain full visibility
                             </Typography>
                         </Grid>
                         {[
@@ -482,11 +629,11 @@ const TMSLandingPage = () => {
                     <Container maxWidth="lg">
                         <Grid container spacing={4}>
                             <Grid size={{ xs: 12 }}>
-                                <Typography variant="h4" component="h2" gutterBottom>
-                                    Featured Blogs
+                                <Typography variant="h3" gutterBottom>
+                                    Blog posts
                                 </Typography>
-                                <Typography variant="h6" component="h3" gutterBottom color="primary">
-                                    Industries
+                                <Typography variant="h5" paragraph>
+                                    Stay updated with our latest articles and insights
                                 </Typography>
                             </Grid>
                             {[
@@ -507,28 +654,10 @@ const TMSLandingPage = () => {
                                     title: 'Freight market update: Q3 – August 2024',
                                     date: 'August 19, 2024',
                                     img: '/img/before.png'
-                                },
-                                {
-                                    category: 'FREIGHT',
-                                    title: 'Deliver 2024 fostering innovation and impact',
-                                    date: 'September 11, 2024',
-                                    img: '/img/before.png',
-                                },
-                                {
-                                    category: 'FREIGHT',
-                                    title: 'Embracing efficiency with TMS implementation',
-                                    date: 'August 19, 2024',
-                                    img: '/img/before.png'
-                                },
-                                {
-                                    category: 'FREIGHT',
-                                    title: 'Freight market update: Q3 – August 2024',
-                                    date: 'August 19, 2024',
-                                    img: '/img/before.png'
                                 }
                             ].map((blog, index) => (
                                 <Grid key={index} size={{ xs: 12, md: 4 }}>
-                                    <Card elevation={2}  variant="outlined">
+                                    <Card elevation={2} variant="outlined">
                                         <CardContent>
                                             <CardMedia
                                                 component="img"
@@ -536,7 +665,7 @@ const TMSLandingPage = () => {
                                                 image={blog.img}
                                                 alt="green iguana"
                                             />
-                                            <Chip label={blog.category} variant="outlined" color="primary" sx={{ my: 1 }}/>
+                                            <Chip label={blog.category} variant="outlined" color="primary" sx={{ my: 1 }} />
                                             <Typography variant="h6" component="h3" gutterBottom>
                                                 {blog.title}
                                             </Typography>
@@ -563,15 +692,15 @@ const TMSLandingPage = () => {
                 <Container maxWidth="lg">
                     <Grid container spacing={4} alignItems="center" py={8}>
                         <Grid size={{ xs: 12, md: 8 }}>
-                            <Typography variant="h4" component="h2" gutterBottom color="primary" mb={2} >
-                                Streamline your transportation
+                            <Typography variant="h3" gutterBottom>
+                                Transform your logistics with Instalanes TMS
                             </Typography>
-                            <Typography variant="body1" paragraph>
-                                Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
+                            <Typography variant="h5" paragraph>
+                                One platform for every shipment—FCL, FTL, PTL, ODC, and warehouse—helping shippers, carriers, and 3PLs streamline operations and grow faster
                             </Typography>
                         </Grid>
                         <Grid size={{ xs: 12, md: 4 }} textAlign="end">
-                            <Button variant="contained" size="large" >
+                            <Button variant="contained" size="large">
                                 Contact our experts
                             </Button>
                         </Grid>
@@ -584,98 +713,23 @@ const TMSLandingPage = () => {
             <Paper elevation={0} square>
                 <Container maxWidth="lg">
                     <Box py={8}>
-                        <Box mb={4} textAlign="center">
-                            <Typography variant="h4" component="h2" gutterBottom>
+                        <Box mb={4} >
+                            <Typography variant="h3" gutterBottom>
                                 Get in touch with us
                             </Typography>
-                            <Typography variant="body1" paragraph>
+                            <Typography variant="h5" paragraph mb={6}>
                                 Interested in learning more about our Transport Management System (TMS) and how it can benefit your business? We would love to hear from you! Whether you have questions about our features, pricing, or implementation process, our team is here to help.
                             </Typography>
                         </Box>
-                        <Grid container spacing={4} mt={4}>
+                        <Grid container spacing={4} >
                             <Grid size={{ xs: 12, md: 6 }}>
-                                <Typography variant="h4" component="h4" gutterBottom>
-                                    Talk to us
+                                <Typography variant="h4" component="h4" gutterBottom mb={3}>
+                                    Contact
                                 </Typography>
                                 <Grid container spacing={3}>
                                     <Grid size={{ xs: 12, sm: 6 }}>
                                         <Card elevation={2} variant="outlined">
                                             <CardContent>
-                                                <Typography variant="h6" gutterBottom>
-                                                    Email
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary" paragraph>
-                                                    Get a response within 24 hours
-                                                </Typography>
-                                                <Typography variant="body1" color="primary">
-                                                    hello@company.com
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-
-                                    <Grid size={{ xs: 12, sm: 6 }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent>
-                                                <Typography variant="h6" gutterBottom>
-                                                    Live Chat
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary" paragraph>
-                                                    Instant support available now
-                                                </Typography>
-                                                <Button variant="contained" size="small">
-                                                    Start chatting
-                                                </Button>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-
-                                    <Grid size={{ xs: 12, sm: 6 }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent>
-                                                <Typography variant="h6" gutterBottom>
-                                                    Phone
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary" paragraph>
-                                                    Mon-Fri, 9AM-6PM EST
-                                                </Typography>
-                                                <Typography variant="body1" color="primary">
-                                                    +1 (555) 123-4567
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-
-                                    <Grid size={{ xs: 12, sm: 6 }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent>
-                                                <Typography variant="h6" gutterBottom>
-                                                    Office
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary" paragraph>
-                                                    Schedule an in-person meeting
-                                                </Typography>
-                                                <Typography variant="body1" color="primary">
-                                                    123 Innovation St, Tech City
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-                                </Grid>
-                                {/* <Grid container spacing={3}>
-                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
-                                        <Card elevation={2} variant="outlined" >
-                                            <CardContent sx={{ textAlign: 'center' }}>
-                                                <OutgoingMailIcon fontSize="large" />
-                                                <Typography variant="h6" gutterBottom>
-                                                    Send Enquiry
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent sx={{ textAlign: 'center' }}>
                                                 <WhatsAppIcon fontSize="large" />
                                                 <Typography variant="h6" gutterBottom>
                                                     Message
@@ -683,9 +737,10 @@ const TMSLandingPage = () => {
                                             </CardContent>
                                         </Card>
                                     </Grid>
-                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+
+                                    <Grid size={{ xs: 12, sm: 6 }}>
                                         <Card elevation={2} variant="outlined">
-                                            <CardContent sx={{ textAlign: 'center' }}>
+                                            <CardContent>
                                                 <MonetizationOnIcon fontSize="large" />
                                                 <Typography variant="h6" gutterBottom>
                                                     Pricing
@@ -693,51 +748,37 @@ const TMSLandingPage = () => {
                                             </CardContent>
                                         </Card>
                                     </Grid>
-                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+
+                                    <Grid size={{ xs: 12, sm: 6 }}>
                                         <Card elevation={2} variant="outlined">
-                                            <CardContent sx={{ textAlign: 'center' }}>
-                                                <ComputerIcon fontSize="large" />
+                                            <CardContent>
                                                 <Typography variant="h6" gutterBottom>
-                                                    Demo
+                                                    Priyanka S
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" paragraph>
+                                                    Sales Manager
                                                 </Typography>
                                             </CardContent>
                                         </Card>
                                     </Grid>
-                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
+
+                                    <Grid size={{ xs: 12, sm: 6 }}>
                                         <Card elevation={2} variant="outlined">
-                                            <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                                                <Avatar alt="Priyanka S" src="/static/images/avatar/1.jpg" />
-                                                <Box>
-                                                    <Typography variant="h6" gutterBottom>
-                                                        Sales Manager
-                                                    </Typography>
-                                                    <Typography variant="body2" color="text.secondary" paragraph>
-                                                        Priyanka S
-                                                    </Typography>
-                                                </Box>
+                                            <CardContent>
+                                                <Typography variant="h6" gutterBottom>
+                                                    Lucky S
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" paragraph>
+                                                    Sales Manager
+                                                </Typography>
                                             </CardContent>
                                         </Card>
                                     </Grid>
-                                    <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100%' }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                                                <Avatar alt="Lucky S" src="/static/images/avatar/1.jpg" />
-                                                <Box>
-                                                    <Typography variant="h6" gutterBottom>
-                                                        Sales Manager
-                                                    </Typography>
-                                                    <Typography variant="body2" color="text.secondary" paragraph>
-                                                        Lucky S
-                                                    </Typography>
-                                                </Box>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-                                </Grid> */}
+                                </Grid>
                             </Grid>
                             <Grid size={{ xs: 12, md: 6 }}>
-                                <Typography variant="h4" component="h2" gutterBottom>
-                                    Submit your details
+                                <Typography variant="h4" component="h2" gutterBottom mb={3}>
+                                    Submit
                                 </Typography>
                                 <Grid container spacing={2}>
                                     <Grid size={{ xs: 6 }}>
@@ -784,7 +825,7 @@ const TMSLandingPage = () => {
                                     </Grid>
                                     <Grid size={{ xs: 12 }}>
                                         <Button variant="contained" size="large" fullWidth>
-                                            Submit
+                                            Get Call Back
                                         </Button>
                                     </Grid>
                                 </Grid>
