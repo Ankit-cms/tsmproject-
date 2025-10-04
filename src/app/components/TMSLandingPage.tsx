@@ -79,26 +79,6 @@ const TMSLandingPage = () => {
     return (
         <Box>
             {/* Header */}
-            {/* <AppBar color="default" position="static" elevation={0}>
-                <Container maxWidth="lg">
-                    <Toolbar>
-                        <Typography variant="h5" component="h5" >
-                            Instalanes
-                        </Typography>
-                        <Box flexGrow={1} display={{ xs: 'none', md: 'block' }} textAlign="center">
-                            <Button>TMS solutions</Button>
-                            <Button>Resources</Button>
-                            <Button>Pricing</Button>
-                            <Button>Contact us</Button>
-                        </Box>
-                        <Box>
-                            <Button variant="contained" >
-                                Get Demo
-                            </Button>
-                        </Box>
-                    </Toolbar>
-                </Container>
-            </AppBar> */}
 
             <AppBar position="sticky">
                 <Container maxWidth="xl">
@@ -109,7 +89,7 @@ const TMSLandingPage = () => {
                             noWrap
                             component="a"
                             href="#app-bar-with-responsive-menu"
-                            sx={{ 
+                            sx={{
                                 display: { xs: 'none', md: 'flex' },
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
@@ -117,12 +97,11 @@ const TMSLandingPage = () => {
                                 color: 'inherit',
                                 textDecoration: 'none',
                                 textTransform: 'uppercase',
-                            }}
-                        >
+                            }}>
                             Instalanes
                         </Typography>
 
-                        <Box sx={{display: { xs: 'inline-flex', md: 'none' } }}>
+                        <Box sx={{ display: { xs: 'inline-flex', md: 'none' } }}>
                             <IconButton
                                 size="large"
                                 aria-label="account of current user"
@@ -175,7 +154,7 @@ const TMSLandingPage = () => {
                         >
                             Instalanes
                         </Typography>
-                        <Box sx={{ flexGrow: 1, gap: 2, justifyContent: 'center', display: { xs: 'none', md: 'flex' }}}>
+                        <Box sx={{ flexGrow: 1, gap: 2, justifyContent: 'center', display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
                                 <Button
                                     key={page}
@@ -413,6 +392,7 @@ const TMSLandingPage = () => {
             </Container>
 
             <Divider sx={{ my: 2 }} />
+
             <Paper elevation={0} square>
                 <Container maxWidth="lg">
                     <Box py={8}>
@@ -434,79 +414,93 @@ const TMSLandingPage = () => {
                     </Box>
                 </Container>
             </Paper>
+
             <Divider sx={{ my: 2 }} />
             <Paper component="footer" elevation={0} square>
                 <Container maxWidth="lg" >
                     <Box py={4}>
-                        <Box mb={4}>
-                            <Typography variant="h5" gutterBottom>
-                                Installanes
-                            </Typography>
-                            <Typography variant="body2" paragraph>
-                                Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
-                            </Typography>
-                        </Box>
                         <Grid container spacing={4} mb={2}>
-                            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                <Typography variant="subtitle1" gutterBottom>
-                                    Company
+                            <Grid size={{ md: 4 }}>
+                                <Box mb={2} display={'flex'} gap={1} alignItems="center">
+                                    <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                                    <Typography variant="h5" gutterBottom mb={0}>
+                                        Installanes
+                                    </Typography>
+                                </Box>
+                                <Typography variant="body2" paragraph>
+                                    Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
                                 </Typography>
-                                <List dense disablePadding>
-                                    {['About', 'Careers', 'Terms', 'Privacy policy'].map((item) => (
-                                        <ListItem key={item} disablePadding>
-                                            <ListItemText primary={item} />
-                                        </ListItem>
-                                    ))}
-                                </List>
                             </Grid>
-
-                            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                <Typography variant="subtitle1" gutterBottom>
-                                    TMS Capabilities
-                                </Typography>
-                                <List dense disablePadding>
-                                    {['Consulting', 'Data analytics', 'Business intelligence', 'Process automation'].map((item) => (
-                                        <ListItem key={item} disablePadding>
-                                            <ListItemText primary={item} />
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Grid>
-
-                            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                <Typography variant="subtitle1" gutterBottom>
-                                    Resources
-                                </Typography>
-                                <List dense disablePadding>
-                                    {['Blogs', 'Partnering', 'Pricing - Get Quote', 'Pay here'].map((item) => (
-                                        <ListItem key={item} disablePadding>
-                                            <ListItemText primary={item} />
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Grid>
-
-                            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                <Typography variant="subtitle1" gutterBottom>
-                                    Contact
-                                </Typography>
-                                <List dense disablePadding>
-                                    {['Email', 'Phone'].map((item) => (
-                                        <ListItem key={item} disablePadding>
-                                            <ListItemText primary={item} />
-                                        </ListItem>
-                                    ))}
-                                </List>
+                            <Grid size={{ md: 8 }}>
+                                <Grid container spacing={4} mb={2}>
+                                    <Grid size={{  sm: 6, md: 3 }}>
+                                        <Typography variant="subtitle1" gutterBottom>
+                                            Company
+                                        </Typography>
+                                        <List dense disablePadding>
+                                            {['About', 'Careers', 'Terms', 'Privacy policy'].map((item) => (
+                                                <ListItem key={item} disablePadding>
+                                                    <ListItemText primary={item} />
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                                        <Typography variant="subtitle1" gutterBottom>
+                                            TMS Capabilities
+                                        </Typography>
+                                        <List dense disablePadding>
+                                            {['Consulting', 'Data analytics', 'Business intelligence', 'Process automation'].map((item) => (
+                                                <ListItem key={item} disablePadding>
+                                                    <ListItemText primary={item} />
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                                        <Typography variant="subtitle1" gutterBottom>
+                                            Resources
+                                        </Typography>
+                                        <List dense disablePadding>
+                                            {['Blogs', 'Partnering', 'Pricing - Get Quote', 'Pay here'].map((item) => (
+                                                <ListItem key={item} disablePadding>
+                                                    <ListItemText primary={item} />
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    </Grid>
+                                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                                        <Typography variant="subtitle1" gutterBottom>
+                                            Contact
+                                        </Typography>
+                                        <List dense disablePadding>
+                                            {['Email', 'Phone'].map((item) => (
+                                                <ListItem key={item} disablePadding>
+                                                    <ListItemText primary={item} />
+                                                </ListItem>
+                                            ))}
+                                        </List>
+                                    </Grid>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Box>
                 </Container>
                 <Divider />
-                <Typography variant="body2" textAlign="center" my={4}>
-                    Gravity44/ Copyright © 2024 Installanes.com. All rights reserved.
-                </Typography>
+                <Container maxWidth="lg" >
+                    <Grid container spacing={4}>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Typography variant="body2" textAlign="center" my={3}>
+                                Gravity44/ Copyright © 2024 Installanes.com. All rights reserved.
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                </Container>
             </Paper>
-        </Box>
+        </Box >
     );
 };
 
