@@ -395,7 +395,7 @@ const TMSLandingPage = () => {
                         <Typography variant="h5" component="h2" gutterBottom color="primary" mb={2}>
                             Digital TMS platform solutions
                         </Typography>
-                        <Typography variant="h4" component="h2" gutterBottom>
+                        <Typography variant="h4" component="h2" gutterBottom mb={4}>
                             Instalanes digitizes your entire transportation process, solving real industry challenges
                         </Typography>
                         <Box mt={2}>
