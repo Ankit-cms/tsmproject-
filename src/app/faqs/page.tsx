@@ -6,6 +6,7 @@ import {
   Box,
   Breadcrumbs,
   Container,
+  Divider,
   Link,
   Paper,
   Typography,
@@ -77,31 +78,27 @@ const Faq = () => {
     <Box>
       <Header />
       <Paper elevation={0} square>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ ml: 2, mt: 2 }}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 4 }}>
           <Link underline="hover" color="inherit" href="/">
             Home
           </Link>
 
-          <Typography sx={{ color: 'text.primary' }}>{pathnames[0]}</Typography>
+          <Typography sx={{ color: 'text.primary' }}>FAQs</Typography>
         </Breadcrumbs>
-        <Box py={8}>
+        <Divider />
+        <Box py={4}>
           <Container maxWidth="lg">
-            <Typography
-              variant="h4"
-              component="h2"
-              gutterBottom
-              textAlign={'center'}
-            >
+            <Typography variant="h4" component="h2" gutterBottom>
               Frequently asked questions{' '}
             </Typography>
-            <Typography variant="subtitle1" gutterBottom textAlign={'center'}>
+            <Typography variant="subtitle1" gutterBottom>
               Find answers to common questions about our products. Can not find
               what you are looking for? Contact our support team.
             </Typography>
-
+<Divider sx={{pt:4}}/>
             <Box mt={8}>
               {faqs.map((question) => (
-                <Accordion elevation={0} key={question.question}>
+                <Accordion key={question.question}>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography variant="h6" py={1}>
                       {question.question}

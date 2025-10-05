@@ -23,40 +23,14 @@ import { usePathname } from 'next/navigation';
 
 const jobCategories = [
   {
-    category: 'Engineering',
-    jobs: [
-      {
-        title: 'Senior Software Engineer',
-        description:
-          'You will be responsible for the development of new and existing software products.',
-        location: 'Salta, Argentina office or Remote',
-      },
-      {
-        title: 'QA Engineer',
-        description:
-          'Ensure the quality of our software products through testing and automation.',
-        location: 'Chiang Mai, Thailand office or Remote',
-      },
-    ],
-  },
-  {
     category: 'Product',
     jobs: [
       {
-        title: 'Product Manager',
-        description: 'Help us build the next generation of Acme products.',
-        location: 'Windhoek, Namibia office or Remote',
-      },
-    ],
-  },
-  {
-    category: 'Support',
-    jobs: [
-      {
-        title: 'Technical Support Specialist',
-        description:
-          'Provide technical support to our customers and internal teams.',
-        location: 'Cusco, Peru office or Remote',
+        Project: 'AcreBytes',
+        title: 'Implementation Manager',
+        location: 'Noida',
+        workType: 'Remote',
+        contractType: 'Part time',
       },
     ],
   },
@@ -70,63 +44,73 @@ const Career = () => {
     <Box>
       <Header />
       <Paper elevation={0} square>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ ml: 2, mt: 2 }}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 4 }}>
           <Link underline="hover" color="inherit" href="/">
             Home
           </Link>
-          <Typography sx={{ color: 'text.primary' }}>{pathnames[0]}</Typography>
+          <Typography sx={{ color: 'text.primary' }}>Careers</Typography>
         </Breadcrumbs>
-
+        <Divider />
         <Box py={4}>
           <Container maxWidth="lg">
             <Typography variant="h4" component="h2" gutterBottom>
-              Open positions
+              Enhance your Career, join us
             </Typography>
-
+            <Typography variant="subtitle1" gutterBottom>
+              We are building global scalable platforms for enterprises. Change
+              the way business processes work.
+            </Typography>
+            <Divider sx={{ pt: 2 }} />
             {jobCategories.map((section) => (
               <Box key={section.category} sx={{ mt: 3 }}>
-                <Chip
-                  sx={{ mb: 2 }}
-                  label={section.category}
-                  color="primary"
-                  variant="outlined"
-                />
-
-                {section.jobs.map((job, index) => (
+                {section.jobs.map((job) => (
                   <Box key={job.title}>
-                    <Accordion
-                      elevation={0}
-                      disableGutters
-                      sx={{
-                        border: 'none',
-                        '&:before': { display: 'none' },
-                      }}
-                    >
+                    <Accordion disableGutters sx={{p:2}}>
                       <AccordionSummary
                         expandIcon={<ArrowForwardIcon fontSize="small" />}
                       >
                         <Stack spacing={1}>
-                          <Typography variant="h6">{job.title}</Typography>
-                          <Typography
-                            variant="subtitle1"
-                            color="text.secondary"
-                          >
-                            {job.description}
-                          </Typography>
+                          <Box display={'flex'} gap={2}>
+                            <Chip
+                              sx={{ width: 'fit-content' }}
+                              label={section.category}
+                              color="primary"
+                              variant="outlined"
+                            />
+                            <Typography variant="h6">{job.Project}</Typography>
+                            <Typography variant="h6">{job.title}</Typography>
+                          </Box>
+
                           <Box display="flex" alignItems="center" gap={0.5}>
                             <LocationOnOutlinedIcon fontSize="small" />
                             <Typography variant="body2" color="text.secondary">
                               {job.location}
+                            </Typography>{' '}
+                            |
+                            <Typography variant="body2" color="text.secondary">
+                              {job.workType} |
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                              {job.contractType}
                             </Typography>
                           </Box>
                         </Stack>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Button variant="contained">Apply</Button>
+                        <Typography paragraph>
+                          Requirements: 3+ years of experience in SaaS
+                          implementation, onboarding, or project management.
+                          Strong communication, client management, and
+                          problem-solving skills. Experience with enterprise
+                          software, data migration, and integrations preferred.
+                          Ability to manage multiple projects simultaneously in
+                          a fast-paced environment.
+                        </Typography>
+                        <Box textAlign={'end'}>
+                          <Button variant="contained">Apply</Button>
+                        </Box>
                       </AccordionDetails>
                     </Accordion>
-
-                    <Divider sx={{ my: 1.5 }} />
                   </Box>
                 ))}
               </Box>
