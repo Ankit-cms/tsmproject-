@@ -84,8 +84,8 @@ const Faq = () => {
                             Frequently asked questions{' '}
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom textAlign={'center'}>
-                            Find answers to common questions about our products. Can't find what
-                            you're looking for? Contact our support team.
+                            Find answers to common questions about our products. Can not find what
+                            you are looking for? Contact our support team.
                         </Typography>
 
                         <Box mt={8}>
