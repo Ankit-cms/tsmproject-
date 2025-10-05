@@ -110,10 +110,10 @@ const Features = () => {
             <Box py={8}>
                 <Container maxWidth="lg">
                     <Typography variant="h3" gutterBottom>
-                        Key Features & Benefits
+                        Platform Features 
                     </Typography>
                     <Typography variant="h5" paragraph>
-                        Unique Features & Benefits - Powerful features that help you outperform competitors and wow your customers
+                        Powerful features that help you outperform competitors and wow your customers
                     </Typography>
                     <Grid
                         container

@@ -51,17 +51,23 @@ const Footer = () => {
           <Grid container spacing={4} mb={2}>
             <Grid size={{ md: 4 }}>
               <Box mb={2} display={'flex'} gap={1} alignItems="center">
-                <FlareIcon
-                  sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+                <FlareIcon fontSize='large'
+                  sx={{ display: { xs: 'none', md: 'flex' }, }}
                 />
-                <Typography variant="h4" gutterBottom mb={0}>
+                <Typography variant="h4" gutterBottom mb={0} sx={{
+                  display: { xs: 'none', md: 'flex' },
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  letterSpacing: '2px',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                }}>
                   Instalanes
                 </Typography>
               </Box>
               <Typography variant="body2" paragraph>
-                Instalanes is a Transport management and visibility platform
-                that helps businesses improve their supply chain visibility,
-                collaboration, growth, and efficiency.
+                TMS platform boosting supply chain visibility, collaboration, and efficiency
               </Typography>
             </Grid>
             <Grid size={{ md: 8 }}>
@@ -77,6 +83,7 @@ const Footer = () => {
                           <ListItemButton
                             component="a"
                             href={`/${item.toLowerCase().replace(' ', '-')}`}
+                            sx={{ px: 0 }}
                           >
                             <ListItemText primary={item} />
                           </ListItemButton>
@@ -87,7 +94,7 @@ const Footer = () => {
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                   <Typography variant="h6" fontWeight="600" gutterBottom>
-                    TMS Capabilities
+                    Capabilities
                   </Typography>
                   <List dense disablePadding>
                     {[
@@ -100,6 +107,7 @@ const Footer = () => {
                         <ListItemButton
                           component="a"
                           href={`/${item.toLowerCase().replace(' ', '-')}`}
+                          sx={{ px: 0 }}
                         >
                           <ListItemText primary={item} />
                         </ListItemButton>
@@ -112,12 +120,13 @@ const Footer = () => {
                     Resources
                   </Typography>
                   <List dense disablePadding>
-                    {['Blogs', 'Faqs', 'Pricing - Get Quote', 'Pay here'].map(
+                    {['Blogs', 'Faqs', 'Pricing', 'Pay here'].map(
                       (item) => (
                         <ListItem key={item} disablePadding>
                           <ListItemButton
                             component="a"
                             href={`/${item.toLowerCase().replace(' ', '-')}`}
+                            sx={{ px: 0 }}
                           >
                             <ListItemText primary={item} />
                           </ListItemButton>
@@ -133,7 +142,13 @@ const Footer = () => {
                   <List dense disablePadding>
                     {['Email', 'Phone'].map((item) => (
                       <ListItem key={item} disablePadding>
-                        <ListItemText primary={item} />
+                        <ListItemButton
+                          component="a"
+                          href={`/${item.toLowerCase().replace(' ', '-')}`}
+                          sx={{ px: 0 }}
+                        >
+                          <ListItemText primary={item} />
+                        </ListItemButton>
                       </ListItem>
                     ))}
                   </List>
@@ -152,17 +167,16 @@ const Footer = () => {
           spacing={2}
           sx={{ py: 2 }}
         >
-         
           <Grid >
             <Typography
               variant="body2"
               textAlign={{ xs: 'center', md: 'left' }}
             >
-              Gravity44 / Copyright © 2024 Installanes.com. All rights reserved.
+              Gravity44 © 2025 Instalanes. All rights reserved
             </Typography>
           </Grid>
 
-          <Grid   textAlign="center">
+          <Grid textAlign="center">
             <SocialIconGroup />
           </Grid>
 
@@ -171,15 +185,15 @@ const Footer = () => {
             justifyContent={{ xs: 'center', md: 'flex-end' }}
             gap={2}
           >
-            {['Privacy Statement', 'Terms of Use', 'Cookies'].map((text) => (
+            {['Privacy Policy', 'Terms', 'Cookies'].map((text, index) => (
               <Link
-                key={text}
+                key={index}
                 href="#"
                 underline="hover"
                 variant="body2"
                 color="inherit"
               >
-                {text}
+                {text} &nbsp; {index < 2 && '|'}
               </Link>
             ))}
           </Grid>
