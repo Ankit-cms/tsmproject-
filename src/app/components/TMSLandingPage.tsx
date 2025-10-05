@@ -349,7 +349,7 @@ const TMSLandingPage = () => {
                     <Typography variant="h5" paragraph>
                         Simplifying the complex manual chaos — digitally.
                     </Typography>
-                    <Box mt={4} mb={4}>
+                    <Box my={4}>
                         <CardMedia
                             component="img"
                             image="/img/work/instalanes_TMS_challenges.png"
