@@ -16,17 +16,15 @@ import MenuItem from '@mui/material/MenuItem';
 import FlareIcon from '@mui/icons-material/Flare';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import AppsIcon from "@mui/icons-material/Apps";
-import DescriptionIcon from "@mui/icons-material/Description";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
 import CallIcon from '@mui/icons-material/Call';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
-import InfoIcon from "@mui/icons-material/Info";
 import ArticleIcon from "@mui/icons-material/Article";
 import GroupIcon from "@mui/icons-material/Group";
 import ApartmentIcon from '@mui/icons-material/Apartment';
+import ComputerIcon from '@mui/icons-material/Computer';
+
 
 
 const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
@@ -123,13 +121,14 @@ const Header = () => {
                                 <Typography textAlign="center" display={"flex"} alignItems={"center"}>Resources <KeyboardArrowDownIcon /></Typography>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                                <AttachMoneyIcon sx={{ mr: 1 }} />
-                                <Typography textAlign="center">Pricing</Typography>
-                            </MenuItem>
-                            <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
                                 <CallIcon sx={{ mr: 1 }} />
                                 <Typography textAlign="center">Contact Us</Typography>
                             </MenuItem>
+                            <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
+                                <ComputerIcon sx={{ mr: 1 }} />
+                                <Typography textAlign="center">Get Demo</Typography>
+                            </MenuItem>
+
                         </Menu>
                     </Box>
                     <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1 }} />
@@ -180,6 +179,14 @@ const Header = () => {
                                 <ApartmentIcon fontSize="small" />
                                 About
                             </MenuItem>
+                            <MenuItem
+                                component={"a"}
+                                href="/pricing"
+                                onClick={handleClose}
+                                sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                                <AttachMoneyIcon fontSize="small" />
+                                Pricing
+                            </MenuItem>
 
                             <MenuItem
                                 component={"a"}
@@ -204,21 +211,23 @@ const Header = () => {
 
                         <Button
                             component={'a'}
-                            href="/pricing"
-                            sx={{ my: 2, color: "white", display: "flex", alignItems: "center", gap: 1 }}
-                        >
-                            <AttachMoneyIcon fontSize="small" />
-                            Pricing
-                        </Button>
-
-                        <Button
-                            component={'a'}
                             href="/contact"
                             sx={{ my: 2, color: "white", display: "flex", alignItems: "center", gap: 1 }}
                         >
                             <CallIcon fontSize="small" />
                             Contact Us
                         </Button>
+
+                        <Button
+                            component={'a'}
+                            href="/pricing"
+                            sx={{ my: 2, color: "white", display: "flex", alignItems: "center", gap: 1 }}
+                        >
+                            <ComputerIcon fontSize="small" />
+                            Get Demo
+                        </Button>
+
+
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open Profile">

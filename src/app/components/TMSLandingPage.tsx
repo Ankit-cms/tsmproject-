@@ -8,24 +8,15 @@ import {
     Button,
     Card,
     CardContent,
-    AppBar,
-    Toolbar,
-    IconButton,
     Paper,
     TextField,
     Chip,
     Avatar,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
     Divider,
-    Stack,
-    useTheme,
-    useMediaQuery,
     CardMedia,
     Checkbox,
-    InputAdornment
+    InputAdornment,
+    CardActionArea
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
@@ -35,6 +26,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import ComputerIcon from '@mui/icons-material/Computer';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -128,6 +120,7 @@ const TMSLandingPage = () => {
     return (
         <Box>
             <Header />
+
             <Paper elevation={0} square>
                 <Box display="flex" alignItems="center" justifyContent="center" pt={10} pb={4}>
                     <Container maxWidth="lg">
@@ -152,8 +145,8 @@ const TMSLandingPage = () => {
                                     Powering smarter, faster logistics with a cloud TMS &
                                     visibility platform built for 3PLs, shippers, and carriers.
                                 </Typography>
-                                <Button variant="contained" size="small">
-                                    <ComputerIcon sx={{ mr: 1 }} fontSize="small" /> Schedule a
+                                <Button variant="contained" >
+                                    <ComputerIcon sx={{ mr: 1 }} /> Schedule a
                                     Demo
                                 </Button>
                             </Grid>
@@ -342,41 +335,6 @@ const TMSLandingPage = () => {
                                 />
                             </TabPanel>
                         </Box>
-                        <Grid container spacing={4} alignItems="center">
-                            {/* <Grid size={{ xs: 12, sm: 6 }} >
-                                <Grid container spacing={2}>
-                                    {[
-                                        { number: 1, title: 'Dispatch planner', icon: <Dashboard /> },
-                                        { number: 2, title: 'Transport order', icon: <Receipt /> },
-                                        { number: 3, title: 'Rates and Carrier', icon: <Analytics /> },
-                                        { number: 4, title: 'Shipments and tracking', icon: <Visibility /> },
-                                        { number: 5, title: 'PoD and Billing', icon: <DocumentScanner /> },
-                                        { number: 6, title: 'Reporting Intelligence', icon: <DataUsage /> }, 
-                                    ].map((feature, index) => (
-                                        <Grid key={index} size={{ xs: 12, sm: 4 }} >
-                                            <Card elevation={2} variant="outlined" sx={{ height: '100%' }}>
-                                                <CardContent sx={{ textAlign: 'center' }}>
-                                                    <Typography variant="h4" gutterBottom color="text.primary">
-                                                        {feature.number}
-                                                    </Typography>
-                                                    <Typography variant="body1" color="text.primary">
-                                                        {feature.title}
-                                                    </Typography>
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
-                                    ))}
-                                </Grid>
-                            </Grid> */}
-                            {/* <Grid size={{ xs: 12, sm: 12 }} >
-                                <CardMedia
-                                    component="img"
-                                    height="100%"
-                                    image="/img/Instalanes-TMS-Process.svg"
-                                    alt="TMS Illustration"
-                                />
-                            </Grid> */}
-                        </Grid>
                     </Box>
                 </Container>
             </Paper>
@@ -386,49 +344,72 @@ const TMSLandingPage = () => {
             <Container maxWidth="lg">
                 <Box py={8}>
                     <Typography variant="h3" gutterBottom>
-                        Solving the big challenge
+                        Solving the Big Challenge
                     </Typography>
                     <Typography variant="h5" paragraph>
-                        Simplifying the complex manual chaos, digitally
+                        Simplifying the complex manual chaos — digitally.
                     </Typography>
-                    <Typography variant="h5" paragraph>
-                        What Supply Chain leaders want .. ?
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        Efficient and visible supply chain management is the goal of every
-                        business leader. Having a clear understanding of the supply chain
-                        and being able to track it in real time is critical for running a
-                        successful operation and expanding the business.
-                    </Typography>
+                    <Box mt={4} mb={4}>
+                        <CardMedia
+                            component="img"
+                            image="/img/work/instalanes_TMS_challenges.png"
+                            alt="TMS Illustration"
+                        />
+                    </Box>
                     <Grid container spacing={4} alignItems="center" mt={4}>
-                        <Grid size={{ xs: 12, md: 6 }}>
-                            <Typography variant="h4" component="h2" gutterBottom>
-                                The challenge
-                            </Typography>
-                            <Typography variant="body1" paragraph>
-                                However, managing the supply chain and maintaining visibility
-                                across all teams, systems, documents, and process handoffs is
-                                extremely complex. Organizations are still relying on emails
-                                and phone calls to manage and track.
-                            </Typography>
-                            <Typography variant="body1" paragraph>
-                                This leads to a complex way of working, additional logistics
-                                costs, poor experience, and low operational control.
-                            </Typography>
-                        </Grid>
-                        <Grid size={{ xs: 12, md: 6 }}>
-                            <CardMedia
-                                component="img"
-                                image="/img/before.png"
-                                alt="TMS Illustration"
-                            />
+                        <Grid container spacing={2}>
+                            {[
+                                {
+                                    icon: '👁️',
+                                    title: 'Lack of End-to-End Visibility',
+                                    desc: 'Supply chain leaders struggle to get a single, real-time view across teams, systems, and geographies — making informed decision-making difficult.'
+                                },
+                                {
+                                    icon: '📝',
+                                    title: 'Manual & Fragmented Operations',
+                                    desc: 'Critical processes still run on emails, spreadsheets, and phone calls, creating silos and slowing execution.'
+                                },
+                                {
+                                    icon: '💸',
+                                    title: 'Rising Logistics Costs',
+                                    desc: 'Inefficiencies and poor coordination lead to avoidable costs, delays, and resource waste.'
+                                },
+                                {
+                                    icon: '😖',
+                                    title: 'Poor Stakeholder Experience',
+                                    desc: 'Lack of transparency and delayed updates frustrate customers, partners, and internal teams alike.'
+                                },
+                                {
+                                    icon: '🧰',
+                                    title: 'Low Operational Control',
+                                    desc: 'Without connected systems, leaders lack the levers to proactively manage exceptions and drive performance at scale.'
+                                },
+                                {
+                                    icon: '⏱',
+                                    title: 'Slow Decision-Making & Delayed Actions',
+                                    desc: 'Data lives in multiple places and updates come late — making it hard to act fast, optimize in real time, and stay ahead of disruptions.'
+                                }
+                            ].map((data, index) => (
+                                <Grid key={index} size={{ xs: 12, md: 6 }}>
+                                    <Card elevation={2} sx={{ height: '100%' }}>
+                                        <CardContent>
+                                            <Typography variant="h5" gutterBottom component="h5">
+                                                {data.icon} {data.title}
+                                            </Typography>
+                                            <Typography variant="body1" paragraph mb={0}>
+                                                {data.desc}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            ))}
                         </Grid>
                     </Grid>
                     <Grid container spacing={4} alignItems="center" mt={4}>
                         <Grid size={{ xs: 12, md: 6 }}>
                             <CardMedia
                                 component="img"
-                                image="/img/after.png"
+                                image="/img/work/instalanes_TMS_Digital_Solution.png"
                                 alt="TMS Illustration"
                             />
                         </Grid>
@@ -450,7 +431,7 @@ const TMSLandingPage = () => {
                         </Grid>
                     </Grid>
                 </Box>
-            </Container>
+            </Container >
 
             <Divider sx={{ my: 2 }} />
 
@@ -458,19 +439,18 @@ const TMSLandingPage = () => {
                 <Container maxWidth="lg">
                     <Box py={8}>
                         <Typography variant="h3" gutterBottom>
-                            Digital TMS platform solutions
+                            Platform overview - What it covers
                         </Typography>
                         <Typography variant="h5" paragraph>
-                            Instalanes digitizes your entire transportation process, solving
-                            real industry challenges
+                            A complete TMS for planning, dispatch, visibility, billing, and more — all in one place.
                         </Typography>
-                        <Box mt={5}>
+                        <Card elevation={1} sx={{ mt: 4 }} >
                             <CardMedia
                                 component="img"
-                                image="/img/Instalanes-TMS-Process.svg"
+                                image="/img/work/instalanes_TMS_Platform_overview.jpg"
                                 alt="TMS Illustration"
                             />
-                        </Box>
+                        </Card>
                     </Box>
                 </Container>
             </Paper>
@@ -487,11 +467,10 @@ const TMSLandingPage = () => {
                         <Grid container spacing={4} mt={4}>
                             <Grid size={{ xs: 12 }} textAlign="left">
                                 <Typography variant="h3" gutterBottom>
-                                    Trusted by Logistics Leaders
+                                    What our Customers say
                                 </Typography>
                                 <Typography variant="h5" paragraph>
-                                    Discover how Instalanes TMS helps shippers, carriers, and 3PLs
-                                    streamline operations, reduce costs, and gain full visibility
+                                    Real stories from teams streamlining their logistics with Instalanes
                                 </Typography>
                             </Grid>
                             {[
@@ -507,12 +486,6 @@ const TMSLandingPage = () => {
                                     name: 'John Doe',
                                     role: 'Logistics Director at Hewells',
                                 },
-                                // {
-                                //     title: 'Fast Implementation',
-                                //     description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
-                                //     name: 'John Doe',
-                                //     role: 'Logistics Director at Hewells',
-                                // },
                             ].map((stat, index) => (
                                 <Grid key={index} size={{ xs: 12, md: 6 }}>
                                     <Card
@@ -598,7 +571,7 @@ const TMSLandingPage = () => {
                                             <CardMedia
                                                 component="img"
                                                 height="180"
-                                                image={blog.img}
+                                                image="/img/before.png"
                                                 alt="green iguana"
                                             />
                                             <Chip
@@ -613,8 +586,7 @@ const TMSLandingPage = () => {
                                             <Box
                                                 display={'flex'}
                                                 justifyContent="space-between"
-                                                alignItems="center"
-                                            >
+                                                alignItems="center">
                                                 <Typography variant="body2" color="text.secondary">
                                                     {blog.date}
                                                 </Typography>
@@ -636,7 +608,7 @@ const TMSLandingPage = () => {
             <Paper elevation={0} square>
                 <Container maxWidth="lg">
                     <Grid container spacing={4} alignItems="center" py={8}>
-                        <Grid size={{ xs: 12, md: 8 }}>
+                        <Grid>
                             <Typography variant="h3" gutterBottom>
                                 Transform your logistics with Instalanes TMS
                             </Typography>
@@ -645,10 +617,8 @@ const TMSLandingPage = () => {
                                 warehouse—helping shippers, carriers, and 3PLs streamline
                                 operations and grow faster
                             </Typography>
-                        </Grid>
-                        <Grid size={{ xs: 12, md: 4 }} textAlign="end">
                             <Button variant="contained" size="large">
-                                Contact our experts
+                                <CallIcon sx={{ mr: 1 }} />  Contact our experts
                             </Button>
                         </Grid>
                     </Grid>
@@ -671,12 +641,22 @@ const TMSLandingPage = () => {
                         <Grid container spacing={4}>
                             <Grid size={{ xs: 12, md: 6 }}>
                                 <Typography variant="h4" component="h4" gutterBottom mb={3}>
-                                    Contact
+                                    Get in touch
                                 </Typography>
                                 <Grid container spacing={3}>
-                                    <Grid size={{ xs: 12, sm: 6 }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent>
+                                    <Grid size={{ xs: 12, sm: 6 }} >
+                                        <Card elevation={2}>
+                                            <CardActionArea
+                                                sx={{
+                                                    height: '100%',
+                                                    p: 3, position: 'relative',
+                                                    '&[data-active]': {
+                                                        backgroundColor: 'action.selected',
+                                                        '&:hover': {
+                                                            backgroundColor: 'action.selectedHover',
+                                                        },
+                                                    },
+                                                }}>
                                                 <WhatsAppIcon fontSize="large" />
                                                 <Typography variant="h6" gutterBottom>
                                                     Message
@@ -686,13 +666,26 @@ const TMSLandingPage = () => {
                                                     paragraph
                                                     mb={0}
                                                 >Drop us a message — team will get back to you</Typography>
-                                            </CardContent>
+                                                <Link href="https://wa.me/919999999999" target="_blank" color="inherit" style={{ position: 'absolute', top: 16, right: 16 }}>
+                                                    <ArrowOutwardIcon fontSize='small' />
+                                                </Link>
+                                            </CardActionArea>
                                         </Card>
                                     </Grid>
 
                                     <Grid size={{ xs: 12, sm: 6 }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent>
+                                        <Card elevation={2}>
+                                            <CardActionArea
+                                                sx={{
+                                                    height: '100%',
+                                                    p: 3, position: 'relative',
+                                                    '&[data-active]': {
+                                                        backgroundColor: 'action.selected',
+                                                        '&:hover': {
+                                                            backgroundColor: 'action.selectedHover',
+                                                        },
+                                                    },
+                                                }}>
                                                 <MonetizationOnIcon fontSize="large" />
                                                 <Typography variant="h6" gutterBottom>
                                                     Pricing
@@ -702,13 +695,23 @@ const TMSLandingPage = () => {
                                                     paragraph
                                                     mb={0}
                                                 >Get flexible pricing built for every business size</Typography>
-                                            </CardContent>
+                                            </CardActionArea>
                                         </Card>
                                     </Grid>
 
-                                    <Grid size={{ xs: 12, sm: 6 }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent>
+                                    <Grid size={{ xs: 12, sm: 6 }} >
+                                        <Card elevation={2} >
+                                            <CardActionArea
+                                                sx={{
+                                                    height: '100%',
+                                                    p: 3, position: 'relative',
+                                                    '&[data-active]': {
+                                                        backgroundColor: 'action.selected',
+                                                        '&:hover': {
+                                                            backgroundColor: 'action.selectedHover',
+                                                        },
+                                                    },
+                                                }}>
                                                 <Typography variant="h6" gutterBottom display={'flex'} alignItems="center" gap={2}>
                                                     <Avatar
                                                         alt="Priyanka S"
@@ -720,16 +723,29 @@ const TMSLandingPage = () => {
                                                     variant="body2"
                                                     color="text.secondary"
                                                     paragraph
-                                                >
+                                                    mb={0}>
                                                     Sales Manager
                                                 </Typography>
-                                            </CardContent>
+                                                <Link href="#" target="_blank" color="inherit" style={{ position: 'absolute', top: 16, right: 16 }}>
+                                                    <ArrowOutwardIcon fontSize='small' />
+                                                </Link>
+                                            </CardActionArea>
                                         </Card>
                                     </Grid>
 
                                     <Grid size={{ xs: 12, sm: 6 }}>
-                                        <Card elevation={2} variant="outlined">
-                                            <CardContent>
+                                        <Card elevation={2} >
+                                            <CardActionArea
+                                                sx={{
+                                                    height: '100%',
+                                                    p: 3, position: 'relative',
+                                                    '&[data-active]': {
+                                                        backgroundColor: 'action.selected',
+                                                        '&:hover': {
+                                                            backgroundColor: 'action.selectedHover',
+                                                        },
+                                                    },
+                                                }}>
                                                 <Typography variant="h6" gutterBottom display={'flex'} alignItems="center" gap={2}>
                                                     <Avatar
                                                         alt="Lucky S"
@@ -741,17 +757,21 @@ const TMSLandingPage = () => {
                                                     variant="body2"
                                                     color="text.secondary"
                                                     paragraph
+                                                    mb={0}
                                                 >
                                                     Sales Manager
                                                 </Typography>
-                                            </CardContent>
+                                                <Link href="#" target="_blank" color="inherit" style={{ position: 'absolute', top: 16, right: 16 }}>
+                                                    <ArrowOutwardIcon fontSize='small' />
+                                                </Link>
+                                            </CardActionArea>
                                         </Card>
                                     </Grid>
                                 </Grid>
                             </Grid>
                             <Grid size={{ xs: 12, md: 6 }}>
                                 <Typography variant="h4" component="h2" gutterBottom mb={3}>
-                                    Submit
+                                    Book a Demo - Submit your details
                                 </Typography>
                                 <Grid container spacing={2}>
                                     <Grid size={{ xs: 6 }}>
@@ -892,7 +912,7 @@ const TMSLandingPage = () => {
                                     </Grid>
                                     <Grid size={{ xs: 12 }}>
                                         <Button variant="contained" size="large" fullWidth>
-                                            <CallIcon sx={{ mr: 1 }} /> Get Call Back
+                                            <CallIcon sx={{ mr: 1 }} /> Submit
                                         </Button>
                                     </Grid>
                                 </Grid>
@@ -905,7 +925,7 @@ const TMSLandingPage = () => {
             <Divider sx={{ my: 2 }} />
 
             <Footer />
-        </Box>
+        </Box >
     );
 };
 
