@@ -591,7 +591,7 @@ const TMSLandingPage = () => {
                         </Grid>
                         <Grid size={{ xs: 12, md: 4 }} textAlign="end">
                             <Button variant="contained" size="large">
-                                Contact our experts
+                                Contact
                             </Button>
                         </Grid>
                     </Grid>
