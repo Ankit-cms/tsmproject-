@@ -65,6 +65,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
 import Link from 'next/link';
+import Features from './Features';
+import Header from './Header';
+import Footer from './Footer';
 
 const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -134,124 +137,7 @@ const TMSLandingPage = () => {
         <Box>
             {/* Header */}
 
-            <AppBar position="sticky">
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
-                        <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="#app-bar-with-responsive-menu"
-                            sx={{
-                                display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '2px',
-                                color: 'inherit',
-                                textDecoration: 'none',
-                                textTransform: 'uppercase',
-                            }}>
-                            Instalanes
-                        </Typography>
-
-                        <Box sx={{ display: { xs: 'inline-flex', md: 'none' } }}>
-                            <IconButton
-                                size="large"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                onClick={handleOpenNavMenu}
-                                color="inherit"
-                                sx={{ px: 0 }}
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                            <Menu
-                                id="menu-appbar"
-                                anchorEl={anchorElNav}
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'left',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
-                                open={Boolean(anchorElNav)}
-                                onClose={handleCloseNavMenu}
-                                sx={{ display: { xs: 'block', md: 'none' } }}
-                            >
-                                {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
-                        </Box>
-                        <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1 }} />
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="#app-bar-with-responsive-menu"
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'flex', md: 'none' },
-                                flexGrow: 1,
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                color: 'inherit',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            Instalanes
-                        </Typography>
-                        <Box sx={{ flexGrow: 1, gap: 2, justifyContent: 'center', display: { xs: 'none', md: 'flex' } }}>
-                            {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}>
-                                    {page}
-                                </Button>
-                            ))}
-                        </Box>
-                        <Box sx={{ flexGrow: 0 }}>
-                            <Tooltip title="Open Profile">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, borderRadius: '50%', border: '1px solid white' }}>
-                                    {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-                                    <PersonOutlineIcon sx={{ color: 'white' }} />
-                                </IconButton>
-                            </Tooltip>
-                            <Menu
-                                sx={{ mt: '45px' }}
-                                id="menu-appbar"
-                                anchorEl={anchorElUser}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElUser)}
-                                onClose={handleCloseUserMenu}
-                            >
-                                {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                        <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
-                        </Box>
-                    </Toolbar>
-                </Container>
-            </AppBar>
-
+            <Header />
 
             <Paper elevation={0} square>
                 <Box display="flex" alignItems="center" justifyContent="center">
@@ -565,6 +451,10 @@ const TMSLandingPage = () => {
 
             <Divider sx={{ my: 2 }} />
 
+            <Features />
+
+            <Divider sx={{ my: 2 }} />
+
             <Paper elevation={0} square>
                 <Box py={8} px={4}>
                     <Grid container spacing={4} mt={4}>
@@ -834,91 +724,8 @@ const TMSLandingPage = () => {
                     </Box>
                 </Container>
             </Paper>
-
-
             <Divider sx={{ my: 2 }} />
-            <Paper component="footer" elevation={0} square>
-                <Container maxWidth="lg" >
-                    <Box py={4}>
-                        <Grid container spacing={4} mb={2}>
-                            <Grid size={{ md: 4 }}>
-                                <Box mb={2} display={'flex'} gap={1} alignItems="center">
-                                    <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                                    <Typography variant="h4" gutterBottom mb={0}>
-                                        Instalanes
-                                    </Typography>
-                                </Box>
-                                <Typography variant="body2" paragraph>
-                                    Instalanes is a Transport management and visibility platform that helps businesses improve their supply chain visibility, collaboration, growth, and efficiency.
-                                </Typography>
-                            </Grid>
-                            <Grid size={{ md: 8 }}>
-                                <Grid container spacing={4} mb={2}>
-                                    <Grid size={{ sm: 6, md: 3 }}>
-                                        <Typography variant="h6" fontWeight="600" gutterBottom>
-                                            Company
-                                        </Typography>
-                                        <List dense disablePadding>
-                                            {['About', 'Careers', 'Terms', 'Privacy policy'].map((item) => (
-                                                <ListItem key={item} disablePadding>
-                                                    <ListItemText primary={item} />
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    </Grid>
-                                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                        <Typography variant="h6" fontWeight="600" gutterBottom>
-                                            TMS Capabilities
-                                        </Typography>
-                                        <List dense disablePadding>
-                                            {['Consulting', 'Data analytics', 'Business intelligence', 'Process automation'].map((item) => (
-                                                <ListItem key={item} disablePadding>
-                                                    <ListItemText primary={item} />
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    </Grid>
-                                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                        <Typography variant="h6" fontWeight="600" gutterBottom>
-                                            Resources
-                                        </Typography>
-                                        <List dense disablePadding>
-                                            {['Blogs', 'Partnering', 'Pricing - Get Quote', 'Pay here'].map((item) => (
-                                                <ListItem key={item} disablePadding>
-                                                    <ListItemText primary={item} />
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    </Grid>
-                                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                        <Typography variant="h6" fontWeight="600" gutterBottom>
-                                            Contact
-                                        </Typography>
-                                        <List dense disablePadding>
-                                            {['Email', 'Phone'].map((item) => (
-                                                <ListItem key={item} disablePadding>
-                                                    <ListItemText primary={item} />
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Box>
-                </Container>
-                <Divider />
-                <Container maxWidth="lg" >
-                    <Grid container spacing={4}>
-                        <Grid size={{ xs: 12, md: 6 }}>
-                            <Typography variant="body2" my={3}>
-                                Gravity44/ Copyright © 2024 Installanes.com. All rights reserved.
-                            </Typography>
-                        </Grid>
-                        <Grid size={{ xs: 12, md: 6 }}></Grid>
-                    </Grid>
-                </Container>
-            </Paper>
+            <Footer />
         </Box >
     );
 };
