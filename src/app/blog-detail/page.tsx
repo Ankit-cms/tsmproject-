@@ -63,7 +63,7 @@ const BlogDetail = () => {
                                 </Card>
 
                                 <Typography variant="body1" paragraph>
-                                    Deliver 2024 marks 22 years of hosting industry leaders, logistics professionals, and technology innovators to discuss the future of freight and transportation. Attendees will gather from Sept. 9 – 11 to gain insight into Uber Freight's latest products and initiatives, learn from industry experts, and connect with peers to share experiences and ideas. Supply chain and logistics professionals are invited to register for the event at uberfreight.com/deliver.
+                                    Deliver 2024 marks 22 years of hosting industry leaders, logistics professionals, and technology innovators to discuss the future of freight and transportation. Attendees will gather from Sept. 9 – 11 to gain insight into Uber Freight’s latest products and initiatives, learn from industry experts, and connect with peers to share experiences and ideas. Supply chain and logistics professionals are invited to register for the event at uberfreight.com/deliver.
                                 </Typography>
 
                                 <Typography variant="body1" paragraph>
