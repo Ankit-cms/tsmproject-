@@ -1,13 +1,13 @@
-"use client";
+'use client';
 import React from 'react';
 import {
-    Box,
-    Container,
-    Typography,
-    Button,
-    AppBar,
-    Toolbar,
-    IconButton,
+  Box,
+  Container,
+  Typography,
+  Button,
+  AppBar,
+  Toolbar,
+  IconButton,
 } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -15,253 +15,297 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FlareIcon from '@mui/icons-material/Flare';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import AppsIcon from "@mui/icons-material/Apps";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import AppsIcon from '@mui/icons-material/Apps';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CallIcon from '@mui/icons-material/Call';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ArticleIcon from "@mui/icons-material/Article";
-import GroupIcon from "@mui/icons-material/Group";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import ArticleIcon from '@mui/icons-material/Article';
+import GroupIcon from '@mui/icons-material/Group';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import ComputerIcon from '@mui/icons-material/Computer';
-
-
 
 const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-
 const Header = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
 
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-    const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+  return (
+    <AppBar position="fixed">
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '1px',
+              color: 'inherit',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+            }}
+          >
+            Instalanes
+          </Typography>
 
-    return (
-        <AppBar position="fixed">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '2px',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                            textTransform: 'uppercase',
-                        }}>
-                        Instalanes
-                    </Typography>
+          <Box sx={{ display: { xs: 'inline-flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+              sx={{ px: 0 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: 'block', md: 'none' } }}
+            >
+              {/* Static items with icons and links */}
+              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
+                <AppsIcon sx={{ mr: 1 }} />
+                <Typography textAlign="center">TMS Solutions</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleOpen}>
+                <ReceiptLongIcon sx={{ mr: 1 }} />
+                <Typography
+                  textAlign="center"
+                  display={'flex'}
+                  alignItems={'center'}
+                >
+                  Resources <KeyboardArrowDownIcon />
+                </Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
+                <CallIcon sx={{ mr: 1 }} />
+                <Typography textAlign="center">Contact Us</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
+                <ComputerIcon sx={{ mr: 1 }} />
+                <Typography textAlign="center">Get Demo</Typography>
+              </MenuItem>
+            </Menu>
+          </Box>
+          <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            Instalanes
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              gap: 2,
+              justifyContent: 'center',
+              display: { xs: 'none', md: 'flex' },
+            }}
+          >
+            <Button
+              component={'a'}
+              href="/tms-solutions"
+              sx={{
+                my: 2,
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+              }}
+            >
+              <AppsIcon fontSize="small" />
+              TMS Solutions
+            </Button>
 
-                    <Box sx={{ display: { xs: 'inline-flex', md: 'none' } }}>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                            sx={{ px: 0 }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: "bottom",
-                                horizontal: "left",
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "left",
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{ display: { xs: "block", md: "none" } }}
-                        >
-                            {/* Static items with icons and links */}
-                            <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                                <AppsIcon sx={{ mr: 1 }} />
-                                <Typography textAlign="center">TMS Solutions</Typography>
-                            </MenuItem>
-                            <MenuItem onClick={handleOpen}>
-                                <ReceiptLongIcon sx={{ mr: 1 }} />
-                                <Typography textAlign="center" display={"flex"} alignItems={"center"}>Resources <KeyboardArrowDownIcon /></Typography>
-                            </MenuItem>
-                            <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                                <CallIcon sx={{ mr: 1 }} />
-                                <Typography textAlign="center">Contact Us</Typography>
-                            </MenuItem>
-                            <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                                <ComputerIcon sx={{ mr: 1 }} />
-                                <Typography textAlign="center">Get Demo</Typography>
-                            </MenuItem>
+            <Button
+              onClick={handleOpen}
+              sx={{
+                my: 2,
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+              }}
+            >
+              <ReceiptLongIcon fontSize="small" />
+              Resources <KeyboardArrowDownIcon fontSize="small" />
+            </Button>
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+            >
+              <MenuItem
+                component={'a'}
+                href="/about"
+                onClick={handleClose}
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+              >
+                <ApartmentIcon fontSize="small" />
+                About
+              </MenuItem>
+              <MenuItem
+                component={'a'}
+                href="/pricing"
+                onClick={handleClose}
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+              >
+                <AttachMoneyIcon fontSize="small" />
+                Pricing
+              </MenuItem>
 
-                        </Menu>
-                    </Box>
-                    <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1 }} />
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        Instalanes
-                    </Typography>
-                    <Box sx={{ flexGrow: 1, gap: 2, justifyContent: 'center', display: { xs: 'none', md: 'flex' } }}>
-                        <Button
-                            component={'a'}
-                            href="/tms-solutions"
-                            sx={{ my: 2, color: "white", display: "flex", alignItems: "center", gap: 1 }}>
-                            <AppsIcon fontSize="small" />
-                            TMS Solutions
-                        </Button>
+              <MenuItem
+                component={'a'}
+                href="/blog"
+                onClick={handleClose}
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+              >
+                <ArticleIcon fontSize="small" />
+                Blog
+              </MenuItem>
 
-                        <Button
-                            onClick={handleOpen}
-                            sx={{ my: 2, color: "white", display: "flex", alignItems: "center", gap: 1 }}>
-                            <ReceiptLongIcon fontSize="small" />
-                            Resources <KeyboardArrowDownIcon fontSize="small" />
-                        </Button>
-                        <Menu
-                            anchorEl={anchorEl}
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-                            transformOrigin={{ vertical: "top", horizontal: "left" }}>
-                            <MenuItem
-                                component={"a"}
-                                href="/about"
-                                onClick={handleClose}
-                                sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                            >
-                                <ApartmentIcon fontSize="small" />
-                                About
-                            </MenuItem>
-                            <MenuItem
-                                component={"a"}
-                                href="/pricing"
-                                onClick={handleClose}
-                                sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                                <AttachMoneyIcon fontSize="small" />
-                                Pricing
-                            </MenuItem>
+              <MenuItem
+                component={'a'}
+                href="/partners"
+                onClick={handleClose}
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+              >
+                <GroupIcon fontSize="small" />
+                Partners
+              </MenuItem>
+            </Menu>
 
-                            <MenuItem
-                                component={"a"}
-                                href="/blog"
-                                onClick={handleClose}
-                                sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                            >
-                                <ArticleIcon fontSize="small" />
-                                Blog
-                            </MenuItem>
+            <Button
+              component={'a'}
+              href="/contact"
+              sx={{
+                my: 2,
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+              }}
+            >
+              <CallIcon fontSize="small" />
+              Contact Us
+            </Button>
 
-                            <MenuItem
-                                component={"a"}
-                                href="/partners"
-                                onClick={handleClose}
-                                sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                            >
-                                <GroupIcon fontSize="small" />
-                                Partners
-                            </MenuItem>
-                        </Menu>
-
-                        <Button
-                            component={'a'}
-                            href="/contact"
-                            sx={{ my: 2, color: "white", display: "flex", alignItems: "center", gap: 1 }}
-                        >
-                            <CallIcon fontSize="small" />
-                            Contact Us
-                        </Button>
-
-                        <Button
-                            component={'a'}
-                            href="/pricing"
-                            sx={{ my: 2, color: "white", display: "flex", alignItems: "center", gap: 1 }}
-                        >
-                            <ComputerIcon fontSize="small" />
-                            Get Demo
-                        </Button>
-
-
-                    </Box>
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open Profile">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, borderRadius: '50%', border: '1px solid white' }}>
-                                <PersonOutlineIcon sx={{ color: 'white' }} />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
-    );
+            <Button
+              component={'a'}
+              href="/pricing"
+              sx={{
+                my: 2,
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+              }}
+            >
+              <ComputerIcon fontSize="small" />
+              Get Demo
+            </Button>
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open Profile">
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: 1, borderRadius: '50%', border: '1px solid white' }}
+              >
+                <PersonOutlineIcon sx={{ color: 'white' }} />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography sx={{ textAlign: 'center' }}>
+                    {setting}
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
 };
 
 export default Header;

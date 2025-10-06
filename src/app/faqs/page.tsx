@@ -16,7 +16,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { usePathname } from 'next/navigation';
 export const faqs = [
   {
     question: 'What is the application process like?',
@@ -71,13 +70,10 @@ export const faqs = [
 ];
 
 const Faq = () => {
-  const pathname = usePathname();
-  const pathnames = pathname.split('/').filter((x) => x);
-
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ mt: 9 }}>
         <Breadcrumbs aria-label="breadcrumb" sx={{ p: 4 }}>
           <Link underline="hover" color="inherit" href="/">
             Home
@@ -95,7 +91,7 @@ const Faq = () => {
               Find answers to common questions about our products. Can not find
               what you are looking for? Contact our support team.
             </Typography>
-<Divider sx={{pt:4}}/>
+            <Divider sx={{ pt: 4 }} />
             <Box mt={8}>
               {faqs.map((question) => (
                 <Accordion key={question.question}>
