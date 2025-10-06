@@ -19,7 +19,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { usePathname } from 'next/navigation';
 
 const jobCategories = [
   {
@@ -37,14 +36,11 @@ const jobCategories = [
 ];
 
 const Career = () => {
-  const pathname = usePathname();
-  const pathnames = pathname.split('/').filter((x) => x);
-
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 4 }}>
+      <Paper elevation={0} square sx={{ mt: 9 }}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
           <Link underline="hover" color="inherit" href="/">
             Home
           </Link>
@@ -65,7 +61,7 @@ const Career = () => {
               <Box key={section.category} sx={{ mt: 3 }}>
                 {section.jobs.map((job) => (
                   <Box key={job.title}>
-                    <Accordion disableGutters sx={{p:2}}>
+                    <Accordion disableGutters sx={{ p: 2 }}>
                       <AccordionSummary
                         expandIcon={<ArrowForwardIcon fontSize="small" />}
                       >
