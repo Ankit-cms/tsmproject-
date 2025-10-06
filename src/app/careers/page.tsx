@@ -33,6 +33,18 @@ const jobCategories = [
       },
     ],
   },
+  {
+    category: 'Product',
+    jobs: [
+      {
+        Project: 'AcreBytes',
+        title: 'Implementation Manager',
+        location: 'Noida',
+        workType: 'Remote',
+        contractType: 'Part time',
+      },
+    ],
+  },
 ];
 
 const Career = () => {
@@ -49,7 +61,7 @@ const Career = () => {
         <Divider />
         <Box py={4}>
           <Container maxWidth="lg">
-            <Typography variant="h4" component="h2" gutterBottom>
+            <Typography variant="h3" component="h2" gutterBottom>
               Enhance your Career, join us
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
@@ -73,8 +85,8 @@ const Career = () => {
                               color="primary"
                               variant="outlined"
                             />
-                            <Typography variant="h6">{job.Project}</Typography>
-                            <Typography variant="h6">{job.title}</Typography>
+                            <Typography variant="h5">{job.Project}</Typography>
+                            <Typography variant="h5">{job.title}</Typography>
                           </Box>
 
                           <Box display="flex" alignItems="center" gap={0.5}>

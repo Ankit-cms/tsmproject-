@@ -24,7 +24,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 import GroupIcon from '@mui/icons-material/Group';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import ComputerIcon from '@mui/icons-material/Computer';
-
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -270,11 +270,8 @@ const Header = () => {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open Profile">
-              <IconButton
-                onClick={handleOpenUserMenu}
-                sx={{ p: 1, borderRadius: '50%', border: '1px solid white' }}
-              >
-                <PersonOutlineIcon sx={{ color: 'white' }} />
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
+                <LoginOutlinedIcon sx={{ color: 'white' }} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -292,6 +289,7 @@ const Header = () => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              disableScrollLock
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>

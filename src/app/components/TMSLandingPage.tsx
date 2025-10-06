@@ -31,11 +31,14 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-
+import ArrowOutwardOutlinedIcon from '@mui/icons-material/ArrowOutwardOutlined';
+import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
+import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import Link from 'next/link';
 import Features from './Features';
 import Header from './Header';
 import Footer from './Footer';
+import Client from './Client';
 
 const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -126,8 +129,8 @@ const TMSLandingPage = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          pt={10}
-          pb={4}
+          pt={6}
+          pb={1}
         >
           <Container maxWidth="lg">
             <Grid container spacing={4} alignItems="center" mt={4}>
@@ -174,7 +177,7 @@ const TMSLandingPage = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={8}>
-            <Box mb={6}>
+            <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Why Instalanes?
               </Typography>
@@ -212,15 +215,15 @@ const TMSLandingPage = () => {
               ].map((stat, index) => (
                 <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>
                   <Card
-                    variant="outlined"
+                    // variant="outlined"
                     elevation={3}
                     sx={{ height: '100%' }}
                   >
-                    <CardContent sx={{ textAlign: 'center' }}>
+                    <CardContent sx={{ textAlign: 'center', p: 3 }}>
                       <Typography variant="h3" component="div" gutterBottom>
                         {stat.value}
                       </Typography>
-                      <Typography variant="h6" component="h3" gutterBottom>
+                      <Typography variant="h5" component="h3" gutterBottom>
                         {stat.title}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
@@ -236,119 +239,126 @@ const TMSLandingPage = () => {
       </Paper>
 
       <Divider sx={{ my: 2 }} />
-      <Container maxWidth="lg">
-        <Box py={8}>
-          <Typography variant="h3" gutterBottom>
-            The Real Transportation challenges{' '}
-          </Typography>
-          <Typography variant="h5" paragraph>
-            Disconnected processes create visibility gaps, delays, and hence
-            higher operations costs.{' '}
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Card elevation={1} sx={{ height: '100%' }}>
-                <CardMedia
-                  component="img"
-                  image="/img/work/instalanes_TMS_challenges.png"
-                  alt="TMS Illustration"
-                />
-              </Card>
-            </Grid>
-            <Grid container size={{ xs: 12, md: 6 }} spacing={2}>
-              <Card elevation={2} sx={{ height: '100%', width: '100%' }}>
-                <CardContent>
-                  {[
-                    {
-                      title: 'Lack of End-to-End Visibility',
-                      desc: 'Supply chain leaders struggle to get a single, real-time view across teams, systems, and geographies — making informed decision-making difficult.',
-                    },
-                    {
-                      title: 'Manual & Fragmented Operations',
-                      desc: 'Critical processes still run on emails, spreadsheets, and phone calls, creating silos and slowing execution.',
-                    },
-                    {
-                      title: 'Rising Logistics Costs',
-                      desc: 'Inefficiencies and poor coordination lead to avoidable costs, delays, and resource waste.',
-                    },
-                    {
-                      title: 'Poor Stakeholder Experience',
-                      desc: 'Lack of transparency and delayed updates frustrate customers, partners, and internal teams alike.',
-                    },
-                    {
-                      title: 'Low Operational Control',
-                      desc: 'Without connected systems, leaders lack the levers to proactively manage exceptions and drive performance at scale.',
-                    },
-                    {
-                      title: 'Slow Decision-Making & Delayed Actions',
-                      desc: 'Data lives in multiple places and updates come late — making it hard to act fast, optimize in real time, and stay ahead of disruptions.',
-                    },
-                  ].map((data, index) => (
-                    <Box key={index}>
-                      <Typography variant="h6" gutterBottom component="h5">
-                        <ErrorOutlineIcon fontSize="small" /> {data.title}
-                      </Typography>
-                      {/* <Typography variant="body1" paragraph mb={0}>
+      <Paper elevation={0} square>
+        <Container maxWidth="lg">
+          <Box py={8}>
+            <Box mb={4}>
+              <Typography variant="h3" gutterBottom>
+                The Real Transportation challenges{' '}
+              </Typography>
+              <Typography variant="h5" paragraph>
+                Disconnected processes create visibility gaps, delays, and hence
+                higher operations costs.{' '}
+              </Typography>
+            </Box>
+            <Grid container spacing={2}>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Card elevation={1} sx={{ height: '100%' }}>
+                  <CardMedia
+                    component="img"
+                    image="/img/work/instalanes_TMS_challenges.png"
+                    alt="TMS Illustration"
+                  />
+                </Card>
+              </Grid>
+              <Grid container size={{ xs: 12, md: 6 }} spacing={2}>
+                <Card elevation={2} sx={{ height: '100%', width: '100%' }}>
+                  <CardContent>
+                    {[
+                      {
+                        title: 'Lack of End-to-End Visibility',
+                        desc: 'Supply chain leaders struggle to get a single, real-time view across teams, systems, and geographies — making informed decision-making difficult.',
+                      },
+                      {
+                        title: 'Manual & Fragmented Operations',
+                        desc: 'Critical processes still run on emails, spreadsheets, and phone calls, creating silos and slowing execution.',
+                      },
+                      {
+                        title: 'Rising Logistics Costs',
+                        desc: 'Inefficiencies and poor coordination lead to avoidable costs, delays, and resource waste.',
+                      },
+                      {
+                        title: 'Poor Stakeholder Experience',
+                        desc: 'Lack of transparency and delayed updates frustrate customers, partners, and internal teams alike.',
+                      },
+                      {
+                        title: 'Low Operational Control',
+                        desc: 'Without connected systems, leaders lack the levers to proactively manage exceptions and drive performance at scale.',
+                      },
+                      {
+                        title: 'Slow Decision-Making & Delayed Actions',
+                        desc: 'Data lives in multiple places and updates come late — making it hard to act fast, optimize in real time, and stay ahead of disruptions.',
+                      },
+                    ].map((data, index) => (
+                      <Box key={index}>
+                        <Typography variant="h6" gutterBottom component="h5">
+                          <ErrorOutlineIcon fontSize="small" /> {data.title}
+                        </Typography>
+                        {/* <Typography variant="body1" paragraph mb={0}>
                         {data.desc}
                       </Typography> */}
-                    </Box>
-                  ))}
-                </CardContent>
-              </Card>
+                      </Box>
+                    ))}
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
-      </Container>
-
+          </Box>
+        </Container>
+      </Paper>
       <Divider sx={{ my: 2 }} />
-      <Container maxWidth="lg">
-        <Box py={8}>
-          <Typography variant="h3" gutterBottom>
-            Solution – Digitized process{' '}
-          </Typography>
-          <Typography variant="h5" paragraph>
-            One Platform. End-to-End Control
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Card elevation={1} sx={{ height: '100%' }}>
-                <CardMedia
-                  component="img"
-                  image="/img/work/instalanes_TMS_Digital_Solution.png"
-                  alt="TMS Illustration"
-                />
-              </Card>
-            </Grid>
-            <Grid container size={{ xs: 12, md: 6 }} spacing={2}>
-              <Card elevation={2} sx={{ height: '100%', width: '100%' }}>
-                <CardContent>
-                  {[
-                    'Full Visibility, Zero Blind Spots',
-                    'Speed, Efficiency & Scalability',
-                    'Seamless Collaboration',
-                    'Actionable Insights to Drive Growth',
-                  ].map((data, index) => (
-                    <Box key={index}>
-                      <Typography variant="h6" gutterBottom component="h5">
-                        <ErrorOutlineIcon fontSize="small" /> {data}
-                      </Typography>
-                      {/* <Typography variant="body1" paragraph mb={0}>
+      <Paper elevation={0} square>
+        <Container maxWidth="lg">
+          <Box py={8}>
+            <Box mb={4}>
+              <Typography variant="h3" gutterBottom>
+                Solution – Digitized process{' '}
+              </Typography>
+              <Typography variant="h5" paragraph>
+                One Platform. End-to-End Control
+              </Typography>
+            </Box>
+            <Grid container spacing={2}>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Card elevation={1} sx={{ height: '100%' }}>
+                  <CardMedia
+                    component="img"
+                    image="/img/work/instalanes_TMS_Digital_Solution.png"
+                    alt="TMS Illustration"
+                  />
+                </Card>
+              </Grid>
+              <Grid container size={{ xs: 12, md: 6 }} spacing={2}>
+                <Card elevation={2} sx={{ height: '100%', width: '100%' }}>
+                  <CardContent>
+                    {[
+                      'Full Visibility, Zero Blind Spots',
+                      'Speed, Efficiency & Scalability',
+                      'Seamless Collaboration',
+                      'Actionable Insights to Drive Growth',
+                    ].map((data, index) => (
+                      <Box key={index}>
+                        <Typography variant="h6" gutterBottom component="h5">
+                          <ErrorOutlineIcon fontSize="small" /> {data}
+                        </Typography>
+                        {/* <Typography variant="body1" paragraph mb={0}>
                         {data.desc}
                       </Typography> */}
-                    </Box>
-                  ))}
-                </CardContent>
-              </Card>
+                      </Box>
+                    ))}
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
-      </Container>
+          </Box>
+        </Container>
+      </Paper>
 
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={8}>
-            <Box>
+            <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 How Instalanes TMS Works{' '}
               </Typography>
@@ -493,13 +503,15 @@ const TMSLandingPage = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={8}>
-            <Typography variant="h3" gutterBottom>
-              Platform overview
-            </Typography>
-            <Typography variant="h5" paragraph>
-              A complete TMS for planning, dispatch, visibility, billing, and
-              more — all in one place.
-            </Typography>
+            <Box mb={4}>
+              <Typography variant="h3" gutterBottom>
+                Platform overview
+              </Typography>
+              <Typography variant="h5" paragraph>
+                A complete TMS for planning, dispatch, visibility, billing, and
+                more — all in one place.
+              </Typography>
+            </Box>
             <Card elevation={1} sx={{ mt: 4 }}>
               <CardMedia
                 component="img"
@@ -516,86 +528,101 @@ const TMSLandingPage = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Grid container size={{ xs: 12, md: 4 }} spacing={3} py={8} justifyContent={'space-between'}>
-            {[
-              {
-                title: 'Collaborative tracking and visibility',
-                image:
-                  'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-                description:
-                  'Track shipments in real-time through telematics, mobile apps, and shared dashboards. Improve collaboration and transparency across all stakeholders.',
-              },
-              {
-                title: 'Control tower',
-                image:
-                  'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-                description:
-                  'Gain a birds-eye view of operations with map-based insights, next action prompts, and status updates anytime. Enable faster, more informed decision-making.',
-              },
-              {
-                title: 'Data performance and analytics',
-                image:
-                  'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-                description:
-                  'Monitor key performance indicators with customizable dashboards and actionable insights. Drive continuous improvement and achieve business goals.',
-              },
-              {
-                title: 'End-to-End mobile platform',
-                image:
-                  'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-                description:
-                  'Manage transportation operations seamlessly on mobile, from planning to delivery. Empower on-the-go management and enhanced efficiency.',
-              },
-              {
-                title: 'Alerts and notifications controller',
-                image:
-                  'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-                description:
-                  'Configure real-time alerts for exceptions, milestones, and tasks. Stay proactive and reduce operational risks.',
-              },
-              {
-                title: 'Documents centralization',
-                image:
-                  'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-                description:
-                  'Store, access, and share all transport-related documents in one place. Simplify compliance and reduce administrative burden.',
-              },
-            //   {
-            //     title: 'One-View operations management',
-            //     image:
-            //       'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-            //     description:
-            //       'Access end-to-end transportation operations from a single, unified interface. Streamline processes and enhance visibility.',
-            //   },
-            //   {
-            //     title: 'Trip settlement analytics',
-            //     image:
-            //       'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
-            //     description:
-            //       'Analyze trip settlements to determine profit or loss in real time. Maximize profitability with actionable financial insights.',
-            //   },
-            ].map((card) => (
-              <Grid key={card.title}>
-                <Card sx={{ maxWidth: 345 }}>
-                  <CardMedia
-                    component="img"
-                    height="194"
-                    image={card.image}
-                    alt={card.title}
-                  />
-                  <CardContent>
-                    <Typography variant='h6'>{card.title}</Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ color: 'text.secondary' }}
-                    >
-                      {card.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+          <Box py={8}>
+            <Box mb={4}>
+              <Typography variant="h3" gutterBottom>
+                Platform Capabilities
+              </Typography>
+              <Typography variant="h5" paragraph>
+                Unlock powerful tools to plan, execute, and monitor
+                transportation seamlessly—anytime, anywhere
+              </Typography>
+            </Box>
+            <Grid spacing={3} container py={2}>
+              {[
+                {
+                  title: 'Collaborative visibility',
+                  image:
+                    'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                  description:
+                    'Track shipments in real-time through telematics, mobile apps, and shared dashboards. Improve collaboration and transparency across all stakeholders.',
+                },
+                {
+                  title: 'Control tower',
+                  image:
+                    'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                  description:
+                    'Gain a birds-eye view of operations with map-based insights, next action prompts, and status updates anytime. Enable faster, more informed decision-making.',
+                },
+                {
+                  title: 'Data analytics',
+                  image:
+                    'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                  description:
+                    'Monitor key performance indicators with customizable dashboards and actionable insights. Drive continuous improvement and achieve business goals.',
+                },
+                {
+                  title: 'Mobile based platform',
+                  image:
+                    'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                  description:
+                    'Manage transportation operations seamlessly on mobile, from planning to delivery. Empower on-the-go management and enhanced efficiency.',
+                },
+                {
+                  title: 'Alerts, notifications controller',
+                  image:
+                    'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                  description:
+                    'Configure real-time alerts for exceptions, milestones, and tasks. Stay proactive and reduce operational risks.',
+                },
+                {
+                  title: 'Documents centralization',
+                  image:
+                    'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                  description:
+                    'Store, access, and share all transport-related documents in one place. Simplify compliance and reduce administrative burden.',
+                },
+                //   {
+                //     title: 'One-View operations management',
+                //     image:
+                //       'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                //     description:
+                //       'Access end-to-end transportation operations from a single, unified interface. Streamline processes and enhance visibility.',
+                //   },
+                //   {
+                //     title: 'Trip settlement analytics',
+                //     image:
+                //       'https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/Control-tower-2-1024x577-1.png',
+                //     description:
+                //       'Analyze trip settlements to determine profit or loss in real time. Maximize profitability with actionable financial insights.',
+                //   },
+              ].map((card) => (
+                <Grid key={card.title} size={{ xs: 12, md: 4 }}>
+                  <Card>
+                    <CardMedia
+                      component="img"
+                      height="194"
+                      image={card.image}
+                      alt={card.title}
+                    />
+                    <CardContent>
+                      <Box display={'flex'} justifyContent={'space-between'}>
+                        <Typography variant="h6">{card.title}</Typography>
+                        <ArrowOutwardOutlinedIcon fontSize="small" />
+                      </Box>
+
+                      <Typography
+                        variant="body2"
+                        sx={{ color: 'text.secondary' }}
+                      >
+                        {card.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Paper>
 
@@ -603,16 +630,18 @@ const TMSLandingPage = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={8}>
-            <Grid container spacing={4} mt={4}>
-              <Grid size={{ xs: 12 }} textAlign="left">
-                <Typography variant="h3" gutterBottom>
-                  What our Customers say
-                </Typography>
-                <Typography variant="h5" paragraph>
-                  Real stories from teams streamlining their logistics with
-                  Instalanes
-                </Typography>
-              </Grid>
+            <Box mb={4}>
+              {' '}
+              <Typography variant="h3" gutterBottom>
+                What our Customers say
+              </Typography>
+              <Typography variant="h5" paragraph>
+                Real stories from teams streamlining their logistics with
+                Instalanes
+              </Typography>
+            </Box>
+            <Grid container spacing={4}>
+              {/* <Grid size={{ xs: 12 }} textAlign="left"></Grid> */}
               {[
                 {
                   title: 'Fast Implementation',
@@ -635,6 +664,7 @@ const TMSLandingPage = () => {
                   >
                     <CardContent>
                       <Chip
+                        icon={<DoneOutlinedIcon />}
                         label={stat.title}
                         variant="outlined"
                         color="primary"
@@ -672,19 +702,22 @@ const TMSLandingPage = () => {
       </Paper>
 
       <Divider sx={{ my: 2 }} />
+      <Client/>
+      <Divider sx={{ my: 2 }} />
 
       <Paper elevation={0} square>
-        <Box py={8}>
-          <Container maxWidth="lg">
+        <Container maxWidth="lg">
+          <Box py={8}>
+            <Box pb={4}>
+              <Typography variant="h3" gutterBottom>
+                Blog posts
+              </Typography>
+              <Typography variant="h5" paragraph>
+                Stay updated with our latest articles and insights
+              </Typography>
+            </Box>
             <Grid container spacing={4}>
-              <Grid size={{ xs: 12 }}>
-                <Typography variant="h3" gutterBottom>
-                  Blog posts
-                </Typography>
-                <Typography variant="h5" paragraph>
-                  Stay updated with our latest articles and insights
-                </Typography>
-              </Grid>
+              {/* <Grid size={{ xs: 12 }}></Grid> */}
               {[
                 {
                   category: 'FREIGHT',
@@ -740,29 +773,29 @@ const TMSLandingPage = () => {
                 </Grid>
               ))}
             </Grid>
-          </Container>
-        </Box>
+          </Box>
+        </Container>
       </Paper>
 
       <Divider sx={{ my: 2 }} />
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center" py={8}>
-            <Grid>
+          <Box py={8}>
+            <Box pb={4}>
               <Typography variant="h3" gutterBottom>
-                Transform your logistics with Instalanes TMS
+                Transform your logistics
               </Typography>
               <Typography variant="h5" paragraph>
-                One platform for every shipment—FCL, FTL, PTL, ODC, and
-                warehouse—helping shippers, carriers, and 3PLs streamline
-                operations and grow faster
+                Instalanes TMS, One platform for every shipment—FCL, FTL, PTL,
+                ODC, and warehouse—helping shippers, carriers, and 3PLs
+                streamline operations and grow faster
               </Typography>
-              <Button variant="contained" size="large">
-                <CallIcon sx={{ mr: 1 }} /> Contact our experts
-              </Button>
-            </Grid>
-          </Grid>
+            </Box>
+            <Button variant="contained" size="large">
+              <CallIcon sx={{ mr: 1 }} /> Contact team
+            </Button>
+          </Box>
         </Container>
       </Paper>
 
@@ -958,7 +991,7 @@ const TMSLandingPage = () => {
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h4" component="h2" gutterBottom mb={3}>
-                  Book a Demo - Submit your details
+                  Book a Demo - Submit details
                 </Typography>
                 <Grid container spacing={2}>
                   <Grid size={{ xs: 6 }}>
@@ -974,7 +1007,7 @@ const TMSLandingPage = () => {
                   <Grid size={{ xs: 12 }}>
                     <TextField
                       fullWidth
-                      label="Company name"
+                      label="Your Company name"
                       variant="outlined"
                     />
                   </Grid>
@@ -982,7 +1015,7 @@ const TMSLandingPage = () => {
                     <TextField
                       fullWidth
                       select
-                      label="Role"
+                      label="Your Role"
                       variant="outlined"
                       value={selectedRole}
                       onChange={(e) => setSelectedRole(e.target.value)}
@@ -1093,7 +1126,7 @@ const TMSLandingPage = () => {
                   </Grid>
                   <Grid size={{ xs: 12 }}>
                     <Button variant="contained" size="large" fullWidth>
-                      <CallIcon sx={{ mr: 1 }} /> Submit
+                      <SubdirectoryArrowRightIcon sx={{ mr: 1 }} /> Submit
                     </Button>
                   </Grid>
                 </Grid>

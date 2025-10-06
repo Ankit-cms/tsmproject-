@@ -106,55 +106,58 @@ const Features = () => {
     ];
 
     return (
-        <Paper elevation={0} square>
-            <Box py={8}>
-                <Container maxWidth="lg">
-                    <Typography variant="h3" gutterBottom>
-                        Platform Features 
-                    </Typography>
-                    <Typography variant="h5" paragraph>
-                        Powerful features that help you outperform competitors and wow your customers
-                    </Typography>
-                    <Grid
-                        container
-                        mt={4}
-                        sx={{
-                            '--Grid-borderWidth': '1px',
-                            borderTop: 'var(--Grid-borderWidth) solid',
-                            borderLeft: 'var(--Grid-borderWidth) solid',
-                            borderColor: 'divider',
-                            '& > div': {
-                                borderRight: 'var(--Grid-borderWidth) solid',
-                                borderBottom: 'var(--Grid-borderWidth) solid',
-                                borderColor: 'divider',
-                            },
-                        }}
-                    >
-                        {features.map((feature) => (
-                            <Grid
-                                key={feature.title}
-                                minHeight={160}
-                                size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
-                            >
-                                <Card elevation={0}>
-                                    <CardContent sx={{ p: 3 }}>
-                                        <Box>
-                                            <feature.icon fontSize="large" />
-                                        </Box>
-                                        <Typography variant="h6" gutterBottom>
-                                            {feature.title}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {feature.description}
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Container>
+      <Paper elevation={0} square>
+        <Container maxWidth="lg">
+          <Box py={8}>
+            <Box mb={6}>
+              <Typography variant="h3" gutterBottom>
+                Platform Features
+              </Typography>
+              <Typography variant="h5" paragraph>
+                Powerful features that help you outperform competitors and wow
+                your customers
+              </Typography>
             </Box>
-        </Paper>
+            <Grid
+              container
+              mt={4}
+              sx={{
+                '--Grid-borderWidth': '1px',
+                borderTop: 'var(--Grid-borderWidth) solid',
+                borderLeft: 'var(--Grid-borderWidth) solid',
+                borderColor: 'divider',
+                '& > div': {
+                  borderRight: 'var(--Grid-borderWidth) solid',
+                  borderBottom: 'var(--Grid-borderWidth) solid',
+                  borderColor: 'divider',
+                },
+              }}
+            >
+              {features.map((feature) => (
+                <Grid
+                  key={feature.title}
+                  minHeight={160}
+                  size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
+                >
+                  <Card elevation={0}>
+                    <CardContent sx={{ p: 3 }}>
+                      <Box>
+                        <feature.icon fontSize="large" />
+                      </Box>
+                      <Typography variant="h6" gutterBottom>
+                        {feature.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {feature.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+      </Paper>
     );
 };
 

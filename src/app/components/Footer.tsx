@@ -55,7 +55,7 @@ const Footer = () => {
     <Paper component="footer" elevation={0} square>
       <Container maxWidth="lg">
         <Box py={4}>
-          <Grid container spacing={4} mb={2}>
+          <Grid container spacing={4}>
             <Grid size={{ md: 4 }}>
               <Box mb={2} display={'flex'} gap={1} alignItems="center">
                 <FlareIcon
@@ -84,17 +84,16 @@ const Footer = () => {
                 and efficiency
               </Typography>
               <Box>
-                <Chip
-                  icon={<EmailOutlinedIcon fontSize="small" />}
-                  label="info.gravity44.com"
-                  variant="outlined"
-                  color="primary"
-                  sx={{ px: 1 }}
-                />
+                <Box display={'flex'} gap={1} mt={1}>
+                  <EmailOutlinedIcon fontSize="small" />
+                  <Typography variant="subtitle2" gutterBottom>
+                    info.gravity44.com
+                  </Typography>
+                </Box>
                 <Box display={'flex'} gap={1} mt={1}>
                   <WhatsAppIcon fontSize="small" />
                   <Typography variant="subtitle2" gutterBottom>
-                    +91123456789
+                    +91 9818106472
                   </Typography>
                 </Box>
                 <Box display={'flex'} gap={1} mt={1}>
@@ -218,15 +217,19 @@ const Footer = () => {
             justifyContent={{ xs: 'center', md: 'flex-end' }}
             gap={2}
           >
-            {['Privacy', 'Terms', 'Cookies'].map((text, index) => (
+            {[
+              { title: 'Privacy', link: '/privacy' },
+              { title: 'Terms', link: '/terms' },
+              { title: 'Cookies', link: '/privacy' },
+            ].map((text, index) => (
               <Link
                 key={index}
-                href="#"
+                href={text.link}
                 underline="hover"
                 variant="body2"
                 color="inherit"
               >
-                {text} &nbsp; {index < 2 && '|'}
+                {text.title} &nbsp; {index < 2 && '|'}
               </Link>
             ))}
           </Grid>
