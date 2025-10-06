@@ -76,8 +76,8 @@ const AboutUs = () => {
         </Breadcrumbs>
         <Divider />
         <Container maxWidth="lg">
-          <Box my={2}>
-            <Typography variant="h4" component="h2" gutterBottom>
+          <Box my={3}>
+            <Typography variant="h3" component="h2" gutterBottom>
               About us
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
