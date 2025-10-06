@@ -14,7 +14,7 @@ import CardMedia from '@mui/material/CardMedia';
 
 const Hero = () => {
 
-    return (
+    return ( 
         <Paper elevation={0} square>
             <Box
                 display="flex"

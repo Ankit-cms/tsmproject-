@@ -718,7 +718,7 @@ const TMSLandingPage = () => {
                         <Typography variant="body2" color="text.secondary">
                           {blog.date}
                         </Typography>
-                        <Link href="#">
+                        <Link href="/blog-detail">
                           <ArrowRightAltIcon />
                         </Link>
                       </Box>
