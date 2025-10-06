@@ -53,7 +53,7 @@ const contact = () => {
                     <Grid size={{ xs: 12, md: 6 }} alignContent={"center"} >
                         <Typography variant="h1" gutterBottom>Get in touch</Typography>
                         <Typography variant="body1" paragraph>
-                            We'd love to hear from you! Whether you have questions about our services, need assistance, or want to explore partnership opportunities, our team is here to help. Reach out to us through any of the following methods:
+                            We would love to hear from you! Whether you have questions about our services, need assistance, or want to explore partnership opportunities, our team is here to help. Reach out to us through any of the following methods:
                         </Typography>
                     </Grid>
                 </Grid>
