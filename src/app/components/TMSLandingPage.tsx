@@ -38,6 +38,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Client from './Client';
 import Hero from './Hero';
+import HeroFull from './HeroFull';
 
 
 interface TabPanelProps {
@@ -121,7 +122,9 @@ const TMSLandingPage = () => {
     <Box>
       <Header />
 
-      <Hero />
+      {/* <Hero /> */}
+
+      <HeroFull />
 
       <Divider sx={{ my: 2 }} />
 
