@@ -79,8 +79,7 @@ const Header = () => {
               color: 'inherit',
               textDecoration: 'none',
               textTransform: 'uppercase',
-            }}
-          >
+            }}>
             Instalanes
           </Typography>
 
@@ -92,8 +91,7 @@ const Header = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-              sx={{ px: 0 }}
-            >
+              sx={{ px: 0 }}>
               <MenuIcon />
             </IconButton>
             <Menu
@@ -150,8 +148,7 @@ const Header = () => {
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
-            }}
-          >
+            }}>
             Instalanes
           </Typography>
           <Box
@@ -160,8 +157,7 @@ const Header = () => {
               gap: 2,
               justifyContent: 'center',
               display: { xs: 'none', md: 'flex' },
-            }}
-          >
+            }}>
             <Button
               component={'a'}
               href="/"
@@ -171,8 +167,7 @@ const Header = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
-              }}
-            >
+              }}>
               <AppsIcon fontSize="small" />
               TMS Solutions
             </Button>
@@ -185,8 +180,7 @@ const Header = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
-              }}
-            >
+              }}>
               <ReceiptLongIcon fontSize="small" />
               Resources <KeyboardArrowDownIcon fontSize="small" />
             </Button>
@@ -196,14 +190,12 @@ const Header = () => {
               onClose={handleClose}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-              disableScrollLock
-            >
+              disableScrollLock>
               <MenuItem
                 component={'a'}
                 href="/about"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <ApartmentIcon fontSize="small" />
                 About
               </MenuItem>
@@ -211,8 +203,7 @@ const Header = () => {
                 component={'a'}
                 href="/pricing"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <AttachMoneyIcon fontSize="small" />
                 Pricing
               </MenuItem>
@@ -221,8 +212,7 @@ const Header = () => {
                 component={'a'}
                 href="/blogs"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <ArticleIcon fontSize="small" />
                 Blog
               </MenuItem>
@@ -231,8 +221,7 @@ const Header = () => {
                 component={'a'}
                 href="/partners"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <GroupIcon fontSize="small" />
                 Partners
               </MenuItem>
@@ -263,8 +252,7 @@ const Header = () => {
                   gap: 1,
                   display: { xs: 'none', md: 'flex' }
                 }}
-                onClick={handleOpenUserMenu}
-              >
+                onClick={handleOpenUserMenu}>
                 <LoginOutlinedIcon sx={{ color: 'white' }} />
                 Login
               </Button>
@@ -284,8 +272,7 @@ const Header = () => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-              disableScrollLock
-            >
+              disableScrollLock>
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography sx={{ textAlign: 'center' }}>
@@ -304,8 +291,7 @@ const Header = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
-              }}
-            >
+              }}>
               <ComputerIcon fontSize="small" />
               Get Demo
             </Button>
