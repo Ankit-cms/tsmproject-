@@ -52,13 +52,13 @@ const BlogDetail = () => {
                             <Divider sx={{ mt: 2 }} />
                         </Box>
                         <Grid container spacing={4}>
-                            <Grid size={{ xs: 12, md: 8 }}>
+                            <Grid size={{ xs: 12, md: 10 }}>
                                 <Card elevation={1} sx={{ mb: 4 }}>
                                     <CardMedia
                                         component="img"
                                         image="/img/blog.jpg"
                                         alt="Deliver 2024 Event"
-                                        height="360"
+                                        height="450"
                                     />
                                 </Card>
 
@@ -117,38 +117,6 @@ const BlogDetail = () => {
                                         />
                                     </ListItem>
                                 </List>
-                            </Grid>
-
-                            <Grid size={{ xs: 12, md: 4 }}>
-                                <Card elevation={2}>
-                                    <CardContent>
-                                        <Typography variant="h6" gutterBottom>
-                                            Recent Blogs
-                                        </Typography>
-                                        <List>
-                                            <ListItem>
-                                                <ListItemText
-                                                    primary="Embracing efficiency with TMS implementation"
-                                                    secondary="August 19, 2024"
-                                                />
-                                            </ListItem>
-                                            <Divider />
-                                            <ListItem>
-                                                <ListItemText
-                                                    primary="Freight market update: Q3 – August 2024"
-                                                    secondary="August 19, 2024"
-                                                />
-                                            </ListItem>
-                                            <Divider />
-                                            <ListItem>
-                                                <ListItemText
-                                                    primary="Digital transformation in logistics"
-                                                    secondary="July 15, 2024"
-                                                />
-                                            </ListItem>
-                                        </List>
-                                    </CardContent>
-                                </Card>
                             </Grid>
                         </Grid>
                     </Box>
