@@ -50,7 +50,7 @@ const BlogDetail = () => {
                                 Stay updated with our latest articles and insights
                             </Typography>
                         </Box>
-                        <Grid container spacing={4}>
+                        <Grid container spacing={8}>
                             <Grid size={{ xs: 6 }}>
                                 <Card elevation={2} variant="outlined">
                                     <CardMedia
@@ -74,7 +74,7 @@ const BlogDetail = () => {
                                 <Typography variant="body2" color="text.secondary" mb={2}>
                                     {"September 11, 2024"}
                                 </Typography>
-                                <Typography variant="body1" paragraph>
+                                <Typography  paragraph>
                                     {"SeptDeliver 2024 marks 22 years of hosting industry leaders, logistics professionals, and technology innovators to discuss the future of freight and transportation. Attendees will gather from Sept. 9 – 11 to gain insight into Uber Freight’s latest products and initiatives, learnember 11, 2024..."}
                                 </Typography>
                                 <Box>
