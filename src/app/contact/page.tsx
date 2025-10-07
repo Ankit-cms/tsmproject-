@@ -41,29 +41,33 @@ const contact = () => {
                     <Typography sx={{ color: 'text.primary' }}>Contact Us</Typography>
                 </Breadcrumbs>
                 <Divider />
-                <Grid container spacing={4}>
-                    <Grid size={{ xs: 12, md: 6 }}>
-                        <CardMedia
-                            component="img"
-                            image="/img/blog.jpg"
-                            alt="Deliver 2024 Event"
-                            height="360"
-                        />
-                    </Grid>
-                    <Grid size={{ xs: 12, md: 6 }} alignContent={"center"} >
-                        <Typography variant="h1" gutterBottom>Get in touch</Typography>
-                        <Typography variant="body1" paragraph>
-                            We would love to hear from you! Whether you have questions about our services, need assistance, or want to explore partnership opportunities, our team is here to help. Reach out to us through any of the following methods:
-                        </Typography>
-                    </Grid>
-                </Grid>
-                <Divider />
                 <Container maxWidth="lg">
-                    <Box py={1}>
-                        <ContactForm />
-                    </Box>
+                    <Grid container spacing={4} alignItems="center" my={2}>
+                        <Grid size={{ xs: 12, md: 6 }} alignContent={"center"} >
+                            <Typography
+                                variant="h3"
+                                component="h1"
+                                gutterBottom
+                                sx={{ fontSize: { xs: '1.5rem', md: '3rem' } }}
+                                mt={2}
+                            >Get in touch</Typography>
+                            <Typography variant="body1" paragraph>
+                                We would love to hear from you! Whether you have questions about our services, need assistance, or want to explore partnership opportunities, our team is here to help. Reach out to us through any of the following methods:
+                            </Typography>
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <CardMedia
+                                component="img"
+                                image="/img/blog.jpg"
+                                alt="Deliver 2024 Event"
+                                height="360"
+                            />
+                        </Grid>
+                    </Grid>
                 </Container>
-            </Paper>
+                <Divider />
+                <ContactForm />
+            </Paper >
             <Divider />
             <Footer />
         </>
