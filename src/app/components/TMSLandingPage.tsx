@@ -22,11 +22,9 @@ import {
 import { Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import CallIcon from '@mui/icons-material/Call';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import CallIcon from '@mui/icons-material/Call'; 
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import ComputerIcon from '@mui/icons-material/Computer';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'; 
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import Tabs from '@mui/material/Tabs';
@@ -39,9 +37,9 @@ import Features from './Features';
 import Header from './Header';
 import Footer from './Footer';
 import Client from './Client';
+import Hero from './Hero';
+import HeroFull from './HeroFull';
 
-const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -124,53 +122,9 @@ const TMSLandingPage = () => {
     <Box>
       <Header />
 
-      <Paper elevation={0} square>
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          pt={6}
-          pb={1}
-        >
-          <Container maxWidth="lg">
-            <Grid container spacing={4} alignItems="center" mt={4}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Chip
-                  icon={<AutoAwesomeIcon />}
-                  label="Switch to Instalanes"
-                  variant="outlined"
-                  color="primary"
-                  sx={{ px: 1 }}
-                />
-                <Typography
-                  variant="h3"
-                  component="h1"
-                  gutterBottom
-                  sx={{ fontSize: { xs: '2rem', md: '3.5rem' } }}
-                  mt={2}
-                >
-                  Collaborative TMS Platform powering End-to-End Visibility{' '}
-                </Typography>
-                <Typography variant="body1" paragraph>
-                  Powering smarter, faster logistics with a cloud TMS &
-                  visibility platform built for 3PLs, Shippers, and Carriers.
-                </Typography>
-                <Button variant="contained">
-                  <ComputerIcon sx={{ mr: 1 }} /> Schedule a Demo
-                </Button>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <CardMedia
-                  component="img"
-                  height="500"
-                  image="/img/Banner.jpg"
-                  alt="TMS Illustration"
-                />
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
-      </Paper>
+      {/* <Hero /> */}
+
+      <HeroFull />
 
       <Divider sx={{ my: 2 }} />
 
@@ -764,7 +718,7 @@ const TMSLandingPage = () => {
                         <Typography variant="body2" color="text.secondary">
                           {blog.date}
                         </Typography>
-                        <Link href="#">
+                        <Link href="/blog-detail">
                           <ArrowRightAltIcon />
                         </Link>
                       </Box>
