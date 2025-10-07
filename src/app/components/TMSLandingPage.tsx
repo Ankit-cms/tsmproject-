@@ -18,13 +18,14 @@ import {
   InputAdornment,
   CardActionArea,
   Stack,
+  Menu,
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import CallIcon from '@mui/icons-material/Call'; 
+import CallIcon from '@mui/icons-material/Call';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'; 
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import Tabs from '@mui/material/Tabs';
@@ -39,7 +40,6 @@ import Footer from './Footer';
 import Client from './Client';
 import Hero from './Hero';
 import HeroFull from './HeroFull';
-
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -126,6 +126,21 @@ const TMSLandingPage = () => {
 
       <HeroFull />
 
+      <Divider sx={{ my: 2 }} />
+      <Paper elevation={0} square>
+        <Container maxWidth="lg">
+          <Box py={8}>
+            <Box>
+              <Typography variant="h5" gutterBottom>
+                Instalanes TMS is a transport management and visibility platform
+                that helps businesses manage and optimize shipments, logistics
+                operations, and costs—while enhancing visibility, collaboration,
+                and team efficiency for seamless, end-to-end logistics.
+              </Typography>
+            </Box>
+          </Box>
+        </Container>
+      </Paper>
       <Divider sx={{ my: 2 }} />
 
       <Paper elevation={0} square>
@@ -656,7 +671,7 @@ const TMSLandingPage = () => {
       </Paper>
 
       <Divider sx={{ my: 2 }} />
-      <Client/>
+      <Client />
       <Divider sx={{ my: 2 }} />
 
       <Paper elevation={0} square>
@@ -973,6 +988,11 @@ const TMSLandingPage = () => {
                       variant="outlined"
                       value={selectedRole}
                       onChange={(e) => setSelectedRole(e.target.value)}
+                      SelectProps={{
+                        MenuProps: {
+                          disableScrollLock: true,
+                        },
+                      }}
                     >
                       {roles.map((role) => (
                         <MenuItem key={role} value={role}>
@@ -981,6 +1001,7 @@ const TMSLandingPage = () => {
                       ))}
                     </TextField>
                   </Grid>
+
                   <Grid size={{ xs: 12 }}>
                     <TextField fullWidth label="Email" variant="outlined" />
                   </Grid>
@@ -1000,6 +1021,11 @@ const TMSLandingPage = () => {
                               value={countryCode}
                               onChange={(e) => setCountryCode(e.target.value)}
                               InputProps={{ disableUnderline: true }}
+                              SelectProps={{
+                                MenuProps: {
+                                  disableScrollLock: true,
+                                },
+                              }}
                               sx={{
                                 '& .MuiSelect-select': {
                                   paddingRight: '24px',
@@ -1028,6 +1054,11 @@ const TMSLandingPage = () => {
                       label="Enquiry about"
                       variant="outlined"
                       value={selectedPlatform}
+                      SelectProps={{
+                        MenuProps: {
+                          disableScrollLock: true,
+                        },
+                      }}
                       onChange={(e) => setSelectedPlatform(e.target.value)}
                     >
                       {platforms.map((platform) => (

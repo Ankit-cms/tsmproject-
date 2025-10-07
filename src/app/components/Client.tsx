@@ -77,22 +77,15 @@ const Client = () => {
             ].map((brand) => (
               <Grid
                 key={brand.title}
-                minHeight={160}
-                size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
+                size={2}
               >
                 <Card elevation={0}>
-                  <CardContent sx={{ p: 3 }}>
+                  <CardContent >
                     <CardMedia
                       component="img"
                       image={brand.img}
                       alt={brand.title}
-                      height={100}
-                      sx={{
-                        width: '80%', // make image take only 80% width of card
-                        height: 'auto', // maintain aspect ratio
-                        mx: 'auto', // center horizontally (margin-left/right auto)
-                        borderRadius: 2, // optional: round corners
-                      }}
+                      
                     />
                   </CardContent>
                 </Card>
