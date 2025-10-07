@@ -4,16 +4,14 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
-  Chip,
+  CardMedia, 
   Container,
   Divider,
   Fab,
   Grid,
   Link,
   List,
-  ListItem,
-  ListItemButton,
+  ListItem, 
   ListItemIcon,
   ListItemText,
   Paper,
@@ -25,12 +23,11 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LaptopIcon from '@mui/icons-material/Laptop';
-import { AutoAwesomeMosaicOutlined, WhatsApp } from '@mui/icons-material';
+import { WhatsApp } from '@mui/icons-material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
-import CorporateFareOutlinedIcon from '@mui/icons-material/CorporateFareOutlined';
-import ComputerIcon from '@mui/icons-material/Computer';
+import CorporateFareOutlinedIcon from '@mui/icons-material/CorporateFareOutlined'; 
 const Partners = () => {
   return (
     <Box position={'relative'}>
@@ -166,7 +163,7 @@ const Partners = () => {
                               },
                             }}
                           >
-                            {item.activities.map((activity, i) => (
+                            {item.activities.map((activity) => (
                               <ListItem key={activity}>
                                 <ListItemIcon>
                                   <ArrowRightIcon />
@@ -196,7 +193,7 @@ const Partners = () => {
                               },
                             }}
                           >
-                            {item.commission.map((comm, i) => (
+                            {item.commission.map((comm) => (
                               <ListItem key={comm}>
                                 <ListItemIcon>
                                   <ArrowRightIcon />

@@ -1,20 +1,13 @@
 import * as React from 'react';
 import {
-    AllInclusive,
-    Analytics,
     Api,
     ArrowForward,
     Dashboard,
-    Folder,
-    Groups,
-    Handshake,
-    NotificationsActive,
-    Public,
-    ReceiptLong,
-    RocketLaunch,
+    Folder, 
+    NotificationsActive, 
+    ReceiptLong, 
     Smartphone,
-    Summarize,
-    TouchApp,
+    Summarize, 
 } from '@mui/icons-material';
 import {
     Box,

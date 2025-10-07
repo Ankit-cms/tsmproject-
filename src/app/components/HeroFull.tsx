@@ -1,12 +1,10 @@
 import * as React from 'react';
 import {
-  Box,
-  Chip,
+  Box, 
   Container,
   Grid,
   Typography,
-} from '@mui/material';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+} from '@mui/material';  
 import Button from '@mui/material/Button';
 import ComputerIcon from '@mui/icons-material/Computer';
 

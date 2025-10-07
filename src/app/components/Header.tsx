@@ -13,8 +13,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import FlareIcon from '@mui/icons-material/Flare';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import FlareIcon from '@mui/icons-material/Flare'; 
 import AppsIcon from '@mui/icons-material/Apps';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CallIcon from '@mui/icons-material/Call';
@@ -24,8 +23,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 import GroupIcon from '@mui/icons-material/Group';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import ComputerIcon from '@mui/icons-material/Computer';
-import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
-const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined'; 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {

@@ -16,9 +16,7 @@ import {
   CardMedia,
   Checkbox,
   InputAdornment,
-  CardActionArea,
-  Stack,
-  Menu,
+  CardActionArea, 
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
@@ -37,8 +35,7 @@ import Link from 'next/link';
 import Features from './Features';
 import Header from './Header';
 import Footer from './Footer';
-import Client from './Client';
-import Hero from './Hero';
+import Client from './Client'; 
 import HeroFull from './HeroFull';
 
 interface TabPanelProps {

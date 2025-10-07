@@ -10,8 +10,7 @@ import {
   Divider,
   ListItemButton,
   IconButton,
-  Link,
-  Chip,
+  Link, 
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import FlareIcon from '@mui/icons-material/Flare';
