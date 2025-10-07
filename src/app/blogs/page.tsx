@@ -55,7 +55,7 @@ const BlogDetail = () => {
                                 <CardMedia
                                     component="img"
                                     height="350"
-                                    image="/img/before.png"
+                                    image="/img/blog.jpg"
                                     alt="green iguana"
                                 />
                             </Card>
@@ -65,7 +65,7 @@ const BlogDetail = () => {
                                 label={"FREIGHT"}
                                 variant="outlined"
                                 color="primary"
-                                sx={{ my: 1 }}
+                                sx={{ mt: 2, mb: 1 }}
                             />
                             <Typography variant="h6" component="h3" gutterBottom>
                                 {"Embracing efficiency with TMS implementation"}
@@ -138,14 +138,14 @@ const BlogDetail = () => {
                                         <CardMedia
                                             component="img"
                                             height="180"
-                                            image="/img/before.png"
+                                            image="/img/blog.jpg"
                                             alt="green iguana"
                                         />
                                         <Chip
                                             label={blog.category}
                                             variant="outlined"
                                             color="primary"
-                                            sx={{ my: 1 }}
+                                            sx={{ mt: 2, mb: 1 }}
                                         />
                                         <Typography variant="h6" component="h3" gutterBottom>
                                             {blog.title}
