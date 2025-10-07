@@ -42,9 +42,8 @@ const BlogDetail = () => {
                     <Typography sx={{ color: 'text.primary' }}>Blog Detail</Typography>
                 </Breadcrumbs>
                 <Divider />
-                <Container maxWidth="lg">
-                    <Box py={8}>
-                        <Box mb={4}>
+                <Container maxWidth="lg"> 
+                        <Box my={3}>
                             <Typography variant="h3" component="h1" gutterBottom>
                                 Deliver 2024 fostering innovation and impact
                             </Typography>
@@ -120,11 +119,10 @@ const BlogDetail = () => {
                                     </ListItem>
                                 </List>
                             </Grid>
-                        </Grid>
-                    </Box>
+                        </Grid> 
                 </Container>
             </Paper> 
-            <Paper elevation={0} square sx={{ pb: 8}} >
+            <Paper elevation={0} square sx={{ pb: 8, pt: 4}} >
                 <Container maxWidth="lg">
                     <Box>
                         <Typography variant="h4" gutterBottom mb={3}>
