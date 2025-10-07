@@ -73,8 +73,9 @@ const Faq = () => {
   return (
     <Box>
       <Header />
+      
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 4 }}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
           <Link underline="hover" color="inherit" href="/">
             Home
           </Link>
@@ -107,6 +108,8 @@ const Faq = () => {
           </Container>
         </Box>
       </Paper>
+            <Divider sx={{ my: 2 }} />
+      
       <Footer />
     </Box>
   );

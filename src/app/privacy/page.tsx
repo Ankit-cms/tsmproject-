@@ -4,6 +4,7 @@ import {
   Box,
   Breadcrumbs,
   Container,
+  Divider,
   Link,
   Paper,
   Typography,
@@ -16,15 +17,13 @@ const PrivacyPolicy = () => {
     <Box>
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        {/* Breadcrumbs */}
         <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
           <Link underline="hover" color="inherit" href="/">
             Home
           </Link>
           <Typography sx={{ color: 'text.primary' }}>Privacy Policy</Typography>
         </Breadcrumbs>
-
-        {/* Privacy Policy Content */}
+<Divider/>
         <Paper elevation={0} square>
           <Container maxWidth="lg">
             <Box py={8}>
@@ -194,6 +193,7 @@ const PrivacyPolicy = () => {
           </Container>
         </Paper>
       </Paper>
+      <Divider sx={{ my: 2 }} />
 
       <Footer />
     </Box>
