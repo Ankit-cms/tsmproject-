@@ -26,6 +26,8 @@ import {
 } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+
 
 const BlogDetail = () => {
 
@@ -120,6 +122,72 @@ const BlogDetail = () => {
                             </Grid>
                         </Grid>
                     </Box>
+                </Container>
+            </Paper> 
+            <Paper elevation={0} square sx={{ pb: 8}} >
+                <Container maxWidth="lg">
+                    <Box>
+                        <Typography variant="h4" gutterBottom mb={3}>
+                            Read more blogs
+                        </Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                        {/* <Grid size={{ xs: 12 }}></Grid> */}
+                        {[
+                            {
+                                category: 'FREIGHT',
+                                title: 'Deliver 2024 fostering innovation and impact',
+                                date: 'September 11, 2024',
+                                img: '/img/before.png',
+                            },
+                            {
+                                category: 'FREIGHT',
+                                title: 'Embracing efficiency with TMS implementation',
+                                date: 'August 19, 2024',
+                                img: '/img/before.png',
+                            },
+                            {
+                                category: 'FREIGHT',
+                                title: 'Freight market update: Q3 – August 2024',
+                                date: 'August 19, 2024',
+                                img: '/img/before.png',
+                            },
+                        ].map((blog, index) => (
+                            <Grid key={index} size={{ xs: 12, md: 4 }}>
+                                <Card elevation={2} variant="outlined">
+                                    <CardContent>
+                                        <CardMedia
+                                            component="img"
+                                            height="180"
+                                            image="/img/before.png"
+                                            alt="green iguana"
+                                        />
+                                        <Chip
+                                            label={blog.category}
+                                            variant="outlined"
+                                            color="primary"
+                                            sx={{ my: 1 }}
+                                        />
+                                        <Typography variant="h6" component="h3" gutterBottom>
+                                            {blog.title}
+                                        </Typography>
+                                        <Box
+                                            display={'flex'}
+                                            justifyContent="space-between"
+                                            alignItems="center"
+                                        >
+                                            <Typography variant="body2" color="text.secondary">
+                                                {blog.date}
+                                            </Typography>
+                                            <Link href="/blog-detail">
+                                                <ArrowRightAltIcon />
+                                            </Link>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
                 </Container>
             </Paper>
             <Divider />
