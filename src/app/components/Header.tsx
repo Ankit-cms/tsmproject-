@@ -13,8 +13,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import FlareIcon from '@mui/icons-material/Flare';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import FlareIcon from '@mui/icons-material/Flare'; 
 import AppsIcon from '@mui/icons-material/Apps';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CallIcon from '@mui/icons-material/Call';
@@ -24,8 +23,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 import GroupIcon from '@mui/icons-material/Group';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import ComputerIcon from '@mui/icons-material/Computer';
-import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
-const pages = ['TMS solutions', 'Resources', 'Pricing', 'Contact us'];
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined'; 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -63,7 +61,7 @@ const Header = () => {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
@@ -79,8 +77,7 @@ const Header = () => {
               color: 'inherit',
               textDecoration: 'none',
               textTransform: 'uppercase',
-            }}
-          >
+            }}>
             Instalanes
           </Typography>
 
@@ -92,8 +89,7 @@ const Header = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-              sx={{ px: 0 }}
-            >
+              sx={{ px: 0 }}>
               <MenuIcon />
             </IconButton>
             <Menu
@@ -122,18 +118,17 @@ const Header = () => {
                 <Typography
                   textAlign="center"
                   display={'flex'}
-                  alignItems={'center'}
-                >
+                  alignItems={'center'}>
                   Resources <KeyboardArrowDownIcon />
                 </Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
+              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/contact`}>
                 <CallIcon sx={{ mr: 1 }} />
                 <Typography textAlign="center">Contact Us</Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                <ComputerIcon sx={{ mr: 1 }} />
-                <Typography textAlign="center">Get Demo</Typography>
+                <LoginOutlinedIcon sx={{ mr: 1 }} /> 
+                <Typography textAlign="center">Login</Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -151,8 +146,7 @@ const Header = () => {
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
-            }}
-          >
+            }}>
             Instalanes
           </Typography>
           <Box
@@ -161,19 +155,17 @@ const Header = () => {
               gap: 2,
               justifyContent: 'center',
               display: { xs: 'none', md: 'flex' },
-            }}
-          >
+            }}>
             <Button
               component={'a'}
-              href="/tms-solutions"
+              href="/"
               sx={{
                 my: 2,
                 color: 'white',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
-              }}
-            >
+              }}>
               <AppsIcon fontSize="small" />
               TMS Solutions
             </Button>
@@ -186,8 +178,7 @@ const Header = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
-              }}
-            >
+              }}>
               <ReceiptLongIcon fontSize="small" />
               Resources <KeyboardArrowDownIcon fontSize="small" />
             </Button>
@@ -197,14 +188,12 @@ const Header = () => {
               onClose={handleClose}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-              disableScrollLock
-            >
+              disableScrollLock>
               <MenuItem
                 component={'a'}
                 href="/about"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <ApartmentIcon fontSize="small" />
                 About
               </MenuItem>
@@ -212,8 +201,7 @@ const Header = () => {
                 component={'a'}
                 href="/pricing"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <AttachMoneyIcon fontSize="small" />
                 Pricing
               </MenuItem>
@@ -222,8 +210,7 @@ const Header = () => {
                 component={'a'}
                 href="/blogs"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <ArticleIcon fontSize="small" />
                 Blog
               </MenuItem>
@@ -232,8 +219,7 @@ const Header = () => {
                 component={'a'}
                 href="/partners"
                 onClick={handleClose}
-                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-              >
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <GroupIcon fontSize="small" />
                 Partners
               </MenuItem>
@@ -254,18 +240,17 @@ const Header = () => {
               Contact Us
             </Button> */}
           </Box>
-          <Box sx={{ flexGrow: 0 }} display={'flex'}>
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Tooltip title="Open Profile">
               <Button
                 sx={{
                   my: 2,
                   color: 'white',
-                  display: 'flex',
                   alignItems: 'center',
                   gap: 1,
+                  display: { xs: 'none', md: 'flex' }
                 }}
-                onClick={handleOpenUserMenu}
-              >
+                onClick={handleOpenUserMenu}>
                 <LoginOutlinedIcon sx={{ color: 'white' }} />
                 Login
               </Button>
@@ -285,8 +270,7 @@ const Header = () => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-              disableScrollLock
-            >
+              disableScrollLock>
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography sx={{ textAlign: 'center' }}>
@@ -305,8 +289,7 @@ const Header = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
-              }}
-            >
+              }}>
               <ComputerIcon fontSize="small" />
               Get Demo
             </Button>

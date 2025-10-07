@@ -16,9 +16,7 @@ import {
   CardMedia,
   Checkbox,
   InputAdornment,
-  CardActionArea,
-  Stack,
-  Menu,
+  CardActionArea, 
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
@@ -37,8 +35,7 @@ import Link from 'next/link';
 import Features from './Features';
 import Header from './Header';
 import Footer from './Footer';
-import Client from './Client';
-import Hero from './Hero';
+import Client from './Client'; 
 import HeroFull from './HeroFull';
 
 interface TabPanelProps {
@@ -713,14 +710,14 @@ const TMSLandingPage = () => {
                       <CardMedia
                         component="img"
                         height="180"
-                        image="/img/before.png"
+                        image="/img/blog.jpg"
                         alt="green iguana"
                       />
                       <Chip
                         label={blog.category}
                         variant="outlined"
                         color="primary"
-                        sx={{ my: 1 }}
+                        sx={{ mt: 2, mb: 1 }}
                       />
                       <Typography variant="h6" component="h3" gutterBottom>
                         {blog.title}

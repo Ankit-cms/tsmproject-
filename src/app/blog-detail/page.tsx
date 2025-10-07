@@ -2,20 +2,13 @@ import * as React from 'react';
 import {
     Box,
     Container,
-    Typography,
-    Button,
+    Typography, 
     Card,
     CardContent,
-    Paper,
-    TextField,
-    Chip,
-    Avatar,
+    Paper, 
+    Chip, 
     Divider,
-    CardMedia,
-    Checkbox,
-    InputAdornment,
-    CardActionArea,
-    Stack,
+    CardMedia, 
     Grid,
     List,
     ListItem,
@@ -26,6 +19,8 @@ import {
 } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+
 
 const BlogDetail = () => {
 
@@ -40,9 +35,8 @@ const BlogDetail = () => {
                     <Typography sx={{ color: 'text.primary' }}>Blog Detail</Typography>
                 </Breadcrumbs>
                 <Divider />
-                <Container maxWidth="lg">
-                    <Box py={8}>
-                        <Box mb={4}>
+                <Container maxWidth="lg"> 
+                        <Box my={3}>
                             <Typography variant="h3" component="h1" gutterBottom>
                                 Deliver 2024 fostering innovation and impact
                             </Typography>
@@ -52,13 +46,13 @@ const BlogDetail = () => {
                             <Divider sx={{ mt: 2 }} />
                         </Box>
                         <Grid container spacing={4}>
-                            <Grid size={{ xs: 12, md: 8 }}>
+                            <Grid size={{ xs: 12, md: 10 }}>
                                 <Card elevation={1} sx={{ mb: 4 }}>
                                     <CardMedia
                                         component="img"
                                         image="/img/blog.jpg"
                                         alt="Deliver 2024 Event"
-                                        height="360"
+                                        height="450"
                                     />
                                 </Card>
 
@@ -118,40 +112,73 @@ const BlogDetail = () => {
                                     </ListItem>
                                 </List>
                             </Grid>
-
-                            <Grid size={{ xs: 12, md: 4 }}>
-                                <Card elevation={2}>
+                        </Grid> 
+                </Container>
+            </Paper> 
+            <Paper elevation={0} square sx={{ pb: 8, pt: 4}} >
+                <Container maxWidth="lg">
+                    <Box>
+                        <Typography variant="h4" gutterBottom mb={3}>
+                            Read more blogs
+                        </Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                        {/* <Grid size={{ xs: 12 }}></Grid> */}
+                        {[
+                            {
+                                category: 'FREIGHT',
+                                title: 'Deliver 2024 fostering innovation and impact',
+                                date: 'September 11, 2024',
+                                img: '/img/before.png',
+                            },
+                            {
+                                category: 'FREIGHT',
+                                title: 'Embracing efficiency with TMS implementation',
+                                date: 'August 19, 2024',
+                                img: '/img/before.png',
+                            },
+                            {
+                                category: 'FREIGHT',
+                                title: 'Freight market update: Q3 – August 2024',
+                                date: 'August 19, 2024',
+                                img: '/img/before.png',
+                            },
+                        ].map((blog, index) => (
+                            <Grid key={index} size={{ xs: 12, md: 4 }}>
+                                <Card elevation={2} variant="outlined">
                                     <CardContent>
-                                        <Typography variant="h6" gutterBottom>
-                                            Recent Blogs
+                                        <CardMedia
+                                            component="img"
+                                            height="180"
+                                            image="/img/blog.jpg"
+                                            alt="green iguana"
+                                        />
+                                        <Chip
+                                            label={blog.category}
+                                            variant="outlined"
+                                            color="primary"
+                                            sx={{ mt: 2, mb: 1 }}
+                                        />
+                                        <Typography variant="h6" component="h3" gutterBottom>
+                                            {blog.title}
                                         </Typography>
-                                        <List>
-                                            <ListItem>
-                                                <ListItemText
-                                                    primary="Embracing efficiency with TMS implementation"
-                                                    secondary="August 19, 2024"
-                                                />
-                                            </ListItem>
-                                            <Divider />
-                                            <ListItem>
-                                                <ListItemText
-                                                    primary="Freight market update: Q3 – August 2024"
-                                                    secondary="August 19, 2024"
-                                                />
-                                            </ListItem>
-                                            <Divider />
-                                            <ListItem>
-                                                <ListItemText
-                                                    primary="Digital transformation in logistics"
-                                                    secondary="July 15, 2024"
-                                                />
-                                            </ListItem>
-                                        </List>
+                                        <Box
+                                            display={'flex'}
+                                            justifyContent="space-between"
+                                            alignItems="center"
+                                        >
+                                            <Typography variant="body2" color="text.secondary">
+                                                {blog.date}
+                                            </Typography>
+                                            <Link href="/blog-detail">
+                                                <ArrowRightAltIcon />
+                                            </Link>
+                                        </Box>
                                     </CardContent>
                                 </Card>
                             </Grid>
-                        </Grid>
-                    </Box>
+                        ))}
+                    </Grid>
                 </Container>
             </Paper>
             <Divider />

@@ -5,18 +5,12 @@ import {
     Container,
     Typography,
     Button,
-    Card,
-    CardContent,
-    Paper,
-    TextField,
-    Chip,
-    Avatar,
-    Divider,
-    CardMedia,
+    Card,  
+    TextField, 
+    Avatar, 
     Checkbox,
     InputAdornment,
-    CardActionArea,
-    Stack,
+    CardActionArea, 
 } from '@mui/material';
 import Link from 'next/link';
 import { Grid } from '@mui/material';

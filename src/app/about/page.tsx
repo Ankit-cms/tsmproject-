@@ -15,8 +15,7 @@ import {
   Typography,
 } from '@mui/material';
 import Header from '../components/Header';
-import {
-  Api,
+import { 
   ArrowForward,
   Dashboard,
   Folder,
@@ -24,8 +23,7 @@ import {
   ReceiptLong,
   Smartphone,
 } from '@mui/icons-material';
-import Footer from '../components/Footer';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Footer from '../components/Footer'; 
 const AboutUs = () => {
   const features = [
     {
