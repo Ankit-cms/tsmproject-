@@ -175,7 +175,7 @@ const AboutUs = () => {
             </Box>
 
             <Divider sx={{ my: 3 }} />
-            <Grid container spacing={4} >
+            <Grid container spacing={4} py={3} >
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h4" gutterBottom>
                   Join our Team
@@ -213,7 +213,7 @@ const AboutUs = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 3 }} />
+      <Divider sx={{ my: 2 }} />
       <Footer />
     </Box>
   );

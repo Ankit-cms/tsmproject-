@@ -4,6 +4,7 @@ import {
   CardContent,
   CardMedia,
   Container,
+  Divider,
   Grid,
   Paper,
   Typography,
@@ -24,6 +25,7 @@ const Client = () => {
               with the highest level of service.
             </Typography>
           </Box>
+          <Divider sx={{my:2}}/>
           <Grid
             container
             mt={4}
@@ -39,18 +41,51 @@ const Client = () => {
               },
             }}
           >
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((feature) => (
+            {[
+              {
+                title: 'Rolex',
+                img: './img/client/rolex.png',
+              },
+              {
+                title: 'Citi',
+                img: './img/client/citi.png',
+              },
+              {
+                title: 'Dell',
+                img: './img/client/dell.png',
+              },
+              {
+                title: 'Nissan',
+                img: './img/client/nissan.png',
+              },
+              {
+                title: 'Hundai',
+                img: './img/client/hundai.png',
+              },
+              {
+                title: 'Redbull',
+                img: './img/client/redbull.png',
+              },
+              {
+                title: 'Philips',
+                img: './img/client/philips.png',
+              },
+              {
+                title: 'John-deere',
+                img: './img/client/john-deere.png',
+              },
+            ].map((brand) => (
               <Grid
-                key={feature}
-                minHeight={160}
-                size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
+                key={brand.title}
+                size={2}
               >
                 <Card elevation={0}>
-                  <CardContent sx={{ p: 3 }}>
+                  <CardContent >
                     <CardMedia
                       component="img"
-                      image="/img/work/instalanes_TMS_challenges.png"
-                      alt="TMS Illustration"
+                      image={brand.img}
+                      alt={brand.title}
+                      
                     />
                   </CardContent>
                 </Card>

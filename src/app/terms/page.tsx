@@ -25,7 +25,7 @@ const Terms = () => {
           <Typography sx={{ color: 'text.primary' }}>Terms</Typography>
         </Breadcrumbs>
 
-       <Divider />
+        <Divider />
         <Paper elevation={0} square>
           <Container maxWidth="lg">
             <Box py={8}>
@@ -40,7 +40,6 @@ const Terms = () => {
               </Box>
 
               <Box display="flex" flexDirection="column" gap={4}>
-              
                 <Box>
                   <Typography variant="h5" gutterBottom>
                     1. Introduction
@@ -230,7 +229,7 @@ const Terms = () => {
           </Container>
         </Paper>
       </Paper>
-
+      <Divider sx={{ my: 2 }} />
       <Footer />
     </Box>
   );

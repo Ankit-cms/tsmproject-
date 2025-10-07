@@ -197,6 +197,7 @@ const Header = () => {
               onClose={handleClose}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+              disableScrollLock
             >
               <MenuItem
                 component={'a'}
@@ -238,7 +239,7 @@ const Header = () => {
               </MenuItem>
             </Menu>
 
-            <Button
+            {/* <Button
               component={'a'}
               href="/contact"
               sx={{
@@ -251,28 +252,23 @@ const Header = () => {
             >
               <CallIcon fontSize="small" />
               Contact Us
-            </Button>
-
-            <Button
-              component={'a'}
-              href="/pricing"
-              sx={{
-                my: 2,
-                color: 'white',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-              }}
-            >
-              <ComputerIcon fontSize="small" />
-              Get Demo
-            </Button>
+            </Button> */}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0 }} display={'flex'}>
             <Tooltip title="Open Profile">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
+              <Button
+                sx={{
+                  my: 2,
+                  color: 'white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                }}
+                onClick={handleOpenUserMenu}
+              >
                 <LoginOutlinedIcon sx={{ color: 'white' }} />
-              </IconButton>
+                Login
+              </Button>
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
@@ -299,6 +295,21 @@ const Header = () => {
                 </MenuItem>
               ))}
             </Menu>
+            <Button
+              variant="contained"
+              // color='secondary'
+              href="/pricing"
+              sx={{
+                my: 2,
+                ml: 2,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+              }}
+            >
+              <ComputerIcon fontSize="small" />
+              Get Demo
+            </Button>
           </Box>
         </Toolbar>
       </Container>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Client from '../components/Client';
 import Header from '../components/Header';
-import { Box, Breadcrumbs, Link, Paper, Typography } from '@mui/material';
+import { Box, Breadcrumbs, Divider, Link, Paper, Typography } from '@mui/material';
 import Footer from '../components/Footer';
 const Clients = () => {
   return (
@@ -14,9 +14,13 @@ const Clients = () => {
           </Link>
           <Typography sx={{ color: 'text.primary' }}>Clients</Typography>
         </Breadcrumbs>
+        <Divider />
+
         <Client />
       </Paper>
-      <Footer/>
+      <Divider sx={{my:2}}/>
+
+      <Footer />
     </Box>
   );
 };
