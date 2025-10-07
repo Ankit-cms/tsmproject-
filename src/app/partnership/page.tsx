@@ -167,7 +167,7 @@ const Partners = () => {
                             }}
                           >
                             {item.activities.map((activity, i) => (
-                              <ListItem>
+                              <ListItem key={activity}>
                                 <ListItemIcon>
                                   <ArrowRightIcon />
                                 </ListItemIcon>
@@ -197,7 +197,7 @@ const Partners = () => {
                             }}
                           >
                             {item.commission.map((comm, i) => (
-                              <ListItem>
+                              <ListItem key={comm}>
                                 <ListItemIcon>
                                   <ArrowRightIcon />
                                 </ListItemIcon>
