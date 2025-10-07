@@ -220,7 +220,7 @@ const Header = () => {
 
               <MenuItem
                 component={'a'}
-                href="/blog"
+                href="/blogs"
                 onClick={handleClose}
                 sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
               >
