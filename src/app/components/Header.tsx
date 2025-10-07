@@ -63,7 +63,7 @@ const Header = () => {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
@@ -122,18 +122,17 @@ const Header = () => {
                 <Typography
                   textAlign="center"
                   display={'flex'}
-                  alignItems={'center'}
-                >
+                  alignItems={'center'}>
                   Resources <KeyboardArrowDownIcon />
                 </Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
+              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/contact`}>
                 <CallIcon sx={{ mr: 1 }} />
                 <Typography textAlign="center">Contact Us</Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                <ComputerIcon sx={{ mr: 1 }} />
-                <Typography textAlign="center">Get Demo</Typography>
+                <LoginOutlinedIcon sx={{ mr: 1 }} /> 
+                <Typography textAlign="center">Login</Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -165,7 +164,7 @@ const Header = () => {
           >
             <Button
               component={'a'}
-              href="/tms-solutions"
+              href="/"
               sx={{
                 my: 2,
                 color: 'white',
@@ -254,15 +253,15 @@ const Header = () => {
               Contact Us
             </Button> */}
           </Box>
-          <Box sx={{ flexGrow: 0 }} display={'flex'}>
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Tooltip title="Open Profile">
               <Button
                 sx={{
                   my: 2,
                   color: 'white',
-                  display: 'flex',
                   alignItems: 'center',
                   gap: 1,
+                  display: { xs: 'none', md: 'flex' }
                 }}
                 onClick={handleOpenUserMenu}
               >

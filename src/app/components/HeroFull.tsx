@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {
-    Box,
-    Chip,
-    Container,
-    Grid,
-    Typography,
+  Box,
+  Chip,
+  Container,
+  Grid,
+  Typography,
 } from '@mui/material';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import Button from '@mui/material/Button';
@@ -12,30 +12,31 @@ import ComputerIcon from '@mui/icons-material/Computer';
 
 const HeroFull = () => {
 
-    return (
-      <Box
-        sx={{
-          position: 'relative',
-          minHeight: '72vh',
-          display: 'flex',
-          alignItems: 'center',
-          backgroundImage: 'url("/img/Banner.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.2)',
-            zIndex: 1,
-          },
-        }}
-      >
-        <Box px={13} sx={{ position: 'relative', zIndex: 2 }}>
+  return (
+
+    <Box
+      sx={{
+        position: 'relative',
+        minHeight: '72vh',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundImage: 'url("/img/Banner.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.2)',
+          zIndex: 1,
+        },
+      }}>
+      <Container maxWidth="lg">
+        <Box position="relative" zIndex={2} width="100%" >
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 8 }} mt={8}>
               {/* <Chip
@@ -71,7 +72,8 @@ const HeroFull = () => {
             </Grid>
           </Grid>
         </Box>
-      </Box>
-    );
+      </Container>
+    </Box>
+  );
 };
 export default HeroFull;
