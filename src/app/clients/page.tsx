@@ -1,24 +1,26 @@
 import React from 'react';
 import Client from '../components/Client';
 import Header from '../components/Header';
-import { Box, Breadcrumbs, Divider, Link, Paper, Typography } from '@mui/material';
+import { Box, Breadcrumbs, Container, Divider, Link, Paper, Typography } from '@mui/material';
 import Footer from '../components/Footer';
 const Clients = () => {
   return (
     <Box>
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
-          <Link underline="hover" color="inherit" href="/">
-            Home
-          </Link>
-          <Typography sx={{ color: 'text.primary' }}>Clients</Typography>
-        </Breadcrumbs>
-        <Divider />
+        <Container maxWidth="lg">
+          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3,pl:0 }}>
+            <Link underline="hover" color="inherit" href="/">
+              Home
+            </Link>
+            <Typography sx={{ color: 'text.primary' }}>Clients</Typography>
+          </Breadcrumbs>
+          <Divider />
 
-        <Client />
+          <Client />
+        </Container>
       </Paper>
-      <Divider sx={{my:2}}/>
+      <Divider sx={{ my: 2 }} />
 
       <Footer />
     </Box>

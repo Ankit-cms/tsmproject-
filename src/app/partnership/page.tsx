@@ -4,7 +4,7 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia, 
+  CardMedia,
   Checkbox,
   Container,
   Divider,
@@ -12,7 +12,7 @@ import {
   Grid,
   Link,
   List,
-  ListItem, 
+  ListItem,
   ListItemIcon,
   ListItemText,
   Paper,
@@ -36,53 +36,49 @@ const Partners = () => {
     <Box position={'relative'}>
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
-          <Link underline="hover" color="inherit" href="/">
-            Home
-          </Link>
-          <Typography sx={{ color: 'text.primary' }}>Partners</Typography>
-        </Breadcrumbs>
-        <Divider />
-        <Box display="flex" alignItems="center" justifyContent="center">
-          <Container maxWidth="lg">
-            <Grid container spacing={4} alignItems="center" my={2}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Typography
-                  variant="h3"
-                  component="h1"
-                  gutterBottom
-                  sx={{ fontSize: { xs: '1.5rem', md: '3rem' } }}
-                  mt={2}
-                >
-                  Partner with Instalanes
-                  <br />
-                  Drive growth. Unlock seamless logistics.{' '}
-                </Typography>
-                <Typography variant="body1" paragraph>
-                  Join our partner network to expand your business, collaborate
-                  on smarter logistics solutions, and deliver unmatched
-                  efficiency and visibility to your customers.
-                </Typography>
-                <Button variant="contained">
-                  <HandshakeOutlinedIcon sx={{ mr: 1 }} />
-                  Become a partner
-                </Button>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <CardMedia
-                  component="img"
-                  height="400"
-                  image="/img/client/partner-header.webp"
-                  alt="TMS Illustration"
-                />
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
-      </Paper>
-      <Divider />
-      <Paper elevation={0} square>
         <Container maxWidth="lg">
+          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
+            <Link underline="hover" color="inherit" href="/">
+              Home
+            </Link>
+            <Typography sx={{ color: 'text.primary' }}>Partners</Typography>
+          </Breadcrumbs>
+          <Divider />
+          <Grid container spacing={4} alignItems="center" my={2}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Typography
+                variant="h3"
+                component="h1"
+                gutterBottom
+                sx={{ fontSize: { xs: '1.5rem', md: '3rem' } }}
+                mt={2}
+              >
+                Partner with Instalanes
+                <br />
+                Drive growth. Unlock seamless logistics.{' '}
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Join our partner network to expand your business, collaborate on
+                smarter logistics solutions, and deliver unmatched efficiency
+                and visibility to your customers.
+              </Typography>
+              <Button variant="contained">
+                <HandshakeOutlinedIcon sx={{ mr: 1 }} />
+                Become a partner
+              </Button>
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <CardMedia
+                component="img"
+                height="400"
+                image="/img/client/partner-header.webp"
+                alt="TMS Illustration"
+              />
+            </Grid>
+          </Grid>
+
+          <Divider />
+
           <Box py={8}>
             <Box mb={4}>
               <Typography variant="h3" component="h2" gutterBottom>
@@ -215,9 +211,7 @@ const Partners = () => {
           </Box>
         </Container>
       </Paper>
-
       <Divider sx={{ my: 2 }} />
-
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={4}>
@@ -328,7 +322,6 @@ const Partners = () => {
           </Box>
         </Container>
       </Paper>
-
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
@@ -385,9 +378,7 @@ const Partners = () => {
           </Box>
         </Container>
       </Paper>
-
       <Divider sx={{ my: 2 }} />
-
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={4}>
@@ -414,9 +405,7 @@ const Partners = () => {
           </Box>
         </Container>
       </Paper>
-
       <Divider sx={{ my: 2 }} />
-
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Grid container spacing={3} py={8}>

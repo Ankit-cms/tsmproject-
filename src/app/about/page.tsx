@@ -15,7 +15,7 @@ import {
   Typography,
 } from '@mui/material';
 import Header from '../components/Header';
-import { 
+import {
   ArrowForward,
   Dashboard,
   Folder,
@@ -23,7 +23,7 @@ import {
   ReceiptLong,
   Smartphone,
 } from '@mui/icons-material';
-import Footer from '../components/Footer'; 
+import Footer from '../components/Footer';
 const AboutUs = () => {
   const features = [
     {
@@ -66,14 +66,14 @@ const AboutUs = () => {
     <Box>
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
-          <Link underline="hover" color="inherit" href="/">
-            Home
-          </Link>
-          <Typography sx={{ color: 'text.primary' }}>About us</Typography>
-        </Breadcrumbs>
-        <Divider />
         <Container maxWidth="lg">
+          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
+            <Link underline="hover" color="inherit" href="/">
+              Home
+            </Link>
+            <Typography sx={{ color: 'text.primary' }}>About us</Typography>
+          </Breadcrumbs>
+          <Divider />
           <Box my={3}>
             <Typography variant="h3" component="h2" gutterBottom>
               About us
@@ -83,7 +83,7 @@ const AboutUs = () => {
             </Typography>
             <Divider sx={{ my: 3 }} />
 
-            <Grid container spacing={4}  >
+            <Grid container spacing={4}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <CardMedia
                   component="img"
@@ -125,16 +125,17 @@ const AboutUs = () => {
                 </Card>
               </Grid>
             </Grid>
-            <Divider sx={{ my: 3 }} />
+            <Divider sx={{ my: 2 }} />
 
-            <Box>
-              <Typography variant="h4" component="h2" gutterBottom>
-                {' '}
-                Our Values
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                At the core of Instalanes{' '}
-              </Typography>
+            <Box py={4}>
+              <Box mb={4}>
+                <Typography variant="h3" gutterBottom>
+                  Our Values
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  At the core of Instalanes{' '}
+                </Typography>
+              </Box>
 
               <Grid container>
                 {features.map((feature) => (
@@ -172,8 +173,8 @@ const AboutUs = () => {
               </Grid>
             </Box>
 
-            <Divider sx={{ my: 3 }} />
-            <Grid container spacing={4} py={3} >
+            <Divider sx={{ my: 2 }} />
+            <Grid container spacing={4} py={3}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h4" gutterBottom>
                   Join our Team
