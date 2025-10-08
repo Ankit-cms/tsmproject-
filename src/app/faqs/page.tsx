@@ -73,18 +73,18 @@ const Faq = () => {
   return (
     <Box>
       <Header />
-      
-      <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
-          <Link underline="hover" color="inherit" href="/">
-            Home
-          </Link>
 
-          <Typography sx={{ color: 'text.primary' }}>FAQs</Typography>
-        </Breadcrumbs>
-        <Divider />
-        <Box py={4}>
-          <Container maxWidth="lg">
+      <Paper elevation={0} square sx={{ mt: 9 }}>
+        <Container maxWidth="lg">
+          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 ,pl:0}}>
+            <Link underline="hover" color="inherit" href="/">
+              Home
+            </Link>
+
+            <Typography sx={{ color: 'text.primary' }}>FAQs</Typography>
+          </Breadcrumbs>
+          <Divider />
+          <Box py={4}>
             <Typography variant="h4" component="h2" gutterBottom>
               Frequently asked questions{' '}
             </Typography>
@@ -105,11 +105,11 @@ const Faq = () => {
                 </Accordion>
               ))}
             </Box>
-          </Container>
-        </Box>
+          </Box>
+        </Container>
       </Paper>
-            <Divider sx={{ my: 2 }} />
-      
+      <Divider sx={{ my: 2 }} />
+
       <Footer />
     </Box>
   );

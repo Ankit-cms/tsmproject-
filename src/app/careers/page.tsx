@@ -52,7 +52,9 @@ const Career = () => {
     <Box>
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
+        
+          <Container maxWidth="lg">
+            <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3,pl:0 }}>
           <Link underline="hover" color="inherit" href="/">
             Home
           </Link>
@@ -60,7 +62,6 @@ const Career = () => {
         </Breadcrumbs>
         <Divider />
         <Box py={4}>
-          <Container maxWidth="lg">
             <Typography variant="h3" component="h2" gutterBottom>
               Enhance your Career, join us
             </Typography>
@@ -123,8 +124,8 @@ const Career = () => {
                 ))}
               </Box>
             ))}
-          </Container>
         </Box>
+          </Container>
       </Paper>
       <Divider sx={{ my: 2 }} />
       <Footer />

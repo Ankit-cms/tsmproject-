@@ -31,22 +31,25 @@ const Pricing = () => {
     <Box>
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
-          <Link underline="hover" color="inherit" href="/">
-            Home
-          </Link>
-          <Typography sx={{ color: 'text.primary' }}>Pricing</Typography>
-        </Breadcrumbs>
-        <Divider />
-        <Box py={4}>
-          <Container maxWidth="lg">
-            <Typography variant="h3" component="h2" gutterBottom>
-              Instalanes TMS - Pricing{' '}
-            </Typography>
-            <Typography variant="h5" paragraph gutterBottom>
-              Select your scope - Let us know what fits for your Transportation
-              business process
-            </Typography>
+        <Container maxWidth="lg">
+          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 ,pl:0}}>
+            <Link underline="hover" color="inherit" href="/">
+              Home
+            </Link>
+            <Typography sx={{ color: 'text.primary' }}>Pricing</Typography>
+          </Breadcrumbs>
+          <Divider />
+          <Box py={8}>
+            <Box mb={6}>
+              <Typography variant="h3" component="h2" gutterBottom>
+                Instalanes TMS - Pricing{' '}
+              </Typography>
+              <Typography variant="h5" paragraph gutterBottom>
+                Select your scope - Let us know what fits for your
+                Transportation business process
+              </Typography>
+            </Box>
+
             <Divider sx={{ my: 2 }} />
             <Grid container spacing={2} my={4}>
               <Grid size={{ xs: 12, md: 8 }}>
@@ -491,11 +494,11 @@ const Pricing = () => {
                 </Card>
               </Grid>
             </Grid>
-          </Container>
-        </Box>
+          </Box>
+        </Container>
       </Paper>
-      <Divider sx={{my:2}}/>
-      <Footer/>
+      <Divider sx={{ my: 2 }} />
+      <Footer />
     </Box>
   );
 };

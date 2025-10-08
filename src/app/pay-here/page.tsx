@@ -50,15 +50,15 @@ const PayHere = () => {
     <Box>
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 }}>
-          <Link underline="hover" color="inherit" href="/">
-            Home
-          </Link>
-          <Typography sx={{ color: 'text.primary' }}>Pay-here</Typography>
-        </Breadcrumbs>
-        <Divider />
-        <Box py={4}>
           <Container maxWidth="lg">
+            <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3,pl:0 }}>
+              <Link underline="hover" color="inherit" href="/">
+                Home
+              </Link>
+              <Typography sx={{ color: 'text.primary' }}>Pay-here</Typography>
+            </Breadcrumbs>
+            <Divider />
+      <Box py={4}>
             <Typography variant="h3" component="h2" gutterBottom>
               Pay us here
             </Typography>
@@ -67,10 +67,10 @@ const PayHere = () => {
               transfer details below.
             </Typography>
             <Divider sx={{ my: 2 }} />
-            <Grid container spacing={2} my={4} >
-              <Grid size={{ xs: 12, md: 6 }} p={0} >
-                <Card sx={{ height: '100%', }} >
-                  <CardContent >
+            <Grid container spacing={2} my={4}>
+              <Grid size={{ xs: 12, md: 6 }} p={0}>
+                <Card sx={{ height: '100%' }}>
+                  <CardContent>
                     <Stack spacing={2}>
                       <Typography variant="h4" component="h2" gutterBottom>
                         Company Info
@@ -178,7 +178,7 @@ const PayHere = () => {
               </Grid>
             </Grid>
             <Divider sx={{ my: 2 }} />
-            <Grid container spacing={2}>
+            <Grid container spacing={2} mt={4}>
               <Grid size={{ xs: 12, md: 6 }} spacing={3}>
                 <Card sx={{ height: '100%' }}>
                   <CardContent>
@@ -267,7 +267,7 @@ const PayHere = () => {
                       padding="none"
                       sx={{
                         '& .MuiTableCell-root': {
-                          padding: 0, 
+                          padding: 0,
                         },
                         '& .MuiTableRow-root': {
                           borderBottom: 'none',
@@ -301,8 +301,8 @@ const PayHere = () => {
                 </Card>
               </Grid>
             </Grid>
-          </Container>
         </Box>
+          </Container>
       </Paper>
       <Divider sx={{ my: 2 }} />
       <Footer />
