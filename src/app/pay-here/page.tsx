@@ -23,24 +23,29 @@ import {
 import Footer from '../components/Footer';
 import { WhatsApp } from '@mui/icons-material';
 
-function createData(name: string, description: string) {
-  return { name, description };
+interface RowData {
+  step: string;
+  description: React.ReactNode;
+}
+
+function createData(step: string, description: React.ReactNode): RowData {
+  return { step, description };
 }
 const PayHere = () => {
-    const data = [
-      createData('Step 1', 'Scan QR code, enter amount and Pay'),
-      createData(
-        'Step 2',
-        'Take screenshot / photo of successful payment confirmation'
-      ),
-      createData(
-        'Step 3',
-        `Send payment screenshot / photo at ${(
-          <Chip icon={<WhatsApp />} label={'+91 9818106472'}/>
-           
-        )}`
-      ),
-    ];
+  const data = [
+    createData('Step 1', 'Scan QR code, enter amount and Pay'),
+    createData(
+      'Step 2',
+      'Take screenshot / photo of successful payment confirmation'
+    ),
+    createData(
+      'Step 3',
+      <>
+        Send payment screenshot / photo a
+        <Chip icon={<WhatsApp />} label="+91 9818106472" />
+      </>
+    ),
+  ];
   return (
     <Box>
       <Header />
@@ -62,10 +67,10 @@ const PayHere = () => {
               transfer details below.
             </Typography>
             <Divider sx={{ my: 2 }} />
-            <Grid container spacing={2} my={4}>
-              <Grid size={{ xs: 12, md: 6 }} p={3}>
-                <Card sx={{ height: '100%' }}>
-                  <CardContent>
+            <Grid container spacing={2} my={4} >
+              <Grid size={{ xs: 12, md: 6 }} p={0} >
+                <Card sx={{ height: '100%', }} >
+                  <CardContent >
                     <Stack spacing={2}>
                       <Typography variant="h4" component="h2" gutterBottom>
                         Company Info
@@ -124,7 +129,7 @@ const PayHere = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid size={{ xs: 12, md: 6 }} p={3}>
+              <Grid size={{ xs: 12, md: 6 }} p={0}>
                 <Card sx={{ height: '100%' }}>
                   <CardContent>
                     <Stack spacing={2}>
@@ -174,7 +179,7 @@ const PayHere = () => {
             </Grid>
             <Divider sx={{ my: 2 }} />
             <Grid container spacing={2}>
-              <Grid size={{ xs: 12, md: 6 }} p={3} spacing={3}>
+              <Grid size={{ xs: 12, md: 6 }} spacing={3}>
                 <Card sx={{ height: '100%' }}>
                   <CardContent>
                     <Typography variant="h4" component="h2" gutterBottom>
@@ -184,7 +189,7 @@ const PayHere = () => {
                       Scan and pay by any UPI app
                     </Typography>
                     <Divider sx={{ my: 2 }} />
-                    <Card sx={{ width: 'fit-content', p: 3, mx: 'auto' }}>
+                    <Card sx={{ width: 'fit-content', mx: 'auto' }}>
                       <CardContent>
                         <Box display="flex" justifyContent="center">
                           <CardMedia
@@ -202,40 +207,32 @@ const PayHere = () => {
                     </Card>
 
                     <Divider sx={{ my: 2 }} />
-                    <Box p={2}>
-                      <TableContainer component={Paper}>
-                        <Table aria-label="simple table">
-                          <TableBody>
-                            {data.map((row) => (
-                              <TableRow
-                                key={row.name}
-                                sx={{
-                                  '&:last-child td, &:last-child th': {
-                                    border: 0,
-                                  },
-                                }}
-                              >
-                                <TableCell
-                                  component="th"
-                                  scope="row"
-                                  width={100}
-                                >
-                                  {row.name}
-                                </TableCell>
-                                <TableCell align="left">
-                                  {row.description}
-                                </TableCell>
-                              </TableRow>
-                            ))}
-                          </TableBody>
-                        </Table>
-                      </TableContainer>
-                    
-                    </Box>
+                    <Table aria-label="simple table" padding="none">
+                      <TableBody sx={{ p: 0 }}>
+                        {data.map((row) => (
+                          <TableRow
+                            key={row.step}
+                            sx={{
+                              '&:last-child td, &:last-child th': {
+                                border: 0,
+                              },
+                              p: 0,
+                            }}
+                          >
+                            <TableCell component="th" scope="row" width={100}>
+                              {row.step}
+                            </TableCell>
+                            <TableCell align="left">
+                              {row.description}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid size={{ xs: 12, md: 6 }} p={3} spacing={3}>
+              <Grid size={{ xs: 12, md: 6 }} spacing={3}>
                 <Card sx={{ height: '100%' }}>
                   <CardContent>
                     <Typography variant="h4" component="h2" gutterBottom>
@@ -245,7 +242,7 @@ const PayHere = () => {
                       Scan and pay by any UPI app
                     </Typography>
                     <Divider sx={{ my: 2 }} />
-                    <Card sx={{ width: 'fit-content', p: 3, mx: 'auto' }}>
+                    <Card sx={{ width: 'fit-content', mx: 'auto' }}>
                       <CardContent>
                         <Box display="flex" justifyContent="center">
                           <CardMedia
@@ -263,35 +260,43 @@ const PayHere = () => {
                     </Card>
 
                     <Divider sx={{ my: 2 }} />
-                    <Box p={2}>
-                      <TableContainer component={Paper}>
-                        <Table aria-label="simple table">
-                          <TableBody>
-                            {data.map((row) => (
-                              <TableRow
-                                key={row.name}
-                                sx={{
-                                  '&:last-child td, &:last-child th': {
-                                    border: 0,
-                                  },
-                                }}
-                              >
-                                <TableCell
-                                  component="th"
-                                  scope="row"
-                                  width={100}
-                                >
-                                  {row.name}
-                                </TableCell>
-                                <TableCell align="left">
-                                  {row.description}
-                                </TableCell>
-                              </TableRow>
-                            ))}
-                          </TableBody>
-                        </Table>
-                      </TableContainer>
-                    </Box>
+
+                    <Table
+                      aria-label="simple table"
+                      size="small"
+                      padding="none"
+                      sx={{
+                        '& .MuiTableCell-root': {
+                          padding: 0, 
+                        },
+                        '& .MuiTableRow-root': {
+                          borderBottom: 'none',
+                        },
+                      }}
+                    >
+                      <TableBody>
+                        {data.map((row) => (
+                          <TableRow
+                            key={row.step}
+                            sx={{
+                              '&:last-child td, &:last-child th': { border: 0 },
+                            }}
+                          >
+                            <TableCell
+                              component="th"
+                              scope="row"
+                              width={100}
+                              padding="none" // ✅ extra safety
+                            >
+                              {row.step}
+                            </TableCell>
+                            <TableCell align="left" padding="none">
+                              {row.description}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
                   </CardContent>
                 </Card>
               </Grid>

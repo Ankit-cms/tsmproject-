@@ -5,6 +5,7 @@ import {
   Card,
   CardContent,
   CardMedia, 
+  Checkbox,
   Container,
   Divider,
   Fab,
@@ -27,8 +28,10 @@ import { WhatsApp } from '@mui/icons-material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
-import CorporateFareOutlinedIcon from '@mui/icons-material/CorporateFareOutlined'; 
+import CorporateFareOutlinedIcon from '@mui/icons-material/CorporateFareOutlined';
 const Partners = () => {
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
   return (
     <Box position={'relative'}>
       <Header />
@@ -239,7 +242,7 @@ const Partners = () => {
                     <Card sx={{ height: '100%' }}>
                       <CardContent sx={{ p: 3 }}>
                         <Typography
-                          variant="h4"
+                          variant="h5"
                           gutterBottom
                           sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
                         >
@@ -277,7 +280,7 @@ const Partners = () => {
                     <Card sx={{ height: '100%' }}>
                       <CardContent sx={{ p: 3 }}>
                         <Typography
-                          variant="h4"
+                          variant="h5"
                           gutterBottom
                           sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
                         >
@@ -309,6 +312,7 @@ const Partners = () => {
                   </Grid>
                 </Grid>
                 <Typography variant="body2" mt={3}>
+                  <Checkbox {...label} defaultChecked />
                   By submitting this lead, you confirm that the information
                   provided is accurate and obtained with the prospect’s consent.
                   The company reserves the right to review and validate all
@@ -365,7 +369,7 @@ const Partners = () => {
                 },
               ].map((value) => (
                 <Grid size={{ xs: 12, md: 3 }} key={value.title}>
-                  <Card sx={{ height: '100%', borderRadius: 3 }}>
+                  <Card sx={{ height: '100%' }}>
                     <CardContent sx={{ p: 3 }}>
                       <Typography variant="h6" gutterBottom>
                         {value.title}
@@ -442,12 +446,12 @@ const Partners = () => {
         </Container>
       </Paper>
 
-        <Box position={'fixed'} bottom={16} right={16}>
-          <Fab variant="extended" color='primary'>
-            <HandshakeOutlinedIcon sx={{ mr: 1 }} />
-            Become a Partner
-          </Fab>
-        </Box>
+      <Box position={'fixed'} bottom={16} right={16}>
+        <Fab variant="extended" color="primary">
+          <HandshakeOutlinedIcon sx={{ mr: 1 }} />
+          Become a Partner
+        </Fab>
+      </Box>
       <Divider sx={{ my: 2 }} />
       <Footer />
     </Box>

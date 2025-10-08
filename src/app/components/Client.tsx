@@ -25,7 +25,6 @@ const Client = () => {
               with the highest level of service.
             </Typography>
           </Box>
-          <Divider sx={{my:2}}/>
           <Grid
             container
             mt={4}
