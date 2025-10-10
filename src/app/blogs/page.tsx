@@ -23,7 +23,7 @@ const BlogDetail = () => {
         <Header />
         <Paper elevation={0} square sx={{ mt: 9 }}>
           <Container maxWidth="lg">
-            <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3,pl:0 }}>
+            <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
               <Link underline="hover" color="inherit" href="/">
                 Home
               </Link>
@@ -38,49 +38,54 @@ const BlogDetail = () => {
                 Stay updated with our latest articles and insights
               </Typography>
             </Box>
-            <Grid container spacing={8}>
-              <Grid size={{ xs: 6 }}>
-                <Card elevation={2} variant="outlined">
-                  <CardMedia
-                    component="img"
-                    height="350"
-                    image="/img/blog.jpg"
-                    alt="green iguana"
-                  />
-                </Card>
-              </Grid>
-              <Grid size={{ xs: 6 }} alignContent={'center'}>
-                <Chip
-                  label={'FREIGHT'}
-                  variant="outlined"
-                  color="primary"
-                  sx={{ mt: 2, mb: 1 }}
-                />
-                <Typography variant="h6" component="h3" gutterBottom>
-                  {'Embracing efficiency with TMS implementation'}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" mb={2}>
-                  {'September 11, 2024'}
-                </Typography>
-                <Typography paragraph>
-                  {
-                    'SeptDeliver 2024 marks 22 years of hosting industry leaders, logistics professionals, and technology innovators to discuss the future of freight and transportation. Attendees will gather from Sept. 9 – 11 to gain insight into Uber Freight’s latest products and initiatives, learnember 11, 2024...'
-                  }
-                </Typography>
-                <Box>
-                  <Link
-                    href="/blog-detail"
-                    display={'flex'}
-                    justifyContent={'flex-start'}
-                    gap={1}
-                    mt={2}
-                    alignItems="center"
-                  >
-                    Read more <ArrowRightAltIcon />
-                  </Link>
-                </Box>
-              </Grid>
-            </Grid>
+            <Card>
+              <CardContent sx={{p:3}}>
+                <Grid container spacing={8}>
+                  <Grid size={{ xs: 6 }}>
+                    <Card elevation={2} variant="outlined">
+                      <CardMedia
+                        component="img"
+                        height="350"
+                        image="/img/blog.jpg"
+                        alt="green iguana"
+                      />
+                    </Card>
+                  </Grid>
+                  <Grid size={{ xs: 6 }} alignContent={'center'}>
+                    <Chip
+                      label={'FREIGHT'}
+                      variant="outlined"
+                      color="primary"
+                      sx={{ mt: 2, mb: 1 }}
+                    />
+                    <Typography variant="h6" component="h3" gutterBottom>
+                      {'Embracing efficiency with TMS implementation'}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" mb={2}>
+                      {'September 11, 2024'}
+                    </Typography>
+                    <Typography paragraph>
+                      {
+                        'SeptDeliver 2024 marks 22 years of hosting industry leaders, logistics professionals, and technology innovators to discuss the future of freight and transportation. Attendees will gather from Sept. 9 – 11 to gain insight into Uber Freight’s latest products and initiatives, learnember 11, 2024...'
+                      }
+                    </Typography>
+                    <Box>
+                      <Link
+                        href="/blog-detail"
+                        display={'flex'}
+                        justifyContent={'flex-start'}
+                        gap={1}
+                        mt={2}
+                        alignItems="center"
+                      >
+                        Read more <ArrowRightAltIcon />
+                      </Link>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </Card>
+            <Divider sx={{my:2}}/>
             <Box my={4}>
               <Typography variant="h4" gutterBottom>
                 Popular Posts

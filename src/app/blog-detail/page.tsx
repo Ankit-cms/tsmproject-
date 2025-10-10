@@ -27,7 +27,7 @@ const BlogDetail = () => {
       <Header />
       <Paper elevation={0} square sx={{ mt: 9 }}>
         <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 ,pl:0}}>
+          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
             <Link underline="hover" color="inherit" href="/">
               Home
             </Link>
@@ -46,91 +46,95 @@ const BlogDetail = () => {
             </Box>
             <Grid container spacing={4} justifyContent={'center'}>
               <Grid size={{ xs: 12, md: 10 }}>
-                <Card elevation={1} sx={{ mb: 4 }}>
-                  <CardMedia
-                    component="img"
-                    image="/img/blog.jpg"
-                    alt="Deliver 2024 Event"
-                    height="450"
-                  />
-                </Card>
+                <Card variant="outlined" sx={{ p: 3 }}>
+                  <Card elevation={1} sx={{ mb: 4 }}>
+                    <CardMedia
+                      component="img"
+                      image="/img/blog.jpg"
+                      alt="Deliver 2024 Event"
+                      height="450"
+                    />
+                  </Card>
 
-                <Typography variant="body1" paragraph>
-                  Deliver 2024 marks 22 years of hosting industry leaders,
-                  logistics professionals, and technology innovators to discuss
-                  the future of freight and transportation. Attendees will
-                  gather from Sept. 9 – 11 to gain insight into Uber Freight’s
-                  latest products and initiatives, learn from industry experts,
-                  and connect with peers to share experiences and ideas. Supply
-                  chain and logistics professionals are invited to register for
-                  the event at uberfreight.com/deliver.
-                </Typography>
-
-                <Typography variant="body1" paragraph>
-                  New this year is a hands-on workshop for attendees:{' '}
-                  <Typography component="span" fontWeight="bold">
-                    Transforming Logistics with AI
+                  <Typography variant="body1" paragraph>
+                    Deliver 2024 marks 22 years of hosting industry leaders,
+                    logistics professionals, and technology innovators to
+                    discuss the future of freight and transportation. Attendees
+                    will gather from Sept. 9 – 11 to gain insight into Uber
+                    Freight’s latest products and initiatives, learn from
+                    industry experts, and connect with peers to share
+                    experiences and ideas. Supply chain and logistics
+                    professionals are invited to register for the event at
+                    uberfreight.com/deliver.
                   </Typography>
-                  . As logistics operations continue to evolve, artificial
-                  intelligence (AI) presents numerous opportunities to enhance
-                  efficiency, reporting, cost-savings, and customer
-                  satisfaction. This workshop is designed for attendees who want
-                  to participate in discussions and practical exercises to
-                  develop innovative ideas for AI implementation in logistics.
-                  Space is limited and attendees are encouraged to sign-up after
-                  registering for the event.
-                </Typography>
 
-                <Typography variant="h5" component="h2" gutterBottom mt={4}>
-                  Deliver 2024 sessions this year will also offer key insights,
-                  strategic considerations, and current market and economic
-                  trends for shippers and logistics professionals including:
-                </Typography>
+                  <Typography variant="body1" paragraph>
+                    New this year is a hands-on workshop for attendees:{' '}
+                    <Typography component="span" fontWeight="bold">
+                      Transforming Logistics with AI
+                    </Typography>
+                    . As logistics operations continue to evolve, artificial
+                    intelligence (AI) presents numerous opportunities to enhance
+                    efficiency, reporting, cost-savings, and customer
+                    satisfaction. This workshop is designed for attendees who
+                    want to participate in discussions and practical exercises
+                    to develop innovative ideas for AI implementation in
+                    logistics. Space is limited and attendees are encouraged to
+                    sign-up after registering for the event.
+                  </Typography>
 
-                <List>
-                  <ListItem alignItems="flex-start">
-                    <ListItemIcon sx={{ minWidth: 32, mt: 0.5 }}>
-                      <Typography color="primary">•</Typography>
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={
-                        <Typography variant="body1" fontWeight="bold">
-                          Combating fraud with collaboration
-                        </Typography>
-                      }
-                      secondary="Cargo theft and supply chain fraud are making headlines. Hear from industry and law enforcement experts in a fireside chat on new and emerging trends and how to mitigate risks to your supply chain. We will explore actions you can take to insulate your business and supply chains from these emerging threat vectors."
-                    />
-                  </ListItem>
+                  <Typography variant="h5" component="h2" gutterBottom mt={4}>
+                    Deliver 2024 sessions this year will also offer key
+                    insights, strategic considerations, and current market and
+                    economic trends for shippers and logistics professionals
+                    including:
+                  </Typography>
 
-                  <ListItem alignItems="flex-start">
-                    <ListItemIcon sx={{ minWidth: 32, mt: 0.5 }}>
-                      <Typography color="primary">•</Typography>
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={
-                        <Typography variant="body1" fontWeight="bold">
-                          Embracing AI: Future-proofing supply chains with
-                          innovative solutions
-                        </Typography>
-                      }
-                      secondary="Dive into the critical questions and exploratory work Uber Freight is undertaking to help shippers integrate AI into their supply chain strategies. This discussion will provide valuable insights into how you can prepare your legacy supply chain planning and Transportation Management Systems for AI."
-                    />
-                  </ListItem>
+                  <List>
+                    <ListItem alignItems="flex-start">
+                      <ListItemIcon sx={{ minWidth: 32, mt: 0.5 }}>
+                        <Typography color="primary">•</Typography>
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={
+                          <Typography variant="body1" fontWeight="bold">
+                            Combating fraud with collaboration
+                          </Typography>
+                        }
+                        secondary="Cargo theft and supply chain fraud are making headlines. Hear from industry and law enforcement experts in a fireside chat on new and emerging trends and how to mitigate risks to your supply chain. We will explore actions you can take to insulate your business and supply chains from these emerging threat vectors."
+                      />
+                    </ListItem>
 
-                  <ListItem alignItems="flex-start">
-                    <ListItemIcon sx={{ minWidth: 32, mt: 0.5 }}>
-                      <Typography color="primary">•</Typography>
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={
-                        <Typography variant="body1" fontWeight="bold">
-                          To nearshore or not to nearshore?
-                        </Typography>
-                      }
-                      secondary="Mexico has become one of the United States' biggest trading partners. Manufacturers are choosing to nearshore, or the process of planning and bringing their supply chains back to North America. While this can provide cost savings and economic benefits, potential risks are also involved. Learn best practices for nearshoring and how shippers have seen success with cross-border operations."
-                    />
-                  </ListItem>
-                </List>
+                    <ListItem alignItems="flex-start">
+                      <ListItemIcon sx={{ minWidth: 32, mt: 0.5 }}>
+                        <Typography color="primary">•</Typography>
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={
+                          <Typography variant="body1" fontWeight="bold">
+                            Embracing AI: Future-proofing supply chains with
+                            innovative solutions
+                          </Typography>
+                        }
+                        secondary="Dive into the critical questions and exploratory work Uber Freight is undertaking to help shippers integrate AI into their supply chain strategies. This discussion will provide valuable insights into how you can prepare your legacy supply chain planning and Transportation Management Systems for AI."
+                      />
+                    </ListItem>
+
+                    <ListItem alignItems="flex-start">
+                      <ListItemIcon sx={{ minWidth: 32, mt: 0.5 }}>
+                        <Typography color="primary">•</Typography>
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={
+                          <Typography variant="body1" fontWeight="bold">
+                            To nearshore or not to nearshore?
+                          </Typography>
+                        }
+                        secondary="Mexico has become one of the United States' biggest trading partners. Manufacturers are choosing to nearshore, or the process of planning and bringing their supply chains back to North America. While this can provide cost savings and economic benefits, potential risks are also involved. Learn best practices for nearshoring and how shippers have seen success with cross-border operations."
+                      />
+                    </ListItem>
+                  </List>
+                </Card>
               </Grid>
             </Grid>
           </Grid>
@@ -138,13 +142,12 @@ const BlogDetail = () => {
       </Paper>
       <Paper elevation={0} square sx={{ pb: 8, pt: 4 }}>
         <Container maxWidth="lg">
-          <Box>
+          <Box mt={5}>
             <Typography variant="h4" gutterBottom mb={3}>
               Read more blogs
             </Typography>
           </Box>
           <Grid container spacing={4}>
-            {/* <Grid size={{ xs: 12 }}></Grid> */}
             {[
               {
                 category: 'FREIGHT',
@@ -166,7 +169,7 @@ const BlogDetail = () => {
               },
             ].map((blog, index) => (
               <Grid key={index} size={{ xs: 12, md: 4 }}>
-                <Card elevation={2} variant="outlined">
+                <Card elevation={2} >
                   <CardContent>
                     <CardMedia
                       component="img"

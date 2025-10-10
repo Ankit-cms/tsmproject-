@@ -10,7 +10,7 @@ import {
   Divider,
   ListItemButton,
   IconButton,
-  Link, 
+  Link,
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import FlareIcon from '@mui/icons-material/Flare';
@@ -59,14 +59,14 @@ const Footer = () => {
               <Box mb={2} display={'flex'} gap={1} alignItems="center">
                 <FlareIcon
                   fontSize="large"
-                  sx={{ display: { xs: 'none', md: 'flex' } }}
+                  sx={{ display: 'flex' }}
                 />
                 <Typography
                   variant="h4"
                   gutterBottom
                   mb={0}
                   sx={{
-                    display: { xs: 'none', md: 'flex' },
+                    display: 'flex',
                     fontFamily: 'monospace',
                     fontWeight: 700,
                     letterSpacing: '1px',
@@ -79,8 +79,7 @@ const Footer = () => {
                 </Typography>
               </Box>
               <Typography variant="body2" paragraph>
-                TMS platform boosting supply chain visibility, collaboration,
-                and efficiency
+                Collaborative logistics. Faster decisions. Complete visibility
               </Typography>
               <Box>
                 <Box display={'flex'} gap={1} mt={1}>
@@ -214,22 +213,34 @@ const Footer = () => {
           <Grid
             display="flex"
             justifyContent={{ xs: 'center', md: 'flex-end' }}
-            gap={2}
+            alignItems="center"
           >
             {[
               { title: 'Privacy', link: '/privacy' },
               { title: 'Terms', link: '/terms' },
               { title: 'Cookies', link: '/privacy' },
-            ].map((text, index) => (
-              <Link
-                key={index}
-                href={text.link}
-                underline="hover"
-                variant="body2"
-                color="inherit"
-              >
-                {text.title} &nbsp; {index < 2 && '|'}
-              </Link>
+            ].map((text, index, arr) => (
+              <React.Fragment key={index}>
+                <Link
+                  href={text.link}
+                  underline="hover"
+                  variant="body2"
+                  color="inherit"
+                  sx={{ display: 'inline-block' }}
+                >
+                  {text.title}
+                </Link>
+                {index < arr.length - 1 && (
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    component="span"
+                    sx={{ mx: 1 }}
+                  >
+                    |
+                  </Typography>
+                )}
+              </React.Fragment>
             ))}
           </Grid>
         </Grid>
