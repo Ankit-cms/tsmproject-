@@ -16,6 +16,15 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { styled } from '@mui/material/styles';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import MuiAccordionSummary, {
+  AccordionSummaryProps,
+  accordionSummaryClasses,
+} from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+
 export const faqs = [
   {
     question: 'What is the application process like?',
@@ -70,13 +79,56 @@ export const faqs = [
 ];
 
 const Faq = () => {
+  const Accordion = styled((props: AccordionProps) => (
+    <MuiAccordion disableGutters elevation={0} square {...props} />
+  ))(({ theme }) => ({
+    border: `1px solid ${theme.palette.divider}`,
+    '&:not(:last-child)': {
+      borderBottom: 0,
+    },
+    '&::before': {
+      display: 'none',
+    },
+  }));
+
+  const AccordionSummary = styled((props: AccordionSummaryProps) => (
+    <MuiAccordionSummary
+      expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+      {...props}
+    />
+  ))(({ theme }) => ({
+    backgroundColor: 'rgba(0, 0, 0, .03)',
+    flexDirection: 'row-reverse',
+    [`& .${accordionSummaryClasses.expandIconWrapper}.${accordionSummaryClasses.expanded}`]:
+      {
+        transform: 'rotate(90deg)',
+      },
+    [`& .${accordionSummaryClasses.content}`]: {
+      marginLeft: theme.spacing(1),
+    },
+    ...theme.applyStyles('dark', {
+      backgroundColor: 'rgba(255, 255, 255, .05)',
+    }),
+  }));
+
+  const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+    padding: theme.spacing(2),
+    borderTop: '1px solid rgba(0, 0, 0, .125)',
+  }));
+
+  const [expanded, setExpanded] = React.useState<string | false>('');
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+      setExpanded(newExpanded ? panel : false);
+    };
   return (
     <Box>
       <Header />
 
       <Paper elevation={0} square sx={{ mt: 9 }}>
         <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3 ,pl:0}}>
+          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
             <Link underline="hover" color="inherit" href="/">
               Home
             </Link>
@@ -89,19 +141,23 @@ const Faq = () => {
               Frequently asked questions{' '}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
-              Find answers to common questions about our products. Can not find
-              what you are looking for? Contact our support team.
+              Quick answers to common questions. Need more? Get in touch.
             </Typography>
-            <Divider sx={{ pt: 4 }} />
-            <Box mt={8}>
-              {faqs.map((question) => (
-                <Accordion key={question.question}>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography variant="h6" py={1}>
-                      {question.question}
-                    </Typography>
+            <Box mt={4}>
+              {faqs.map((faq, index) => (
+                <Accordion key={index}
+                  expanded={expanded === `panel${index + 1}`}
+                  onChange={handleChange(`panel${index + 1}`)}
+                >
+                  <AccordionSummary
+                    aria-controls="panel3d-content"
+                    id="panel3d-header"
+                  >
+                    <Typography component="span">{faq.question} </Typography>
                   </AccordionSummary>
-                  <AccordionDetails>{question.answer} </AccordionDetails>
+                  <AccordionDetails>
+                    <Typography>{faq.answer}</Typography>
+                  </AccordionDetails>
                 </Accordion>
               ))}
             </Box>

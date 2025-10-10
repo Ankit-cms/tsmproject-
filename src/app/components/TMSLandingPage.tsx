@@ -16,7 +16,8 @@ import {
   CardMedia,
   Checkbox,
   InputAdornment,
-  CardActionArea, 
+  CardActionArea,
+  Autocomplete,
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
@@ -35,7 +36,7 @@ import Link from 'next/link';
 import Features from './Features';
 import Header from './Header';
 import Footer from './Footer';
-import Client from './Client'; 
+import Client from './Client';
 import HeroFull from './HeroFull';
 
 interface TabPanelProps {
@@ -87,7 +88,19 @@ const TMSLandingPage = () => {
     { value: '+44', label: 'UK (+44)' },
     { value: '+61', label: 'Australia (+61)' },
   ];
+  const [selectedCountry, setSelectedCountry] = useState('India');
 
+  const countries = [
+    'India',
+    'America',
+    'Canada',
+    'Russia',
+    'Ukraine',
+    'Shrilanka',
+    'Bhutan',
+    'Bangladesh',
+    'Israil',
+  ];
   const [selectedRole, setSelectedRole] = useState(
     'Owner / Founder / Co-founder'
   );
@@ -977,6 +990,27 @@ const TMSLandingPage = () => {
                       variant="outlined"
                     />
                   </Grid>
+                  <Grid size={{ xs: 12 }}>
+                    <Autocomplete
+                      freeSolo
+                      id="free-solo-2-demo"
+                      disableClearable
+                      options={countries.map((country) => country)}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="Country"
+                          slotProps={{
+                            input: {
+                              ...params.InputProps,
+                              type: 'search',
+                            },
+                          }}
+                        />
+                      )}
+                    />
+                  </Grid>
+
                   <Grid size={{ xs: 12 }}>
                     <TextField
                       fullWidth
