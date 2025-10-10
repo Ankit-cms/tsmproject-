@@ -35,7 +35,7 @@ const BlogDetail = () => {
           </Breadcrumbs>
           <Divider />
           <Grid container justifyContent={'center'}>
-            <Box my={3}>
+            <Box my={4}>
               <Typography variant="h3" component="h1" gutterBottom>
                 Deliver 2024 fostering innovation and impact
               </Typography>

@@ -4,7 +4,6 @@ import {
   CardContent,
   CardMedia,
   Container,
-  Divider,
   Grid,
   Paper,
   Typography,
@@ -15,8 +14,8 @@ const Client = () => {
   return (
     <Paper elevation={0} square>
       <Container maxWidth="lg">
-        <Box py={8}>
-          <Box mb={6}>
+        <Box py={5}>
+          <Box mb={4}>
             <Typography variant="h3" gutterBottom>
               Trusted by over 500+ clients
             </Typography>

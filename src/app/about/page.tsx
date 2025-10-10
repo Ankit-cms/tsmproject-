@@ -74,16 +74,16 @@ const AboutUs = () => {
             <Typography sx={{ color: 'text.primary' }}>About us</Typography>
           </Breadcrumbs>
           <Divider />
-          <Box my={3}>
-            <Typography variant="h3" component="h2" gutterBottom>
+          <Box py={4}>
+            <Typography variant="h3"  gutterBottom>
               About us
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
+            <Typography variant="h5" paragraph>
               We are team of problem solvers who love technology{' '}
             </Typography>
-            <Divider sx={{ my: 3 }} />
+            <Divider  />
 
-            <Grid container spacing={4}>
+            <Grid container spacing={4} my={3}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <CardMedia
                   component="img"
@@ -125,14 +125,14 @@ const AboutUs = () => {
                 </Card>
               </Grid>
             </Grid>
-            <Divider sx={{ my: 2 }} />
+            <Divider  />
 
-            <Box py={4}>
+            <Box py={5}>
               <Box mb={4}>
                 <Typography variant="h3" gutterBottom>
                   Our Values
                 </Typography>
-                <Typography variant="subtitle1" gutterBottom>
+                <Typography variant="h5" paragraph>
                   At the core of Instalanes{' '}
                 </Typography>
               </Box>
@@ -172,8 +172,9 @@ const AboutUs = () => {
                 ))}
               </Grid>
             </Box>
-
+</Box></Container></Paper>
             <Divider sx={{ my: 2 }} />
+<Paper><Container maxWidth='lg'>
             <Grid container spacing={4} py={3}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h4" gutterBottom>
@@ -209,7 +210,7 @@ const AboutUs = () => {
                 />
               </Grid>
             </Grid>
-          </Box>
+          {/* </Box> */}
         </Container>
       </Paper>
       <Divider sx={{ my: 2 }} />

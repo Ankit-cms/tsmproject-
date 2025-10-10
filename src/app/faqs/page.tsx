@@ -1,8 +1,5 @@
 'use client';
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Box,
   Breadcrumbs,
   Container,
@@ -11,7 +8,6 @@ import {
   Paper,
   Typography,
 } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import React from 'react';
 import Header from '../components/Header';
@@ -137,15 +133,16 @@ const Faq = () => {
           </Breadcrumbs>
           <Divider />
           <Box py={4}>
-            <Typography variant="h4" component="h2" gutterBottom>
+            <Typography variant="h3" gutterBottom>
               Frequently asked questions{' '}
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
+            <Typography variant="h5" paragraph>
               Quick answers to common questions. Need more? Get in touch.
             </Typography>
             <Box mt={4}>
               {faqs.map((faq, index) => (
-                <Accordion key={index}
+                <Accordion
+                  key={index}
                   expanded={expanded === `panel${index + 1}`}
                   onChange={handleChange(`panel${index + 1}`)}
                 >

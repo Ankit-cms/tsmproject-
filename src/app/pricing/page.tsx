@@ -4,7 +4,6 @@ import {
   Autocomplete,
   Box,
   Breadcrumbs,
-  Button,
   Card,
   CardContent,
   Checkbox,
@@ -56,7 +55,6 @@ import {
    AnalyticsOutlined,
    AssessmentOutlined,
    ListAltOutlined,
-   WarningOutlined,
    AccountBalanceOutlined,
    WarningAmberOutlined,
  } from '@mui/icons-material';
@@ -73,7 +71,7 @@ const Pricing = () => {
     setSelected(newSelected);
   };
 
-  const [selectedCountry, setSelectedCountry] = useState('India');
+  // const [selectedCountry, setSelectedCountry] = useState('India');
 
   const countries = [
     'India',
@@ -220,16 +218,17 @@ const Pricing = () => {
           <Typography sx={{ color: 'text.primary' }}>Pricing</Typography>
         </Breadcrumbs>
         <Divider />
-        <Box py={7}>
-          <Box mb={6}>
+        <Box py={5}>
+          <Box mb={4}>
             <Typography variant="h3" component="h2" gutterBottom>
               Instalanes TMS - Pricing
             </Typography>
-            <Typography variant="h5" paragraph gutterBottom>
+            <Typography variant="h5" paragraph >
               Select your scope - Let us know what fits your transportation
               business process.
             </Typography>
           </Box>
+          <Divider sx={{my:2}}/>
           <Grid container spacing={2} alignItems="stretch">
             <Grid size={12} sx={{ display: 'flex' }}>
               <Card

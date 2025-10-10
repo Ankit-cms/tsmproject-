@@ -1,16 +1,11 @@
 'use client';
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Avatar,
   Box,
   Breadcrumbs,
   Button,
   Card,
   CardContent,
-  CardMedia,
-  Checkbox,
   Chip,
   Container,
   Divider,
@@ -23,37 +18,18 @@ import {
   ListItemIcon,
   ListItemText,
   Paper,
-  Stack,
-  TextField,
   Typography,
 } from '@mui/material';
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
-import {
-  ArrowDropDownCircleOutlined,
-  FormatQuote,
-  ThreeP,
-  WhatsApp,
-} from '@mui/icons-material';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { FormatQuote, WhatsApp } from '@mui/icons-material';
 import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
-import CorporateFareOutlinedIcon from '@mui/icons-material/CorporateFareOutlined';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import SettingsIcon from '@mui/icons-material/Settings';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import DoneIcon from '@mui/icons-material/Done';
-import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
-import CircleIcon from '@mui/icons-material/Circle';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import AddLinkIcon from '@mui/icons-material/AddLink';
-import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
@@ -376,10 +352,12 @@ const Leads = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={4}>
+          <Box py={5}>
             <Box pb={4}>
-              <Typography variant="h3">Partnership Offerings</Typography>
-              <Typography variant="subtitle1">
+              <Typography variant="h3" gutterBottom>
+                Partnership Offerings
+              </Typography>
+              <Typography variant="h5" paragraph>
                 A simple, focused set of services and tools designed to drive
                 leads and conversions for brokers & real estate companies.
               </Typography>
@@ -459,12 +437,12 @@ const Leads = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={4}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Trusted by brokers & teams
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="h5" paragraph>
                 See what our customers love about our products. Discover how we
                 excel in efficiency, durability, and satisfaction. Join us for
                 quality, and reliable support.
@@ -510,18 +488,16 @@ const Leads = () => {
                             left: 0,
                             top: 0,
                             transform: 'scaleX(-1)',
-                       
-                           
-                         
                           }}
                         />
-                        <Typography variant="body1" mx={4} >{item.feedback}</Typography>
+                        <Typography variant="body1" mx={4}>
+                          {item.feedback}
+                        </Typography>
                         <FormatQuote
                           sx={{
                             position: 'absolute',
                             right: 0,
                             bottom: 0,
-                          
                           }}
                         />
                       </Box>
@@ -547,7 +523,7 @@ const Leads = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 FAQs
@@ -559,7 +535,7 @@ const Leads = () => {
             </Box>
 
             <Grid container>
-              <Grid size={12} mt={2}>
+              <Grid size={12}>
                 {[
                   {
                     question:
@@ -596,7 +572,8 @@ const Leads = () => {
                       "Yes, AcreBytes allows you to list your property if it's not already available on the platform, ensuring complete visibility.",
                   },
                 ].map((faq, index) => (
-                  <Accordion key={index}
+                  <Accordion
+                    key={index}
                     expanded={expanded === `panel${index + 1}`}
                     onChange={handleChange(`panel${index + 1}`)}
                   >
@@ -624,7 +601,7 @@ const Leads = () => {
               <Typography variant="h3" gutterBottom>
                 Get Verified, project based leads, Grow Your conversions{' '}
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="h6" paragraph>
                 Register up today and be part of the real estate revolution! So
                 much is happening in our smallest launch - 2,343 members, 45
                 projects, 565 units in inventory, and 3,434 enquiries already!

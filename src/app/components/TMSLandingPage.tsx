@@ -73,7 +73,6 @@ function a11yProps(index: number) {
 }
 
 const TMSLandingPage = () => {
-  // const theme = useTheme();
 
   const [value, setValue] = React.useState(0);
 
@@ -88,7 +87,7 @@ const TMSLandingPage = () => {
     { value: '+44', label: 'UK (+44)' },
     { value: '+61', label: 'Australia (+61)' },
   ];
-  const [selectedCountry, setSelectedCountry] = useState('India');
+  // const [selectedCountry, setSelectedCountry] = useState('India');
 
   const countries = [
     'India',
@@ -155,7 +154,7 @@ const TMSLandingPage = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Why Instalanes?
@@ -194,7 +193,6 @@ const TMSLandingPage = () => {
               ].map((stat, index) => (
                 <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>
                   <Card
-                    // variant="outlined"
                     elevation={3}
                     sx={{ height: '100%' }}
                   >
@@ -220,7 +218,7 @@ const TMSLandingPage = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 The Real Transportation challenges{' '}
@@ -288,7 +286,7 @@ const TMSLandingPage = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Solution – Digitized process{' '}
@@ -336,7 +334,7 @@ const TMSLandingPage = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 How Instalanes TMS Works{' '}
@@ -481,7 +479,7 @@ const TMSLandingPage = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Platform overview
@@ -507,7 +505,7 @@ const TMSLandingPage = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Platform Capabilities
@@ -608,7 +606,7 @@ const TMSLandingPage = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               {' '}
               <Typography variant="h3" gutterBottom>
@@ -620,7 +618,6 @@ const TMSLandingPage = () => {
               </Typography>
             </Box>
             <Grid container spacing={4}>
-              {/* <Grid size={{ xs: 12 }} textAlign="left"></Grid> */}
               {[
                 {
                   title: 'Fast Implementation',
@@ -686,7 +683,7 @@ const TMSLandingPage = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box pb={4}>
               <Typography variant="h3" gutterBottom>
                 Blog posts
@@ -760,7 +757,7 @@ const TMSLandingPage = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box pb={4}>
               <Typography variant="h3" gutterBottom>
                 Transform your logistics
@@ -782,7 +779,7 @@ const TMSLandingPage = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Let’s Connect

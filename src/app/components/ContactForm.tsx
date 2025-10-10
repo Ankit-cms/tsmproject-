@@ -59,7 +59,7 @@ const ContactForm = () => {
 
     return (
         <Container maxWidth="lg">
-            <Box py={8}>
+            <Box py={5}>
                 <Box mb={4}>
                     <Typography variant="h3" gutterBottom>
                         Let’s Connect
