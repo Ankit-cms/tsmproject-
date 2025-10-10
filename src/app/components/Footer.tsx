@@ -152,7 +152,7 @@ const Footer = () => {
                     Resources
                   </Typography>
                   <List dense disablePadding>
-                    {['Blogs', 'Faqs', 'Pricing', 'Pay here'].map((item) => (
+                    {['Blogs', 'Faqs', 'Pricing', 'Pay here',"Leads",'Acrebytes'].map((item) => (
                       <ListItem key={item} disablePadding>
                         <ListItemButton
                           component="a"

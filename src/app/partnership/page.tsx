@@ -79,12 +79,12 @@ const Partners = () => {
 
           <Divider />
 
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
-              <Typography variant="h3" component="h2" gutterBottom>
+              <Typography variant="h3"  gutterBottom>
                 Growth Partners
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="h5" paragraph>
                 Select your scope - Let us know what fits for your
                 Transportation business process
               </Typography>
@@ -325,12 +325,12 @@ const Partners = () => {
       <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box py={5}>
             <Box mb={4}>
               <Typography variant="h3" gutterBottom>
                 Why Partner with Us?
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="h5" paragraph>
                 At Instalanes, we believe in the power of collaboration to drive
                 mutual success. We are always looking to build strong,
                 meaningful partnerships that benefit our customers and enhance
@@ -387,7 +387,7 @@ const Partners = () => {
                 <Typography variant="h3" gutterBottom>
                   Who We Partner With
                 </Typography>
-                <Typography variant="subtitle1" gutterBottom>
+                <Typography variant="h6" paragraph>
                   We are looking to partner with organizations that share our
                   values and commitment to excellence. Whether you’re a
                   supplier, a service provider, or a tech innovator, let’s
@@ -413,7 +413,7 @@ const Partners = () => {
               <Typography variant="h3" gutterBottom>
                 How to Become a Partner
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="h6" paragraph>
                 Becoming a partner with Instalanes is straightforward. If you
                 are interested in discussing a partnership, please fill out the
                 contact form below, and our team will get back to you promptly.

@@ -62,10 +62,10 @@ const Career = () => {
         </Breadcrumbs>
         <Divider />
         <Box py={4}>
-            <Typography variant="h3" component="h2" gutterBottom>
+            <Typography variant="h3" gutterBottom>
               Enhance your Career, join us
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
+            <Typography variant="h5" paragraph>
               We are building global scalable platforms for enterprises. Change
               the way business processes work.
             </Typography>
