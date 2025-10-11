@@ -57,10 +57,7 @@ const Footer = () => {
           <Grid container spacing={4}>
             <Grid size={{ md: 4 }}>
               <Box mb={2} display={'flex'} gap={1} alignItems="center">
-                <FlareIcon
-                  fontSize="large"
-                  sx={{ display: 'flex' }}
-                />
+                <FlareIcon fontSize="large" sx={{ display: 'flex' }} />
                 <Typography
                   variant="h4"
                   gutterBottom
@@ -152,7 +149,15 @@ const Footer = () => {
                     Resources
                   </Typography>
                   <List dense disablePadding>
-                    {['Blogs', 'Faqs', 'Pricing', 'Pay here',"Leads",'Acrebytes'].map((item) => (
+                    {[
+                      'Blogs',
+                      'Faqs',
+                      'Pricing',
+                      'Pay here',
+                      'Leads',
+                      'Acrebytes',
+                      'Acrebytes Project',
+                    ].map((item) => (
                       <ListItem key={item} disablePadding>
                         <ListItemButton
                           component="a"
