@@ -8,14 +8,20 @@
 html,
 body {
   max-width: 100vw;
-  /* overflow-x: hidden; */
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  /* margin: 0 !important; */
   background-color: whitesmoke;
-  /* overflow: visible; */
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* You can keep your custom font variables for non-MUI components */
+.font-geist-sans {
+  font-family: var(--font-geist-sans);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
 }
