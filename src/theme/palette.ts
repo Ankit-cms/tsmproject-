@@ -19,6 +19,11 @@ const palette = {
     primary: '#333333',
     secondary: '#666666',
   },
+  common: {
+    black: '#000000',
+    white: '#ffffff',
+  },
+  
 };
 
 export default palette;

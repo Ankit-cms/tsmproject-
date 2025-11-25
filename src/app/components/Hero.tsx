@@ -29,8 +29,7 @@ const Hero = () => {
                             <Chip
                                 icon={<AutoAwesomeIcon />}
                                 label="Switch to Instalanes"
-                                variant="outlined"
-                                color="primary"
+                                variant="outlined" 
                                 sx={{ px: 1 }}
                             />
                             <Typography

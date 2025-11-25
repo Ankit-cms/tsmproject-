@@ -40,8 +40,7 @@ const HeroFull = () => {
               {/* <Chip
                             icon={<AutoAwesomeIcon />}
                             label="Switch to Instalanes"
-                            variant="outlined"
-                            color="primary"
+                            variant="outlined" 
                             sx={{
                                 px: 1,
                                 backgroundColor: 'rgba(255, 255, 255, 0.9)',

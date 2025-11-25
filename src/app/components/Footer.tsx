@@ -24,34 +24,27 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 const SocialIconGroup = () => (
-  <Box
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: { xs: 1, md: 1 },
-    }}
-  >
-    <IconButton aria-label="facebook">
+  <Box display="flex" gap={1} justifyContent="center" alignItems="center">
+    <IconButton aria-label="facebook" sx={{ color: 'common.white' }}>
       <FacebookIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="x-twitter">
+    <IconButton aria-label="x-twitter" sx={{ color: 'common.white' }}>
       <TwitterIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="youtube">
+    <IconButton aria-label="youtube" sx={{ color: 'common.white' }}>
       <YouTubeIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="instagram">
+    <IconButton aria-label="instagram" sx={{ color: 'common.white' }}>
       <InstagramIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="linkedin">
+    <IconButton aria-label="linkedin" sx={{ color: 'common.white' }}>
       <LinkedInIcon fontSize="small" />
     </IconButton>
   </Box>
 );
 const Footer = () => {
   return (
-    <Paper component="footer" elevation={0} square>
+    <Paper component="footer" elevation={0} square sx={{ mt: 6, bgcolor: 'common.black', color: 'common.white' }}>
       <Container maxWidth="lg">
         <Box py={4}>
           <Grid container spacing={4}>
