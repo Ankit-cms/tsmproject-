@@ -379,7 +379,7 @@ const Leads = () => {
                           mb: 2,
                         }}
                       >
-                        <Chip label={item.type} color="primary" size="small" />
+                        <Chip label={item.type}  size="small" />
                         <Typography variant="caption" color="text.secondary">
                           {item.category}
                         </Typography>

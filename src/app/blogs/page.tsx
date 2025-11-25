@@ -54,8 +54,7 @@ const BlogDetail = () => {
                   <Grid size={{ xs: 6 }} alignContent={'center'}>
                     <Chip
                       label={'FREIGHT'}
-                      variant="outlined"
-                      color="primary"
+                      variant="outlined" 
                       sx={{ mt: 2, mb: 1 }}
                     />
                     <Typography variant="h6" component="h3" gutterBottom>
@@ -142,8 +141,7 @@ const BlogDetail = () => {
                       />
                       <Chip
                         label={blog.category}
-                        variant="outlined"
-                        color="primary"
+                        variant="outlined" 
                         sx={{ mt: 2, mb: 1 }}
                       />
                       <Typography variant="h6" component="h3" gutterBottom>

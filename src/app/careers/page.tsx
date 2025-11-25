@@ -82,8 +82,7 @@ const Career = () => {
                           <Box display={'flex'} gap={2}>
                             <Chip
                               sx={{ width: 'fit-content' }}
-                              label={section.category}
-                              color="primary"
+                              label={section.category} 
                               variant="outlined"
                             />
                             <Typography variant="h5">{job.Project}</Typography>

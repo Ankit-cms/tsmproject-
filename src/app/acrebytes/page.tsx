@@ -468,12 +468,12 @@ const AcreBytes = () => {
                           }}
                         >
                           <Chip
-                            color="primary"
+                            
                             size="small"
                             label={formatIndianPrice(property.price)}
                           />
                           <Chip
-                            color="primary"
+                            
                             size="small"
                             label={property.type}
                           />

@@ -642,8 +642,7 @@ const TMSLandingPage = () => {
                       <Chip
                         icon={<DoneOutlinedIcon />}
                         label={stat.title}
-                        variant="outlined"
-                        color="primary"
+                        variant="outlined" 
                       />
                       <Typography
                         variant="body1"
@@ -725,8 +724,7 @@ const TMSLandingPage = () => {
                       />
                       <Chip
                         label={blog.category}
-                        variant="outlined"
-                        color="primary"
+                        variant="outlined" 
                         sx={{ mt: 2, mb: 1 }}
                       />
                       <Typography variant="h6" component="h3" gutterBottom>
