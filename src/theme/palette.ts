@@ -22,6 +22,7 @@ const palette = {
   common: {
     black: '#000000',
     white: '#ffffff',
+    whiteSmoke: '#f5f5f5',
   },
   
 };

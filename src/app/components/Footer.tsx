@@ -25,26 +25,26 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 const SocialIconGroup = () => (
   <Box display="flex" gap={1} justifyContent="center" alignItems="center">
-    <IconButton aria-label="facebook" sx={{ color: 'common.white' }}>
+    <IconButton aria-label="facebook" sx={{ color: 'common.black' }}>
       <FacebookIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="x-twitter" sx={{ color: 'common.white' }}>
+    <IconButton aria-label="x-twitter" sx={{ color: 'common.black' }}>
       <TwitterIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="youtube" sx={{ color: 'common.white' }}>
+    <IconButton aria-label="youtube" sx={{ color: 'common.black' }}>
       <YouTubeIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="instagram" sx={{ color: 'common.white' }}>
+    <IconButton aria-label="instagram" sx={{ color: 'common.black' }}>
       <InstagramIcon fontSize="small" />
     </IconButton>
-    <IconButton aria-label="linkedin" sx={{ color: 'common.white' }}>
+    <IconButton aria-label="linkedin" sx={{ color: 'common.black' }}>
       <LinkedInIcon fontSize="small" />
     </IconButton>
   </Box>
 );
 const Footer = () => {
   return (
-    <Paper component="footer" elevation={0} square sx={{ mt: 6, bgcolor: 'common.black', color: 'common.white' }}>
+    <Paper component="footer" elevation={0} square sx={{ mt: 6, bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
       <Container maxWidth="lg">
         <Box py={4}>
           <Grid container spacing={4}>
@@ -56,9 +56,7 @@ const Footer = () => {
                   gutterBottom
                   mb={0}
                   sx={{
-                    display: 'flex',
-                    fontFamily: 'monospace',
-                    fontWeight: 700,
+                    display: 'flex', 
                     letterSpacing: '1px',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -97,7 +95,7 @@ const Footer = () => {
             <Grid size={{ md: 8 }}>
               <Grid container spacing={4} mb={2}>
                 <Grid size={{ sm: 6, md: 3 }}>
-                  <Typography variant="h6" fontWeight="600" gutterBottom>
+                  <Typography variant="h6" gutterBottom>
                     Company
                   </Typography>
                   <List dense disablePadding>
@@ -115,7 +113,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <Typography variant="h6" fontWeight="600" gutterBottom>
+                  <Typography variant="h6" gutterBottom>
                     Capabilities
                   </Typography>
                   <List dense disablePadding>
@@ -138,7 +136,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <Typography variant="h6" fontWeight="600" gutterBottom>
+                  <Typography variant="h6" gutterBottom>
                     Resources
                   </Typography>
                   <List dense disablePadding>
@@ -164,7 +162,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <Typography variant="h6" fontWeight="600" gutterBottom>
+                  <Typography variant="h6" gutterBottom>
                     Other
                   </Typography>
                   <List dense disablePadding>

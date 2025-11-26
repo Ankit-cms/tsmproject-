@@ -38,6 +38,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Client from './Client';
 import HeroFull from './HeroFull';
+import Banner from './Banner';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -133,9 +134,11 @@ const TMSLandingPage = () => {
 
       {/* <Hero /> */}
 
-      <HeroFull />
+      {/* <HeroFull /> */}
 
-      <Divider sx={{ my: 2 }} />
+      <Banner />
+
+      <Divider  />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={8}>
@@ -150,7 +153,7 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
@@ -215,7 +218,7 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
@@ -283,7 +286,7 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
@@ -297,7 +300,7 @@ const TMSLandingPage = () => {
             </Box>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Card elevation={1} sx={{ height: '100%' }}>
+                <Card elevation={1} sx={{ height: '100%', width: '100%' }} variant="outlined">
                   <CardMedia
                     component="img"
                     image="/img/work/instalanes_TMS_Digital_Solution.png"
@@ -306,7 +309,7 @@ const TMSLandingPage = () => {
                 </Card>
               </Grid>
               <Grid container size={{ xs: 12, md: 6 }} spacing={2}>
-                <Card elevation={2} sx={{ height: '100%', width: '100%' }}>
+                <Card elevation={2} sx={{ height: '100%', width: '100%' }} variant="outlined">
                   <CardContent>
                     {[
                       'Full Visibility, Zero Blind Spots',
@@ -331,7 +334,7 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
@@ -363,7 +366,7 @@ const TMSLandingPage = () => {
                 <Tab label="Analyze " {...a11yProps(8)} />
               </Tabs>
               <TabPanel value={value} index={0}>
-                <Card>
+                <Card variant="outlined">
                   <CardContent>
                     <CardMedia
                       component="img"
@@ -475,7 +478,7 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
@@ -489,7 +492,7 @@ const TMSLandingPage = () => {
                 more — all in one place.
               </Typography>
             </Box>
-            <Card elevation={1} sx={{ mt: 4 }}>
+            <Card elevation={1} sx={{ mt: 4 }} variant="outlined">
               <CardMedia
                 component="img"
                 image="/img/work/instalanes_TMS_Platform_overview.jpg"
@@ -500,9 +503,9 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
       <Features />
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
@@ -575,7 +578,7 @@ const TMSLandingPage = () => {
                 //   },
               ].map((card) => (
                 <Grid key={card.title} size={{ xs: 12, md: 4 }}>
-                  <Card>
+                  <Card elevation={2} variant="outlined" sx={{ height: '100%' }}>
                     <CardMedia
                       component="img"
                       height="194"
@@ -603,7 +606,7 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
@@ -676,9 +679,9 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
       <Client />
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
@@ -714,7 +717,7 @@ const TMSLandingPage = () => {
                 },
               ].map((blog, index) => (
                 <Grid key={index} size={{ xs: 12, md: 4 }}>
-                  <Card elevation={2} variant="outlined">
+                  <Card elevation={2} variant="outlined" sx={{ height: '100%' }}>
                     <CardContent>
                       <CardMedia
                         component="img"
@@ -751,7 +754,7 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
@@ -773,7 +776,7 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
@@ -1147,7 +1150,7 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
+      <Divider  />
 
       <Footer />
     </Box>
