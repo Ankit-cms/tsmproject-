@@ -50,7 +50,8 @@ const HeroFull = () => {
               <Typography
                 variant="h3"
                 component="h1"
-                color="white"
+                color="white"  
+                fontWeight="light"
                 gutterBottom
                 sx={{
                   fontSize: { xs: '1.5rem', md: '3rem' },

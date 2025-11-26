@@ -63,18 +63,16 @@ const Header = () => {
     <AppBar position="fixed">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'common.black' }}  />
           <Typography
             variant="h6"
             noWrap
             component="a"
+            color="common.black"
             href="/"
             sx={{
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '1px',
-              color: 'inherit',
+              display: { xs: 'none', md: 'flex' }, 
+              letterSpacing: '1px', 
               textDecoration: 'none',
               textTransform: 'uppercase',
             }}>
@@ -87,9 +85,8 @@ const Header = () => {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-              sx={{ px: 0 }}>
+              onClick={handleOpenNavMenu} 
+              sx={{ px: 0, color: 'common.black' }}>
               <MenuIcon />
             </IconButton>
             <Menu
@@ -109,42 +106,41 @@ const Header = () => {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {/* Static items with icons and links */}
-              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                <AppsIcon sx={{ mr: 1 }} />
-                <Typography textAlign="center">TMS Solutions</Typography>
+              <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`} >
+                <AppsIcon sx={{ mr: 1, color: 'common.black' }} />
+                <Typography textAlign="center" color="common.black">TMS Solutions</Typography>
               </MenuItem>
               <MenuItem onClick={handleOpen}>
-                <ReceiptLongIcon sx={{ mr: 1 }} />
+                <ReceiptLongIcon sx={{ mr: 1, color: 'common.black' }} />
                 <Typography
                   textAlign="center"
+                  color="common.black"
                   display={'flex'}
                   alignItems={'center'}>
                   Resources <KeyboardArrowDownIcon />
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu} component="a" href={`/contact`}>
-                <CallIcon sx={{ mr: 1 }} />
-                <Typography textAlign="center">Contact Us</Typography>
+                <CallIcon sx={{ mr: 1, color: 'common.black' }} />
+                <Typography textAlign="center" color="common.black">Contact Us</Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`}>
-                <LoginOutlinedIcon sx={{ mr: 1 }} /> 
-                <Typography textAlign="center">Login</Typography>
+                <LoginOutlinedIcon sx={{ mr: 1, color: 'common.black' }} /> 
+                <Typography textAlign="center" color="common.black">Login</Typography>
               </MenuItem>
             </Menu>
           </Box>
-          <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1 }} />
+          <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1, color: 'common.black' }} />
           <Typography
             variant="h6"
             noWrap
             component="a"
+            color="common.black"
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              color: 'inherit',
+              flexGrow: 1, 
               textDecoration: 'none',
             }}>
             Instalanes
@@ -161,7 +157,7 @@ const Header = () => {
               href="/"
               sx={{
                 my: 2,
-                color: 'white',
+                color: 'common.black',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
@@ -174,7 +170,7 @@ const Header = () => {
               onClick={handleOpen}
               sx={{
                 my: 2,
-                color: 'white',
+                color: 'common.black',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1,
@@ -245,13 +241,13 @@ const Header = () => {
               <Button
                 sx={{
                   my: 2,
-                  color: 'white',
+                  color: 'black',
                   alignItems: 'center',
                   gap: 1,
                   display: { xs: 'none', md: 'flex' }
                 }}
                 onClick={handleOpenUserMenu}>
-                <LoginOutlinedIcon sx={{ color: 'white' }} />
+                <LoginOutlinedIcon sx={{ color: 'black' }} />
                 Login
               </Button>
             </Tooltip>

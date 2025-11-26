@@ -9,10 +9,10 @@ const MuiButton: Components['MuiButton'] = {
     },
     contained: {
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-      backgroundColor: palette.text.primary,
+      backgroundColor: palette.common.black,
       '&:hover': {
         boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
-        backgroundColor: palette.text.secondary,
+        backgroundColor: palette.common.white,
       },
       '&:active': {
         boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
