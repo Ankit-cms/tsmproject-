@@ -32,7 +32,7 @@ const Banner = () => {
                                 Powering smarter, faster logistics with a cloud TMS & visibility
                                 platform built for 3PLs, Shippers, and Carriers.
                             </Typography>
-                            <Button sx={{ mt: 3 }} variant="contained" size="large">
+                            <Button sx={{ mt: 1 }} variant="contained" size="large">
                                 <ComputerIcon sx={{ mr: 1 }} /> Schedule a Demo
                             </Button>
                         </Grid>
