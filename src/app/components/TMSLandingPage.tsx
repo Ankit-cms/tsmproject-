@@ -139,7 +139,7 @@ const TMSLandingPage = () => {
       <Banner />
 
       <Divider  />
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: 'common.grayLight' }}>
         <Container maxWidth="lg">
           <Box py={8}>
             <Box>
@@ -756,7 +756,7 @@ const TMSLandingPage = () => {
 
       <Divider  />
 
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: 'common.grayLight' }}>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box pb={4}>

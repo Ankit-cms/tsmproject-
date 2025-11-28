@@ -156,7 +156,6 @@ const Header = () => {
               component={'a'}
               href="/"
               sx={{
-                my: 2,
                 color: 'common.black',
                 display: 'flex',
                 alignItems: 'center',
@@ -169,7 +168,6 @@ const Header = () => {
             <Button
               onClick={handleOpen}
               sx={{
-                my: 2,
                 color: 'common.black',
                 display: 'flex',
                 alignItems: 'center',
@@ -240,7 +238,6 @@ const Header = () => {
             <Tooltip title="Open Profile">
               <Button
                 sx={{
-                  my: 2,
                   color: 'black',
                   alignItems: 'center',
                   gap: 1,
@@ -280,7 +277,6 @@ const Header = () => {
               // color='secondary'
               href="/pricing"
               sx={{
-                my: 2,
                 ml: 2,
                 display: 'flex',
                 alignItems: 'center',

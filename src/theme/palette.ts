@@ -23,6 +23,8 @@ const palette = {
     black: '#000000',
     white: '#ffffff',
     whiteSmoke: '#f5f5f5',
+    grayLight: '#f3f3f3',
+    cardBg: '#e8e8e8',
   },
   
 };
