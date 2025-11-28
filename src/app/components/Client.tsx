@@ -16,7 +16,7 @@ const Client = () => {
       <Container maxWidth="lg">
         <Box py={5}>
           <Box mb={4}>
-            <Typography variant="h3" gutterBottom>
+            <Typography variant="h3" gutterBottom fontWeight="bold">
               Trusted by over 500+ clients
             </Typography>
             <Typography variant="h5" paragraph>

@@ -103,7 +103,7 @@ const Features = () => {
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={6}>
-              <Typography variant="h3" gutterBottom>
+              <Typography variant="h3" gutterBottom fontWeight="bold">
                 Platform Features
               </Typography>
               <Typography variant="h5" paragraph>
