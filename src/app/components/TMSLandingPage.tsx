@@ -432,7 +432,7 @@ const TMSLandingPage = () => {
                     icon: ReceiptLongOutlinedIcon,
                   },
                 ].map((data, index) => (
-                  <Grid size={{ xs: 4, sm: 1.5 }}>
+                  <Grid key={index} size={{ xs: 4, sm: 1.5 }}>
                     <Card elevation={2} variant='elevation' sx={{ height: '100%', }}>
                       <CardActionArea
                         sx={{
