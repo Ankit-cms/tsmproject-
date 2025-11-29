@@ -1,28 +1,28 @@
-import { Components } from '@mui/material/styles';
+import { Components } from "@mui/material/styles";
 
-const MuiCard: Components['MuiCard'] = {
+const MuiCard: Components["MuiCard"] = {
   styleOverrides: {
     root: {
       borderRadius: 8,
-      boxShadow: 'none',
+      boxShadow: "none",
     },
   },
-  // variants: [
-  //   {
-  //     props: { variant: 'outlined' },
-  //     style: {
-  //       backgroundColor: 'var(--palette-common-cardBg)',
-  //       border: '1px solid var(--palette-divider)',
-  //       borderRadius: 12,
-  //       transition: 'all 0.3s ease-in-out',
-  //       '&:hover': {
-  //         borderColor: 'var(--palette-primary-main)',
-  //         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
-  //         transform: 'translateY(-2px)',
-  //       },
-  //     },
-  //   },
-  // ],
+  variants: [
+    // {
+    //   props: { variant: "outlined" },
+    //   style: {
+    //     boxShadow: "0 1px 1px rgba(0, 0, 0, 0.1)",
+    //     border: "1px solid rgba(0, 0, 0, 0.1)",
+    //   },
+    // },
+    {
+      props: { variant: "elevation" },
+      style: {
+        boxShadow: "0 1px 3px gainsboro",
+        border: "none",  
+      },
+    },
+  ],
 };
 
 export default MuiCard;

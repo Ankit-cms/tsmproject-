@@ -99,12 +99,12 @@ const Features = () => {
     ];
 
     return (
-      <Paper elevation={0} square sx={{ bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
+      <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={6}>
               <Typography variant="h3" gutterBottom fontWeight="bold">
-                Platform Features
+                TMS features
               </Typography>
               <Typography variant="h5" paragraph>
                 Powerful features that help you outperform competitors and wow
@@ -132,10 +132,10 @@ const Features = () => {
                   minHeight={160}
                   size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
                 >
-                  <Card elevation={0} square sx={{ bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
+                  <Card elevation={0} square >
                     <CardContent sx={{ p: 3 }}>
                       <Box>
-                        <feature.icon fontSize="large" />
+                        <feature.icon fontSize="large" /> 
                       </Box>
                       <Typography variant="h6" gutterBottom>
                         {feature.title}
