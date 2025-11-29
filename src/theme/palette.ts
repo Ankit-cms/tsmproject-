@@ -1,32 +1,30 @@
 const palette = {
   primary: {
-    main: '#1976d2',
-    light: '#42a5f5',
-    dark: '#1565c0',
-    contrastText: '#ffffff',
+    main: '#8B9C9C',     // soft greenish-grey (your main)
+    light: '#E9ECEC',    // lighter variant / hover
+    dark: '#476556ff',     // for active / emphasis
+    contrastText: '#121212', // near-black for readability
   },
   secondary: {
-    main: '#dc004e',
-    light: '#ff5983',
-    dark: '#9a0036',
-    contrastText: '#ffffff',
+    main: '#CED0D6',     // soft light gray (accent)
+    light: '#E3E4EB',    // subtle hover/outline
+    dark: '#A5A8B0',     // for text/icons on gray
+    contrastText: '#1A1A1A',
   },
   background: {
-    default: '#f5f5f5',
-    paper: '#ffffff',
+    default: '#F8F7FF',  // full page background (your color)
+    paper: '#FFFFFF',    // surfaces like cards, sections
   },
   text: {
-    primary: '#333333',
-    secondary: '#666666',
+    primary: '#222222',  // not pure black
+    secondary: '#555555',
   },
   common: {
-    black: '#000000',
-    white: '#ffffff',
-    whiteSmoke: '#f5f5f5',
-    grayLight: '#f3f3f3',
-    cardBg: '#e8e8e8',
+    black: '#121212',    // soft black
+    white: '#FAFAFA',    // soft white
+    whiteSmoke: '#F8F7FF', // aligning with background
+    grayLight: '#E9ECEC',  // your alternate
+    cardBg: '#EBE8FE',   // your card color
   },
-  
 };
-
 export default palette;

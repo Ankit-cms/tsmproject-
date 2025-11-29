@@ -141,7 +141,7 @@ const TMSLandingPage = () => {
       {/* <HeroFull /> */}
 
       <Banner />
-      <Paper elevation={0} square sx={{ bgcolor: 'common.black' }}>
+      <Paper elevation={0} square sx={{ bgcolor: 'primary.main' }}>
         <Container maxWidth="lg">
           <Box py={8}>
             <Box>
@@ -544,7 +544,7 @@ const TMSLandingPage = () => {
                 },
               ].map((card) => (
                 <Grid key={card.title} size={{ xs: 12, md: 4 }}>
-                  <Card elevation={2} variant="outlined" sx={{ height: '100%', bgcolor: 'common.black', color: 'common.white' }}>
+                  <Card elevation={2} variant="outlined" sx={{ height: '100%', bgcolor: 'primary.main', color: 'common.white' }}>
                     <CardContent>
                       <CardMedia
                         component="img"
@@ -602,7 +602,7 @@ const TMSLandingPage = () => {
                   <Card
                     elevation={3}
                     variant="outlined"
-                    sx={{ height: '100%' }}
+                    sx={{ height: '100%', bgcolor: 'common.whiteSmoke', color: 'common.black' }}
                   >
                     <CardContent>
                       <Chip

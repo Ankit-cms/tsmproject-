@@ -99,7 +99,7 @@ const Features = () => {
     ];
 
     return (
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={6}>
@@ -132,7 +132,7 @@ const Features = () => {
                   minHeight={160}
                   size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
                 >
-                  <Card elevation={0}>
+                  <Card elevation={0} square sx={{ bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
                     <CardContent sx={{ p: 3 }}>
                       <Box>
                         <feature.icon fontSize="large" />
