@@ -238,13 +238,13 @@ const Header = () => {
             <Tooltip title="Open Profile">
               <Button
                 sx={{
-                  color: 'black',
+                  color: 'common.black',
                   alignItems: 'center',
                   gap: 1,
                   display: { xs: 'none', md: 'flex' }
                 }}
                 onClick={handleOpenUserMenu}>
-                <LoginOutlinedIcon sx={{ color: 'black' }} />
+                <LoginOutlinedIcon sx={{ color: 'common.black' }} />
                 Login
               </Button>
             </Tooltip>
