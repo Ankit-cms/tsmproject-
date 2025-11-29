@@ -50,26 +50,23 @@ const Footer = () => {
           <Grid container spacing={4}>
             <Grid size={{ md: 4 }}>
               <Box mb={2} display={'flex'} gap={1} alignItems="center">
-                <FlareIcon fontSize="large" sx={{ display: 'flex' }} />
+                {/* <FlareIcon fontSize="large" sx={{ display: 'flex' }} /> */}
                 <Typography
                   variant="h4"
                   gutterBottom
                   mb={0}
                   sx={{
-                    display: 'flex', 
-                    letterSpacing: '1px',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                    textTransform: 'uppercase',
+                    display: 'flex',  
+                    textDecoration: 'none', 
                   }}
                 >
-                  Instalanes
+                  Instalanes TMS
                 </Typography>
               </Box>
               <Typography variant="body2" paragraph>
                 Collaborative logistics. Faster decisions. Complete visibility
               </Typography>
-              <Box>
+              {/* <Box>
                 <Box display={'flex'} gap={1} mt={1}>
                   <EmailOutlinedIcon fontSize="small" />
                   <Typography variant="subtitle2" gutterBottom>
@@ -90,7 +87,7 @@ const Footer = () => {
                     Delhi, Delhi, India, 110091
                   </Typography>
                 </Box>
-              </Box>
+              </Box> */}
             </Grid>
             <Grid size={{ md: 8 }}>
               <Grid container spacing={4} mb={2}>

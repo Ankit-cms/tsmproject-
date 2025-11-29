@@ -63,20 +63,19 @@ const Header = () => {
     <AppBar position="fixed">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'common.black' }}  />
+          {/* <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'common.black' }}  /> */}
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="a"
+            fontWeight="bold"
             color="common.black"
             href="/"
             sx={{
-              display: { xs: 'none', md: 'flex' }, 
-              letterSpacing: '1px', 
-              textDecoration: 'none',
-              textTransform: 'uppercase',
+              display: { xs: 'none', md: 'flex' },  
+              textDecoration: 'none', 
             }}>
-            Instalanes
+            Instalanes TMS
           </Typography>
 
           <Box sx={{ display: { xs: 'inline-flex', md: 'none' } }}>

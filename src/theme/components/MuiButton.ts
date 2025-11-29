@@ -4,7 +4,7 @@ import palette from '../palette';
 const MuiButton: Components['MuiButton'] = {
   styleOverrides: {
     root: {
-      borderRadius: 20,
+      borderRadius: 10,
       padding: '8px 16px',
     },
     contained: {
@@ -15,9 +15,9 @@ const MuiButton: Components['MuiButton'] = {
       color: palette.common.white,
       '&:hover': {
         boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
-        backgroundColor: palette.common.white,
-        border: '1px solid ' + palette.primary.main,
-        color: palette.common.black,
+        backgroundColor: palette.text.primary,
+        border: '1px solid ' + palette.common.black,
+        color: palette.common.white,
       },
       '&:active': {
         boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
