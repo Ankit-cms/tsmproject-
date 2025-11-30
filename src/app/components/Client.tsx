@@ -16,10 +16,10 @@ const Client = () => {
       <Container maxWidth="lg">
         <Box py={5}>
           <Box mb={4}>
-            <Typography variant="h2" gutterBottom fontWeight="bold">
+            <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
               Trusted by over 500+ clients
             </Typography>
-            <Typography variant="h5" paragraph>
+            <Typography variant="h2" paragraph>
               Our clients are our top priority, and we committed to providing
               with the highest level of service.
             </Typography>

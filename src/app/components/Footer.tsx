@@ -45,12 +45,11 @@ const SocialIconGroup = () => (
 const Footer = () => {
   return (
     <Paper component="footer" elevation={0} square sx={{ mt: 6, bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Box py={4}>
           <Grid container spacing={4}>
             <Grid size={{ md: 4 }}>
-              <Box mb={2} display={'flex'} gap={1} alignItems="center">
-                {/* <FlareIcon fontSize="large" sx={{ display: 'flex' }} /> */}
+              {/* <Box mb={2} display={'flex'} gap={1} alignItems="center"> 
                 <Typography
                   variant="h4"
                   gutterBottom
@@ -62,7 +61,7 @@ const Footer = () => {
                 >
                   Instalanes TMS
                 </Typography>
-              </Box>
+              </Box> */}
               <Typography variant="body2" paragraph>
                 Collaborative logistics. Faster decisions. Complete visibility
               </Typography>
@@ -180,6 +179,16 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Box>
+        <Typography
+          variant="h1"
+          component={"h2"}
+          gutterBottom 
+          textAlign="center"
+          fontWeight="bold"
+          sx={{fontSize: "13vw"}}
+        >
+          Instalanes TMS
+        </Typography>
       </Container>
       <Divider />
       <Container maxWidth="lg">

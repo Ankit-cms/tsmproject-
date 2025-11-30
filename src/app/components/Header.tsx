@@ -61,11 +61,11 @@ const Header = () => {
 
   return (
     <AppBar position="sticky" >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'common.black' }}  /> */}
           <Typography
-            variant="h4"
+            variant="h5"
             noWrap
             component="a"
             fontWeight="bold"

@@ -19,11 +19,13 @@ const Banner = () => {
                 <Container maxWidth="lg">
                     <Grid container spacing={4} alignItems="center" my={2}>
                         <Grid size={{ xs: 12, md: 6 }}>
+                            <Typography variant="h6" color="primary.dark" gutterBottom textTransform="uppercase">
+                                Transport management Software for
+                            </Typography>
                             <Typography
-                                variant="h3"
+                                variant="h1"
                                 component="h1" 
                                 gutterBottom
-                                sx={{ fontSize: { xs: '1.5rem', md: '3rem' } }}
                                 mt={2}
                             >
                                 Collaborative logistics. Faster decisions. Complete visibility
