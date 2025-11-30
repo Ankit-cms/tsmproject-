@@ -101,7 +101,7 @@ const Features = () => {
     return (
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={5}>
+          <Box pt={8}>
             <Box mb={6}>
               <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
                 TMS features

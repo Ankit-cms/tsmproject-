@@ -26,12 +26,11 @@ const Banner = () => {
                                 variant="h1"
                                 component="h1" 
                                 gutterBottom
-                                mt={2}
-                            >
+                                mt={2}>
                                 Collaborative logistics. Faster decisions. Complete visibility
                             </Typography>
                             <Typography variant="body1" fontWeight={400} paragraph>
-                                Powering smarter, faster logistics with a cloud TMS & visibility
+                            Global SaaS Powering smarter, faster logistics with a cloud TMS & visibility
                                 platform built for 3PLs, Shippers, and Carriers.
                             </Typography>
                             <Button sx={{ mt: 1 }} variant="contained" size="large">

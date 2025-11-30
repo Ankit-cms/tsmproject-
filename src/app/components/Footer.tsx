@@ -49,23 +49,24 @@ const Footer = () => {
         <Box py={4}>
           <Grid container spacing={4}>
             <Grid size={{ md: 4 }}>
-              {/* <Box mb={2} display={'flex'} gap={1} alignItems="center"> 
+              <Box mb={2} display={'flex'} gap={1} alignItems="center">
                 <Typography
-                  variant="h4"
+                  variant="h2"
                   gutterBottom
                   mb={0}
+                  fontWeight="bold" 
                   sx={{
-                    display: 'flex',  
-                    textDecoration: 'none', 
+                    display: 'flex',
+                    textDecoration: 'none',
                   }}
                 >
                   Instalanes TMS
                 </Typography>
-              </Box> */}
-              <Typography variant="body2" paragraph>
+              </Box>
+              <Typography variant="h4" paragraph>
                 Collaborative logistics. Faster decisions. Complete visibility
               </Typography>
-              {/* <Box>
+              <Box>
                 <Box display={'flex'} gap={1} mt={1}>
                   <EmailOutlinedIcon fontSize="small" />
                   <Typography variant="subtitle2" gutterBottom>
@@ -78,20 +79,19 @@ const Footer = () => {
                     +91 9818106472
                   </Typography>
                 </Box>
-                <Box display={'flex'} gap={1} mt={1}>
+                {/* <Box display={'flex'} gap={1} mt={1}>
                   <FmdGoodOutlinedIcon fontSize="small" />
-
                   <Typography variant="subtitle2" gutterBottom>
                     101, Pratap Nagar, Mayur Vihar Phase-1, New Delhi, East
                     Delhi, Delhi, India, 110091
                   </Typography>
-                </Box>
-              </Box> */}
+                </Box> */}
+              </Box>
             </Grid>
             <Grid size={{ md: 8 }}>
               <Grid container spacing={4} mb={2}>
                 <Grid size={{ sm: 6, md: 3 }}>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="h5" gutterBottom fontWeight="bold">
                     Company
                   </Typography>
                   <List dense disablePadding>
@@ -109,7 +109,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="h5" gutterBottom fontWeight="bold">
                     Capabilities
                   </Typography>
                   <List dense disablePadding>
@@ -132,7 +132,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="h5" gutterBottom fontWeight="bold">
                     Resources
                   </Typography>
                   <List dense disablePadding>
@@ -158,7 +158,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="h5" gutterBottom fontWeight="bold">
                     Other
                   </Typography>
                   <List dense disablePadding>
@@ -179,19 +179,24 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Box>
-        <Typography
-          variant="h1"
-          component={"h2"}
-          gutterBottom 
-          textAlign="center"
-          fontWeight="bold"
-          sx={{fontSize: "13vw"}}
-        >
-          Instalanes TMS
-        </Typography>
       </Container>
+      <Box bgcolor="common.white" >
+        <Container maxWidth="xl" >
+          <Typography
+            variant="h1"
+            component={"h2"}
+            py={3}
+            gutterBottom 
+            textAlign="center"
+            fontWeight="bold"
+            sx={{ fontSize: "28vh",  mb: 0 }}
+          >
+            Instalanes TMS
+          </Typography>
+        </Container>
+      </Box>
       <Divider />
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid
           container
           alignItems="center"
