@@ -1,6 +1,6 @@
-'use client';
+"use client";
 // pages/index.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -18,36 +18,51 @@ import {
   CardActionArea,
   Autocomplete,
   Alert,
-} from '@mui/material';
-import { Grid } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import ArrowOutwardOutlinedIcon from '@mui/icons-material/ArrowOutwardOutlined';
-import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
-import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
-import Link from 'next/link';
-import Features from './Features';
-import Header from './Header';
-import Footer from './Footer';
-import Client from './Client';
-import Banner from './Banner';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import RouteOutlinedIcon from '@mui/icons-material/RouteOutlined';
-import CreditScoreOutlinedIcon from '@mui/icons-material/CreditScoreOutlined';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-import HubOutlinedIcon from '@mui/icons-material/HubOutlined';
-import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
-import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
-
+} from "@mui/material";
+import { Grid } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
+import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
+import SubdirectoryArrowRightIcon from "@mui/icons-material/SubdirectoryArrowRight";
+import Link from "next/link";
+import Features from "./Features";
+import Header from "./Header";
+import Footer from "./Footer";
+import Client from "./Client";
+import Banner from "./Banner";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
+import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
+import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
+import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
+import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
+import WebhookOutlinedIcon from "@mui/icons-material/WebhookOutlined";
+import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import CellTowerOutlinedIcon from "@mui/icons-material/CellTowerOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import MobileFriendlyOutlinedIcon from "@mui/icons-material/MobileFriendlyOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import DifferenceOutlinedIcon from "@mui/icons-material/DifferenceOutlined";
+import TvOutlinedIcon from "@mui/icons-material/TvOutlined";
+import DvrOutlinedIcon from "@mui/icons-material/DvrOutlined";
+import PriceCheckOutlinedIcon from "@mui/icons-material/PriceCheckOutlined";
+import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDesktopOutlined";
+import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
+import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
+import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -77,63 +92,62 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
 const TMSLandingPage = () => {
-
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  const [countryCode, setCountryCode] = useState<string>('+91');
+  const [countryCode, setCountryCode] = useState<string>("+91");
   const countryCodes = [
-    { value: '+91', label: 'India (+91)' },
-    { value: '+1', label: 'USA (+1)' },
-    { value: '+44', label: 'UK (+44)' },
-    { value: '+61', label: 'Australia (+61)' },
+    { value: "+91", label: "India (+91)" },
+    { value: "+1", label: "USA (+1)" },
+    { value: "+44", label: "UK (+44)" },
+    { value: "+61", label: "Australia (+61)" },
   ];
   // const [selectedCountry, setSelectedCountry] = useState('India');
 
   const countries = [
-    'India',
-    'America',
-    'Canada',
-    'Russia',
-    'Ukraine',
-    'Shrilanka',
-    'Bhutan',
-    'Bangladesh',
-    'Israil',
+    "India",
+    "America",
+    "Canada",
+    "Russia",
+    "Ukraine",
+    "Shrilanka",
+    "Bhutan",
+    "Bangladesh",
+    "Israil",
   ];
   const [selectedRole, setSelectedRole] = useState(
-    'Owner / Founder / Co-founder'
+    "Owner / Founder / Co-founder"
   );
 
-  const [selectedPlatform, setSelectedPlatform] = useState('Platform demo');
+  const [selectedPlatform, setSelectedPlatform] = useState("Platform demo");
 
   const platforms = [
-    'Platform demo',
-    'Careers',
-    'Investments',
-    'Growth partnering',
-    'Support',
-    'Feedback',
-    'Media',
-    'Legal',
-    'Other',
+    "Platform demo",
+    "Careers",
+    "Investments",
+    "Growth partnering",
+    "Support",
+    "Feedback",
+    "Media",
+    "Legal",
+    "Other",
   ];
   const roles = [
-    'Owner / Founder / Co-founder',
-    'CEO / CXO',
-    'Managing Director / Director',
-    'President / Vice President',
-    'Senior Management',
-    'Middle Management',
-    'Other',
+    "Owner / Founder / Co-founder",
+    "CEO / CXO",
+    "Managing Director / Director",
+    "President / Vice President",
+    "Senior Management",
+    "Middle Management",
+    "Other",
   ];
 
   return (
@@ -145,51 +159,75 @@ const TMSLandingPage = () => {
       {/* <HeroFull /> */}
 
       <Banner />
-      <Paper elevation={0} square sx={{ bgcolor: 'common.whiteSmoke' }}>
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={8} >
-            <Typography variant="h6" color="primary.dark" gutterBottom textTransform="uppercase">
+          <Box py={8}>
+            <Typography
+              variant="h6"
+              color="primary.dark"
+              gutterBottom
+              textTransform="uppercase"
+            >
               Why Instalanes?
             </Typography>
-            <Typography variant="h2" component="h3" gutterBottom color='common.black' mb={4}>
-              The Collaborative TMS Built for Shippers, Carriers, and Logistics professionals for Real-time visibility, and Optimized logistics operations that drive meaningful Business outcomes
+            <Typography
+              variant="h2"
+              component="h3"
+              gutterBottom
+              color="common.black"
+              mb={4}
+            >
+              The Collaborative TMS Built for Shippers, Carriers, and Logistics
+              professionals for Real-time visibility, and Optimized logistics
+              operations that drive meaningful Business outcomes
             </Typography>
             <Grid container spacing={3}>
               {[
                 {
-                  value: '9x',
-                  title: 'Visibility',
+                  value: "9x",
+                  title: "Visibility",
                   description:
                     "Nine-layered visibility gives you unmatched control and understanding of what's happening on your network. See everything at a glance.",
                 },
                 {
-                  value: '100%',
-                  title: 'Collaboration',
+                  value: "100%",
+                  title: "Collaboration",
                   description:
-                    'Boost your teams productivity and experience. Empower your team, enhance effectiveness of your teams.',
+                    "Boost your teams productivity and experience. Empower your team, enhance effectiveness of your teams.",
                 },
                 {
-                  value: '~30%',
-                  title: 'Optimization',
+                  value: "~30%",
+                  title: "Optimization",
                   description:
-                    'By digitizing your processes, you can eliminate manual tasks and standardize your operations to lower costs.',
+                    "By digitizing your processes, you can eliminate manual tasks and standardize your operations to lower costs.",
                 },
                 {
-                  value: '~2x',
-                  title: 'Growth',
+                  value: "~2x",
+                  title: "Growth",
                   description:
-                    'The network provides opportunities for businesses to expand quickly and help businesses grow rapidly in new geographic areas.',
+                    "The network provides opportunities for businesses to expand quickly and help businesses grow rapidly in new geographic areas.",
                 },
               ].map((stat, index) => (
                 <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>
                   <Card
                     elevation={3}
-                    sx={{ height: '100%', bgcolor: 'common.white', color: 'common.black' }}>
-                    <CardContent sx={{ textAlign: 'start', p: 3 }}>
-                      <Typography variant="h3" component="h3" gutterBottom >
+                    variant="elevation"
+                    sx={{
+                      height: "100%",
+                      bgcolor: "common.white",
+                      color: "common.black",
+                    }}
+                  >
+                    <CardContent sx={{ textAlign: "start", p: 3 }}>
+                      <Typography variant="h3" component="h3" gutterBottom>
                         {stat.value}
                       </Typography>
-                      <Typography variant="h5" component="h3" gutterBottom fontWeight='bold'>
+                      <Typography
+                        variant="h5"
+                        component="h3"
+                        gutterBottom
+                        fontWeight="bold"
+                      >
                         {stat.title}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
@@ -206,16 +244,28 @@ const TMSLandingPage = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box pt={8}>
-            <Box mb={4}>
-              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+            <Box >
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 SOLVING THE BIG CHALLENGE
               </Typography>
               <Typography variant="h2" paragraph>
                 Simplifying the complex manual chaos, digitally.
               </Typography>
-              <Alert severity="error" sx={{ mb: 2, }}>Modern supply chains lack real-time visibility and smooth coordination because teams still rely on emails, spreadsheets, and disconnected systems. This siloed and manual way of working slows information flow and creates visibility gaps, leading to delays, higher logistics costs, and a poor experience for customers, partners, and internal teams</Alert>
+              <Alert severity="error" sx={{ mb: 2}}>
+                Modern supply chains lack real-time visibility and smooth
+                coordination because teams still rely on emails, spreadsheets,
+                and disconnected systems. This siloed and manual way of working
+                slows information flow and creates visibility gaps, leading to
+                delays, higher logistics costs, and a poor experience for
+                customers, partners, and internal teams
+              </Alert>
             </Box>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{ mb: 2 }}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Card elevation={1} variant="elevation">
                   <CardMedia
@@ -225,30 +275,36 @@ const TMSLandingPage = () => {
                   />
                 </Card>
               </Grid>
-              <Grid container size={{ xs: 12, md: 6 }}  >
+              <Grid container size={{ xs: 12, md: 6 }}>
                 <Grid container spacing={2}>
                   {[
                     {
-                      title: 'Lack of Visibility',
-                      desc: 'No single, real-time view to track shipments or exceptions.',
+                      title: "Lack of Visibility",
+                      desc: "No single, real-time view to track shipments or exceptions.",
                     },
                     {
-                      title: 'Manual Operations',
-                      desc: 'Emails, calls, and spreadsheets slow execution and create errors.',
+                      title: "Manual Operations",
+                      desc: "Emails, calls, and spreadsheets slow execution and create errors.",
                     },
                     {
-                      title: 'High Operations Cost',
-                      desc: 'Inefficiencies and poor coordination increase per-shipment cost.',
+                      title: "High Operations Cost",
+                      desc: "Inefficiencies and poor coordination increase per-shipment cost.",
                     },
                     {
-                      title: 'Poor Experience',
-                      desc: 'Delayed updates frustrate Customers, Carriers, and internal Teams.',
+                      title: "Poor Experience",
+                      desc: "Delayed updates frustrate Customers, Carriers, and internal Teams.",
                     },
                   ].map((data, index) => (
-                    <Grid
-                      key={index}
-                      size={{ sm: 6 }}>
-                      <Card elevation={0} square sx={{ bgcolor: 'common.whiteSmoke', color: 'common.black', height: '100%' }} >
+                    <Grid key={index} size={{ sm: 6 }}>
+                      <Card
+                        elevation={0}
+                        square
+                        sx={{
+                          bgcolor: "common.whiteSmoke",
+                          color: "common.black",
+                          height: "100%",
+                        }}
+                      >
                         <CardContent sx={{ p: 3 }}>
                           <Box display={"flex"} alignItems="start" gap={1}>
                             <InfoOutlinedIcon color="error" />
@@ -270,33 +326,43 @@ const TMSLandingPage = () => {
         </Container>
         <Container maxWidth="lg">
           <Box pb={8} pt={2}>
-            <Alert severity="success" sx={{ mb: 4 }}>A global, easy-to-use SaaS TMS that digitizes operations, connects all stakeholders on one platform, and delivers real-time visibility, automation, and faster decision-making across the entire supply chain</Alert>
-            <Grid container spacing={5} >
+            <Alert severity="success" sx={{ mb: 2 }}>
+              A global, easy-to-use SaaS TMS that digitizes operations, connects
+              all stakeholders on one platform, and delivers real-time
+              visibility, automation, and faster decision-making across the
+              entire supply chain
+            </Alert>
+            <Grid container spacing={5}>
               <Grid container size={{ xs: 12, md: 6 }}>
                 <Grid container spacing={2}>
                   {[
                     {
-                      title: 'Full Visibility',
-                      desc: 'One platform, real-time tracking, zero blind spots.',
+                      title: "Full Visibility",
+                      desc: "One platform, real-time tracking, zero blind spots.",
                     },
                     {
-                      title: 'Speed & Scalability',
-                      desc: 'Automated workflows and faster execution.',
+                      title: "Speed & Scalability",
+                      desc: "Automated workflows and faster execution.",
                     },
                     {
-                      title: 'Seamless Collaboration',
-                      desc: 'All teams and partners aligned in one system.',
+                      title: "Seamless Collaboration",
+                      desc: "All teams and partners aligned in one system.",
                     },
                     {
-                      title: 'Actionable Insights',
-                      desc: 'Dashboards and analytics to improve cost, performance, and growth.',
+                      title: "Actionable Insights",
+                      desc: "Dashboards and analytics to improve cost, performance, and growth.",
                     },
                   ].map((data, index) => (
-                    <Grid
-                      key={index}
-                      size={{ sm: 6 }}
-                    >
-                      <Card elevation={0} square sx={{ bgcolor: 'common.whiteSmoke', color: 'common.black', height: '100%' }} >
+                    <Grid key={index} size={{ sm: 6 }}>
+                      <Card
+                        elevation={0}
+                        square
+                        sx={{
+                          bgcolor: "common.whiteSmoke",
+                          color: "common.black",
+                          height: "100%",
+                        }}
+                      >
                         <CardContent sx={{ p: 3 }}>
                           <Box display={"flex"} alignItems="start" gap={1}>
                             <TaskAltOutlinedIcon color="success" />
@@ -314,7 +380,11 @@ const TMSLandingPage = () => {
                 </Grid>
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Card elevation={1} variant="elevation" sx={{ height: '100%', width: '100%' }} >
+                <Card
+                  elevation={1}
+                  variant="elevation"
+                  sx={{ height: "100%", width: "100%" }}
+                >
                   <CardMedia
                     component="img"
                     image="/img/work/instalanes_TMS_Digital_Solution.png"
@@ -330,7 +400,12 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box py={8}>
             <Box mb={4}>
-              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 Digital solution deep dive
               </Typography>
               <Typography variant="h2" paragraph>
@@ -352,82 +427,395 @@ const TMSLandingPage = () => {
             <Typography variant="h6" paragraph fontWeight="bold">
               Transportation process
             </Typography>
-            <Grid container spacing={2}>
-              {
-                [
-                  {
-                    title: 'Dispatch plan',
-                    icon: FormatListBulletedIcon,
-                  },
-                  {
-                    title: 'Transport request',
-                    icon: RouteOutlinedIcon,
-                  },
-                  {
-                    title: 'Rate Engine (Buy / Sell)',
-                    icon: CreditScoreOutlinedIcon,
-                  },
-                  {
-                    title: 'Vehicle / Driver Allocation',
-                    icon: LocalShippingOutlinedIcon,
-                  },
-                  {
-                    title: 'Load (LR / CN)',
-                    icon: FileDownloadOutlinedIcon,
-                  },
-                  {
-                    title: 'Execution - Control tower',
-                    icon: HubOutlinedIcon,
-                  },
-                  {
-                    title: 'Unload (ePoD)',
-                    icon: FileUploadOutlinedIcon,
-                  },
-                  {
-                    title: 'Invoicing & Billing',
-                    icon: ReceiptLongOutlinedIcon,
-                  },
-                ].map((data, index) => (
-                  <Grid key={index} size={{ xs: 4, sm: 1.5 }}>
-                    <Card elevation={2} variant='elevation' sx={{ height: '100%', }}>
-                      <CardActionArea
-                        sx={{
-                          height: '100%',
-                          textAlign: 'center',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'start',
-                          alignItems: 'center',
-                          gap: 1,
-                          p: 2,
-                          '&[data-active]': {
-                            backgroundColor: 'action.selected',
-                            '&:hover': {
-                              backgroundColor: 'action.selectedHover',
-                            },
+            <Grid container spacing={2} sx={{ mb: 4 }}>
+              {[
+                {
+                  title: "Dispatch plan",
+                  icon: FormatListBulletedIcon,
+                },
+                {
+                  title: "Transport request",
+                  icon: RouteOutlinedIcon,
+                },
+                {
+                  title: "Rate Engine (Buy / Sell)",
+                  icon: CreditScoreOutlinedIcon,
+                },
+                {
+                  title: "Vehicle / Driver Allocation",
+                  icon: LocalShippingOutlinedIcon,
+                },
+                {
+                  title: "Load (LR / CN)",
+                  icon: FileDownloadOutlinedIcon,
+                },
+                {
+                  title: "Execution - Control tower",
+                  icon: HubOutlinedIcon,
+                },
+                {
+                  title: "Unload (ePoD)",
+                  icon: FileUploadOutlinedIcon,
+                },
+                {
+                  title: "Invoicing & Billing",
+                  icon: ReceiptLongOutlinedIcon,
+                },
+              ].map((data, index) => (
+                <Grid key={index} size={{ xs: 4, sm: 1.5 }}>
+                  <Card
+                    elevation={2}
+                    variant="elevation"
+                    sx={{ height: "100%" }}
+                  >
+                    <CardActionArea
+                      sx={{
+                        height: "100%",
+                        textAlign: "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "start",
+                        alignItems: "center",
+                        p: 2,
+                        "&[data-active]": {
+                          backgroundColor: "action.selected",
+                          "&:hover": {
+                            backgroundColor: "action.selectedHover",
                           },
-                        }}>
-                        <data.icon fontSize="large" />
-                        <Box mt={1}>
-                          <Typography variant="body2" gutterBottom>
-                            {data.title}
-                          </Typography>
-                        </Box>
-                      </CardActionArea>
-                    </Card>
-                  </Grid>
-                ))
-              }
+                        },
+                      }}
+                    >
+                      <data.icon fontSize="large" />
+                      <Box mt={1}>
+                        <Typography variant="body2" gutterBottom>
+                          {data.title}
+                        </Typography>
+                      </Box>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+
+            {/* <Card elevation={2} variant="elevation" sx={{ height: "100%" }}>
+              <CardContent> */}
+            <Grid container spacing={2} alignItems="start" sx={{ mb: 4 }}>
+              <Grid size={{ md: 3 }}>
+                <Typography variant="h6" paragraph fontWeight="bold">
+                  TMS implementaion
+                </Typography>
+                {/* <Card
+                      elevation={2}
+                      variant="elevation"
+                      sx={{ height: "100%", bgcolor: "common.whiteSmoke" }}>
+                      <CardContent sx={{ textAlign: "center" }}> */}
+                <Grid container spacing={2}>
+                  {[
+                    {
+                      title: "Account users",
+                      icon: GroupOutlinedIcon,
+                    },
+                    {
+                      title: "GPS APIs",
+                      icon: WebhookOutlinedIcon,
+                    },
+                    {
+                      title: "Rates master",
+                      icon: CreditScoreOutlinedIcon,
+                    },
+                    {
+                      title: "Lanes master",
+                      icon: RouteOutlinedIcon,
+                    },
+                    {
+                      title: "Vehicle master",
+                      icon: LocalShippingOutlinedIcon,
+                    },
+                    {
+                      title: "Driver master",
+                      icon: GroupAddOutlinedIcon,
+                    },
+                  ].map((data, index) => (
+                    <Grid key={index} size={{ xs: 6 }}>
+                      <Card
+                        elevation={2}
+                        variant="elevation"
+                        sx={{ height: "100%" }}
+                      >
+                        <CardActionArea
+                          sx={{
+                            height: "100%",
+                            textAlign: "center",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "start",
+                            alignItems: "center",
+                            p: 2,
+                            "&[data-active]": {
+                              backgroundColor: "action.selected",
+                              "&:hover": {
+                                backgroundColor: "action.selectedHover",
+                              },
+                            },
+                          }}
+                        >
+                          <data.icon fontSize="large" />
+                          <Box mt={1}>
+                            <Typography variant="body2" gutterBottom>
+                              {data.title}
+                            </Typography>
+                          </Box>
+                        </CardActionArea>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+                {/* </CardContent>
+                    </Card> */}
+              </Grid>
+              <Grid size={{ md: 6 }}>
+                <Typography variant="h6" paragraph fontWeight="bold">
+                  Capability enablers
+                </Typography>
+                {/* <Card
+                      elevation={2}
+                      variant="elevation"
+                      sx={{ height: "100%", bgcolor: "common.whiteSmoke" }}>
+                      <CardContent sx={{ textAlign: "center" }}> */}
+                <Grid container spacing={2}>
+                  {[
+                    {
+                      title: "Collaborative visibility",
+                      icon: GroupsOutlinedIcon,
+                      grid: { xs: 6 },
+                    },
+                    {
+                      title: "Control tower",
+                      icon: CellTowerOutlinedIcon,
+                      grid: { xs: 6 },
+                    },
+                    {
+                      title: "Business Analytics ",
+                      icon: BarChartOutlinedIcon,
+                      grid: { xs: 6 },
+                    },
+                    // {
+                    //   title: "Mobile powered ",
+                    //   icon: MobileFriendlyOutlinedIcon,
+                    //   grid: { xs: 6 },
+                    // },
+                    // {
+                    //   title: "Alerts and notifications",
+                    //   icon: NotificationsNoneOutlinedIcon,
+                    //   grid: { xs: 6 },
+                    // },
+                    {
+                      title: "Documents centralization",
+                      icon: DifferenceOutlinedIcon,
+                      grid: { xs: 6 },
+                    },
+                    {
+                      title: "Ops one view ",
+                      icon: TvOutlinedIcon,
+                      grid: { xs: 6 },
+                    },
+                    {
+                      title: "Freight settlements view",
+                      icon: DvrOutlinedIcon,
+                      grid: { xs: 6 },
+                    },
+                  ].map((data, index) => (
+                    <Grid key={index} size={data.grid}>
+                      <Card
+                        elevation={2}
+                        variant="elevation"
+                        sx={{ height: "100%" }}
+                      >
+                        <CardActionArea
+                          sx={{
+                            height: "100%",
+                            textAlign: "center",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "start",
+                            alignItems: "center",
+                            p: 2,
+                            "&[data-active]": {
+                              backgroundColor: "action.selected",
+                              "&:hover": {
+                                backgroundColor: "action.selectedHover",
+                              },
+                            },
+                          }}
+                        >
+                          <data.icon fontSize="large" />
+                          <Box mt={1}>
+                            <Typography variant="body2" gutterBottom>
+                              {data.title}
+                            </Typography>
+                          </Box>
+                        </CardActionArea>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+                {/* </CardContent>
+                    </Card> */}
+              </Grid>
+              <Grid size={{ md: 3 }}>
+                <Typography variant="h6" paragraph fontWeight="bold">
+                  Business outcomes
+                </Typography>
+                {/* <Card
+                      elevation={2}
+                      variant="elevation"
+                      sx={{ height: "100%", bgcolor: "common.whiteSmoke" }}>
+                      <CardContent sx={{ textAlign: "center" }}> */}
+                <Grid container spacing={2}>
+                  {[
+                    {
+                      title: "Collaboration",
+                      icon: GroupsOutlinedIcon,
+                    },
+                    {
+                      title: "Cost savings",
+                      icon: PriceCheckOutlinedIcon,
+                    },
+                    {
+                      title: "Scalability",
+                      icon: TrendingUpOutlinedIcon,
+                    },
+                    {
+                      title: "Visibility",
+                      icon: ScreenSearchDesktopOutlinedIcon,
+                    },
+                    {
+                      title: "Compliance",
+                      icon: VerifiedUserOutlinedIcon,
+                    },
+                    {
+                      title: "Experience",
+                      icon: Diversity3OutlinedIcon,
+                    },
+                  ].map((data, index) => (
+                    <Grid key={index} size={{ xs: 6 }}>
+                      <Card
+                        elevation={2}
+                        variant="elevation"
+                        sx={{ height: "100%" }}
+                      >
+                        <CardActionArea
+                          sx={{
+                            height: "100%",
+                            textAlign: "center",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "start",
+                            alignItems: "center",
+                            p: 2,
+                            "&[data-active]": {
+                              backgroundColor: "action.selected",
+                              "&:hover": {
+                                backgroundColor: "action.selectedHover",
+                              },
+                            },
+                          }}
+                        >
+                          <data.icon fontSize="large" />
+                          <Box mt={1}>
+                            <Typography variant="body2" gutterBottom>
+                              {data.title}
+                            </Typography>
+                          </Box>
+                        </CardActionArea>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+                {/* </CardContent>
+                    </Card> */}
+              </Grid>
+            </Grid>
+            {/* </CardContent>
+            </Card> */}
+            <Typography variant="h6" paragraph fontWeight="bold">
+              TMS Features
+            </Typography>
+            <Grid container spacing={2} sx={{ mb: 4 }}>
+              {[
+                {
+                  title: "Mobile driven",
+                  icon: FormatListBulletedIcon,
+                },
+                {
+                  title: "Instant ePoD ",
+                  icon: RouteOutlinedIcon,
+                },
+                {
+                  title: "Smart notifications",
+                  icon: CreditScoreOutlinedIcon,
+                },
+                {
+                  title: "Next action ready",
+                  icon: LocalShippingOutlinedIcon,
+                },
+                {
+                  title: "Auto status reporting",
+                  icon: FileDownloadOutlinedIcon,
+                },
+                {
+                  title: "API-Enabled",
+                  icon: HubOutlinedIcon,
+                },
+              ].map((data, index) => (
+                <Grid key={index} size={{ xs: 2 }}>
+                  <Card
+                    elevation={2}
+                    variant="elevation"
+                    sx={{ height: "100%" }}
+                  >
+                    <CardActionArea
+                      sx={{
+                        height: "100%",
+                        textAlign: "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "start",
+                        alignItems: "center",
+                        p: 2,
+                        "&[data-active]": {
+                          backgroundColor: "action.selected",
+                          "&:hover": {
+                            backgroundColor: "action.selectedHover",
+                          },
+                        },
+                      }}
+                    >
+                      <data.icon fontSize="large" />
+                      <Box mt={1}>
+                        <Typography variant="body2" gutterBottom>
+                          {data.title}
+                        </Typography>
+                      </Box>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))}
             </Grid>
           </Box>
         </Container>
       </Paper>
-      <Features />
+      {/* <Features /> */}
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={8}>
             <Box mb={4}>
-              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 TMS capabilities
               </Typography>
               <Typography variant="h2" paragraph>
@@ -438,56 +826,60 @@ const TMSLandingPage = () => {
             <Grid spacing={3} container py={2}>
               {[
                 {
-                  title: 'Collaborative visibility',
-                  image: '/img/card/collabiration.jpg',
+                  title: "Collaborative visibility",
+                  image: "/img/card/collabiration.jpg",
                   description:
-                    'Track shipments in real-time through telematics, mobile apps, and shared dashboards. Improve collaboration and transparency across all stakeholders.',
+                    "Track shipments in real-time through telematics, mobile apps, and shared dashboards. Improve collaboration and transparency across all stakeholders.",
                 },
                 {
-                  title: 'Control tower',
-                  image: '/img/card/Control-tower.jpg',
+                  title: "Control tower",
+                  image: "/img/card/Control-tower.jpg",
                   description:
-                    'Gain a birds-eye view of operations with map-based insights, next action prompts, and status updates anytime. Enable faster, more informed decision-making.',
+                    "Gain a birds-eye view of operations with map-based insights, next action prompts, and status updates anytime. Enable faster, more informed decision-making.",
                 },
                 {
-                  title: 'Data analytics',
-                  image: '/img/card/data-analytics.webp',
+                  title: "Data analytics",
+                  image: "/img/card/data-analytics.webp",
                   description:
-                    'Monitor key performance indicators with customizable dashboards and actionable insights. Drive continuous improvement and achieve business goals.',
+                    "Monitor key performance indicators with customizable dashboards and actionable insights. Drive continuous improvement and achieve business goals.",
                 },
                 {
-                  title: 'Mobile based platform',
-                  image: '/img/card/mobile-based.jpg',
+                  title: "Mobile based platform",
+                  image: "/img/card/mobile-based.jpg",
                   description:
-                    'Manage transportation operations seamlessly on mobile, from planning to delivery. Empower on-the-go management and enhanced efficiency.',
+                    "Manage transportation operations seamlessly on mobile, from planning to delivery. Empower on-the-go management and enhanced efficiency.",
                 },
                 {
-                  title: 'Alerts, notifications controller',
-                  image: '/img/card/alerts-notifications.jpg',
+                  title: "Alerts, notifications controller",
+                  image: "/img/card/alerts-notifications.jpg",
                   description:
-                    'Configure real-time alerts for exceptions, milestones, and tasks. Stay proactive and reduce operational risks.',
+                    "Configure real-time alerts for exceptions, milestones, and tasks. Stay proactive and reduce operational risks.",
                 },
                 {
-                  title: 'Documents centralization',
-                  image: '/img/card/document-centralization.jpg',
+                  title: "Documents centralization",
+                  image: "/img/card/document-centralization.jpg",
                   description:
-                    'Store, access, and share all transport-related documents in one place. Simplify compliance and reduce administrative burden.',
+                    "Store, access, and share all transport-related documents in one place. Simplify compliance and reduce administrative burden.",
                 },
                 {
-                  title: 'Alerts, notifications controller',
-                  image: '/img/card/alerts-notifications.jpg',
+                  title: "Alerts, notifications controller",
+                  image: "/img/card/alerts-notifications.jpg",
                   description:
-                    'Configure real-time alerts for exceptions, milestones, and tasks. Stay proactive and reduce operational risks.',
+                    "Configure real-time alerts for exceptions, milestones, and tasks. Stay proactive and reduce operational risks.",
                 },
                 {
-                  title: 'Documents centralization',
-                  image: '/img/card/document-centralization.jpg',
+                  title: "Documents centralization",
+                  image: "/img/card/document-centralization.jpg",
                   description:
-                    'Store, access, and share all transport-related documents in one place. Simplify compliance and reduce administrative burden.',
+                    "Store, access, and share all transport-related documents in one place. Simplify compliance and reduce administrative burden.",
                 },
               ].map((card) => (
                 <Grid key={card.title} size={{ xs: 12, md: 3 }}>
-                  <Card elevation={2} variant="elevation" sx={{ height: '100%' }}>
+                  <Card
+                    elevation={2}
+                    variant="elevation"
+                    sx={{ height: "100%" }}
+                  >
                     <CardMedia
                       component="img"
                       height="194"
@@ -495,17 +887,21 @@ const TMSLandingPage = () => {
                       alt={card.title}
                     />
                     <CardContent>
-                      <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'} mb={1}>
-                        <Chip
-                          label={"Feature"}
-                          variant="outlined"
-                        />
+                      <Box
+                        display={"flex"}
+                        justifyContent={"space-between"}
+                        alignItems={"center"}
+                        mb={1}
+                      >
+                        <Chip label={"Feature"} variant="outlined" />
                         <Link href="/blog-detail">
                           <ArrowOutwardOutlinedIcon />
                         </Link>
                       </Box>
-                      <Box display={'flex'} justifyContent={'space-between'}>
-                        <Typography variant="h6" component="h3" gutterBottom>{card.title}</Typography>
+                      <Box display={"flex"} justifyContent={"space-between"}>
+                        <Typography variant="h6" component="h3" gutterBottom>
+                          {card.title}
+                        </Typography>
                         {/* <ArrowOutwardOutlinedIcon fontSize="small" /> */}
                       </Box>
                     </CardContent>
@@ -520,49 +916,49 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box py={8}>
             <Box mb={4}>
-              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 What our Customers say
               </Typography>
               <Typography variant="h2" paragraph>
-                Real stories from teams streamlining their logistics with
-                Instalanes
+                Insights from teams simplifying their logistics journey with Instalanes
               </Typography>
             </Box>
             <Grid container spacing={4}>
               {[
                 {
-                  title: 'Fast Implementation',
+                  title: "Fast Implementation",
                   description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
-                  name: 'John Doe',
-                  role: 'Logistics Director at Hewells',
+                  name: "John Doe",
+                  role: "Logistics Director at Hewells",
                 },
                 {
-                  title: 'Fast Implementation',
+                  title: "Fast Implementation",
                   description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
-                  name: 'John Doe',
-                  role: 'Logistics Director at Hewells',
+                  name: "John Doe",
+                  role: "Logistics Director at Hewells",
                 },
               ].map((stat, index) => (
                 <Grid key={index} size={{ xs: 12, md: 6 }}>
                   <Card
                     elevation={3}
                     variant="outlined"
-                    sx={{ height: '100%', }}
+                    sx={{ height: "100%" }}
                   >
                     <CardContent>
                       <Chip
-                        icon={<DoneOutlinedIcon fontSize='small' />}
+                        icon={<DoneOutlinedIcon fontSize="small" />}
                         label={stat.title}
                         variant="outlined"
                       />
-                      <Typography
-                        variant="h6"
-                        paragraph
-                        mt={1}
-                      >
+                      <Typography variant="h6" paragraph mt={1}>
                         {stat.description}
                       </Typography>
-                      <Box display={'flex'} alignItems="center" gap={2} mt={2}>
+                      <Box display={"flex"} alignItems="center" gap={2} mt={2}>
                         <Avatar
                           alt={stat.name}
                           src="/static/images/avatar/1.jpg"
@@ -658,37 +1054,64 @@ const TMSLandingPage = () => {
         </Container>
       </Paper> */}
 
-
-      <Paper elevation={0} square >
+      <Paper elevation={0} square>
         <Box py={8} sx={{ bgcolor: "common.whiteSmoke" }}>
           <Container maxWidth="lg">
-            <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+            <Typography
+              variant="h6"
+              gutterBottom
+              textTransform="uppercase"
+              color="primary.dark"
+            >
               Contact us
             </Typography>
             <Typography variant="h2" paragraph mb={0}>
-              Discover how Instalanes TMS can simplify and streamline all your moves – FCL, FTL, PTL, ODC, and warehouse. Our experts are here to help with features, pricing, and implementation
+              Discover how Instalanes TMS can simplify and streamline all your
+              moves – FCL, FTL, PTL, ODC, and warehouse. Our experts are here to
+              help with features, pricing, and implementation
             </Typography>
           </Container>
         </Box>
         <Container maxWidth="lg">
           <Box py={8}>
+            <Typography
+              variant="h6"
+              gutterBottom
+              textTransform="uppercase"
+              color="primary.dark"
+            >
+              Contact us
+            </Typography>
+            <Typography variant="h2" paragraph mb={4}>
+              We'd love to talk about how we can work together
+            </Typography>
             <Grid container spacing={4}>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Typography variant="h4" component="h4" fontWeight="bold" gutterBottom mb={3}>
+                <Typography
+                  variant="h4"
+                  component="h4"
+                  fontWeight="bold"
+                  gutterBottom
+                  mb={3}
+                >
                   Get in touch
                 </Typography>
                 <Grid container spacing={3}>
                   <Grid size={{ xs: 12, sm: 6 }}>
-                    <Card elevation={2} variant='outlined' sx={{ bgcolor: 'common.whiteSmoke' }}>
+                    <Card
+                      elevation={2}
+                      variant="outlined"
+                      sx={{ bgcolor: "common.whiteSmoke" }}
+                    >
                       <CardActionArea
                         sx={{
-                          height: '100%',
+                          height: "100%",
                           p: 3,
-                          position: 'relative',
-                          '&[data-active]': {
-                            backgroundColor: 'action.selected',
-                            '&:hover': {
-                              backgroundColor: 'action.selectedHover',
+                          position: "relative",
+                          "&[data-active]": {
+                            backgroundColor: "action.selected",
+                            "&:hover": {
+                              backgroundColor: "action.selectedHover",
                             },
                           },
                         }}
@@ -709,7 +1132,7 @@ const TMSLandingPage = () => {
                           href="https://wa.me/919999999999"
                           target="_blank"
                           color="inherit"
-                          style={{ position: 'absolute', top: 16, right: 16 }}
+                          style={{ position: "absolute", top: 16, right: 16 }}
                         >
                           <ArrowOutwardIcon fontSize="small" />
                         </Link>
@@ -718,16 +1141,20 @@ const TMSLandingPage = () => {
                   </Grid>
 
                   <Grid size={{ xs: 12, sm: 6 }}>
-                    <Card elevation={2} variant='outlined' sx={{ bgcolor: 'common.whiteSmoke' }}>
+                    <Card
+                      elevation={2}
+                      variant="outlined"
+                      sx={{ bgcolor: "common.whiteSmoke" }}
+                    >
                       <CardActionArea
                         sx={{
-                          height: '100%',
+                          height: "100%",
                           p: 3,
-                          position: 'relative',
-                          '&[data-active]': {
-                            backgroundColor: 'action.selected',
-                            '&:hover': {
-                              backgroundColor: 'action.selectedHover',
+                          position: "relative",
+                          "&[data-active]": {
+                            backgroundColor: "action.selected",
+                            "&:hover": {
+                              backgroundColor: "action.selectedHover",
                             },
                           },
                         }}
@@ -749,16 +1176,20 @@ const TMSLandingPage = () => {
                   </Grid>
 
                   <Grid size={{ xs: 12, sm: 6 }}>
-                    <Card elevation={2} variant='outlined' sx={{ bgcolor: 'common.whiteSmoke' }}>
+                    <Card
+                      elevation={2}
+                      variant="outlined"
+                      sx={{ bgcolor: "common.whiteSmoke" }}
+                    >
                       <CardActionArea
                         sx={{
-                          height: '100%',
+                          height: "100%",
                           p: 3,
-                          position: 'relative',
-                          '&[data-active]': {
-                            backgroundColor: 'action.selected',
-                            '&:hover': {
-                              backgroundColor: 'action.selectedHover',
+                          position: "relative",
+                          "&[data-active]": {
+                            backgroundColor: "action.selected",
+                            "&:hover": {
+                              backgroundColor: "action.selectedHover",
                             },
                           },
                         }}
@@ -766,7 +1197,7 @@ const TMSLandingPage = () => {
                         <Typography
                           variant="h6"
                           gutterBottom
-                          display={'flex'}
+                          display={"flex"}
                           alignItems="center"
                           gap={2}
                         >
@@ -774,7 +1205,7 @@ const TMSLandingPage = () => {
                             alt="Priyanka S"
                             src="/img/team1.jpg"
                             sx={{ width: 50, height: 50 }}
-                          />{' '}
+                          />{" "}
                           Priyanka S
                         </Typography>
                         <Typography
@@ -789,7 +1220,7 @@ const TMSLandingPage = () => {
                           href="#"
                           target="_blank"
                           color="inherit"
-                          style={{ position: 'absolute', top: 16, right: 16 }}
+                          style={{ position: "absolute", top: 16, right: 16 }}
                         >
                           <ArrowOutwardIcon fontSize="small" />
                         </Link>
@@ -798,16 +1229,20 @@ const TMSLandingPage = () => {
                   </Grid>
 
                   <Grid size={{ xs: 12, sm: 6 }}>
-                    <Card elevation={2} variant='outlined' sx={{ bgcolor: 'common.whiteSmoke' }}>
+                    <Card
+                      elevation={2}
+                      variant="outlined"
+                      sx={{ bgcolor: "common.whiteSmoke" }}
+                    >
                       <CardActionArea
                         sx={{
-                          height: '100%',
+                          height: "100%",
                           p: 3,
-                          position: 'relative',
-                          '&[data-active]': {
-                            backgroundColor: 'action.selected',
-                            '&:hover': {
-                              backgroundColor: 'action.selectedHover',
+                          position: "relative",
+                          "&[data-active]": {
+                            backgroundColor: "action.selected",
+                            "&:hover": {
+                              backgroundColor: "action.selectedHover",
                             },
                           },
                         }}
@@ -815,7 +1250,7 @@ const TMSLandingPage = () => {
                         <Typography
                           variant="h6"
                           gutterBottom
-                          display={'flex'}
+                          display={"flex"}
                           alignItems="center"
                           gap={2}
                         >
@@ -823,7 +1258,7 @@ const TMSLandingPage = () => {
                             alt="Lucky S"
                             src="/img/team2.jpeg"
                             sx={{ width: 50, height: 50 }}
-                          />{' '}
+                          />{" "}
                           Lucky S
                         </Typography>
                         <Typography
@@ -838,7 +1273,7 @@ const TMSLandingPage = () => {
                           href="#"
                           target="_blank"
                           color="inherit"
-                          style={{ position: 'absolute', top: 16, right: 16 }}
+                          style={{ position: "absolute", top: 16, right: 16 }}
                         >
                           <ArrowOutwardIcon fontSize="small" />
                         </Link>
@@ -848,7 +1283,13 @@ const TMSLandingPage = () => {
                 </Grid>
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Typography variant="h4" component="h2" fontWeight="bold" gutterBottom mb={3}>
+                <Typography
+                  variant="h4"
+                  component="h2"
+                  fontWeight="bold"
+                  gutterBottom
+                  mb={3}
+                >
                   Book a Demo - Submit details
                 </Typography>
                 <Grid container spacing={2}>
@@ -882,7 +1323,7 @@ const TMSLandingPage = () => {
                           slotProps={{
                             input: {
                               ...params.InputProps,
-                              type: 'search',
+                              type: "search",
                             },
                           }}
                         />
@@ -937,8 +1378,8 @@ const TMSLandingPage = () => {
                                 },
                               }}
                               sx={{
-                                '& .MuiSelect-select': {
-                                  paddingRight: '24px',
+                                "& .MuiSelect-select": {
+                                  paddingRight: "24px",
                                 },
                                 minWidth: 80,
                               }}

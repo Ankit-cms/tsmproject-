@@ -4,7 +4,7 @@ const MuiCard: Components["MuiCard"] = {
   styleOverrides: {
     root: {
       borderRadius: 8,
-      boxShadow: "none",
+      boxShadow: "none", 
     },
   },
   variants: [

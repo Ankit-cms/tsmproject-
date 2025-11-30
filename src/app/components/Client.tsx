@@ -17,11 +17,10 @@ const Client = () => {
         <Box py={8}>
           <Box mb={4}>
             <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
-              Trusted by over 500+ clients
+              Trusted by Logistics Supply Chains enterprises 
             </Typography>
             <Typography variant="h2" paragraph>
-              Our clients are our top priority, and we committed to providing
-              with the highest level of service.
+              Modern teams choose us to simplify planning, execution, billing, and visibility
             </Typography>
           </Box>
           <Grid
