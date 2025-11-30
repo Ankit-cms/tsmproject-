@@ -189,7 +189,7 @@ const Footer = () => {
             gutterBottom 
             textAlign="center"
             fontWeight="bold"
-            sx={{ fontSize: "28vh",  mb: 0 }}
+            sx={{ fontSize: "26vh",  mb: 0 }}
           >
             Instalanes TMS
           </Typography>
