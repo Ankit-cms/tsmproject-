@@ -14,7 +14,7 @@ const Client = () => {
   return (
     <Paper elevation={0} square>
       <Container maxWidth="lg">
-        <Box py={5}>
+        <Box py={8}>
           <Box mb={4}>
             <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
               Trusted by over 500+ clients
@@ -64,14 +64,14 @@ const Client = () => {
                 title: 'Redbull',
                 img: './img/client/redbull.png',
               },
-              {
-                title: 'Philips',
-                img: './img/client/philips.png',
-              },
-              {
-                title: 'John-deere',
-                img: './img/client/john-deere.png',
-              },
+              // {
+              //   title: 'Philips',
+              //   img: './img/client/philips.png',
+              // },
+              // {
+              //   title: 'John-deere',
+              //   img: './img/client/john-deere.png',
+              // },
             ].map((brand) => (
               <Grid
                 key={brand.title}

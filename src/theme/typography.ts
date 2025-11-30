@@ -1,7 +1,7 @@
 const typography = {
   fontFamily: 'var(--font-almarai), sans-serif',
   h1: {
-    fontSize: '2.5rem', 
+    fontSize: '3rem', 
     lineHeight: 1.2,
   },
   h2: {
