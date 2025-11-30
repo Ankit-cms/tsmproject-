@@ -60,7 +60,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="sticky" >
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           {/* <FlareIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'common.black' }}  /> */}

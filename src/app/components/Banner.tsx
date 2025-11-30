@@ -15,7 +15,7 @@ import ComputerIcon from '@mui/icons-material/Computer';
 const Banner = () => {
     return (
         < >
-            <Paper elevation={0} square sx={{mt: 8, py: 8}}>
+            <Paper elevation={0} square sx={{py: 8}}>
                 <Container maxWidth="lg">
                     <Grid container spacing={4} alignItems="center" my={2}>
                         <Grid size={{ xs: 12, md: 6 }}>
