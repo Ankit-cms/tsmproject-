@@ -329,7 +329,7 @@ const AcreBytes = () => {
   return (
     <Box position={'relative'}>
       <Header />
-      <Paper elevation={0} square sx={{ mt: 9 }}>
+      <Paper elevation={0} square >
         <Container maxWidth="lg">
           <Divider />
           <Grid container spacing={4} alignItems="center" my={2}>

@@ -103,10 +103,10 @@ const Features = () => {
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={6}>
-              <Typography variant="h3" gutterBottom fontWeight="bold">
+              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
                 TMS features
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 Powerful features that help you outperform competitors and wow
                 your customers
               </Typography>

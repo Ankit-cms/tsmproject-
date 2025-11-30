@@ -4,7 +4,7 @@ import palette from '../palette';
 const MuiButton: Components['MuiButton'] = {
   styleOverrides: {
     root: {
-      borderRadius: 10,
+      borderRadius: 20,
       padding: '8px 16px',
     },
     contained: {

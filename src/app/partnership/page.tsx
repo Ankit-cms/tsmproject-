@@ -35,7 +35,7 @@ const Partners = () => {
   return (
     <Box position={'relative'}>
       <Header />
-      <Paper elevation={0} square sx={{ mt: 9 }}>
+      <Paper elevation={0} square >
         <Container maxWidth="lg">
           <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
             <Link underline="hover" color="inherit" href="/">

@@ -156,28 +156,12 @@ const TMSLandingPage = () => {
       <Paper elevation={0} square sx={{ bgcolor: 'common.whiteSmoke' }}>
         <Container maxWidth="lg">
           <Box py={8} >
-            <Typography variant="h4" gutterBottom color='common.black' fontWeight="bold">
-              Instalanes TMS is a transport management and visibility platform
-              that helps businesses manage and optimize shipments, logistics
-              operations, and costs—while enhancing visibility, collaboration,
-              and team efficiency for seamless, end-to-end logistics.
+            <Typography variant="h6" color="primary.dark" gutterBottom textTransform="uppercase">
+              Why Instalanes?
             </Typography>
-          </Box>
-        </Container>
-      </Paper>
-
-      <Paper elevation={0} square>
-        <Container maxWidth="lg">
-          <Box py={5}>
-            <Box mb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
-                Why Instalanes?
-              </Typography>
-              <Typography variant="h5" paragraph>
-                A collaborative TMS platform built to deliver the business
-                outcomes that matter to you
-              </Typography>
-            </Box>
+            <Typography variant="h2" component="h3" gutterBottom color='common.black' mb={4}>
+              The Collaborative TMS Built for Shippers, carriers, and Logistics professionals – A modern TMS built for teamwork, real-time visibility, and optimized logistics operations that drive meaningful business outcomes
+            </Typography>
             <Grid container spacing={3}>
               {[
                 {
@@ -208,7 +192,7 @@ const TMSLandingPage = () => {
                 <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>
                   <Card
                     elevation={3}
-                    sx={{ height: '100%', bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
+                    sx={{ height: '100%', bgcolor: 'common.white', color: 'common.black' }}>
                     <CardContent sx={{ textAlign: 'start', p: 3 }}>
                       <Typography variant="h3" component="h3" gutterBottom >
                         {stat.value}
@@ -228,17 +212,37 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Paper elevation={0} square sx={{ bgcolor: 'common.whiteSmoke' }}>
+      {/* <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={4}>
               <Typography variant="h2" gutterBottom fontWeight="bold">
-                The Real Transportation challenges{' '}
+                Why Instalanes?
               </Typography>
               <Typography variant="h5" paragraph>
-                Disconnected processes create visibility gaps, delays, and hence
-                higher operations costs.{' '}
+                A collaborative TMS platform built to deliver the business
+                outcomes that matter to you
               </Typography>
+            </Box>
+
+          </Box>
+        </Container>
+      </Paper> */}
+
+      <Paper elevation={0} square>
+        <Container maxWidth="lg">
+          <Box pt={5}>
+            <Box mb={4}>
+              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+                SOLVING THE BIG CHALLENGE
+              </Typography>
+              <Typography variant="h2" paragraph>
+                Simplifying the complex manual chaos, digitally.
+              </Typography>
+              {/* <Typography variant="h5" paragraph >
+              <Box fontWeight="bold" component={"span"} color="error"></Box>  Disconnected processes create visibility gaps, delays, and hence higher operations costs.
+              </Typography> */}
+              <Alert severity="error" sx={{ mb: 2, }}>Problem - Disconnected processes create visibility gaps, delays, and hence higher operations costs. </Alert>
             </Box>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12, md: 6 }}>
@@ -250,7 +254,7 @@ const TMSLandingPage = () => {
                   />
                 </Card>
               </Grid>
-              <Grid container size={{ xs: 12, md: 6 }} spacing={2} alignItems="center">
+              <Grid container size={{ xs: 12, md: 6 }} spacing={2}>
                 <Grid
                   container
                 >
@@ -305,28 +309,14 @@ const TMSLandingPage = () => {
             </Grid>
           </Box>
         </Container>
-        <Divider />
         <Container maxWidth="lg">
-          <Box py={5}>
-            <Box mb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
-                Solution – Digitized process{' '}
-              </Typography>
-              <Typography variant="h5" paragraph>
-                One Platform. End-to-End Control
-              </Typography>
-            </Box>
-            <Grid container spacing={5}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Card elevation={1} variant="elevation" sx={{ height: '100%', width: '100%' }} >
-                  <CardMedia
-                    component="img"
-                    image="/img/work/instalanes_TMS_Digital_Solution.png"
-                    alt="TMS Illustration"
-                  />
-                </Card>
-              </Grid>
-              <Grid container size={{ xs: 12, md: 6 }} spacing={2} alignItems="center">
+          <Box pb={5} pt={2}>
+            {/* <Typography variant="h5" paragraph > 
+              <strong style={{color: 'success'}}>Solution –</strong> Digitized process, one Platform. End-to-End Control
+            </Typography> */}
+            <Alert severity="success" sx={{ mb: 2 }}>Solution – Digitized process, one Platform. End-to-End Control.</Alert>
+            <Grid container spacing={5} >
+              <Grid container size={{ xs: 12, md: 6 }} spacing={2}>
                 {/* <Card elevation={2} sx={{ width: '100%', bgcolor: 'transparent' }}>
                   <CardContent>
                     <Box display="flex" flexDirection="column" gap={2.5}>
@@ -354,10 +344,10 @@ const TMSLandingPage = () => {
                   ].map((data, index) => (
                     <Grid
                       key={index}
-                      size={{ sm: 6 }}
+                      size={{ sm: 12 }}
                     >
                       <Card elevation={0} square sx={{ bgcolor: 'common.whiteSmoke', color: 'common.black' }}>
-                        <Box display="flex" alignItems="start" gap={1} sx={{ p: 2 }}>
+                        <Box display="flex" alignItems="start" gap={2} sx={{ p: 2 }}>
                           <CheckCircleOutlineIcon color="success" />
                           <Typography variant="h6" gutterBottom mb={0}>
                             {data}
@@ -368,20 +358,28 @@ const TMSLandingPage = () => {
                   ))}
                 </Grid>
               </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Card elevation={1} variant="elevation" sx={{ height: '100%', width: '100%' }} >
+                  <CardMedia
+                    component="img"
+                    image="/img/work/instalanes_TMS_Digital_Solution.png"
+                    alt="TMS Illustration"
+                  />
+                </Card>
+              </Grid>
             </Grid>
           </Box>
         </Container>
       </Paper>
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
-                How Instalanes TMS Works{' '}
+              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+                Digital solution deep dive
               </Typography>
-              <Typography variant="h5" paragraph>
-                One platform to digitize and simplify FCL, FTL, PTL, ODC, and
-                warehouse moves
+              <Typography variant="h2" paragraph>
+                How Instalanes TMS works
               </Typography>
             </Box>
             {/* <Box>
@@ -396,7 +394,10 @@ const TMSLandingPage = () => {
                 </CardContent>
               </Card>
             </Box> */}
-            <Grid container spacing={2}>
+            <Typography variant="h6" paragraph fontWeight="bold">
+              Transportation process
+            </Typography>
+            <Grid container spacing={2} mb={4}>
               {
                 [
                   {
@@ -462,11 +463,6 @@ const TMSLandingPage = () => {
                   </Grid>
                 ))
               }
-
-
-
-
-
             </Grid>
           </Box>
         </Container>
@@ -500,10 +496,10 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
+              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
                 TMS capabilities
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 Unlock powerful tools to plan, execute, and monitor
                 transportation seamlessly—anytime, anywhere
               </Typography>
@@ -546,7 +542,7 @@ const TMSLandingPage = () => {
                   description:
                     'Store, access, and share all transport-related documents in one place. Simplify compliance and reduce administrative burden.',
                 },
-                 {
+                {
                   title: 'Alerts, notifications controller',
                   image: '/img/card/alerts-notifications.jpg',
                   description:
@@ -590,10 +586,10 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
+              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
                 What our Customers say
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 Real stories from teams streamlining their logistics with
                 Instalanes
               </Typography>
@@ -617,7 +613,7 @@ const TMSLandingPage = () => {
                   <Card
                     elevation={3}
                     variant="outlined"
-                    sx={{ height: '100%',  }}
+                    sx={{ height: '100%', }}
                   >
                     <CardContent>
                       <Chip
@@ -627,7 +623,7 @@ const TMSLandingPage = () => {
                       />
                       <Typography
                         variant="h6"
-                        paragraph 
+                        paragraph
                         mt={1}
                       >
                         {stat.description}
@@ -662,10 +658,10 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box py={5}>
             <Box pb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
+              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
                 Blog posts
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 Stay updated with our latest articles and insights
               </Typography>
             </Box>
@@ -729,39 +725,21 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Paper elevation={0} square sx={{ bgcolor: 'common.grayLight' }}>
-        <Container maxWidth="lg">
-          <Box py={5}>
-            <Box pb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
-                Transform your logistics
-              </Typography>
-              <Typography variant="h5" paragraph>
-                Instalanes TMS, One platform for every shipment—FCL, FTL, PTL,
-                ODC, and warehouse—helping shippers, carriers, and 3PLs
-                streamline operations and grow faster
-              </Typography>
-            </Box>
-            <Button variant="contained" size="large">
-              <CallIcon sx={{ mr: 1 }} /> Contact team
-            </Button>
-          </Box>
-        </Container>
-      </Paper>
 
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ py: 5 }}>
+        <Box mb={4} py={3} sx={{ bgcolor: "common.whiteSmoke" }}>
+          <Container maxWidth="lg">
+            <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+              Contact us
+            </Typography>
+            <Typography variant="h2" paragraph>
+              Transform your logistics, Discover how Instalanes TMS can simplify and streamline all your moves – FCL, FTL, PTL, ODC, and warehouse.
+              Our team is here to guide you through features, pricing, implementation, and ongoing support.
+            </Typography>
+          </Container>
+        </Box>
         <Container maxWidth="lg">
-          <Box py={5}>
-            <Box mb={4}>
-              <Typography variant="h2" gutterBottom fontWeight="bold">
-                Let’s Connect
-              </Typography>
-              <Typography variant="h5" paragraph mb={6}>
-                Explore how Instalanes TMS can simplify your operations. We’re
-                here to help you with features, pricing, implementation and
-                support.
-              </Typography>
-            </Box>
+          <Box>
             <Grid container spacing={4}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h4" component="h4" fontWeight="bold" gutterBottom mb={3}>
