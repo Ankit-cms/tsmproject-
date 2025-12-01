@@ -18,6 +18,7 @@ import {
   CardActionArea,
   Autocomplete,
   Alert,
+  Fab,
 } from "@mui/material";
 import { Grid } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -63,6 +64,7 @@ import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDes
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
+import { CallOutlined } from "@mui/icons-material";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -159,9 +161,10 @@ const TMSLandingPage = () => {
       {/* <HeroFull /> */}
 
       <Banner />
+
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Typography
               variant="h6"
               color="primary.dark"
@@ -241,10 +244,11 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
+
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box pt={8}>
-            <Box >
+          <Box sx={{ pt: { xs: 4, md: 8 } }}>
+            <Box>
               <Typography
                 variant="h6"
                 gutterBottom
@@ -256,7 +260,7 @@ const TMSLandingPage = () => {
               <Typography variant="h2" paragraph>
                 Simplifying the complex manual chaos, digitally.
               </Typography>
-              <Alert severity="error" sx={{ mb: 2}}>
+              <Alert severity="error" sx={{ mb: 2 }}>
                 Modern supply chains lack real-time visibility and smooth
                 coordination because teams still rely on emails, spreadsheets,
                 and disconnected systems. This siloed and manual way of working
@@ -325,7 +329,7 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
         <Container maxWidth="lg">
-          <Box pb={8} pt={2}>
+          <Box sx={{ pb: { xs: 4, md: 8 }, pt: { xs: 2, md: 2 } }}>
             <Alert severity="success" sx={{ mb: 2 }}>
               A global, easy-to-use SaaS TMS that digitizes operations, connects
               all stakeholders on one platform, and delivers real-time
@@ -398,7 +402,7 @@ const TMSLandingPage = () => {
       </Paper>
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
               <Typography
                 variant="h6"
@@ -462,7 +466,7 @@ const TMSLandingPage = () => {
                   icon: ReceiptLongOutlinedIcon,
                 },
               ].map((data, index) => (
-                <Grid key={index} size={{ xs: 4, sm: 1.5 }}>
+                <Grid key={index} size={{ xs: 6, md: 1.5 }}>
                   <Card
                     elevation={2}
                     variant="elevation"
@@ -768,7 +772,7 @@ const TMSLandingPage = () => {
                   icon: HubOutlinedIcon,
                 },
               ].map((data, index) => (
-                <Grid key={index} size={{ xs: 2 }}>
+                <Grid key={index} size={{ xs: 6, md: 2 }}>
                   <Card
                     elevation={2}
                     variant="elevation"
@@ -808,7 +812,7 @@ const TMSLandingPage = () => {
       {/* <Features /> */}
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
               <Typography
                 variant="h6"
@@ -914,7 +918,7 @@ const TMSLandingPage = () => {
       </Paper>
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
               <Typography
                 variant="h6"
@@ -925,7 +929,8 @@ const TMSLandingPage = () => {
                 What our Customers say
               </Typography>
               <Typography variant="h2" paragraph>
-                Insights from teams simplifying their logistics journey with Instalanes
+                Insights from teams simplifying their logistics journey with
+                Instalanes
               </Typography>
             </Box>
             <Grid container spacing={4}>
@@ -1055,7 +1060,7 @@ const TMSLandingPage = () => {
       </Paper> */}
 
       <Paper elevation={0} square>
-        <Box py={8} sx={{ bgcolor: "common.whiteSmoke" }}>
+        <Box id="contact" sx={{ py: { xs: 4, md: 8 }, bgcolor: "common.whiteSmoke" }}>
           <Container maxWidth="lg">
             <Typography
               variant="h6"
@@ -1073,7 +1078,7 @@ const TMSLandingPage = () => {
           </Container>
         </Box>
         <Container maxWidth="lg">
-          <Box py={8}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Typography
               variant="h6"
               gutterBottom
@@ -1471,7 +1476,12 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
-
+      <Box position={"fixed"} bottom={16} right={16}>
+        <Fab variant="extended" color="primary" href="/contact" component="a">
+          <CallOutlined sx={{ mr: 1 }} />
+          Contact Us
+        </Fab>
+      </Box>
       <Footer />
     </Box>
   );
