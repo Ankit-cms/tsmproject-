@@ -1,12 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 import {
   Avatar,
   Box,
   Button,
   Card,
+  CardActionArea,
   CardContent,
   CardHeader,
   CardMedia,
@@ -18,41 +19,69 @@ import {
   Tab,
   Tabs,
   Typography,
-} from '@mui/material';
+} from "@mui/material";
+import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
+import LaptopIcon from "@mui/icons-material/Laptop";
+import FormatQuote from "@mui/icons-material/FormatQuote";
+import WhatsApp from "@mui/icons-material/WhatsApp";
+import DescriptionIcon from "@mui/icons-material/Description";
+import PeopleIcon from "@mui/icons-material/People";
+import StarIcon from "@mui/icons-material/Star";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import HomeIcon from "@mui/icons-material/Home";
+import StraightenIcon from "@mui/icons-material/Straighten";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+import PublicIcon from "@mui/icons-material/Public";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import WorkIcon from "@mui/icons-material/Work";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import InfoIcon from "@mui/icons-material/Info";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import GroupIcon from "@mui/icons-material/Group";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import MapIcon from "@mui/icons-material/Map";
+import SpeedIcon from "@mui/icons-material/Speed";
 
-import LaptopIcon from '@mui/icons-material/Laptop';
-import FormatQuote from '@mui/icons-material/FormatQuote';
-import WhatsApp from '@mui/icons-material/WhatsApp';
-import DescriptionIcon from '@mui/icons-material/Description';
-import PeopleIcon from '@mui/icons-material/People';
-import StarIcon from '@mui/icons-material/Star';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import HomeIcon from '@mui/icons-material/Home';
-import StraightenIcon from '@mui/icons-material/Straighten';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import PublicIcon from '@mui/icons-material/Public';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import WorkIcon from '@mui/icons-material/Work';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import InfoIcon from '@mui/icons-material/Info';
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import GroupIcon from '@mui/icons-material/Group';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import MapIcon from '@mui/icons-material/Map';
-import SpeedIcon from '@mui/icons-material/Speed';
-
-import { styled } from '@mui/material/styles';
-import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import { styled } from "@mui/material/styles";
+import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
 import MuiAccordionSummary, {
   AccordionSummaryProps,
   accordionSummaryClasses,
-} from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
+} from "@mui/material/AccordionSummary";
+import MuiAccordionDetails from "@mui/material/AccordionDetails";
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
+import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
+import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
+import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
+import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
+import WebhookOutlinedIcon from "@mui/icons-material/WebhookOutlined";
+import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import CellTowerOutlinedIcon from "@mui/icons-material/CellTowerOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import MobileFriendlyOutlinedIcon from "@mui/icons-material/MobileFriendlyOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import DifferenceOutlinedIcon from "@mui/icons-material/DifferenceOutlined";
+import TvOutlinedIcon from "@mui/icons-material/TvOutlined";
+import DvrOutlinedIcon from "@mui/icons-material/DvrOutlined";
+import PriceCheckOutlinedIcon from "@mui/icons-material/PriceCheckOutlined";
+import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDesktopOutlined";
+import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
+import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
+import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -82,40 +111,40 @@ const AcreBytes = () => {
     <MuiAccordion disableGutters elevation={0} square {...props} />
   ))(({ theme }) => ({
     border: `1px solid ${theme.palette.divider}`,
-    '&:not(:last-child)': {
+    "&:not(:last-child)": {
       borderBottom: 0,
     },
-    '&::before': {
-      display: 'none',
+    "&::before": {
+      display: "none",
     },
   }));
 
   const AccordionSummary = styled((props: AccordionSummaryProps) => (
     <MuiAccordionSummary
-      expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+      expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
       {...props}
     />
   ))(({ theme }) => ({
-    backgroundColor: 'rgba(0, 0, 0, .03)',
-    flexDirection: 'row-reverse',
+    backgroundColor: "rgba(0, 0, 0, .03)",
+    flexDirection: "row-reverse",
     [`& .${accordionSummaryClasses.expandIconWrapper}.${accordionSummaryClasses.expanded}`]:
       {
-        transform: 'rotate(90deg)',
+        transform: "rotate(90deg)",
       },
     [`& .${accordionSummaryClasses.content}`]: {
       marginLeft: theme.spacing(1),
     },
-    ...theme.applyStyles('dark', {
-      backgroundColor: 'rgba(255, 255, 255, .05)',
+    ...theme.applyStyles("dark", {
+      backgroundColor: "rgba(255, 255, 255, .05)",
     }),
   }));
 
   const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     padding: theme.spacing(2),
-    borderTop: '1px solid rgba(0, 0, 0, .125)',
+    borderTop: "1px solid rgba(0, 0, 0, .125)",
   }));
 
-  const [expanded, setExpanded] = React.useState<string | false>('');
+  const [expanded, setExpanded] = React.useState<string | false>("");
 
   const handleAccordian =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
@@ -128,166 +157,166 @@ const AcreBytes = () => {
 
   const owners = [
     {
-      title: 'Verified listings',
-      text: 'Access only researched and approved properties for a confident property search.',
+      title: "Verified listings",
+      text: "Access only researched and approved properties for a confident property search.",
       icon: <VerifiedUserIcon />,
     },
     {
-      title: 'Local expertise',
-      text: 'Find properties in well-researched, approved areas for guaranteed quality.',
+      title: "Local expertise",
+      text: "Find properties in well-researched, approved areas for guaranteed quality.",
       icon: <PublicIcon />,
     },
     {
-      title: 'Consultant transparency',
-      text: 'Know your consultant with ratings and reviews to ensure trust.',
+      title: "Consultant transparency",
+      text: "Know your consultant with ratings and reviews to ensure trust.",
       icon: <VisibilityIcon />,
     },
     {
-      title: 'Consultant rating',
-      text: 'Rate your consultant to promote quality service and improve overall experience.',
+      title: "Consultant rating",
+      text: "Rate your consultant to promote quality service and improve overall experience.",
       icon: <StarIcon />,
     },
-    {
-      title: 'Transparent documentation',
-      text: 'Complete visibility into property and transaction details.',
-      icon: <DescriptionIcon />,
-    },
-    {
-      title: 'Professional experience',
-      text: 'Enjoy professional journey through every step of your property process.',
-      icon: <WorkIcon />,
-    },
-    {
-      title: 'AcreBytes team dedicated support',
-      text: 'Get value added assistance from the AcreBytes team.',
-      icon: <SupportAgentIcon />,
-    },
-    {
-      title: 'Know more',
-      text: 'Know more about the AcreBytes.',
-      icon: <InfoIcon />,
-    },
+    // {
+    //   title: "Transparent documentation",
+    //   text: "Complete visibility into property and transaction details.",
+    //   icon: <DescriptionIcon />,
+    // },
+    // {
+    //   title: "Professional experience",
+    //   text: "Enjoy professional journey through every step of your property process.",
+    //   icon: <WorkIcon />,
+    // },
+    // {
+    //   title: "AcreBytes team dedicated support",
+    //   text: "Get value added assistance from the AcreBytes team.",
+    //   icon: <SupportAgentIcon />,
+    // },
+    // {
+    //   title: "Know more",
+    //   text: "Know more about the AcreBytes.",
+    //   icon: <InfoIcon />,
+    // },
   ];
 
   const brokers = [
     {
-      title: 'Connect with verified Customers',
-      text: 'Engage with quality customers who value researched and structured information.',
+      title: "Connect with verified Customers",
+      text: "Engage with quality customers who value researched and structured information.",
       icon: <GroupIcon />,
     },
     {
-      title: 'Build trust with Ratings',
-      text: 'Gain credibility by collecting ratings and reviews from clients.',
+      title: "Build trust with Ratings",
+      text: "Gain credibility by collecting ratings and reviews from clients.",
       icon: <ThumbUpIcon />,
     },
     {
-      title: 'Personalised profile',
-      text: 'Set up a professional profile that showcases your expertise and trustworthiness.',
+      title: "Personalised profile",
+      text: "Set up a professional profile that showcases your expertise and trustworthiness.",
       icon: <AccountBoxIcon />,
     },
     {
-      title: 'Time-Saving digital tools',
-      text: 'Access efficient digital tools that streamline your workflow and save valuable time.',
+      title: "Time-Saving digital tools",
+      text: "Access efficient digital tools that streamline your workflow and save valuable time.",
       icon: <AccessTimeIcon />,
     },
-    {
-      title: 'Mapping to top Real estate Projects',
-      text: 'Improve your visibility, get access of project level verified customers.',
-      icon: <MapIcon />,
-    },
-    {
-      title: 'Accelerate closures',
-      text: 'Faster deal closures with pre-researched and structured documentation.',
-      icon: <SpeedIcon />,
-    },
-    {
-      title: 'AcreBytes team support',
-      text: 'Receive dedicated support to grow your business and succeed on the platform.',
-      icon: <SupportAgentIcon />,
-    },
-    {
-      title: 'Know more',
-      text: 'Connect with the team.',
-      icon: <InfoIcon />,
-    },
+    // {
+    //   title: "Mapping to top Real estate Projects",
+    //   text: "Improve your visibility, get access of project level verified customers.",
+    //   icon: <MapIcon />,
+    // },
+    // {
+    //   title: "Accelerate closures",
+    //   text: "Faster deal closures with pre-researched and structured documentation.",
+    //   icon: <SpeedIcon />,
+    // },
+    // {
+    //   title: "AcreBytes team support",
+    //   text: "Receive dedicated support to grow your business and succeed on the platform.",
+    //   icon: <SupportAgentIcon />,
+    // },
+    // {
+    //   title: "Know more",
+    //   text: "Connect with the team.",
+    //   icon: <InfoIcon />,
+    // },
   ];
   const properties = [
     {
       id: 1,
       image:
-        'https://www.homznspace.com/wp-content/uploads/2022/01/apartments-img-hns1.jpg',
+        "https://www.homznspace.com/wp-content/uploads/2022/01/apartments-img-hns1.jpg",
       price: 7395000,
-      type: 'Residential',
-      title: 'Belmondo',
-      location: 'Gahunje, Pune',
-      builder: 'FAIRFOX',
-      details: '3 BHK, 4 BHK, 5 BHK, 6 BHK',
-      area: '3065 to 9785 Sqft',
+      type: "Residential",
+      title: "Belmondo",
+      location: "Gahunje, Pune",
+      builder: "FAIRFOX",
+      details: "3 BHK, 4 BHK, 5 BHK, 6 BHK",
+      area: "3065 to 9785 Sqft",
     },
     {
       id: 2,
       image:
-        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60',
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60",
       price: 39845000,
-      type: 'Residential',
-      title: 'Gateway',
-      location: 'Kokapet, Hyderabad',
-      builder: 'FAIRFOX',
-      details: '1 BHK',
-      area: '240 to 240 Sqft',
+      type: "Residential",
+      title: "Gateway",
+      location: "Kokapet, Hyderabad",
+      builder: "FAIRFOX",
+      details: "1 BHK",
+      area: "240 to 240 Sqft",
     },
     {
       id: 3,
       image:
-        'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=60',
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=60",
       price: 56160,
-      type: 'Residential',
-      title: 'Taj',
-      location: 'Worli, Mumbai',
-      builder: 'FAIRFOX',
-      details: 'N/A',
-      area: '0 to 0 Sq. Ft',
+      type: "Residential",
+      title: "Taj",
+      location: "Worli, Mumbai",
+      builder: "FAIRFOX",
+      details: "N/A",
+      area: "0 to 0 Sq. Ft",
     },
     {
       id: 4,
       image:
-        'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=60',
-      price: 'Price N/A',
-      type: 'Residential',
-      title: 'Ssssss123',
-      location: 'Sector 62, Noida',
-      builder: 'FAIRFOX',
-      details: '3 BHK',
-      area: '920 to 1020 Sqft',
+        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=60",
+      price: "Price N/A",
+      type: "Residential",
+      title: "Ssssss123",
+      location: "Sector 62, Noida",
+      builder: "FAIRFOX",
+      details: "3 BHK",
+      area: "920 to 1020 Sqft",
     },
   ];
   const companies = [
     {
-      name: 'Prestige',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/5/50/Prestige_Group.svg',
+      name: "Prestige",
+      logo: "https://upload.wikimedia.org/wikipedia/en/5/50/Prestige_Group.svg",
     },
-    { name: 'Fairfox', logo: 'https://www.propyards.in/storage/6.png' },
+    { name: "Fairfox", logo: "https://www.propyards.in/storage/6.png" },
     {
-      name: 'Prestige',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/5/50/Prestige_Group.svg',
-    },
-    {
-      name: 'Brigade',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Brigade_Group.svg/1058px-Brigade_Group.svg.png',
+      name: "Prestige",
+      logo: "https://upload.wikimedia.org/wikipedia/en/5/50/Prestige_Group.svg",
     },
     {
-      name: 'Mantri',
-      logo: 'https://media.licdn.com/dms/image/v2/C510BAQGJVvop95cilQ/company-logo_200_200/company-logo_200_200/0/1630606386534/mantri_developers_pvvt__ltd_logo?e=2147483647&v=beta&t=xTT87KZDg7g4CEY8gBlxGJ6aK0GAqQIm5Sd-03vgt1E',
+      name: "Brigade",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Brigade_Group.svg/1058px-Brigade_Group.svg.png",
     },
     {
-      name: 'Unitech',
-      logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQEzVS2Iai5DMQ/company-logo_200_200/B4DZliRtuPJYAI-/0/1758290438236/unitech_group_kolkata_logo?e=2147483647&v=beta&t=Th5JgtRdNYRlaqMPjQu66xhScDz5b1vqFOQSff36vf0',
+      name: "Mantri",
+      logo: "https://media.licdn.com/dms/image/v2/C510BAQGJVvop95cilQ/company-logo_200_200/company-logo_200_200/0/1630606386534/mantri_developers_pvvt__ltd_logo?e=2147483647&v=beta&t=xTT87KZDg7g4CEY8gBlxGJ6aK0GAqQIm5Sd-03vgt1E",
+    },
+    {
+      name: "Unitech",
+      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEzVS2Iai5DMQ/company-logo_200_200/B4DZliRtuPJYAI-/0/1758290438236/unitech_group_kolkata_logo?e=2147483647&v=beta&t=Th5JgtRdNYRlaqMPjQu66xhScDz5b1vqFOQSff36vf0",
     },
   ];
 
   function formatIndianPrice(amount: number | string | null): string {
-    if (amount === null || amount === 'Price N/A' || isNaN(Number(amount)))
-      return 'Price N/A';
+    if (amount === null || amount === "Price N/A" || isNaN(Number(amount)))
+      return "Price N/A";
 
     const num = Number(amount);
 
@@ -298,58 +327,60 @@ const AcreBytes = () => {
     } else if (num >= 1000) {
       return `₹ ${(num / 1000).toFixed(2)} Thousand`;
     } else {
-      return `₹ ${num.toLocaleString('en-IN')}`;
+      return `₹ ${num.toLocaleString("en-IN")}`;
     }
   }
 
   const steps = [
     {
       icon: <DescriptionIcon fontSize="large" />,
-      title: 'ENQUIRE',
-      subtitle: 'Sell / Buy / Lease / Rent a property',
+      title: "ENQUIRE",
+      desc: "Sell / Buy / Lease / Rent a property",
     },
     {
       icon: <PeopleIcon fontSize="large" />,
-      title: 'GET CONSULTANT',
-      subtitle: 'Get connected with professional Brokers',
+      title: "GET CONSULTANT",
+      desc: "Get connected with professional Brokers",
     },
     {
       icon: <DescriptionIcon fontSize="large" />,
-      title: 'WORK ON ENQUIRY',
-      subtitle: 'Let Consultant work on your requirements',
+      title: "WORK ON ENQUIRY",
+      desc: "Let Consultant work on your requirements",
     },
     {
       icon: <StarIcon fontSize="large" />,
-      title: 'RATE CONSULTANT',
-      subtitle:
-        'Let us know how was your experience with the assigned Consultant',
+      title: "RATE CONSULTANT",
+      desc: "Let us know how was your experience with the assigned Consultant",
     },
   ];
 
   return (
-    <Box position={'relative'}>
+    <Box>
       <Header />
-      <Paper elevation={0} square >
+
+      <Paper elevation={0} square sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="lg">
-          <Divider />
           <Grid container spacing={4} alignItems="center" my={2}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography
-                variant="h3"
+                variant="h1"
                 component="h1"
                 gutterBottom
-                sx={{ fontSize: { xs: '1.5rem', md: '3rem' } }}
-                mt={2}
+                sx={{ mt: { md: 2 } }}
               >
                 Empowering smarter Real Estate decisions
               </Typography>
-              <Typography variant="body1" paragraph>
+              <Typography variant="body1" fontWeight={400} paragraph>
                 AcreBytes connects buyers, sellers, and verified real estate
                 experts to make property deals simple, secure, and transparent.
               </Typography>
-              <Box display={'flex'} gap={3} mt={3}>
-                <Button variant="contained">Join now</Button>
-                <Button variant="outlined">Read more</Button>
+              <Box display={"flex"} gap={1} mt={3}>
+                <Button sx={{ mt: 1 }} variant="contained" size="large">
+                  Join now
+                </Button>
+                <Button sx={{ mt: 1 }} variant="outlined" size="large">
+                  Read more
+                </Button>
               </Box>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
@@ -358,198 +389,261 @@ const AcreBytes = () => {
                 height="400"
                 image="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ix4_slJB4Kpg/v0/-1x-1.webp"
                 alt="Acrebytes"
+                sx={{ borderRadius: 4, boxShadow: 4 }}
               />
             </Grid>
           </Grid>
+        </Container>
+      </Paper>
 
-          <Divider />
-
-          <Box py={5}>
-            <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
-                How it works{' '}
+      <Paper elevation={0} square>
+        <Container maxWidth="lg">
+          <Box sx={{ pb: { xs: 4, md: 8 } }}>
+            <Box>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
+                How it works
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 Your seamless path to get better experience in Real estate!
               </Typography>
             </Box>
 
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              spacing={2}
-            >
-              {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                  <Grid size={{ xs: 12, sm: 6, md: 2.5 }}>
-                    <Box
+            <Grid container spacing={2} sx={{ mb: 4 }}>
+              {steps?.map((data, index) => (
+                <Grid key={index} size={{ xs: 3 }}>
+                  <Card
+                    elevation={2}
+                    variant="elevation"
+                    sx={{ height: "100%" }}
+                  >
+                    <CardActionArea
                       sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
+                        height: "100%",
+                        textAlign: "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "start",
+                        alignItems: "center",
+                        p: 2,
+                        "&[data-active]": {
+                          backgroundColor: "action.selected",
+                          "&:hover": {
+                            backgroundColor: "action.selectedHover",
+                          },
+                        },
                       }}
                     >
-                      <Avatar
-                        sx={{
-                          boxShadow: 1,
-                          width: 56,
-                          height: 56,
-                          mb: 1.5,
-                        }}
-                      >
-                        {step.icon}
-                      </Avatar>
-
-                      <Typography variant="subtitle1" textAlign={'center'}>
-                        {step.title}
-                      </Typography>
-
-                      <Typography
-                        variant="body2"
-                        sx={{ maxWidth: 180 }}
-                        textAlign={'center'}
-                      >
-                        {step.subtitle}
-                      </Typography>
-                    </Box>
-                  </Grid>
-
-                  {/* Arrow between steps except last one */}
-                  {index < steps.length - 1 && (
-                    <Grid>
-                      <ArrowForwardIcon sx={{ color: '#555' }} />
-                    </Grid>
-                  )}
-                </React.Fragment>
+                      {data.icon}
+                      <Box mt={1}>
+                        <Typography variant="body2" gutterBottom>
+                          {data.title}
+                        </Typography>
+                        <Typography variant="caption" color="text.secondary">
+                          {data.desc}
+                        </Typography>
+                      </Box>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
               ))}
             </Grid>
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
 
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={5}>
-            <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Box mb={3}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 Prime Properties
               </Typography>
             </Box>
+            <Grid container spacing={3} justifyContent="center">
+              {properties.map((property) => (
+                <Grid key={property.id} size={{ xs: 12, sm: 6, md: 3 }}>
+                  <Card
+                    elevation={2}
+                    variant="elevation"
+                    sx={{ height: "100%" }}
+                  >
+                    <CardMedia
+                      component="img"
+                      height="160"
+                      image={property.image}
+                      alt={property.title}
+                    />
 
-            <Box sx={{ py: 2 }}>
-              <Grid container spacing={3} justifyContent="center">
-                {properties.map((property) => (
-                  <Grid key={property.id} size={{ xs: 12, sm: 6, md: 3 }}>
-                    <Card
-                      sx={{
-                        overflow: 'hidden',
+                    {/* Card Content */}
+                    <CardContent sx={{ flexGrow: 1, p: 2 }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Chip
+                          size="small"
+                          label={formatIndianPrice(property.price)}
+                        />
+                        <Chip size="small" label={property.type} />
+                      </Box>
+                      <Typography variant="h6">{property.title}</Typography>
+                      <Typography variant="body2" sx={{ mb: 1 }}>
+                        {property.location}
+                      </Typography>
+                      <Divider sx={{ mb: 1 }} />
 
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                      }}
-                    >
-                      <CardMedia
-                        component="img"
-                        height="160"
-                        image={property.image}
-                        alt={property.title}
-                      />
-
-                      {/* Card Content */}
-                      <CardContent sx={{ flexGrow: 1, p: 2 }}>
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                          }}
-                        >
-                          <Chip
-                            
-                            size="small"
-                            label={formatIndianPrice(property.price)}
-                          />
-                          <Chip
-                            
-                            size="small"
-                            label={property.type}
-                          />
-                        </Box>
-                        <Typography variant="h6">{property.title}</Typography>
-                        <Typography variant="body2" sx={{ mb: 1 }}>
-                          {property.location}
-                        </Typography>
-                        <Divider sx={{ mb: 1 }} />
-
-                        <Grid container spacing={1} alignItems="center">
-                          <Grid>
-                            <HomeIcon fontSize="small" />
-                          </Grid>
-                          <Grid>
-                            <Typography variant="body2">
-                              {property.details}
-                            </Typography>
-                          </Grid>
+                      <Grid container spacing={1} alignItems="center">
+                        <Grid>
+                          <HomeIcon fontSize="small" />
                         </Grid>
-
-                        <Grid
-                          container
-                          spacing={1}
-                          alignItems="center"
-                          mt={0.5}
-                        >
-                          <Grid>
-                            <StraightenIcon fontSize="small" />
-                          </Grid>
-                          <Grid>
-                            <Typography variant="body2">
-                              {property.area}
-                            </Typography>
-                          </Grid>
+                        <Grid>
+                          <Typography variant="body2">
+                            {property.details}
+                          </Typography>
                         </Grid>
+                      </Grid>
 
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            justifyContent: 'flex-end',
-                            alignItems: 'center',
-                          }}
-                        >
-                          {/* <Typography
+                      <Grid container spacing={1} alignItems="center" mt={0.5}>
+                        <Grid>
+                          <StraightenIcon fontSize="small" />
+                        </Grid>
+                        <Grid>
+                          <Typography variant="body2">
+                            {property.area}
+                          </Typography>
+                        </Grid>
+                      </Grid>
+
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "flex-end",
+                          alignItems: "center",
+                        }}
+                      >
+                        {/* <Typography
                             variant="body2"
                           >
                             {property.builder}
                           </Typography> */}
-                        </Box>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 Why Acrebytes?
               </Typography>
-              {/* <Typography variant="subtitle1" gutterBottom>
-                At Instalanes, we believe in the power of collaboration to drive
-                mutual success. We are always looking to build strong,
-                meaningful partnerships that benefit our customers and enhance
-                our service offerings.
-              </Typography> */}
             </Box>
-            <Divider />
-            <Box sx={{ width: '100%', mt: 3 }}>
+            <Grid container spacing={2} sx={{ mb: 4 }}>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Card elevation={1} variant="elevation">
+                  <CardMedia
+                    component="img"
+                    image="/img/work/instalanes_TMS_challenges.png"
+                    alt="TMS Illustration"
+                  />
+                </Card>
+              </Grid>
+              <Grid container size={{ xs: 12, md: 6 }}>
+                <Grid container spacing={2}>
+                  {owners?.map((data, index) => (
+                    <Grid key={index} size={{ sm: 6 }}>
+                      <Card
+                        elevation={0}
+                        square
+                        sx={{
+                          bgcolor: "common.whiteSmoke",
+                          color: "common.black",
+                          height: "100%",
+                        }}
+                      >
+                        <CardContent sx={{ p: 3 }}>
+                          <Box display={"flex"} alignItems="start" gap={1}>
+                            {data.icon}
+                            <Typography variant="body1" gutterBottom>
+                              {data.title}
+                            </Typography>
+                          </Box>
+                          <Typography variant="caption" color="text.secondary">
+                            {data.text}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+              <Grid container size={{ xs: 12, md: 6 }}>
+                <Grid container spacing={2}>
+                  {brokers?.map((data, index) => (
+                    <Grid key={index} size={{ sm: 6 }}>
+                      <Card
+                        elevation={0}
+                        square
+                        sx={{
+                          bgcolor: "common.whiteSmoke",
+                          color: "common.black",
+                          height: "100%",
+                        }}
+                      >
+                        <CardContent sx={{ p: 3 }}>
+                          <Box display={"flex"} alignItems="start" gap={1}>
+                            {data.icon}
+                            <Typography variant="body1" gutterBottom>
+                              {data.title}
+                            </Typography>
+                          </Box>
+                          <Typography variant="caption" color="text.secondary">
+                            {data.text}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Card elevation={1} variant="elevation">
+                  <CardMedia
+                    component="img"
+                    image="/img/work/instalanes_TMS_challenges.png"
+                    alt="TMS Illustration"
+                  />
+                </Card>
+              </Grid>
+            </Grid>
+
+            {/* <Box sx={{ width: "100%", mt: 3 }}>
               <Tabs
                 value={value}
                 onChange={handleChange}
@@ -571,7 +665,7 @@ const AcreBytes = () => {
                 <Grid container spacing={2}>
                   {owners.map((item) => (
                     <Grid size={{ xs: 12, md: 3, sm: 6 }} key={item.title}>
-                      <Card sx={{ height: '100%' }}>
+                      <Card sx={{ height: "100%" }}>
                         <CardHeader
                           avatar={<Avatar>{item.icon}</Avatar>}
                           title={
@@ -593,7 +687,7 @@ const AcreBytes = () => {
                 <Grid container spacing={2}>
                   {brokers.map((item) => (
                     <Grid size={{ xs: 12, sm: 6, md: 3 }} key={item.title}>
-                      <Card sx={{ height: '100%' }}>
+                      <Card sx={{ height: "100%" }}>
                         <CardHeader
                           avatar={<Avatar>{item.icon}</Avatar>}
                           title={
@@ -610,44 +704,50 @@ const AcreBytes = () => {
                   ))}
                 </Grid>
               </TabPanel>
-            </Box>
+            </Box> */}
+            {/* --------------------------------- */}
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={5}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
-                Explore top Real Estate group{' '}
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
+                Explore top Real Estate group
               </Typography>
-              {/* <Typography variant="subtitle1" gutterBottom>
-                See what our customers love about our products. Discover how we
-                excel in efficiency, durability, and satisfaction. Join us for
-                quality, and reliable support.
-              </Typography> */}
             </Box>
-            <Grid container spacing={3} justifyContent="center">
-              {companies.map((company) => (
-                <Grid size={{ xs: 6, sm: 4, md: 2 }} key={company.name}>
-                  <Card elevation={2} sx={{ height: '100%', p: 2 }}>
-                    {/* Logo container with fixed height */}
-                    <CardMedia
-                      component="img"
-                      image={company.logo}
-                      alt={company.name}
-                      sx={{
-                        height: 120, // fixed logo area height
-                        objectFit: 'contain', // keeps proportions
-                        width: '100%',
-                        mb: 1,
-                      }}
-                    />
-                    <CardContent sx={{ textAlign: 'center', p: 0 }}>
-                      <Typography variant="subtitle2">
-                        {company.name}
-                      </Typography>
+            <Grid
+              container
+              mt={4}
+              sx={{
+                "--Grid-borderWidth": "1px",
+                borderTop: "var(--Grid-borderWidth) solid",
+                borderLeft: "var(--Grid-borderWidth) solid",
+                borderColor: "divider",
+                "& > div": {
+                  borderRight: "var(--Grid-borderWidth) solid",
+                  borderBottom: "var(--Grid-borderWidth) solid",
+                  borderColor: "divider",
+                },
+              }}
+            >
+              {companies?.map((brand, index) => (
+                <Grid key={index} size={{ xs: 6, md: 2 }}>
+                  <Card elevation={0}>
+                    <CardContent>
+                      <CardMedia
+                        component="img"
+                        sx={{ height: 100, objectFit: "contain" }}
+                        image={brand.logo}
+                        alt={brand.name}
+                      />
                     </CardContent>
                   </Card>
                 </Grid>
@@ -656,81 +756,91 @@ const AcreBytes = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
-      <Paper elevation={0} square>
+
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={5}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 Trusted by Customers & Consultants
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 See what our customers love about our products. Discover how we
                 excel in efficiency, durability, and satisfaction. Join us for
                 quality, and reliable support.
               </Typography>
             </Box>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
               {[
                 {
-                  name: 'Sneha Patel',
-                  role: 'Property Manager, Mumbai',
+                  name: "Sneha Patel",
+                  role: "Property Manager, Mumbai",
                   feedback:
-                    'Thanks to AcreBytes, managing and tracking my client interactions has become effortless.real estate professional!',
+                    "Thanks to AcreBytes, managing and tracking my client interactions has become effortless.real estate professional!",
                 },
                 {
-                  name: 'Amit Verma',
-                  role: 'Broker, Bangalore',
+                  name: "Amit Verma",
+                  role: "Broker, Bangalore",
                   feedback:
-                    'The quality of leads I receive through AcreBytes is outstanding. It has helped me grow my business faster than any other platform.',
+                    "The quality of leads I receive through AcreBytes is outstanding. It has helped me grow my business faster than any other platform.",
                 },
-              ].map((item) => (
-                <Grid size={{ xs: 12, md: 6 }} key={item.name}>
-                  <Card sx={{ height: '100%' }}>
-                    <CardContent
-                      sx={{
-                        p: 3,
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      {' '}
+              ].map((stat, index) => (
+                <Grid key={index} size={{ xs: 12, md: 6 }}>
+                  <Card
+                    elevation={3}
+                    variant="outlined"
+                    sx={{ height: "100%" }}
+                  >
+                    <CardContent>
+                      <Chip
+                        icon={<DoneOutlinedIcon fontSize="small" />}
+                        label={stat.name}
+                        variant="outlined"
+                      />
                       <Box
                         display="flex"
                         alignItems="center"
-                        mb={1}
+                        my={1}
                         gap={2}
-                        height={'100%'}
-                        position={'relative'}
+                        height={"100%"}
+                        position={"relative"}
                       >
                         <FormatQuote
                           sx={{
-                            position: 'absolute',
+                            position: "absolute",
                             left: 0,
                             top: 0,
-                            transform: 'scaleX(-1)',
+                            transform: "scaleX(-1)",
                           }}
                         />
                         <Typography variant="body1" mx={4}>
-                          {item.feedback}
+                          {stat.feedback}
                         </Typography>
                         <FormatQuote
                           sx={{
-                            position: 'absolute',
+                            position: "absolute",
                             right: 0,
                             bottom: 0,
                           }}
                         />
                       </Box>
-                      <Box display="flex" alignItems="center" mt={2}>
-                        <Avatar>{item.name.charAt(0)}</Avatar>
-                        <Box ml={2}>
-                          <Typography variant="subtitle1">
-                            {item.name}
+                      <Box display={"flex"} alignItems="center" gap={2} mt={2}>
+                        <Avatar
+                          alt={stat.name}
+                          src="/static/images/avatar/1.jpg"
+                          sx={{ width: 50, height: 50 }}
+                        />
+                        <Box>
+                          <Typography variant="subtitle1" fontWeight="bold">
+                            {stat.name}
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
-                            {item.role}
+                            {stat.role}
                           </Typography>
                         </Box>
                       </Box>
@@ -742,7 +852,7 @@ const AcreBytes = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+      
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
@@ -761,9 +871,9 @@ const AcreBytes = () => {
                 {[
                   {
                     question:
-                      'Are there any registration charges to get registered on AcreBytes?',
+                      "Are there any registration charges to get registered on AcreBytes?",
                     answer:
-                      'No, registration is completely free. You get full access to properties researched and listed on AcreBytes.',
+                      "No, registration is completely free. You get full access to properties researched and listed on AcreBytes.",
                   },
                   {
                     question:
@@ -777,19 +887,19 @@ const AcreBytes = () => {
                   },
                   {
                     question:
-                      'How AcreBytes can improve Real Estate consultant visibility?',
+                      "How AcreBytes can improve Real Estate consultant visibility?",
                     answer:
                       "Absolutely! You'll be featured on the Consultants list, and you can also opt for services to showcase your presence on our listed property page.",
                   },
                   {
                     question:
-                      'Can AcreBytes be accessed from mobile, as I keep on travelling for client visits?',
+                      "Can AcreBytes be accessed from mobile, as I keep on travelling for client visits?",
                     answer:
-                      'Yes, you can continue to receive leads and update progress status easily on mobile while on the go.',
+                      "Yes, you can continue to receive leads and update progress status easily on mobile while on the go.",
                   },
                   {
                     question:
-                      'Can AcreBytes list down property, if not listed?',
+                      "Can AcreBytes list down property, if not listed?",
                     answer:
                       "Yes, AcreBytes allows you to list your property if it's not already available on the platform, ensuring complete visibility.",
                   },
@@ -817,7 +927,6 @@ const AcreBytes = () => {
         </Container>
       </Paper>
 
-      <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Grid container spacing={3} py={8}>
@@ -835,12 +944,12 @@ const AcreBytes = () => {
 
             <Grid size={{ xs: 12, md: 4 }}>
               <Box
-                display={'flex'}
-                justifyContent={'flex-end'}
+                display={"flex"}
+                justifyContent={"flex-end"}
                 gap={3}
-                alignItems={'center'}
+                alignItems={"center"}
               >
-                {' '}
+                {" "}
                 <Button variant="contained" startIcon={<LaptopIcon />}>
                   Register
                 </Button>

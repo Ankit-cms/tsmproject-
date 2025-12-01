@@ -64,7 +64,7 @@ import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDes
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
-import { CallOutlined } from "@mui/icons-material";
+import { CallOutlined, FormatQuote } from "@mui/icons-material";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -400,6 +400,7 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
+
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
@@ -416,18 +417,6 @@ const TMSLandingPage = () => {
                 How Instalanes TMS works
               </Typography>
             </Box>
-            {/* <Box>
-              <Card variant="outlined">
-                <CardContent>
-                  <CardMedia
-                    component="img"
-                    height="100%"
-                    image="./img/work/insalanes_transportation_process.png"
-                    alt="TMS Illustration"
-                  />
-                </CardContent>
-              </Card>
-            </Box> */}
             <Typography variant="h6" paragraph fontWeight="bold">
               Transportation process
             </Typography>
@@ -501,18 +490,12 @@ const TMSLandingPage = () => {
               ))}
             </Grid>
 
-            {/* <Card elevation={2} variant="elevation" sx={{ height: "100%" }}>
-              <CardContent> */}
             <Grid container spacing={2} alignItems="start" sx={{ mb: 4 }}>
               <Grid size={{ md: 3 }}>
                 <Typography variant="h6" paragraph fontWeight="bold">
                   TMS implementaion
                 </Typography>
-                {/* <Card
-                      elevation={2}
-                      variant="elevation"
-                      sx={{ height: "100%", bgcolor: "common.whiteSmoke" }}>
-                      <CardContent sx={{ textAlign: "center" }}> */}
+
                 <Grid container spacing={2}>
                   {[
                     {
@@ -574,18 +557,11 @@ const TMSLandingPage = () => {
                     </Grid>
                   ))}
                 </Grid>
-                {/* </CardContent>
-                    </Card> */}
               </Grid>
               <Grid size={{ md: 6 }}>
                 <Typography variant="h6" paragraph fontWeight="bold">
                   Capability enablers
                 </Typography>
-                {/* <Card
-                      elevation={2}
-                      variant="elevation"
-                      sx={{ height: "100%", bgcolor: "common.whiteSmoke" }}>
-                      <CardContent sx={{ textAlign: "center" }}> */}
                 <Grid container spacing={2}>
                   {[
                     {
@@ -603,16 +579,6 @@ const TMSLandingPage = () => {
                       icon: BarChartOutlinedIcon,
                       grid: { xs: 6 },
                     },
-                    // {
-                    //   title: "Mobile powered ",
-                    //   icon: MobileFriendlyOutlinedIcon,
-                    //   grid: { xs: 6 },
-                    // },
-                    // {
-                    //   title: "Alerts and notifications",
-                    //   icon: NotificationsNoneOutlinedIcon,
-                    //   grid: { xs: 6 },
-                    // },
                     {
                       title: "Documents centralization",
                       icon: DifferenceOutlinedIcon,
@@ -663,18 +629,11 @@ const TMSLandingPage = () => {
                     </Grid>
                   ))}
                 </Grid>
-                {/* </CardContent>
-                    </Card> */}
               </Grid>
               <Grid size={{ md: 3 }}>
                 <Typography variant="h6" paragraph fontWeight="bold">
                   Business outcomes
                 </Typography>
-                {/* <Card
-                      elevation={2}
-                      variant="elevation"
-                      sx={{ height: "100%", bgcolor: "common.whiteSmoke" }}>
-                      <CardContent sx={{ textAlign: "center" }}> */}
                 <Grid container spacing={2}>
                   {[
                     {
@@ -736,12 +695,8 @@ const TMSLandingPage = () => {
                     </Grid>
                   ))}
                 </Grid>
-                {/* </CardContent>
-                    </Card> */}
               </Grid>
             </Grid>
-            {/* </CardContent>
-            </Card> */}
             <Typography variant="h6" paragraph fontWeight="bold">
               TMS Features
             </Typography>
@@ -937,13 +892,13 @@ const TMSLandingPage = () => {
               {[
                 {
                   title: "Fast Implementation",
-                  description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
+                  description: `It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough`,
                   name: "John Doe",
                   role: "Logistics Director at Hewells",
                 },
                 {
                   title: "Fast Implementation",
-                  description: `"It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough"`,
+                  description: `It's amazing to see how fast instalanes platform can be set up. Yes, we set it up not in months, weeks but in just 1 day, no kidding, it's a breakthrough`,
                   name: "John Doe",
                   role: "Logistics Director at Hewells",
                 },
@@ -960,9 +915,33 @@ const TMSLandingPage = () => {
                         label={stat.title}
                         variant="outlined"
                       />
-                      <Typography variant="h6" paragraph mt={1}>
-                        {stat.description}
-                      </Typography>
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        my={1}
+                        gap={2}
+                        height={"100%"}
+                        position={"relative"}
+                      >
+                        <FormatQuote
+                          sx={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            transform: "scaleX(-1)",
+                          }}
+                        />
+                        <Typography variant="body1" mx={4}>
+                          {stat.description}
+                        </Typography>
+                        <FormatQuote
+                          sx={{
+                            position: "absolute",
+                            right: 0,
+                            bottom: 0,
+                          }}
+                        />
+                      </Box>
                       <Box display={"flex"} alignItems="center" gap={2} mt={2}>
                         <Avatar
                           alt={stat.name}
@@ -1060,7 +1039,10 @@ const TMSLandingPage = () => {
       </Paper> */}
 
       <Paper elevation={0} square>
-        <Box id="contact" sx={{ py: { xs: 4, md: 8 }, bgcolor: "common.whiteSmoke" }}>
+        <Box
+          id="contact"
+          sx={{ py: { xs: 4, md: 8 }, bgcolor: "common.whiteSmoke" }}
+        >
           <Container maxWidth="lg">
             <Typography
               variant="h6"
