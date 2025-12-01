@@ -15,7 +15,7 @@ import ComputerIcon from '@mui/icons-material/Computer';
 const Banner = () => {
     return (
         < >
-            <Paper elevation={0} square sx={{py: 8}}>
+            <Paper elevation={0} square sx={{ py: { xs: 4, md: 8 }}}>
                 <Container maxWidth="lg">
                     <Grid container spacing={4} alignItems="center" my={2}>
                         <Grid size={{ xs: 12, md: 6 }}>
@@ -24,13 +24,13 @@ const Banner = () => {
                             </Typography>
                             <Typography
                                 variant="h1"
-                                component="h1" 
+                                component="h1"
                                 gutterBottom
-                                mt={2}>
+                                sx={{mt: {md: 2}}}>
                                 Collaborative logistics. Faster decisions. Complete visibility
                             </Typography>
                             <Typography variant="body1" fontWeight={400} paragraph>
-                            Global SaaS Powering smarter, faster logistics with a cloud TMS & visibility
+                                Global SaaS Powering smarter, faster logistics with a cloud TMS & visibility
                                 platform built for 3PLs, Shippers, and Carriers.
                             </Typography>
                             <Button sx={{ mt: 1 }} variant="contained" size="large">

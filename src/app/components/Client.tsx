@@ -14,7 +14,7 @@ const Client = () => {
   return (
     <Paper elevation={0} square>
       <Container maxWidth="lg">
-        <Box py={8}>
+        <Box sx={{ py: { xs: 4, md: 8 }}}>
           <Box mb={4}>
             <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
               Trusted by Logistics Supply Chains enterprises 
@@ -74,7 +74,7 @@ const Client = () => {
             ].map((brand) => (
               <Grid
                 key={brand.title}
-                size={2}
+                size={{ xs: 6, md: 2 }}
               >
                 <Card elevation={0}>
                   <CardContent >

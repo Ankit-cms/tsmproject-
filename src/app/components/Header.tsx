@@ -129,20 +129,20 @@ const Header = () => {
               </MenuItem>
             </Menu>
           </Box>
-          <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1, color: 'common.black' }} />
+          {/* <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1, color: 'common.black' }} /> */}
           <Typography
             variant="h6"
             noWrap
             component="a"
             color="common.black"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
-              mr: 2,
+              mx: 1,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1, 
               textDecoration: 'none',
             }}>
-            Instalanes
+            Instalanes TMS
           </Typography>
           <Box
             sx={{
@@ -233,18 +233,21 @@ const Header = () => {
               Contact Us
             </Button> */}
           </Box>
-          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', gap: { xs: 1, md: 2 } }}>
             <Tooltip title="Open Profile">
               <Button
                 sx={{
                   color: 'common.black',
                   alignItems: 'center',
                   gap: 1,
-                  display: { xs: 'none', md: 'flex' }
+                  display: { xs: 'none', md: 'flex' },
+                  minWidth: 'auto',
                 }}
                 onClick={handleOpenUserMenu}>
                 <LoginOutlinedIcon sx={{ color: 'common.black' }} />
-                Login
+                <Box component="span" sx={{ display: { xs: 'none', lg: 'inline' } }}>
+                  Login
+                </Box>
               </Button>
             </Tooltip>
             <Menu
@@ -273,16 +276,18 @@ const Header = () => {
             </Menu>
             <Button
               variant="contained"
-              // color='secondary'
               href="/pricing"
               sx={{
-                ml: 2,
                 display: 'flex',
                 alignItems: 'center',
-                gap: 1,
+                gap: { xs: 0.5, md: 1 },
+                px: { xs: 1.5, md: 2 },
+                minWidth: 'auto',
               }}>
-              <ComputerIcon fontSize="small" />
-              Get Demo
+              <ComputerIcon fontSize="small" sx={{ display: { xs: 'none', md: 'inline' } }} />
+              <Box component="span" >
+                Get Demo
+              </Box>
             </Button>
           </Box>
         </Toolbar>
