@@ -19,10 +19,10 @@ const typography = {
       fontSize: '2rem',
     },
     '@media (min-width:900px)': {
-      fontSize: '2.5rem',
+      fontSize: '2rem',
     },
     '@media (min-width:1200px)': {
-      fontSize: '2.5rem',
+      fontSize: '2rem',
     },
     lineHeight: 1.3,
   },
@@ -58,10 +58,10 @@ const typography = {
       fontSize: '1.1875rem',
     },
     '@media (min-width:900px)': {
-      fontSize: '1.375rem',
+      fontSize: '1.25rem',
     },
     '@media (min-width:1200px)': {
-      fontSize: '1.375rem',
+      fontSize: '1.25rem',
     },
     lineHeight: 1.5,
   },
@@ -74,7 +74,7 @@ const typography = {
       fontSize: '1.125rem',
     },
     '@media (min-width:1200px)': {
-      fontSize: '1.25rem',
+      fontSize: '1.125rem',
     },
     lineHeight: 1.5,
   },
