@@ -449,7 +449,7 @@ const AcreBytes = () => {
                     >
                       {data.icon}
                       <Box mt={1}>
-                        <Typography variant="body2" gutterBottom>
+                        <Typography variant="body2" gutterBottom textTransform="uppercase">
                           {data.title}
                         </Typography>
                         <Typography variant="caption" color="text.secondary">
