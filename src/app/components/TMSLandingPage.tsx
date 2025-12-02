@@ -336,8 +336,8 @@ const TMSLandingPage = () => {
               visibility, automation, and faster decision-making across the
               entire supply chain
             </Alert>
-            <Grid container spacing={2}>
-              <Grid container size={{ xs: 12, md: 6 }}>
+            <Grid container spacing={2} direction={{ xs: 'column-reverse', md: 'row' }}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <Grid container spacing={2}>
                   {[
                     {
@@ -387,8 +387,7 @@ const TMSLandingPage = () => {
                 <Card
                   elevation={1}
                   variant="elevation"
-                  sx={{ height: "100%", width: "100%" }}
-                >
+                  sx={{ height: "100%", width: "100%" }}>
                   <CardMedia
                     component="img"
                     image="/img/work/instalanes_TMS_Digital_Solution.png"
@@ -858,7 +857,12 @@ const TMSLandingPage = () => {
                         </Link>
                       </Box>
                       <Box display={"flex"} justifyContent={"space-between"}>
-                        <Typography variant="h6" component="h3" gutterBottom fontWeight="bold">
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          gutterBottom
+                          fontWeight="bold"
+                        >
                           {card.title}
                         </Typography>
                         {/* <ArrowOutwardOutlinedIcon fontSize="small" /> */}
@@ -1285,16 +1289,24 @@ const TMSLandingPage = () => {
                       fullWidth
                       label="First name"
                       variant="outlined"
+                      inputProps={{
+                        style: { textTransform: "capitalize" },
+                      }}
                     />
                   </Grid>
                   <Grid size={{ xs: 6 }}>
-                    <TextField fullWidth label="Last name" variant="outlined" />
+                    <TextField fullWidth label="Last name" variant="outlined" inputProps={{
+                        style: { textTransform: "capitalize" },
+                      }} />
                   </Grid>
                   <Grid size={{ xs: 12 }}>
                     <TextField
                       fullWidth
                       label="Your Company name"
                       variant="outlined"
+                      inputProps={{
+                        style: { textTransform: "capitalize" },
+                      }}
                     />
                   </Grid>
                   <Grid size={{ xs: 12 }}>
