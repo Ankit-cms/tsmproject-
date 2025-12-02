@@ -43,7 +43,8 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MapIcon from "@mui/icons-material/Map";
 import SpeedIcon from "@mui/icons-material/Speed";
-
+import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
 import { styled } from "@mui/material/styles";
 import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
 import MuiAccordionSummary, {
@@ -363,12 +364,20 @@ const AcreBytes = () => {
           <Grid container spacing={4} alignItems="center" my={2}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography
+                variant="h6"
+                color="primary.dark"
+                gutterBottom
+                textTransform="uppercase"
+              >
+                Real Estate Platform for
+              </Typography>
+              <Typography
                 variant="h1"
                 component="h1"
                 gutterBottom
                 sx={{ mt: { md: 2 } }}
               >
-                Empowering smarter Real Estate decisions
+                Accurate Properties. Trusted Agents. Seamless Experience.
               </Typography>
               <Typography variant="body1" fontWeight={400} paragraph>
                 AcreBytes connects buyers, sellers, and verified real estate
@@ -376,10 +385,10 @@ const AcreBytes = () => {
               </Typography>
               <Box display={"flex"} gap={1} mt={3}>
                 <Button sx={{ mt: 1 }} variant="contained" size="large">
-                  Join now
+                  <HowToRegOutlinedIcon sx={{ mr: 1 }} /> Join now
                 </Button>
                 <Button sx={{ mt: 1 }} variant="outlined" size="large">
-                  Read more
+                  <PeopleAltOutlinedIcon sx={{ mr: 1 }} /> Explore Agents
                 </Button>
               </Box>
             </Grid>
@@ -387,7 +396,7 @@ const AcreBytes = () => {
               <CardMedia
                 component="img"
                 height="400"
-                image="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ix4_slJB4Kpg/v0/-1x-1.webp"
+                image="/img/hero/real.avif"
                 alt="Acrebytes"
                 sx={{ borderRadius: 4, boxShadow: 4 }}
               />
@@ -396,9 +405,9 @@ const AcreBytes = () => {
         </Container>
       </Paper>
 
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box sx={{ pb: { xs: 4, md: 8 } }}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box>
               <Typography
                 variant="h6"
@@ -456,7 +465,7 @@ const AcreBytes = () => {
         </Container>
       </Paper>
 
-      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+      <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={3}>
@@ -852,15 +861,20 @@ const AcreBytes = () => {
           </Box>
         </Container>
       </Paper>
-      
+
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
                 FAQs
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 Find quick answers to the most common questions about our
                 services.
               </Typography>
@@ -927,7 +941,10 @@ const AcreBytes = () => {
         </Container>
       </Paper>
 
-      <Paper elevation={0} square>
+      <Paper
+        elevation={0}
+        square
+      >
         <Container maxWidth="lg">
           <Grid container spacing={3} py={8}>
             {/* Left Column */}
@@ -961,8 +978,6 @@ const AcreBytes = () => {
           </Grid>
         </Container>
       </Paper>
-
-      <Divider sx={{ my: 2 }} />
       <Footer />
     </Box>
   );
