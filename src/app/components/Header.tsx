@@ -131,7 +131,7 @@ const Header = () => {
           </Box>
           {/* <FlareIcon sx={{ display: { xs: 'flex', md: 'none' }, mx: 1, color: 'common.black' }} /> */}
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
             color="common.black"

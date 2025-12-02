@@ -309,7 +309,7 @@ const TMSLandingPage = () => {
                           height: "100%",
                         }}
                       >
-                        <CardContent sx={{ p: 3 }}>
+                        <CardContent sx={{ p: 2 }}>
                           <Box display={"flex"} alignItems="start" gap={1}>
                             <InfoOutlinedIcon color="error" />
                             <Typography variant="h6" gutterBottom>
@@ -336,7 +336,7 @@ const TMSLandingPage = () => {
               visibility, automation, and faster decision-making across the
               entire supply chain
             </Alert>
-            <Grid container spacing={5}>
+            <Grid container spacing={2}>
               <Grid container size={{ xs: 12, md: 6 }}>
                 <Grid container spacing={2}>
                   {[
@@ -367,7 +367,7 @@ const TMSLandingPage = () => {
                           height: "100%",
                         }}
                       >
-                        <CardContent sx={{ p: 3 }}>
+                        <CardContent sx={{ p: 2 }}>
                           <Box display={"flex"} alignItems="start" gap={1}>
                             <TaskAltOutlinedIcon color="success" />
                             <Typography variant="h6" gutterBottom>
@@ -858,7 +858,7 @@ const TMSLandingPage = () => {
                         </Link>
                       </Box>
                       <Box display={"flex"} justifyContent={"space-between"}>
-                        <Typography variant="h6" component="h3" gutterBottom>
+                        <Typography variant="h6" component="h3" gutterBottom fontWeight="bold">
                           {card.title}
                         </Typography>
                         {/* <ArrowOutwardOutlinedIcon fontSize="small" /> */}
@@ -1461,7 +1461,7 @@ const TMSLandingPage = () => {
       <Box position={"fixed"} bottom={16} right={16}>
         <Fab variant="extended" color="primary" href="/contact" component="a">
           <CallOutlined sx={{ mr: 1 }} />
-          Contact Us
+          Contact us
         </Fab>
       </Box>
       <Footer />
