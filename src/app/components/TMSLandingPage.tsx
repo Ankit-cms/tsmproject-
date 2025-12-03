@@ -217,6 +217,7 @@ const TMSLandingPage = () => {
                     variant="elevation"
                     sx={{
                       height: "100%",
+                      width: "100%",
                       bgcolor: "common.white",
                       color: "common.black",
                     }}
@@ -271,7 +272,11 @@ const TMSLandingPage = () => {
             </Box>
             <Grid container spacing={2} sx={{ mb: 2 }}>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Card elevation={1} variant="elevation">
+                <Card
+                  elevation={1}
+                  variant="elevation"
+                  sx={{ height: "100%", width: "100%" }}
+                >
                   <CardMedia
                     component="img"
                     image="/img/work/instalanes_TMS_challenges.png"
@@ -307,6 +312,7 @@ const TMSLandingPage = () => {
                           bgcolor: "common.whiteSmoke",
                           color: "common.black",
                           height: "100%",
+                          width: "100%",
                         }}
                       >
                         <CardContent sx={{ p: 2 }}>
@@ -336,7 +342,11 @@ const TMSLandingPage = () => {
               visibility, automation, and faster decision-making across the
               entire supply chain
             </Alert>
-            <Grid container spacing={2} direction={{ xs: 'column-reverse', md: 'row' }}>
+            <Grid
+              container
+              spacing={2}
+              direction={{ xs: "column-reverse", md: "row" }}
+            >
               <Grid size={{ xs: 12, md: 6 }}>
                 <Grid container spacing={2}>
                   {[
@@ -357,7 +367,7 @@ const TMSLandingPage = () => {
                       desc: "Dashboards and analytics to improve cost, performance, and growth.",
                     },
                   ].map((data, index) => (
-                    <Grid key={index} size={{ sm: 6 }}>
+                    <Grid key={index} size={{ sm: 6 }}  sx={{ width: '100%' }}>
                       <Card
                         elevation={0}
                         square
@@ -365,6 +375,7 @@ const TMSLandingPage = () => {
                           bgcolor: "common.whiteSmoke",
                           color: "common.black",
                           height: "100%",
+                          width: "100%",
                         }}
                       >
                         <CardContent sx={{ p: 2 }}>
@@ -387,7 +398,8 @@ const TMSLandingPage = () => {
                 <Card
                   elevation={1}
                   variant="elevation"
-                  sx={{ height: "100%", width: "100%" }}>
+                  sx={{ height: "100%", width: "100%" }}
+                >
                   <CardMedia
                     component="img"
                     image="/img/work/instalanes_TMS_Digital_Solution.png"
@@ -458,7 +470,7 @@ const TMSLandingPage = () => {
                   <Card
                     elevation={2}
                     variant="elevation"
-                    sx={{ height: "100%" }}
+                    sx={{ height: "100%", width: "100%" }}
                   >
                     <CardActionArea
                       sx={{
@@ -526,7 +538,7 @@ const TMSLandingPage = () => {
                       <Card
                         elevation={2}
                         variant="elevation"
-                        sx={{ height: "100%" }}
+                        sx={{ height: "100%", width: "100%" }}
                       >
                         <CardActionArea
                           sx={{
@@ -598,7 +610,7 @@ const TMSLandingPage = () => {
                       <Card
                         elevation={2}
                         variant="elevation"
-                        sx={{ height: "100%" }}
+                        sx={{ height: "100%", width: "100%" }}
                       >
                         <CardActionArea
                           sx={{
@@ -660,11 +672,11 @@ const TMSLandingPage = () => {
                       icon: Diversity3OutlinedIcon,
                     },
                   ].map((data, index) => (
-                    <Grid key={index} size={{ xs: 6 }}>
+                    <Grid key={index} size={{ xs: 6 }} sx={{ width: '100%' }}>
                       <Card
                         elevation={2}
                         variant="elevation"
-                        sx={{ height: "100%" }}
+                        sx={{ height: "100%", width: "100%" }}
                       >
                         <CardActionArea
                           sx={{
@@ -730,7 +742,7 @@ const TMSLandingPage = () => {
                   <Card
                     elevation={2}
                     variant="elevation"
-                    sx={{ height: "100%" }}
+                    sx={{ height: "100%", width: "100%" }}
                   >
                     <CardActionArea
                       sx={{
@@ -836,7 +848,7 @@ const TMSLandingPage = () => {
                   <Card
                     elevation={2}
                     variant="elevation"
-                    sx={{ height: "100%" }}
+                    sx={{ height: "100%", width: "100%" }}
                   >
                     <CardMedia
                       component="img"
@@ -911,7 +923,7 @@ const TMSLandingPage = () => {
                   <Card
                     elevation={3}
                     variant="outlined"
-                    sx={{ height: "100%" }}
+                    sx={{ height: "100%", width: "100%" }}
                   >
                     <CardContent>
                       <Chip
@@ -1092,7 +1104,7 @@ const TMSLandingPage = () => {
                     <Card
                       elevation={2}
                       variant="outlined"
-                      sx={{ bgcolor: "common.whiteSmoke" }}
+                      sx={{ bgcolor: "common.whiteSmoke", width: "100%" }}
                     >
                       <CardActionArea
                         sx={{
@@ -1135,7 +1147,7 @@ const TMSLandingPage = () => {
                     <Card
                       elevation={2}
                       variant="outlined"
-                      sx={{ bgcolor: "common.whiteSmoke" }}
+                      sx={{ bgcolor: "common.whiteSmoke", width: "100%" }}
                     >
                       <CardActionArea
                         sx={{
@@ -1170,7 +1182,7 @@ const TMSLandingPage = () => {
                     <Card
                       elevation={2}
                       variant="outlined"
-                      sx={{ bgcolor: "common.whiteSmoke" }}
+                      sx={{ bgcolor: "common.whiteSmoke", width: "100%" }}
                     >
                       <CardActionArea
                         sx={{
@@ -1223,7 +1235,7 @@ const TMSLandingPage = () => {
                     <Card
                       elevation={2}
                       variant="outlined"
-                      sx={{ bgcolor: "common.whiteSmoke" }}
+                      sx={{ bgcolor: "common.whiteSmoke", width: "100%" }}
                     >
                       <CardActionArea
                         sx={{
@@ -1295,9 +1307,14 @@ const TMSLandingPage = () => {
                     />
                   </Grid>
                   <Grid size={{ xs: 6 }}>
-                    <TextField fullWidth label="Last name" variant="outlined" inputProps={{
+                    <TextField
+                      fullWidth
+                      label="Last name"
+                      variant="outlined"
+                      inputProps={{
                         style: { textTransform: "capitalize" },
-                      }} />
+                      }}
+                    />
                   </Grid>
                   <Grid size={{ xs: 12 }}>
                     <TextField

@@ -422,9 +422,9 @@ const AcreBytes = () => {
               </Typography>
             </Box>
 
-            <Grid container spacing={2} sx={{ mb: 4 }}>
+            <Grid container spacing={2}>
               {steps?.map((data, index) => (
-                <Grid key={index} size={{ xs: 3 }}>
+                <Grid key={index} size={{ xs: 12, md: 3 }}>
                   <Card
                     elevation={2}
                     variant="elevation"
@@ -449,7 +449,11 @@ const AcreBytes = () => {
                     >
                       {data.icon}
                       <Box mt={1}>
-                        <Typography variant="body2" gutterBottom textTransform="uppercase">
+                        <Typography
+                          variant="body2"
+                          gutterBottom
+                          textTransform="uppercase"
+                        >
                           {data.title}
                         </Typography>
                         <Typography variant="caption" color="text.secondary">
@@ -560,7 +564,7 @@ const AcreBytes = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={5}>
+          <Box>
             <Box mb={4}>
               <Typography
                 variant="h6"
@@ -864,8 +868,8 @@ const AcreBytes = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={5}>
-            <Box mb={4}>
+          <Box sx={{ pt: { xs: 4, md: 8 }}}>
+            <Box>
               <Typography
                 variant="h6"
                 gutterBottom
@@ -893,11 +897,11 @@ const AcreBytes = () => {
                     question:
                       "How AcreBytes can improve Real Estate consultants' sales?",
                     answer: `We understand Real Estate consultants requirements, so we provide:
-• A unique property page URL featuring your contact details, ensuring you receive verified leads directly in your personal leads panel.
-• Suggested leads tailored to your preferences.
-• Listing of Real Estate consultants on the AcreBytes property page of your project, enabling customers to contact you directly.
-• Tools to manage customer status and keep regular notes updated.
-• Marketing support for your personalized URL to drive traffic and generate leads.`,
+                              • A unique property page URL featuring your contact details, ensuring you receive verified leads directly in your personal leads panel.
+                              • Suggested leads tailored to your preferences.
+                              • Listing of Real Estate consultants on the AcreBytes property page of your project, enabling customers to contact you directly.
+                              • Tools to manage customer status and keep regular notes updated.
+                              • Marketing support for your personalized URL to drive traffic and generate leads.`,
                   },
                   {
                     question:
@@ -941,12 +945,9 @@ const AcreBytes = () => {
         </Container>
       </Paper>
 
-      <Paper
-        elevation={0}
-        square
-      >
+      <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Grid container spacing={3} py={8}>
+          <Grid container spacing={3} sx={{ py: { xs: 4, md: 8 } }} >
             {/* Left Column */}
             <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h3" gutterBottom>
