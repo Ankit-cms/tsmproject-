@@ -65,6 +65,10 @@ import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
 import { CallOutlined, FormatQuote } from "@mui/icons-material";
+import PhonelinkIcon from '@mui/icons-material/Phonelink';
+import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
+import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined';
+import ChecklistOutlinedIcon from '@mui/icons-material/ChecklistOutlined';
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -347,7 +351,7 @@ const TMSLandingPage = () => {
               spacing={2}
               direction={{ xs: "column-reverse", md: "row" }}
             >
-              <Grid size={{ xs: 12, md: 6 }}>
+              <Grid container size={{ xs: 12, md: 6 }}>
                 <Grid container spacing={2}>
                   {[
                     {
@@ -367,7 +371,7 @@ const TMSLandingPage = () => {
                       desc: "Dashboards and analytics to improve cost, performance, and growth.",
                     },
                   ].map((data, index) => (
-                    <Grid key={index} size={{ sm: 6 }}  sx={{ width: '100%' }}>
+                    <Grid key={index} size={{ sm: 6 }}>
                       <Card
                         elevation={0}
                         square
@@ -431,7 +435,7 @@ const TMSLandingPage = () => {
             <Typography variant="h6" paragraph fontWeight="bold">
               Transportation process
             </Typography>
-            <Grid container spacing={2} sx={{ mb: 4 }}>
+            <Grid container spacing={2} sx={{ mb: { xs: 2, md: 4 } }}>
               {[
                 {
                   title: "Dispatch plan",
@@ -501,7 +505,12 @@ const TMSLandingPage = () => {
               ))}
             </Grid>
 
-            <Grid container spacing={2} alignItems="start" sx={{ mb: 4 }}>
+            <Grid
+              container
+              spacing={2}
+              alignItems="start"
+              sx={{ mb: { xs: 2, md: 4 } }}
+            >
               <Grid size={{ md: 3 }}>
                 <Typography variant="h6" paragraph fontWeight="bold">
                   TMS implementaion
@@ -672,7 +681,7 @@ const TMSLandingPage = () => {
                       icon: Diversity3OutlinedIcon,
                     },
                   ].map((data, index) => (
-                    <Grid key={index} size={{ xs: 6 }} sx={{ width: '100%' }}>
+                    <Grid key={index} size={{ xs: 6 }}>
                       <Card
                         elevation={2}
                         variant="elevation"
@@ -715,31 +724,31 @@ const TMSLandingPage = () => {
               {[
                 {
                   title: "Mobile driven",
-                  icon: FormatListBulletedIcon,
+                  icon: PhonelinkIcon,
                 },
                 {
                   title: "Instant ePoD ",
-                  icon: RouteOutlinedIcon,
+                  icon: TaskOutlinedIcon,
                 },
                 {
                   title: "Smart notifications",
-                  icon: CreditScoreOutlinedIcon,
+                  icon: NotificationsNoneOutlinedIcon,
                 },
                 {
                   title: "Next action ready",
-                  icon: LocalShippingOutlinedIcon,
+                  icon: ChecklistOutlinedIcon,
                 },
                 {
                   title: "Auto status reporting",
-                  icon: FileDownloadOutlinedIcon,
+                  icon: PlaylistAddCheckOutlinedIcon,
                 },
                 {
                   title: "API-Enabled",
                   icon: HubOutlinedIcon,
                 },
               ].map((data, index) => (
-                <Grid key={index} size={{ xs: 6, md: 2 }}>
-                  <Card
+                <Grid key={index} size={{ xs: 6, md: 4 }}>
+                  {/* <Card
                     elevation={2}
                     variant="elevation"
                     sx={{ height: "100%", width: "100%" }}
@@ -768,7 +777,13 @@ const TMSLandingPage = () => {
                         </Typography>
                       </Box>
                     </CardActionArea>
-                  </Card>
+                  </Card> */}
+                  <Alert
+                    icon={<data.icon />}
+                    severity="info"
+                    sx={{ textAlign: "center" }}>
+                    {data.title}
+                  </Alert>
                 </Grid>
               ))}
             </Grid>
