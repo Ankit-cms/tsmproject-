@@ -892,10 +892,10 @@ const AcreBytes = () => {
                 mt={2}
                 alignItems={"center"}>
                 <Button variant="contained" startIcon={<WhatsApp />}>
-                  Yes, I'd like to Partner
+                  Yes, I&apos;d like to Partner
                 </Button>
                 <Button variant="outlined" startIcon={<ArrowForwardIcon />} href="/leads" component="a">
-                  I'd like to know more
+                  I&apos;d like to know more
                 </Button>
               </Box>
             </Grid>

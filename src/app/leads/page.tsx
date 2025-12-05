@@ -195,7 +195,7 @@ const Leads = () => {
                 up your Real Estate Sales.
               </Typography>
               <Button variant="contained" startIcon={<WhatsApp />}>
-                Yes, I'd like to Partner
+                Yes, I&apos;d like to Partner
               </Button>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
