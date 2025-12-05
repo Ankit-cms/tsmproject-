@@ -79,7 +79,7 @@ const Footer = () => {
                 <Box display={"flex"} gap={1} mt={1}>
                   <EmailOutlinedIcon fontSize="small" />
                   <Typography variant="subtitle2" gutterBottom>
-                    info.gravity44.com
+                    contact@instalanes.com
                   </Typography>
                 </Box>
                 <Box display={"flex"} gap={1} mt={1}>
