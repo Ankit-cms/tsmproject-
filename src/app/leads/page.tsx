@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   CardContent,
+  CardMedia,
   Chip,
   Container,
   Divider,
@@ -38,7 +39,12 @@ import MuiAccordionSummary, {
   AccordionSummaryProps,
   accordionSummaryClasses,
 } from '@mui/material/AccordionSummary';
+import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined';
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
+
 const Leads = () => {
   const pricingData = [
     {
@@ -128,9 +134,9 @@ const Leads = () => {
     backgroundColor: 'rgba(0, 0, 0, .03)',
     flexDirection: 'row-reverse',
     [`& .${accordionSummaryClasses.expandIconWrapper}.${accordionSummaryClasses.expanded}`]:
-      {
-        transform: 'rotate(90deg)',
-      },
+    {
+      transform: 'rotate(90deg)',
+    },
     [`& .${accordionSummaryClasses.content}`]: {
       marginLeft: theme.spacing(1),
     },
@@ -153,7 +159,7 @@ const Leads = () => {
   return (
     <Box position={'relative'}>
       <Header />
-      <Paper elevation={0} square >
+      {/* <Paper elevation={0} square >
         <Container maxWidth="lg">
           <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
             <Link underline="hover" color="inherit" href="/">
@@ -162,28 +168,134 @@ const Leads = () => {
             <Typography sx={{ color: 'text.primary' }}>Leads</Typography>
           </Breadcrumbs>
           <Divider />
+        </Container>
+      </Paper> */}
+      <Paper elevation={0} square sx={{ py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center" my={2}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography
-                variant="h3"
+                variant="h6"
+                color="primary.dark"
+                gutterBottom
+                textTransform="uppercase"
+              >
+                Become AcreBytes Agent Partner
+              </Typography>
+              <Typography
+                variant="h1"
                 component="h1"
                 gutterBottom
-                fontWeight={500}
-                sx={{ fontSize: { xs: '1.5rem', md: '3rem' } }}
-                mt={2}
+                sx={{ mt: { md: 2 } }}
               >
-                Get verified, project-based leads. Grow your conversions.{' '}
+                Better Leads. More Closings. More Success with by AcreBytes.
               </Typography>
-              <Typography variant="body1" paragraph>
+              <Typography variant="body1" fontWeight={400} paragraph>
                 AcreBytes offers you, everything you need to maximize and speed
                 up your Real Estate Sales.
               </Typography>
-              <Button variant="contained">
-                <AutoGraphIcon sx={{ mr: 1 }} />
-                Generate Leads
+              <Button variant="contained" startIcon={<WhatsApp />}>
+                Yes, I'd like to Partner
               </Button>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
+              <CardMedia
+                component="img"
+                height="400"
+                image="/img/hero/real.avif"
+                alt="Acrebytes"
+                sx={{ borderRadius: 4, boxShadow: 4 }}
+              />
+            </Grid>
+          </Grid>
+        </Container>
+      </Paper>
+
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+        <Container maxWidth="lg">
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography
+              variant="h6"
+              color="primary.dark"
+              gutterBottom
+              textTransform="uppercase">
+              Why Real Estate agents love to Partner with AcreBytes
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h3"
+              gutterBottom
+              color="common.black"
+              mb={4}
+            >
+              Access better projects, verified leads, and tools designed to grow your business.
+            </Typography>
+            <Grid container spacing={3}>
+              {[
+                {
+                  icon: <VerifiedOutlinedIcon fontSize="large"  />,
+                  title: "Verified, targeted Leads",
+                  description:
+                    "Only high-intent enquiries reach you - no cold leads, no wasted time.",
+                },
+                {
+                  icon: <PlaylistAddCheckOutlinedIcon fontSize="large"  />,
+                  title: "Exclusive Project listings",
+                  description:
+                    "Access projects mapped specifically to you, giving you a competitive edge in your market.",
+                },
+                {
+                  icon: <CallOutlinedIcon fontSize="large"  />,
+                  title: "Direct Enquiry access",
+                  description:
+                    " Connect instantly with prospects, track better with no delays.",
+                },
+                {
+                  icon: <TrendingUpOutlinedIcon fontSize="large"  />,
+                  title: "Faster Conversions",
+                  description:
+                    "With the right leads, projects, and tools, close deals faster and grow your business.",
+                }
+              ].map((stat, index) => (
+                <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>
+                  <Card
+                    elevation={3}
+                    variant="elevation"
+                    sx={{
+                      height: "100%",
+                      width: "100%",
+                      bgcolor: "common.white",
+                      color: "common.black",
+                    }}
+                  >
+                    <CardContent sx={{ textAlign: "start", p: 3 }}>
+                      <Typography variant="h3" component="h3" gutterBottom>
+                        {stat.icon}
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        component="h3"
+                        gutterBottom  
+                      >
+                        {stat.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {stat.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+      </Paper>
+
+
+      <Paper elevation={0} square >
+        <Container maxWidth="lg">
+          <Grid container spacing={4} alignItems="center" >
+            <Grid size={{ xs: 12, md: 12 }}>
               <Card>
                 <CardContent>
                   <Typography variant="h6">
@@ -246,7 +358,6 @@ const Leads = () => {
               </Card>
             </Grid>
           </Grid>
-          <Divider />
           <Box py={5}>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12, md: 6 }}>
@@ -349,15 +460,20 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box pb={4}>
-              <Typography variant="h3" gutterBottom>
+              <Typography
+                variant="h6"
+                color="primary.dark"
+                gutterBottom
+                textTransform="uppercase"
+              >
                 Partnership Offerings
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 A simple, focused set of services and tools designed to drive
                 leads and conversions for brokers & real estate companies.
               </Typography>
@@ -379,7 +495,7 @@ const Leads = () => {
                           mb: 2,
                         }}
                       >
-                        <Chip label={item.type}  size="small" />
+                        <Chip label={item.type} size="small" />
                         <Typography variant="caption" color="text.secondary">
                           {item.category}
                         </Typography>
@@ -434,15 +550,19 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
+              <Typography
+                variant="h6"
+                color="primary.dark"
+                gutterBottom
+                textTransform="uppercase"
+              >
                 Trusted by brokers & teams
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 See what our customers love about our products. Discover how we
                 excel in efficiency, durability, and satisfaction. Join us for
                 quality, and reliable support.
@@ -520,7 +640,6 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
@@ -593,7 +712,6 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Grid container spacing={3} py={8}>
@@ -629,7 +747,6 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
       <Footer />
     </Box>
   );

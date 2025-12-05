@@ -133,9 +133,9 @@ const AcreBytes = () => {
     backgroundColor: "rgba(0, 0, 0, .03)",
     flexDirection: "row-reverse",
     [`& .${accordionSummaryClasses.expandIconWrapper}.${accordionSummaryClasses.expanded}`]:
-      {
-        transform: "rotate(90deg)",
-      },
+    {
+      transform: "rotate(90deg)",
+    },
     [`& .${accordionSummaryClasses.content}`]: {
       marginLeft: theme.spacing(1),
     },
@@ -338,22 +338,22 @@ const AcreBytes = () => {
 
   const steps = [
     {
-      icon: <DescriptionOutlinedIcon fontSize="large" />,
+      icon: <DescriptionOutlinedIcon />,
       title: "enquire",
       desc: "Sell / Buy / Lease / Rent a property",
     },
     {
-      icon: <PeopleOutlineOutlinedIcon fontSize="large" />,
+      icon: <PeopleOutlineOutlinedIcon />,
       title: "get consultant",
       desc: "Get connected with professional Brokers",
     },
     {
-      icon: <EngineeringOutlinedIcon fontSize="large" />,
+      icon: <EngineeringOutlinedIcon />,
       title: "work on enquiry",
       desc: "Let Consultant work on your requirements",
     },
     {
-      icon: <StarBorderOutlinedIcon fontSize="large" />,
+      icon: <StarBorderOutlinedIcon />,
       title: "rate consultant",
       desc: "Let us know how was your experience with the assigned Consultant",
     },
@@ -586,9 +586,9 @@ const AcreBytes = () => {
         </Container>
       </Paper>
 
-     
 
-      <Paper elevation={0} square  sx={{ bgcolor: "common.whiteSmoke" }}>
+
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
@@ -601,9 +601,7 @@ const AcreBytes = () => {
                 Trusted by Customers & Consultants
               </Typography>
               <Typography variant="h2" paragraph>
-                See what our customers love about our products. Discover how we
-                excel in efficiency, durability, and satisfaction. Join us for
-                quality, and reliable support.
+                Creating clarity with every enquiry, every connection, every deal.
               </Typography>
             </Box>
             <Grid container spacing={4}>
@@ -684,7 +682,7 @@ const AcreBytes = () => {
         </Container>
       </Paper>
 
-       <Paper elevation={0} square>
+      <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
@@ -693,8 +691,14 @@ const AcreBytes = () => {
                 gutterBottom
                 textTransform="uppercase"
                 color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}
               >
-                Explore top Real Estate group
+                top Real Estate groups <ArrowOutwardIcon fontSize="small" />
+              </Typography>
+              <Typography variant="h2" paragraph>
+                Partnering with leading builders to bring verified projects to you.
               </Typography>
             </Box>
             <Grid
@@ -841,12 +845,12 @@ const AcreBytes = () => {
                     }}
                   >
                     <CardContent sx={{ textAlign: "start", p: 3 }}>
-                      {data.icon}
+                      {data.icon} 
                       <Typography
                         variant="h5"
                         component="h3"
                         gutterBottom
-                        fontWeight={600}
+                        fontWeight={500}
                         textTransform="capitalize"
                       >
                         {data.title}
@@ -864,33 +868,34 @@ const AcreBytes = () => {
       </Paper>
 
       <Paper elevation={0} square>
-        <Container maxWidth="lg">
-          <Grid container spacing={3} sx={{ py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="lg" >
+          <Grid container spacing={5} >
             {/* Left Column */}
-            <Grid size={{ xs: 12, md: 8 }}>
+            <Grid size={{ xs: 12, md: 5 }}>
+              <CardMedia
+                component="img"
+                image="/img/client/partner-header.webp"
+                alt="Become a Partner"
+                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>
               <Typography variant="h3" gutterBottom>
-                How to Become a Partner
+                Become a trusted AcreBytes Agent Partner
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
-                Becoming a partner with Instalanes is straightforward. If you
-                are interested in discussing a partnership, please fill out the
-                contact form below, and our team will get back to you promptly.
+                Are you a Real estate agent ? Join our network of high-performing agents and elevate your growth opportunities.
               </Typography>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 4 }}>
               <Box
                 display={"flex"}
-                justifyContent={"flex-end"}
-                gap={3}
-                alignItems={"center"}
-              >
-                {" "}
-                <Button variant="contained" startIcon={<LaptopIcon />}>
-                  Register
-                </Button>
+                gap={1}
+                mt={2}
+                alignItems={"center"}>
                 <Button variant="contained" startIcon={<WhatsApp />}>
-                  Whatsapp
+                  Yes, I'd like to Partner
+                </Button>
+                <Button variant="outlined" startIcon={<ArrowForwardIcon />} href="/leads" component="a">
+                  I'd like to know more
                 </Button>
               </Box>
             </Grid>
