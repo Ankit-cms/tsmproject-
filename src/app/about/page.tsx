@@ -91,7 +91,7 @@ const AboutUs = () => {
             >
               About us
             </Typography>
-            <Typography variant="h1" paragraph>
+            <Typography variant="h2" paragraph>
               We are team of problem solvers who love technology{' '}
             </Typography>
            

@@ -1,5 +1,7 @@
 'use client';
 import {
+  Alert,
+  AlertTitle,
   Avatar,
   Box,
   Breadcrumbs,
@@ -233,25 +235,25 @@ const Leads = () => {
             <Grid container spacing={3}>
               {[
                 {
-                  icon: <VerifiedOutlinedIcon fontSize="large"  />,
+                  icon: <VerifiedOutlinedIcon fontSize="large" />,
                   title: "Verified, targeted Leads",
                   description:
                     "Only high-intent enquiries reach you - no cold leads, no wasted time.",
                 },
                 {
-                  icon: <PlaylistAddCheckOutlinedIcon fontSize="large"  />,
+                  icon: <PlaylistAddCheckOutlinedIcon fontSize="large" />,
                   title: "Exclusive Project listings",
                   description:
                     "Access projects mapped specifically to you, giving you a competitive edge in your market.",
                 },
                 {
-                  icon: <CallOutlinedIcon fontSize="large"  />,
+                  icon: <CallOutlinedIcon fontSize="large" />,
                   title: "Direct Enquiry access",
                   description:
                     " Connect instantly with prospects, track better with no delays.",
                 },
                 {
-                  icon: <TrendingUpOutlinedIcon fontSize="large"  />,
+                  icon: <TrendingUpOutlinedIcon fontSize="large" />,
                   title: "Faster Conversions",
                   description:
                     "With the right leads, projects, and tools, close deals faster and grow your business.",
@@ -275,7 +277,7 @@ const Leads = () => {
                       <Typography
                         variant="h5"
                         component="h3"
-                        gutterBottom  
+                        gutterBottom
                       >
                         {stat.title}
                       </Typography>
@@ -291,8 +293,421 @@ const Leads = () => {
         </Container>
       </Paper>
 
+      <Paper elevation={0} square>
+        <Container maxWidth="lg">
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography
+              variant="h6"
+              color="primary.dark"
+              gutterBottom
+              textTransform="uppercase">
+              Challenges Agents face, and How AcreBytes solves them
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h3"
+              gutterBottom
+              color="common.black"
+              mb={4}
+            >
+              Clear visibility, quality leads, and tools built to help you close faster.
+            </Typography>
+            <Grid container spacing={3}>
+              <Grid size={{ xs: 12 }}>
+                <Card
+                  elevation={3}
+                  variant="elevation"
+                  sx={{
+                    height: "100%",
+                    width: "100%",
+                    bgcolor: "common.white",
+                    color: "common.black",
+                  }}>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Leads quality
+                    </Typography>
+                    <Box display={"flex"} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }}>
+                        <AlertTitle>Dead / Passive Leads</AlertTitle>
+                        Most portals send random or low-intent enquiries that never convert.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }}>
+                        <AlertTitle>High-Intent Buyers</AlertTitle>
+                        AcreBytes focuses on verified,high-intent property seekers who are actively looking.
+                      </Alert>
+                    </Box>
+                  </CardContent>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Client status
+                    </Typography>
+                    <Box display={"flex"} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }}>
+                        <AlertTitle>Ineffective tracking</AlertTitle>
+                        Scattered customer data and no centralised visibility on leads status and next actions.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }} >
+                        <AlertTitle>Leads management panel</AlertTitle>
+                        AcreBytes give you centralised tracking panel to manage Leads status, Notes & follow-ups
+                      </Alert>
+                    </Box>
+                  </CardContent>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Leads access
+                    </Typography>
+                    <Box display={"flex"} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }} >
+                        <AlertTitle>Leads Shared to masses</AlertTitle>
+                        Competing with hundreds of agents on the same lead reduces your chance of closing.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }} >
+                        <AlertTitle>Controlled Leads access</AlertTitle>
+                        AcreBytes shares leads in a controlled and fair manner, giving you a better closing opportunity.
+                      </Alert>
+                    </Box>
+                  </CardContent>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Agent credibility
+                    </Typography>
+                    <Box display={"flex"} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }} >
+                        <AlertTitle>Credibility Concerns</AlertTitle>
+                        Customers hesitate to answer agent calls due to lack of trust.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }} >
+                        <AlertTitle>Build Trust with Agent profiles</AlertTitle>
+                        AcreBytes builds credibility with verified profiles, enquiry forms, and direct access.
+                      </Alert>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
+      </Paper>
 
-      <Paper elevation={0} square >
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+        <Container maxWidth="lg">
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography
+              variant="h6"
+              color="primary.dark"
+              gutterBottom
+              textTransform="uppercase">
+              What AcreBytes Offers to Our Real Estate Agent Partners
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h3"
+              gutterBottom
+              color="common.black"
+              mb={4}>
+              Tools, visibility, digital presence and high-intent leads designed to help you grow your business faster.
+            </Typography>
+            <Grid container spacing={4} >
+              <Grid size={{ xs: 12, md: 6 }} alignContent="center">
+                <Typography variant="h4" gutterBottom fontWeight="bold">
+                  Project Property Display
+                </Typography>
+                <List
+                  disablePadding
+                  sx={{
+                    '& .MuiListItem-root': {
+                      p: 0,
+                      m: 0,
+                      alignItems: 'flex-start',
+                    },
+                    '& .MuiListItemIcon-root': {
+                      minWidth: '30px',
+                    },
+                  }}>
+                  {[
+                    "Display your project/property with your name and branding", "Pinned Property Option for maximum visibility",
+                    "Pinned Property Option for maximum visibility",
+                    "Shareable Project Link Buy to promote anywhere"].map((item, index) => (
+                      <ListItem key={index}>
+                        <ListItemIcon sx={{ mt: 1 }}>
+                          <DoneIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText primary={item} />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="/img/hero/real.avif"
+                  alt="Acrebytes"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={4} >
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="/img/hero/real.avif"
+                  alt="Acrebytes"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }} alignContent="center">
+                <Typography variant="h4" gutterBottom fontWeight="bold">
+                  Enquiry Forms (Individual & Company)
+                </Typography>
+                <List
+                  disablePadding
+                  sx={{
+                    '& .MuiListItem-root': {
+                      p: 0,
+                      m: 0,
+                      alignItems: 'flex-start',
+                    },
+                    '& .MuiListItemIcon-root': {
+                      minWidth: '30px',
+                    },
+                  }}>
+                  {[
+                    "Personalized enquiry forms with your contact",
+                    "Auto-routing leads directly to your dashboard",
+                    "Track lead source & follow-ups"].map((item, index) => (
+                      <ListItem key={index}>
+                        <ListItemIcon sx={{ mt: 1 }}>
+                          <DoneIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText primary={item} />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+            </Grid>
+            <Grid container spacing={4} >
+              <Grid size={{ xs: 12, md: 6 }} alignContent="center">
+                <Typography variant="h4" gutterBottom fontWeight="bold">
+                  Notes & Tracking Panel
+                </Typography>
+                <List
+                  disablePadding
+                  sx={{
+                    '& .MuiListItem-root': {
+                      p: 0,
+                      m: 0,
+                      alignItems: 'flex-start',
+                    },
+                    '& .MuiListItemIcon-root': {
+                      minWidth: '30px',
+                    },
+                  }}>
+                  {[
+                    "Add client notes",
+                    "Track conversations & follow-up status",
+                    "Never miss a lead again"].map((item, index) => (
+                      <ListItem key={index}>
+                        <ListItemIcon sx={{ mt: 1 }}>
+                          <DoneIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText primary={item} />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="/img/hero/real.avif"
+                  alt="Acrebytes"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={4} >
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="/img/hero/real.avif"
+                  alt="Acrebytes"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }} alignContent="center">
+                <Typography variant="h4" gutterBottom fontWeight="bold">
+                  Suggest Leads
+                </Typography>
+                <List
+                  disablePadding
+                  sx={{
+                    '& .MuiListItem-root': {
+                      p: 0,
+                      m: 0,
+                      alignItems: 'flex-start',
+                    },
+                    '& .MuiListItemIcon-root': {
+                      minWidth: '30px',
+                    },
+                  }}>
+                  {[
+                    "Recommend leads to other agents & earn rewards",
+                    "Build a trusted referral network"].map((item, index) => (
+                      <ListItem key={index}>
+                        <ListItemIcon sx={{ mt: 1 }}>
+                          <DoneIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText primary={item} />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+            </Grid>
+            <Grid container spacing={4} >
+              <Grid size={{ xs: 12, md: 6 }} alignContent="center">
+                <Typography variant="h4" gutterBottom fontWeight="bold">
+                  Digital Marketing Services
+                </Typography>
+                <List
+                  disablePadding
+                  sx={{
+                    '& .MuiListItem-root': {
+                      p: 0,
+                      m: 0,
+                      alignItems: 'flex-start',
+                    },
+                    '& .MuiListItemIcon-root': {
+                      minWidth: '30px',
+                    },
+                  }}>
+                  {[
+                    "Social media campaigns",
+                    "Listing promotion",
+                    "Project-focused video ads (Boost your reach, get more enquiries)"].map((item, index) => (
+                      <ListItem key={index}>
+                        <ListItemIcon sx={{ mt: 1 }}>
+                          <DoneIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText primary={item} />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="/img/hero/real.avif"
+                  alt="Acrebytes"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={4} >
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="/img/hero/real.avif"
+                  alt="Acrebytes"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }} alignContent="center">
+                <Typography variant="h4" gutterBottom fontWeight="bold">
+                  Points Buy (Pay-as-you-grow)
+                </Typography>
+                <List
+                  disablePadding
+                  sx={{
+                    '& .MuiListItem-root': {
+                      p: 0,
+                      m: 0,
+                      alignItems: 'flex-start',
+                    },
+                    '& .MuiListItemIcon-root': {
+                      minWidth: '30px',
+                    },
+                  }}>
+                  {[
+                    "Buy points to activate leads or promote listings",
+                    "No monthly fee, complete flexibility"].map((item, index) => (
+                      <ListItem key={index}>
+                        <ListItemIcon sx={{ mt: 1 }}>
+                          <DoneIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText primary={item} />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+            </Grid>
+            <Grid container spacing={4} >
+              <Grid size={{ xs: 12, md: 6 }} alignContent="center">
+                <Typography variant="h4" gutterBottom fontWeight="bold">
+                  Free Clients Directory
+                </Typography>
+                <List
+                  disablePadding
+                  sx={{
+                    '& .MuiListItem-root': {
+                      p: 0,
+                      m: 0,
+                      alignItems: 'flex-start',
+                    },
+                    '& .MuiListItemIcon-root': {
+                      minWidth: '30px',
+                    },
+                  }}>
+                  {[
+                    "Browse property seekers & company requirements",
+                    "Connect with interested customers instantly"].map((item, index) => (
+                      <ListItem key={index}>
+                        <ListItemIcon sx={{ mt: 1 }}>
+                          <DoneIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText primary={item} />
+                      </ListItem>
+                    ))
+                  }
+                </List>
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image="/img/hero/real.avif"
+                  alt="Acrebytes"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
+      </Paper>
+
+
+
+
+      {/* <Paper elevation={0} square >
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center" >
             <Grid size={{ xs: 12, md: 12 }}>
@@ -459,7 +874,7 @@ const Leads = () => {
             </Grid>
           </Box>
         </Container>
-      </Paper>
+      </Paper> */}
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">
