@@ -14,6 +14,11 @@ import {
   Paper,
   Typography,
 } from '@mui/material';
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
+import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
+import RadarOutlinedIcon from '@mui/icons-material/RadarOutlined';
+
 import Header from '../components/Header';
 import {
   ArrowForward,
@@ -75,31 +80,45 @@ const AboutUs = () => {
           </Breadcrumbs>
           <Divider />
           <Box py={4}>
-            <Typography variant="h3"  gutterBottom>
+            <Typography
+              variant="h6"
+              gutterBottom
+              textTransform="uppercase"
+              color="primary.dark"
+              display="flex"
+              alignItems="center"
+              gap={1}
+            >
               About us
             </Typography>
-            <Typography variant="h5" paragraph>
+            <Typography variant="h1" paragraph>
               We are team of problem solvers who love technology{' '}
             </Typography>
-            <Divider  />
-
-            <Grid container spacing={4} my={3}>
+           
+           <Grid container spacing={4} my={3}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <CardMedia
                   component="img"
                   height="400"
                   image="https://gravity44.com/wp-content/uploads/2024/05/mimi-thian-vdXMSiX-n6M-unsplash.jpg"
                   alt="about-us"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
                 />
               </Grid>
 
               <Grid size={{ xs: 12, md: 6 }}>
-                <Card sx={{ mb: 2 }}>
+                <Card sx={{ mb: 2 }} elevation={8}
+                    variant="outlined"
+                    
+                    >
                   <CardContent sx={{ p: 3 }}>
+                    <Box display={"flex"} alignItems="start" gap={1}>  
+                     <FlagOutlinedIcon />
                     <Typography variant="h5" component="h3" gutterBottom>
                       Purpose
                     </Typography>
-                    <Typography variant="body1">
+                    </Box>
+                    <Typography variant="body1" fontWeight={400} paragraph color="text.secondary">
                       Instalanes was launched in 2024 as a technology company by
                       a team of supply chain industry leaders and technology
                       enthusiasts. We are a team of technology enthusiasts who
@@ -109,12 +128,17 @@ const AboutUs = () => {
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card  elevation={8}
+                    variant="outlined">
                   <CardContent sx={{ p: 3 }}>
+<Box display={"flex"} alignItems="start" gap={1}> 
+                    <RadarOutlinedIcon  />
+
                     <Typography variant="h5" component="h3" gutterBottom>
                       Mission
                     </Typography>
-                    <Typography variant="body1">
+                    </Box>
+                    <Typography variant="body1" fontWeight={400} paragraph color="text.secondary">
                       With the purpose of “building technology platforms that
                       deliver amazing life experiences”, we are on a mission to
                       “build the most global, scalable transport management
@@ -125,14 +149,19 @@ const AboutUs = () => {
                 </Card>
               </Grid>
             </Grid>
-            <Divider  />
+            
 
             <Box py={5}>
               <Box mb={4}>
-                <Typography variant="h3" gutterBottom>
+                 <Typography
+                    variant="h6"
+                    gutterBottom
+                    textTransform="uppercase"
+                    color="primary.dark"
+                  >
                   Our Values
                 </Typography>
-                <Typography variant="h5" paragraph>
+                <Typography variant="h2" paragraph>
                   At the core of Instalanes{' '}
                 </Typography>
               </Box>
@@ -160,7 +189,7 @@ const AboutUs = () => {
                         <Box mb={1}>
                           <feature.icon fontSize="large" />
                         </Box>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h5" gutterBottom >
                           {feature.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
@@ -173,47 +202,41 @@ const AboutUs = () => {
               </Grid>
             </Box>
 </Box></Container></Paper>
-            <Divider sx={{ my: 2 }} />
-<Paper><Container maxWidth='lg'>
-            <Grid container spacing={4} py={3}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Typography variant="h4" gutterBottom>
-                  Join our Team
-                </Typography>
-                <Typography variant="subtitle1" color="text.secondary">
-                  We are always looking for passionate people who want to help
-                  us build the future of transport technology. Join us and be
-                  part of an exciting journey to create smarter, more connected
-                  logistics solutions.
-                </Typography>
-                <Button
-                  sx={{ mt: 2 }}
-                  variant="contained"
-                  endIcon={<ArrowForward />}
-                  href="/careers"
-                >
-                  View open positions
-                </Button>
-              </Grid>
+           
 
-              <Grid size={{ xs: 12, md: 6 }}>
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image="/img/team.jpeg"
-                  alt="team"
-                  sx={{
-                    borderRadius: 2,
-                    objectFit: 'cover',
-                    width: '100%',
-                  }}
-                />
-              </Grid>
+     <Paper elevation={0} square>
+        <Container maxWidth="lg" >
+          <Grid container spacing={5} >
+            {/* Left Column */}
+            <Grid size={{ xs: 12, md: 5 }}>
+              <CardMedia
+                component="img"
+                image="/img/client/partner-header.webp"
+                alt="Become a Partner"
+                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+              />
             </Grid>
-          {/* </Box> */}
+            <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>
+              <Typography variant="h3" gutterBottom>
+                Join our Team
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+                We are always looking for passionate people who want to help us build the future of transport technology. Join us and be part of an exciting journey to create smarter, more connected logistics solutions.
+              </Typography>
+              <Box
+                display={"flex"}
+                gap={1}
+                mt={2}
+                alignItems={"center"}>
+               
+                <Button variant="contained" endIcon={<ArrowForwardIcon />} href="/careers" component="a">
+                  View Open Positions
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
       <Footer />
     </Box>
   );
