@@ -426,10 +426,10 @@ const TMSLandingPage = () => {
                 textTransform="uppercase"
                 color="primary.dark"
               >
-                Digital solution deep dive
+                Instalanes TMS – Digital Solution Deep Dive
               </Typography>
               <Typography variant="h2" paragraph>
-                How Instalanes TMS works
+                Explore the modules and workflows that streamline, automate, and elevate your logistics.
               </Typography>
             </Box>
             <Typography variant="h6" paragraph fontWeight="bold">
@@ -717,10 +717,27 @@ const TMSLandingPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Typography variant="h6" paragraph fontWeight="bold">
-              TMS Features
-            </Typography>
-            <Grid container spacing={2} sx={{ mb: 4 }}>
+          </Box>
+        </Container>
+      </Paper>
+      {/* <Features /> */}
+      <Paper elevation={0} square >
+        <Container maxWidth="lg">
+          <Box sx={{ pt: { xs: 4, md: 8 } }}>
+            <Box mb={4}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
+                Instalanes TMS features
+              </Typography>
+              <Typography variant="h2" paragraph>
+                Powerful features designed to elevate your logistics performance.
+              </Typography>
+            </Box>
+            <Grid container spacing={2}>
               {[
                 {
                   title: "Mobile driven",
@@ -790,7 +807,6 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
-      {/* <Features /> */}
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
