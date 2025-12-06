@@ -3,8 +3,7 @@ import {
   Alert,
   AlertTitle,
   Avatar,
-  Box,
-  Breadcrumbs,
+  Box, 
   Button,
   Card,
   CardContent,
@@ -25,15 +24,9 @@ import {
 } from '@mui/material';
 import React from 'react';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
-import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
-import { FormatQuote, WhatsApp } from '@mui/icons-material';
-import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
-import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
-import DoneIcon from '@mui/icons-material/Done';
-import CloseIcon from '@mui/icons-material/Close';
+import Footer from '../components/Footer'; 
+import { FormatQuote, WhatsApp } from '@mui/icons-material'; 
+import DoneIcon from '@mui/icons-material/Done'; 
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
@@ -257,17 +250,6 @@ const Leads = () => {
   return (
     <Box position={'relative'}>
       <Header />
-      {/* <Paper elevation={0} square >
-        <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography sx={{ color: 'text.primary' }}>Leads</Typography>
-          </Breadcrumbs>
-          <Divider />
-        </Container>
-      </Paper> */}
       <Paper elevation={0} square sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center" my={2}>
@@ -563,266 +545,6 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-
-
-      {/* <Paper elevation={0} square >
-        <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center" >
-            <Grid size={{ xs: 12, md: 12 }}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h6">
-                    Why our leads convert better
-                  </Typography>
-                  <Box sx={{ mt: 1 }}>
-                    {' '}
-                    <List
-                      disablePadding
-                      sx={{
-                        '& .MuiListItem-root': {
-                          p: 0,
-
-                          m: 0,
-                          alignItems: 'flex-start',
-                        },
-                        '& .MuiListItemIcon-root': {
-                          minWidth: '30px',
-                        },
-                      }}
-                    >
-                      {[
-                        'Leads tied to a project or locality — buyers already have intent.',
-                        'Verified contact & preference details — no time wasted on bad data.',
-                        'Notification when leads view your link — reach out at the right moment.',
-                        'Limited distribution — fewer competing brokers for the same lead.',
-                      ].map((listItem) => (
-                        <ListItem key={listItem}>
-                          <ListItemIcon sx={{ mt: 1 }}>
-                            <DoneIcon fontSize="small" />
-                          </ListItemIcon>
-                          <ListItemText primary={listItem} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Box>
-
-                  <Box mt={3}>
-                    <Typography variant="body1">Try a demo panel</Typography>
-                    <Grid container spacing={2} mt={1}>
-                      <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%', p: 2 }}>
-                          <Typography variant="body2">
-                            Leads in panel
-                          </Typography>
-                          <Typography variant="h6">45</Typography>
-                        </Card>
-                      </Grid>
-                      <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%', p: 2 }}>
-                          <Typography variant="body2">
-                            Avg. response time{' '}
-                          </Typography>
-                          <Typography variant="h6">1.4 days</Typography>
-                        </Card>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-          <Box py={5}>
-            <Grid container spacing={2}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box>
-                  <Typography variant="h5">
-                    The common problems brokers face
-                  </Typography>
-                  <Typography variant="subtitle1">
-                    Industry pain points that kill conversions — and how we fix
-                    them.
-                  </Typography>
-                </Box>
-                <Box>
-                  <List
-                    sx={{
-                      width: '100%',
-                      maxWidth: 360,
-                      bgcolor: 'background.paper',
-                    }}
-                  >
-                    <ListItem>
-                      <ListItemAvatar>
-                        <Avatar>
-                          <CloseIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary="Dead / passive leads"
-                        secondary="Most portals deliver enquiries with little or no buying intent."
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar>
-                        <Avatar>
-                          <InfoOutlineIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary="Ineffective tracking"
-                        secondary="Scattered customer data and no visibility on who viewed your listing."
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar>
-                        <Avatar>
-                          <AutorenewIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary="Mass-shared leads"
-                        secondary="Leads sold to large lists reduce your chance of closing the deal."
-                      />
-                    </ListItem>
-                  </List>
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Card sx={{ height: '100%' }}>
-                  <CardContent sx={{ p: 3 }}>
-                    <Typography variant="h6">
-                      How Instalanes fixes it
-                    </Typography>
-                    <Box mt={2}>
-                      <List
-                        disablePadding
-                        sx={{
-                          '& .MuiListItem-root': {
-                            p: 0,
-
-                            m: 0,
-                            alignItems: 'flex-start',
-                          },
-                          '& .MuiListItemIcon-root': {
-                            minWidth: '30px',
-                          },
-                        }}
-                      >
-                        {[
-                          'Leads tied to a project or locality — buyers already have intent.',
-                          'Verified contact & preference details — no time wasted on bad data.',
-                          'Notification when leads view your link — reach out at the right moment.',
-                          'Limited distribution — fewer competing brokers for the same lead.',
-                        ].map((listItem) => (
-                          <ListItem key={listItem}>
-                            <ListItemIcon sx={{ mt: 1 }}>
-                              <DoneIcon fontSize="small" />
-                            </ListItemIcon>
-                            <ListItemText primary={listItem} />
-                          </ListItem>
-                        ))}
-                      </List>
-                      <Button variant="contained" sx={{ mt: 4 }}>
-                        Start now — get qualified leads
-                      </Button>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-            </Grid>
-          </Box>
-        </Container>
-      </Paper> */}
-
-      {/* <Paper elevation={0} square>
-        <Container maxWidth="lg">
-          <Box py={5}>
-            <Box pb={4}>
-              <Typography
-                variant="h6"
-                color="primary.dark"
-                gutterBottom
-                textTransform="uppercase"
-              >
-                Partnership Offerings
-              </Typography>
-              <Typography variant="h2" paragraph>
-                A simple, focused set of services and tools designed to drive
-                leads and conversions for brokers & real estate companies.
-              </Typography>
-            </Box>
-            <Grid container spacing={2}>
-              {pricingData.map((item, index) => (
-                <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
-                  <Card
-                    sx={{
-                      height: '100%',
-                    }}
-                  >
-                    <CardContent sx={{ p: 2.5 }}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'flex-start',
-                          mb: 2,
-                        }}
-                      >
-                        <Chip label={item.type} size="small" />
-                        <Typography variant="caption" color="text.secondary">
-                          {item.category}
-                        </Typography>
-                      </Box>
-
-                      <Typography variant="subtitle1">
-                        {item.offering}
-                      </Typography>
-
-                      <Divider sx={{ my: 1.5 }} />
-
-                      <Box sx={{ spaceY: 1.5 }}>
-                        <List
-                          disablePadding
-                          sx={{
-                            '& .MuiListItem-root': {
-                              p: 0,
-
-                              m: 0,
-                              alignItems: 'flex-start',
-                            },
-                            '& .MuiListItemIcon-root': {
-                              minWidth: '30px',
-                            },
-                          }}
-                        >
-                          <ListItem>
-                            <ListItemIcon sx={{ mt: 1 }}>
-                              <DoneIcon fontSize="small" />
-                            </ListItemIcon>
-                            <ListItemText primary={item.what} />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemIcon sx={{ mt: 1 }}>
-                              <DoneIcon fontSize="small" />
-                            </ListItemIcon>
-                            <ListItemText primary={item.benefits} />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemIcon sx={{ mt: 1 }}>
-                              <DoneIcon fontSize="small" />
-                            </ListItemIcon>
-                            <ListItemText primary={item.outcome} />
-                          </ListItem>
-                        </List>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-        </Container>
-      </Paper> */}
 
       <Paper elevation={0} square>
         <Container maxWidth="lg">

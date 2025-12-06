@@ -6,14 +6,12 @@ import {
   Paper,
   List,
   ListItem,
-  ListItemText,
-  Divider,
+  ListItemText, 
   ListItemButton,
   IconButton,
   Link,
 } from "@mui/material";
-import { Grid } from "@mui/material";
-import FlareIcon from "@mui/icons-material/Flare";
+import { Grid } from "@mui/material"; 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -21,8 +19,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import React from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"; 
 const SocialIconGroup = () => (
   <Box display="flex" gap={1} justifyContent="center" alignItems="center">
     <IconButton aria-label="facebook" sx={{ color: "common.black" }}>
