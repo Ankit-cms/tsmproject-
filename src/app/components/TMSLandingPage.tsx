@@ -308,7 +308,7 @@ const TMSLandingPage = () => {
                       desc: "Delayed updates frustrate Customers, Carriers, and internal Teams.",
                     },
                   ].map((data, index) => (
-                    <Grid key={index} size={{ sm: 6 }}>
+                    <Grid key={index} size={{ xs: 12, md: 6 }}>
                       <Card
                         elevation={0}
                         square
@@ -371,7 +371,7 @@ const TMSLandingPage = () => {
                       desc: "Dashboards and analytics to improve cost, performance, and growth.",
                     },
                   ].map((data, index) => (
-                    <Grid key={index} size={{ sm: 6 }}>
+                    <Grid key={index} size={{ xs: 12, md: 6 }} >
                       <Card
                         elevation={0}
                         square
