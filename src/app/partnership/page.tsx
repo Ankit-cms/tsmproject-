@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
   Checkbox,
+  Chip,
   Container,
   Divider,
   Fab,
@@ -37,31 +38,24 @@ const Partners = () => {
       <Header />
       <Paper elevation={0} square >
         <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography sx={{ color: 'text.primary' }}>Partners</Typography>
-          </Breadcrumbs>
-          <Divider />
+          <Box sx={{ py: { xs: 4, md: 8 } }}>  
           <Grid container spacing={4} alignItems="center" my={2}>
             <Grid size={{ xs: 12, md: 6 }}>
-              <Typography
-                variant="h3"
-                component="h1"
-                gutterBottom
-                sx={{ fontSize: { xs: '1.5rem', md: '3rem' } }}
-                mt={2}
-              >
+             <Typography
+                             variant="h1"
+                             component="h1"
+                             gutterBottom
+                             sx={{ mt: { md: 2 } }}
+                           >
                 Partner with Instalanes
                 <br />
                 Drive growth. Unlock seamless logistics.{' '}
               </Typography>
-              <Typography variant="body1" paragraph>
+             <Typography variant="body1" fontWeight={400} paragraph>
                 Join our partner network to expand your business, collaborate on
                 smarter logistics solutions, and deliver unmatched efficiency
                 and visibility to your customers.
-              </Typography>
+              </Typography> 
               <Button variant="contained">
                 <HandshakeOutlinedIcon sx={{ mr: 1 }} />
                 Become a partner
@@ -73,23 +67,34 @@ const Partners = () => {
                 height="400"
                 image="/img/client/partner-header.webp"
                 alt="TMS Illustration"
+                 sx={{ borderRadius: 4, boxShadow: 4 }}
               />
             </Grid>
           </Grid>
+</Box>
+      </Container>
+      </Paper>
 
-          <Divider />
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+        <Container maxWidth="lg">
 
-          <Box py={5}>
-            <Box mb={4}>
-              <Typography variant="h3"  gutterBottom>
+          <Box sx= {{ py: { xs: 4, md: 8 } }}>
+            <Box mb={3}>
+              <Typography variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}>
                 Growth Partners
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 Select your scope - Let us know what fits for your
                 Transportation business process
               </Typography>
             </Box>
-            <Divider sx={{ my: 2 }} />
+            
 
             <Grid container spacing={3} py={1}>
               {[
@@ -129,7 +134,8 @@ const Partners = () => {
                 },
               ].map((item, index) => (
                 <Grid size={{ xs: 12, md: 4 }} key={index}>
-                  <Card sx={{ height: '100%' }}>
+                  <Card  elevation={2}
+                    variant="elevation" sx={{ height: '100%' }}>
                     <CardMedia
                       component="img"
                       src={item.image}
@@ -138,12 +144,17 @@ const Partners = () => {
                     />
                     <CardContent>
                       <Box>
-                        <Typography variant="h5">{item.title}</Typography>
-                        <Typography variant="subtitle1" gutterBottom>
+                        <Typography variant="h4">{item.title}</Typography>
+                        {/* <Typography variant="subtitle1" gutterBottom>
                           {item.subtitle}
-                        </Typography>
+                        </Typography> */}
+                        <Chip
+                                              label={item.subtitle}
+                                              variant="outlined" 
+                                              sx={{ mt: 1, mb: 1 }}
+                           />
                       </Box>
-                      <Divider sx={{ my: 1 }} />
+                     
                       <Box>
                         <Typography variant="subtitle1">
                           Key activities
@@ -163,7 +174,7 @@ const Partners = () => {
                             }}
                           >
                             {item.activities.map((activity) => (
-                              <ListItem key={activity}>
+                              <ListItem key={activity} >
                                 <ListItemIcon>
                                   <ArrowRightIcon />
                                 </ListItemIcon>
@@ -173,7 +184,7 @@ const Partners = () => {
                           </List>
                         </Stack>
                       </Box>
-                      <Divider sx={{ my: 1 }} />
+                    
                       <Box>
                         <Typography variant="subtitle1">
                           % Commission, applicable period
@@ -211,34 +222,42 @@ const Partners = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+    
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={4}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Card>
               <CardContent>
                 <Box>
                   <Typography
-                    variant="h4"
-                    gutterBottom
-                    sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                  variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}
                   >
-                    <FeedOutlinedIcon fontSize="large" /> Lead submission form
+                    <FeedOutlinedIcon /> Lead submission form
                   </Typography>
-                  <Typography variant="subtitle1" gutterBottom>
+                  <Typography variant="h2" paragraph>
                     Share qualified prospect details to initiate evaluation and
                     registration.
                   </Typography>
-                  <Divider sx={{ my: 2 }} />
+                  
                 </Box>
                 <Grid container spacing={3}>
                   <Grid size={{ xs: 12, md: 6 }}>
                     <Card sx={{ height: '100%' }}>
                       <CardContent sx={{ p: 3 }}>
                         <Typography
-                          variant="h5"
-                          gutterBottom
-                          sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                          variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}
                         >
                           <CorporateFareOutlinedIcon fontSize="large" />
                           Submit Prospect information
@@ -274,9 +293,13 @@ const Partners = () => {
                     <Card sx={{ height: '100%' }}>
                       <CardContent sx={{ p: 3 }}>
                         <Typography
-                          variant="h5"
-                          gutterBottom
-                          sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                           variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}
                         >
                           <HandshakeOutlinedIcon fontSize="large" />
                           Channel partners details
@@ -322,15 +345,21 @@ const Partners = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
-      <Paper elevation={0} square>
+    
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={5}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
+              <Typography  variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}>
                 Why Partner with Us?
               </Typography>
-              <Typography variant="h5" paragraph>
+              <Typography variant="h2" paragraph>
                 At Instalanes, we believe in the power of collaboration to drive
                 mutual success. We are always looking to build strong,
                 meaningful partnerships that benefit our customers and enhance
@@ -362,9 +391,9 @@ const Partners = () => {
                 },
               ].map((value) => (
                 <Grid size={{ xs: 12, md: 3 }} key={value.title}>
-                  <Card sx={{ height: '100%' }}>
+                  <Card sx={{ height: '100%' }} variant='elevation' elevation={2}>
                     <CardContent sx={{ p: 3 }}>
-                      <Typography variant="h6" gutterBottom>
+                      <Typography variant="h5" gutterBottom>
                         {value.title}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
@@ -378,10 +407,10 @@ const Partners = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+      
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={4}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Grid container spacing={3} alignItems="center">
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h3" gutterBottom>
@@ -397,39 +426,51 @@ const Partners = () => {
               <Grid size={{ xs: 12, md: 6 }}>
                 <CardMedia
                   component="img"
-                  src="https://instalanes.com/new_instalanes/wp-content/uploads/2024/08/entrepreneur-593371_1280.jpg"
+                  src="/img/partnership/partner.avif"
                   alt="partners"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
                 />
               </Grid>
             </Grid>
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
-      <Paper elevation={0} square>
-        <Container maxWidth="lg">
-          <Grid container spacing={3} py={8}>
-            <Grid size={{ xs: 12 }}>
-              <Typography variant="h3" gutterBottom>
-                How to Become a Partner
-              </Typography>
-              <Typography variant="h6" paragraph>
-                Becoming a partner with Instalanes is straightforward. If you
-                are interested in discussing a partnership, please fill out the
-                contact form below, and our team will get back to you promptly.
-              </Typography>
+     
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+        <Container maxWidth="lg" >
+          <Grid container spacing={5} >
+            {/* Left Column */}
+            <Grid size={{ xs: 12, md: 5 }}>
+              <CardMedia
+                component="img"
+                image="/img/client/partner-header.webp"
+                alt="Become a Partner"
+                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+              />
             </Grid>
-            <Grid size={{ xs: 12 }}>
-              <Button variant="contained" startIcon={<LaptopIcon />}>
+            <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>
+              <Typography variant="h3" gutterBottom>
+               How to Become a Partner
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+                Becoming a partner with Instalanes is straightforward. If you are interested in discussing a partnership, please fill out the contact form below, and our team will get back to you promptly.
+              </Typography>
+              <Box
+                display={"flex"}
+                gap={1}
+                mt={2}
+                alignItems={"center"}>
+                   <Button variant="contained" startIcon={<LaptopIcon />}>
                 Get Demo
               </Button>
-              <Button
+               <Button
                 variant="contained"
                 startIcon={<WhatsApp />}
                 sx={{ ml: 3 }}
               >
                 Contact
               </Button>
+              </Box>
             </Grid>
           </Grid>
         </Container>
@@ -441,7 +482,7 @@ const Partners = () => {
           Become a Partner
         </Fab>
       </Box>
-      <Divider sx={{ my: 2 }} />
+      
       <Footer />
     </Box>
   );
