@@ -1,8 +1,9 @@
 'use client';
 import {
+  Alert,
+  AlertTitle,
   Avatar,
-  Box,
-  Breadcrumbs,
+  Box, 
   Button,
   Card,
   CardContent,
@@ -23,15 +24,9 @@ import {
 } from '@mui/material';
 import React from 'react';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
-import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
-import { FormatQuote, WhatsApp } from '@mui/icons-material';
-import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
-import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
-import DoneIcon from '@mui/icons-material/Done';
-import CloseIcon from '@mui/icons-material/Close';
+import Footer from '../components/Footer'; 
+import { FormatQuote, WhatsApp } from '@mui/icons-material'; 
+import DoneIcon from '@mui/icons-material/Done'; 
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
@@ -44,6 +39,8 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
+import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
+
 
 const Leads = () => {
   const pricingData = [
@@ -113,6 +110,100 @@ const Leads = () => {
     },
   ];
 
+  const featureCards = [
+    {
+      id: 'project-property-display-card',
+      layout: 'card',
+      chipLabel: 'Feature',
+      image: '/img/lead/dashboard.png',
+      imageAlt: 'Acrebytes',
+      title: 'Project Property Display',
+      list: [
+        'Display your project/property with your name and branding',
+        'Pinned Property Option for maximum visibility',
+        'Pinned Property Option for maximum visibility',
+        'Shareable Project Link Buy to promote anywhere',
+      ],
+    },
+    {
+      id: 'enquiry-forms',
+      layout: 'card',
+      chipLabel: 'Feature',
+      image: '/img/lead/enquiry.avif',
+      imageAlt: 'Acrebytes',
+      title: 'Enquiry Forms (Individual & Company)',
+      list: [
+        'Personalized enquiry forms with your contact',
+        'Auto-routing leads directly to your dashboard',
+        'Track lead source & follow-ups',
+      ],
+    },
+    {
+      id: 'notes-tracking',
+      layout: 'card',
+      chipLabel: 'Feature',
+      image: '/img/lead/notes.jpg',
+      imageAlt: 'Acrebytes',
+      title: 'Notes & Tracking Panel',
+      list: [
+        'Add client notes',
+        'Track conversations & follow-up status',
+        'Never miss a lead again',
+      ],
+    },
+    {
+      id: 'suggest-leads',
+      layout: 'card',
+      chipLabel: 'Feature',
+      image: '/img/lead/leads.jpg',
+      imageAlt: 'Acrebytes',
+      title: 'Suggest Leads',
+      list: [
+        'Recommend leads to other agents & earn rewards',
+        'Build a trusted referral network',
+      ],
+    },
+    {
+      id: 'digital-marketing',
+      layout: 'card',
+      chipLabel: 'Feature',
+      image: '/img/lead/digital.jpg',
+      imageAlt: 'Acrebytes',
+      title: 'Digital Marketing Services',
+      list: [
+        'Social media campaigns',
+        'Listing promotion',
+        'Project-focused video ads (Boost your reach, get more enquiries)',
+      ],
+    },
+    {
+      id: 'points-buy',
+      layout: 'card',
+      chipLabel: 'Feature',
+      image: '/img/lead/buy-point.jpg',
+      imageAlt: 'Acrebytes',
+      title: 'Points Buy (Pay-as-you-grow)',
+      list: [
+        'Buy points to activate leads or promote listings',
+        'No monthly fee, complete flexibility',
+      ],
+    },
+    {
+      id: 'free-clients-directory',
+      layout: 'card',
+      chipLabel: 'Feature',
+      image: '/img/lead/client.jpg',
+      imageAlt: 'Acrebytes',
+      title: 'Free Clients Directory',
+      list: [
+        'Browse property seekers & company requirements',
+        'Connect with interested customers instantly',
+      ],
+    },
+  ];
+
+
+
   const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
   ))(({ theme }) => ({
@@ -159,17 +250,6 @@ const Leads = () => {
   return (
     <Box position={'relative'}>
       <Header />
-      {/* <Paper elevation={0} square >
-        <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography sx={{ color: 'text.primary' }}>Leads</Typography>
-          </Breadcrumbs>
-          <Divider />
-        </Container>
-      </Paper> */}
       <Paper elevation={0} square sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center" my={2}>
@@ -188,7 +268,7 @@ const Leads = () => {
                 gutterBottom
                 sx={{ mt: { md: 2 } }}
               >
-                Better Leads. More Closings. More Success with by AcreBytes.
+                Get Better Leads. More Closings. More Success with AcreBytes.
               </Typography>
               <Typography variant="body1" fontWeight={400} paragraph>
                 AcreBytes offers you, everything you need to maximize and speed
@@ -233,25 +313,25 @@ const Leads = () => {
             <Grid container spacing={3}>
               {[
                 {
-                  icon: <VerifiedOutlinedIcon fontSize="large"  />,
+                  icon: <VerifiedOutlinedIcon fontSize="large" />,
                   title: "Verified, targeted Leads",
                   description:
                     "Only high-intent enquiries reach you - no cold leads, no wasted time.",
                 },
                 {
-                  icon: <PlaylistAddCheckOutlinedIcon fontSize="large"  />,
+                  icon: <PlaylistAddCheckOutlinedIcon fontSize="large" />,
                   title: "Exclusive Project listings",
                   description:
                     "Access projects mapped specifically to you, giving you a competitive edge in your market.",
                 },
                 {
-                  icon: <CallOutlinedIcon fontSize="large"  />,
+                  icon: <CallOutlinedIcon fontSize="large" />,
                   title: "Direct Enquiry access",
                   description:
                     " Connect instantly with prospects, track better with no delays.",
                 },
                 {
-                  icon: <TrendingUpOutlinedIcon fontSize="large"  />,
+                  icon: <TrendingUpOutlinedIcon fontSize="large" />,
                   title: "Faster Conversions",
                   description:
                     "With the right leads, projects, and tools, close deals faster and grow your business.",
@@ -275,7 +355,7 @@ const Leads = () => {
                       <Typography
                         variant="h5"
                         component="h3"
-                        gutterBottom  
+                        gutterBottom
                       >
                         {stat.title}
                       </Typography>
@@ -291,167 +371,101 @@ const Leads = () => {
         </Container>
       </Paper>
 
-
-      <Paper elevation={0} square >
+      <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center" >
-            <Grid size={{ xs: 12, md: 12 }}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h6">
-                    Why our leads convert better
-                  </Typography>
-                  <Box sx={{ mt: 1 }}>
-                    {' '}
-                    <List
-                      disablePadding
-                      sx={{
-                        '& .MuiListItem-root': {
-                          p: 0,
-
-                          m: 0,
-                          alignItems: 'flex-start',
-                        },
-                        '& .MuiListItemIcon-root': {
-                          minWidth: '30px',
-                        },
-                      }}
-                    >
-                      {[
-                        'Leads tied to a project or locality — buyers already have intent.',
-                        'Verified contact & preference details — no time wasted on bad data.',
-                        'Notification when leads view your link — reach out at the right moment.',
-                        'Limited distribution — fewer competing brokers for the same lead.',
-                      ].map((listItem) => (
-                        <ListItem key={listItem}>
-                          <ListItemIcon sx={{ mt: 1 }}>
-                            <DoneIcon fontSize="small" />
-                          </ListItemIcon>
-                          <ListItemText primary={listItem} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Box>
-
-                  <Box mt={3}>
-                    <Typography variant="body1">Try a demo panel</Typography>
-                    <Grid container spacing={2} mt={1}>
-                      <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%', p: 2 }}>
-                          <Typography variant="body2">
-                            Leads in panel
-                          </Typography>
-                          <Typography variant="h6">45</Typography>
-                        </Card>
-                      </Grid>
-                      <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%', p: 2 }}>
-                          <Typography variant="body2">
-                            Avg. response time{' '}
-                          </Typography>
-                          <Typography variant="h6">1.4 days</Typography>
-                        </Card>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-          <Box py={5}>
-            <Grid container spacing={2}>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Box>
-                  <Typography variant="h5">
-                    The common problems brokers face
-                  </Typography>
-                  <Typography variant="subtitle1">
-                    Industry pain points that kill conversions — and how we fix
-                    them.
-                  </Typography>
-                </Box>
-                <Box>
-                  <List
-                    sx={{
-                      width: '100%',
-                      maxWidth: 360,
-                      bgcolor: 'background.paper',
-                    }}
-                  >
-                    <ListItem>
-                      <ListItemAvatar>
-                        <Avatar>
-                          <CloseIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary="Dead / passive leads"
-                        secondary="Most portals deliver enquiries with little or no buying intent."
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar>
-                        <Avatar>
-                          <InfoOutlineIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary="Ineffective tracking"
-                        secondary="Scattered customer data and no visibility on who viewed your listing."
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar>
-                        <Avatar>
-                          <AutorenewIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary="Mass-shared leads"
-                        secondary="Leads sold to large lists reduce your chance of closing the deal."
-                      />
-                    </ListItem>
-                  </List>
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Card sx={{ height: '100%' }}>
-                  <CardContent sx={{ p: 3 }}>
-                    <Typography variant="h6">
-                      How Instalanes fixes it
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography
+              variant="h6"
+              color="primary.dark"
+              gutterBottom
+              textTransform="uppercase">
+              Challenges Agents face, and How AcreBytes solves them
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h3"
+              gutterBottom
+              color="common.black"
+              mb={4}>
+              Clear visibility, quality leads, and tools built to help you close faster.
+            </Typography>
+            <Grid container spacing={3}>
+              <Grid size={{ xs: 12 }}>
+                <Card
+                  elevation={3}
+                  variant="elevation"
+                  sx={{
+                    height: "100%",
+                    width: "100%",
+                    bgcolor: "common.white",
+                    color: "common.black",
+                  }}>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Leads quality
                     </Typography>
-                    <Box mt={2}>
-                      <List
-                        disablePadding
-                        sx={{
-                          '& .MuiListItem-root': {
-                            p: 0,
-
-                            m: 0,
-                            alignItems: 'flex-start',
-                          },
-                          '& .MuiListItemIcon-root': {
-                            minWidth: '30px',
-                          },
-                        }}
-                      >
-                        {[
-                          'Leads tied to a project or locality — buyers already have intent.',
-                          'Verified contact & preference details — no time wasted on bad data.',
-                          'Notification when leads view your link — reach out at the right moment.',
-                          'Limited distribution — fewer competing brokers for the same lead.',
-                        ].map((listItem) => (
-                          <ListItem key={listItem}>
-                            <ListItemIcon sx={{ mt: 1 }}>
-                              <DoneIcon fontSize="small" />
-                            </ListItemIcon>
-                            <ListItemText primary={listItem} />
-                          </ListItem>
-                        ))}
-                      </List>
-                      <Button variant="contained" sx={{ mt: 4 }}>
-                        Start now — get qualified leads
-                      </Button>
+                    <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }}>
+                        <AlertTitle>Dead / Passive Leads</AlertTitle>
+                        Most portals send random or low-intent enquiries that never convert.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }}>
+                        <AlertTitle>High-Intent Buyers</AlertTitle>
+                        AcreBytes focuses on verified,high-intent property seekers who are actively looking.
+                      </Alert>
+                    </Box>
+                  </CardContent>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Client status
+                    </Typography>
+                    <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }}>
+                        <AlertTitle>Ineffective tracking</AlertTitle>
+                        Scattered customer data and no centralised visibility on leads status and next actions.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }} >
+                        <AlertTitle>Leads management panel</AlertTitle>
+                        AcreBytes give you centralised tracking panel to manage Leads status, Notes & follow-ups
+                      </Alert>
+                    </Box>
+                  </CardContent>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Leads access
+                    </Typography>
+                    <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }} >
+                        <AlertTitle>Leads Shared to masses</AlertTitle>
+                        Competing with hundreds of agents on the same lead reduces your chance of closing.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }} >
+                        <AlertTitle>Controlled Leads access</AlertTitle>
+                        AcreBytes shares leads in a controlled and fair manner, giving you a better closing opportunity.
+                      </Alert>
+                    </Box>
+                  </CardContent>
+                  <CardContent sx={{ textAlign: "start", p: 2 }}>
+                    <Typography variant="h5" gutterBottom>
+                      Agent credibility
+                    </Typography>
+                    <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }} gap={2}>
+                      <Alert
+                        severity="error" sx={{ flex: 1 }} >
+                        <AlertTitle>Credibility Concerns</AlertTitle>
+                        Customers hesitate to answer agent calls due to lack of trust.
+                      </Alert>
+                      <Alert
+                        severity="success" sx={{ flex: 1 }} >
+                        <AlertTitle>Build Trust with Agent profiles</AlertTitle>
+                        AcreBytes builds credibility with verified profiles, enquiry forms, and direct access.
+                      </Alert>
                     </Box>
                   </CardContent>
                 </Card>
@@ -461,98 +475,80 @@ const Leads = () => {
         </Container>
       </Paper>
 
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={5}>
-            <Box pb={4}>
-              <Typography
-                variant="h6"
-                color="primary.dark"
-                gutterBottom
-                textTransform="uppercase"
-              >
-                Partnership Offerings
-              </Typography>
-              <Typography variant="h2" paragraph>
-                A simple, focused set of services and tools designed to drive
-                leads and conversions for brokers & real estate companies.
-              </Typography>
-            </Box>
-            <Grid container spacing={2}>
-              {pricingData.map((item, index) => (
-                <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
-                  <Card
-                    sx={{
-                      height: '100%',
-                    }}
-                  >
-                    <CardContent sx={{ p: 2.5 }}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'flex-start',
-                          mb: 2,
-                        }}
-                      >
-                        <Chip label={item.type} size="small" />
-                        <Typography variant="caption" color="text.secondary">
-                          {item.category}
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography
+              variant="h6"
+              color="primary.dark"
+              gutterBottom
+              textTransform="uppercase">
+              What AcreBytes Offers to Our Real Estate Agent Partners
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h3"
+              gutterBottom
+              color="common.black"
+              mb={4}>
+              Tools, visibility, digital presence and high-intent leads designed to help you grow your business faster.
+            </Typography>
+
+
+            <Grid container spacing={4}>
+              {featureCards.map(card => (
+                <Grid size={{ xs: 12, md: 6 }} key={card.id}>
+                  <Card elevation={2} variant="elevation" sx={{ height: '100%', width: '100%' }}>
+                    <CardMedia
+                      component="img"
+                      height="250"
+                      image={card.image}
+                      alt={card.imageAlt}
+                    />
+                    <CardContent>
+                      <Box display="flex" alignItems="center" justifyContent="space-between" my={1}>
+                        <Typography variant="h4" gutterBottom fontWeight="bold">
+                          {card.title}
                         </Typography>
+                        {card.chipLabel && (
+                          <Chip label={card.chipLabel} variant="outlined" />
+                        )}
                       </Box>
 
-                      <Typography variant="subtitle1">
-                        {item.offering}
-                      </Typography>
-
-                      <Divider sx={{ my: 1.5 }} />
-
-                      <Box sx={{ spaceY: 1.5 }}>
-                        <List
-                          disablePadding
-                          sx={{
-                            '& .MuiListItem-root': {
-                              p: 0,
-
-                              m: 0,
-                              alignItems: 'flex-start',
-                            },
-                            '& .MuiListItemIcon-root': {
-                              minWidth: '30px',
-                            },
-                          }}
-                        >
-                          <ListItem>
+                      <List
+                        disablePadding
+                        sx={{
+                          '& .MuiListItem-root': {
+                            p: 0,
+                            m: 0,
+                            alignItems: 'flex-start',
+                          },
+                          '& .MuiListItemIcon-root': {
+                            minWidth: '30px',
+                          },
+                        }}>
+                        {card.list.map((item, index) => (
+                          <ListItem key={index}>
                             <ListItemIcon sx={{ mt: 1 }}>
                               <DoneIcon fontSize="small" />
                             </ListItemIcon>
-                            <ListItemText primary={item.what} />
+                            <ListItemText primary={item} />
                           </ListItem>
-                          <ListItem>
-                            <ListItemIcon sx={{ mt: 1 }}>
-                              <DoneIcon fontSize="small" />
-                            </ListItemIcon>
-                            <ListItemText primary={item.benefits} />
-                          </ListItem>
-                          <ListItem>
-                            <ListItemIcon sx={{ mt: 1 }}>
-                              <DoneIcon fontSize="small" />
-                            </ListItemIcon>
-                            <ListItemText primary={item.outcome} />
-                          </ListItem>
-                        </List>
-                      </Box>
+                        ))}
+                      </List>
                     </CardContent>
                   </Card>
                 </Grid>
               ))}
             </Grid>
+
           </Box>
         </Container>
       </Paper>
+
       <Paper elevation={0} square>
         <Container maxWidth="lg">
-          <Box py={5}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
               <Typography
                 variant="h6"
@@ -560,75 +556,89 @@ const Leads = () => {
                 gutterBottom
                 textTransform="uppercase"
               >
-                Trusted by brokers & teams
+                Trusted by Agents & Real Estate Agencies
               </Typography>
               <Typography variant="h2" paragraph>
-                See what our customers love about our products. Discover how we
-                excel in efficiency, durability, and satisfaction. Join us for
-                quality, and reliable support.
+                Building confidence through verified leads, transparent processes, and results that matter.
               </Typography>
             </Box>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
               {[
                 {
-                  name: 'Sneha Patel',
-                  role: 'Property Manager, Mumbai',
+                  name: 'Rohit Sharma',
+                  role: 'Independent Broker',
                   feedback:
-                    'Thanks to AcreBytes, managing and tracking my client interactions has become effortless.real estate professional!',
+                    'AcreBytes sends only serious enquiries. My conversion rate improved within the first month.',
                 },
                 {
-                  name: 'Amit Verma',
-                  role: 'Broker, Bangalore',
+                  name: 'Anita Properties',
+                  role: 'Real Estate Agency',
                   feedback:
-                    'The quality of leads I receive through AcreBytes is outstanding. It has helped me grow my business faster than any other platform.',
+                    'The project-wise mapping and lead tracking dashboard are game changers. We finally know where every lead is.',
                 },
-              ].map((item) => (
-                <Grid size={{ xs: 12, md: 6 }} key={item.name}>
-                  <Card sx={{ height: '100%' }}>
-                    <CardContent
-                      sx={{
-                        p: 3,
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      {' '}
+                {
+                  name: 'Manoj S',
+                  role: 'Channel Partner',
+                  feedback:
+                    'Unlike other portals, we get exclusive access to property listings without competing with hundreds of agents.',
+                },
+                {
+                  name: 'UrbanNest Realty',
+                  role: 'Real Estate Agency',
+                  feedback: 'AcreBytes makes our agents look more professional — verified listings, clean profiles, and transparent interactions.',
+                },
+              ].map((stat, index) => (
+                <Grid key={index} size={{ xs: 12, md: 6 }}>
+                  <Card
+                    elevation={3}
+                    variant="outlined"
+                    sx={{ height: "100%" }}
+                  >
+                    <CardContent>
+                      <Chip
+                        icon={<DoneOutlinedIcon fontSize="small" />}
+                        label={stat.name}
+                        variant="outlined"
+                      />
                       <Box
                         display="flex"
                         alignItems="center"
-                        mb={1}
+                        my={1}
                         gap={2}
-                        height={'100%'}
-                        position={'relative'}
+                        height={"100%"}
+                        position={"relative"}
                       >
                         <FormatQuote
                           sx={{
-                            position: 'absolute',
+                            position: "absolute",
                             left: 0,
                             top: 0,
-                            transform: 'scaleX(-1)',
+                            transform: "scaleX(-1)",
                           }}
                         />
                         <Typography variant="body1" mx={4}>
-                          {item.feedback}
+                          {stat.feedback}
                         </Typography>
                         <FormatQuote
                           sx={{
-                            position: 'absolute',
+                            position: "absolute",
                             right: 0,
                             bottom: 0,
                           }}
                         />
                       </Box>
-                      <Box display="flex" alignItems="center" mt={2}>
-                        <Avatar>{item.name.charAt(0)}</Avatar>
-                        <Box ml={2}>
-                          <Typography variant="subtitle1">
-                            {item.name}
+                      <Box display={"flex"} alignItems="center" gap={2} mt={2}>
+                        <Avatar
+                          alt={stat.name}
+                          src="/static/images/avatar/1.jpg"
+                          sx={{ width: 50, height: 50 }}
+                        />
+                        <Box>
+                          <Typography variant="subtitle1" fontWeight="bold">
+                            {stat.name}
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
-                            {item.role}
+                            {stat.role}
                           </Typography>
                         </Box>
                       </Box>
@@ -640,16 +650,19 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box py={5}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography variant="h3" gutterBottom>
+              <Typography
+                variant="h6"
+                color="primary.dark"
+                gutterBottom
+                textTransform="uppercase">
                 FAQs
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                Find quick answers to the most common questions about our
-                services.
+              <Typography variant="h2" paragraph>
+                Everything you should know before becoming an AcreBytes Partner.
               </Typography>
             </Box>
 
@@ -658,37 +671,44 @@ const Leads = () => {
                 {[
                   {
                     question:
-                      'Are there any registration charges to get registered on AcreBytes?',
+                      'Is it free to join AcreBytes?',
                     answer:
-                      'No, registration is completely free. You get full access to properties researched and listed on AcreBytes.',
+                      'Yes. Basic registration is free. Complete your profile and get verified to start.',
                   },
                   {
                     question:
-                      "How AcreBytes can improve Real Estate consultants' sales?",
-                    answer: `We understand Real Estate consultants requirements, so we provide:
-• A unique property page URL featuring your contact details, ensuring you receive verified leads directly in your personal leads panel.
-• Suggested leads tailored to your preferences.
-• Listing of Real Estate consultants on the AcreBytes property page of your project, enabling customers to contact you directly.
-• Tools to manage customer status and keep regular notes updated.
-• Marketing support for your personalized URL to drive traffic and generate leads.`,
+                      "What kind of leads will I receive?",
+                    answer: 'Only verified, high-intent enquiries—never mass or bulk-shared leads.',
                   },
                   {
                     question:
-                      'How AcreBytes can improve Real Estate consultant visibility?',
+                      'When do I start getting enquiries?',
                     answer:
-                      "Absolutely! You'll be featured on the Consultants list, and you can also opt for services to showcase your presence on our listed property page.",
+                      "As soon as your profile and selected projects are verified, leads begin immediately.",
                   },
                   {
                     question:
-                      'Can AcreBytes be accessed from mobile, as I keep on travelling for client visits?',
+                      'Can real estate agencies add multiple team members?',
                     answer:
-                      'Yes, you can continue to receive leads and update progress status easily on mobile while on the go.',
+                      'Yes. Agencies can add agents and manage all enquiries from one dashboard.',
                   },
                   {
                     question:
-                      'Can AcreBytes list down property, if not listed?',
+                      'How does AcreBytes build agent credibility?',
                     answer:
-                      "Yes, AcreBytes allows you to list your property if it's not already available on the platform, ensuring complete visibility.",
+                      "Through verified profiles, transparent ratings, and consistent performance tracking.",
+                  },
+                  {
+                    question:
+                      'What support will I get as a partner?',
+                    answer:
+                      "Full onboarding assistance, lead management guidance, and dedicated support.",
+                  },
+                  {
+                    question:
+                      'How do Credit Points work?',
+                    answer:
+                      "Buy points only when you want to activate or promote leads—flexible and pay-as-you-grow.",
                   },
                 ].map((faq, index) => (
                   <Accordion
@@ -712,42 +732,44 @@ const Leads = () => {
           </Box>
         </Container>
       </Paper>
-      <Paper elevation={0} square>
-        <Container maxWidth="lg">
-          <Grid container spacing={3} py={8}>
-            <Grid size={12}>
-              <Typography variant="h3" gutterBottom>
-                Get Verified, project based leads, Grow Your conversions{' '}
-              </Typography>
-              <Typography variant="h6" paragraph>
-                Register up today and be part of the real estate revolution! So
-                much is happening in our smallest launch - 2,343 members, 45
-                projects, 565 units in inventory, and 3,434 enquiries already!
-                Join us and be part of this exciting journey!
-              </Typography>
+      <Paper elevation={0} square >
+        <Container maxWidth="lg" >
+          <Grid container spacing={5} >
+            {/* Left Column */}
+            <Grid size={{ xs: 12, md: 5 }}>
+              <CardMedia
+                component="img"
+                image="/img/client/partner-header.webp"
+                alt="Become a Partner"
+                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+              />
             </Grid>
-            <Grid size={12}>
-              <Button variant="contained" startIcon={<PersonAddAltIcon />}>
-                Become a Partner
-              </Button>
-              <Button
-                variant="contained"
-                startIcon={<WhatsApp />}
-                sx={{ ml: 3 }}
-              >
-                Whatsapp
-              </Button>
+            <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>
+              <Typography variant="h3" gutterBottom>
+                Ready to grow your Real Estate business?
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+                Join AcreBytes and unlock the tools, visibility, and high-intent leads built to help agents win more deals.
+              </Typography>
+              <Box
+                display={"flex"}
+                gap={1}
+                mt={2}
+                alignItems={"center"}>
+                <Button variant="contained" startIcon={<WhatsApp />}>
+                  Yes, I&apos;d like to Partner
+                </Button>
+              </Box>
             </Grid>
           </Grid>
-          <Box position={'fixed'} bottom={16} right={16}>
-            <Fab variant="extended" color="primary">
-              <HandshakeOutlinedIcon sx={{ mr: 1 }} />
-              Become a Partner
-            </Fab>
-          </Box>
         </Container>
       </Paper>
       <Footer />
+      <Box position={"fixed"} bottom={16} right={16}>
+        <Button variant="contained" startIcon={<WhatsApp />} href="/contact" component="a">
+          Become a Partner
+        </Button>
+      </Box>
     </Box>
   );
 };

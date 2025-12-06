@@ -12,8 +12,7 @@ import {
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import FlareIcon from '@mui/icons-material/Flare'; 
+import MenuItem from '@mui/material/MenuItem'; 
 import AppsIcon from '@mui/icons-material/Apps';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CallIcon from '@mui/icons-material/Call';

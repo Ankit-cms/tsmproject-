@@ -1,14 +1,12 @@
 import React from 'react'
-import {
-    Box,
+import { 
     Container,
     Grid,
     Paper,
     Typography,
 } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
+import Button from '@mui/material/Button'; 
 import ComputerIcon from '@mui/icons-material/Computer';
 
 

@@ -6,43 +6,30 @@ import {
   Avatar,
   Box,
   Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardHeader,
+  Card, 
+  CardContent, 
   CardMedia,
   Chip,
-  Container,
-  Divider,
+  Container, 
   Grid,
-  Paper,
-  Tab,
-  Tabs,
+  Paper, 
   Typography,
 } from "@mui/material";
-import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
-import LaptopIcon from "@mui/icons-material/Laptop";
+import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined"; 
 import FormatQuote from "@mui/icons-material/FormatQuote";
-import WhatsApp from "@mui/icons-material/WhatsApp";
-import DescriptionIcon from "@mui/icons-material/Description";
-import PeopleIcon from "@mui/icons-material/People";
+import WhatsApp from "@mui/icons-material/WhatsApp"; 
 import StarIcon from "@mui/icons-material/Star";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HomeIcon from "@mui/icons-material/Home";
 import StraightenIcon from "@mui/icons-material/Straighten";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import PublicIcon from "@mui/icons-material/Public";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import WorkIcon from "@mui/icons-material/Work";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import InfoIcon from "@mui/icons-material/Info";
+import VisibilityIcon from "@mui/icons-material/Visibility"; 
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import GroupIcon from "@mui/icons-material/Group";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import MapIcon from "@mui/icons-material/Map";
-import SpeedIcon from "@mui/icons-material/Speed";
+import AccessTimeIcon from "@mui/icons-material/AccessTime"; 
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
 import { styled } from "@mui/material/styles";
@@ -59,34 +46,7 @@ import Footer from "../components/Footer";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
-import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
-import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
-import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
-import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
-import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
-import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
-import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
-import WebhookOutlinedIcon from "@mui/icons-material/WebhookOutlined";
-import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
-import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
-import CellTowerOutlinedIcon from "@mui/icons-material/CellTowerOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import MobileFriendlyOutlinedIcon from "@mui/icons-material/MobileFriendlyOutlined";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import DifferenceOutlinedIcon from "@mui/icons-material/DifferenceOutlined";
-import TvOutlinedIcon from "@mui/icons-material/TvOutlined";
-import DvrOutlinedIcon from "@mui/icons-material/DvrOutlined";
-import PriceCheckOutlinedIcon from "@mui/icons-material/PriceCheckOutlined";
-import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDesktopOutlined";
-import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
-import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
-import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
+import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined"; 
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -181,26 +141,6 @@ const AcreBytes = () => {
       text: "Use smart filters, maps, and Property insights to shortlist the right home quickly.",
       icon: <StarIcon />,
     },
-    // {
-    //   title: "Transparent documentation",
-    //   text: "Complete visibility into property and transaction details.",
-    //   icon: <DescriptionIcon />,
-    // },
-    // {
-    //   title: "Professional experience",
-    //   text: "Enjoy professional journey through every step of your property process.",
-    //   icon: <WorkIcon />,
-    // },
-    // {
-    //   title: "AcreBytes team dedicated support",
-    //   text: "Get value added assistance from the AcreBytes team.",
-    //   icon: <SupportAgentIcon />,
-    // },
-    // {
-    //   title: "Know more",
-    //   text: "Know more about the AcreBytes.",
-    //   icon: <InfoIcon />,
-    // },
   ];
 
   const brokers = [
@@ -224,26 +164,6 @@ const AcreBytes = () => {
       text: "Share accurate property details, photos, and updates effortlessly—everything is visible and trackable.",
       icon: <AccessTimeIcon />,
     },
-    // {
-    //   title: "Mapping to top Real estate Projects",
-    //   text: "Improve your visibility, get access of project level verified customers.",
-    //   icon: <MapIcon />,
-    // },
-    // {
-    //   title: "Accelerate closures",
-    //   text: "Faster deal closures with pre-researched and structured documentation.",
-    //   icon: <SpeedIcon />,
-    // },
-    // {
-    //   title: "AcreBytes team support",
-    //   text: "Receive dedicated support to grow your business and succeed on the platform.",
-    //   icon: <SupportAgentIcon />,
-    // },
-    // {
-    //   title: "Know more",
-    //   text: "Connect with the team.",
-    //   icon: <InfoIcon />,
-    // },
   ];
   const properties = [
     {
