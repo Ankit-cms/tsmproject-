@@ -94,7 +94,7 @@ const AboutUs = () => {
                 <CardMedia
                   component="img"
                   height="400"
-                  image="https://gravity44.com/wp-content/uploads/2024/05/mimi-thian-vdXMSiX-n6M-unsplash.jpg"
+                  image="/img/about/group.avif"
                   alt="about-us"
                   sx={{ borderRadius: 4, boxShadow: 4 }}
                 />
