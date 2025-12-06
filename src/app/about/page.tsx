@@ -72,14 +72,8 @@ const AboutUs = () => {
       <Header />
       <Paper elevation={0} square >
         <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography sx={{ color: 'text.primary' }}>About us</Typography>
-          </Breadcrumbs>
-          <Divider />
-          <Box py={4}>
+
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Typography
               variant="h6"
               gutterBottom
@@ -94,8 +88,8 @@ const AboutUs = () => {
             <Typography variant="h2" paragraph>
               We are team of problem solvers who love technology{' '}
             </Typography>
-           
-           <Grid container spacing={4} my={3}>
+
+            <Grid container spacing={4} my={3}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <CardMedia
                   component="img"
@@ -108,15 +102,14 @@ const AboutUs = () => {
 
               <Grid size={{ xs: 12, md: 6 }}>
                 <Card sx={{ mb: 2 }} elevation={8}
-                    variant="outlined"
-                    
-                    >
+                  variant="outlined"
+                >
                   <CardContent sx={{ p: 3 }}>
-                    <Box display={"flex"} alignItems="start" gap={1}>  
-                     <FlagOutlinedIcon />
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      Purpose
-                    </Typography>
+                    <Box display={"flex"} alignItems="start" gap={1}>
+                      <FlagOutlinedIcon />
+                      <Typography variant="h5" component="h3" gutterBottom>
+                        Purpose
+                      </Typography>
                     </Box>
                     <Typography variant="body1" fontWeight={400} paragraph color="text.secondary">
                       Instalanes was launched in 2024 as a technology company by
@@ -128,15 +121,15 @@ const AboutUs = () => {
                   </CardContent>
                 </Card>
 
-                <Card  elevation={8}
-                    variant="outlined">
+                <Card elevation={8}
+                  variant="outlined">
                   <CardContent sx={{ p: 3 }}>
-<Box display={"flex"} alignItems="start" gap={1}> 
-                    <RadarOutlinedIcon  />
+                    <Box display={"flex"} alignItems="start" gap={1}>
+                      <RadarOutlinedIcon />
 
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      Mission
-                    </Typography>
+                      <Typography variant="h5" component="h3" gutterBottom>
+                        Mission
+                      </Typography>
                     </Box>
                     <Typography variant="body1" fontWeight={400} paragraph color="text.secondary">
                       With the purpose of “building technology platforms that
@@ -149,62 +142,69 @@ const AboutUs = () => {
                 </Card>
               </Grid>
             </Grid>
-            
+          </Box>
+        </Container>
+      </Paper>
 
-            <Box py={5}>
-              <Box mb={4}>
-                 <Typography
-                    variant="h6"
-                    gutterBottom
-                    textTransform="uppercase"
-                    color="primary.dark"
-                  >
-                  Our Values
-                </Typography>
-                <Typography variant="h2" paragraph>
-                  At the core of Instalanes{' '}
-                </Typography>
-              </Box>
-
-              <Grid container>
-                {features.map((feature) => (
-                  <Grid
-                    size={{ xs: 12, md: 4 }}
-                    key={feature.title}
-                    minHeight={160}
-                    sx={{
-                      '--Grid-borderWidth': '1px',
-                      borderTop: 'var(--Grid-borderWidth) solid',
-                      borderLeft: 'var(--Grid-borderWidth) solid',
-                      borderColor: 'divider',
-                      '& > div': {
-                        borderRight: 'var(--Grid-borderWidth) solid',
-                        borderBottom: 'var(--Grid-borderWidth) solid',
-                        borderColor: 'divider',
-                      },
-                    }}
-                  >
-                    <Card elevation={0} sx={{ height: '100%' }}>
-                      <CardContent sx={{ p: 3 }}>
-                        <Box mb={1}>
-                          <feature.icon fontSize="large" />
-                        </Box>
-                        <Typography variant="h5" gutterBottom >
-                          {feature.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {feature.description}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+        <Container maxWidth="lg">
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Box mb={4}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+              >
+                Our Values
+              </Typography>
+              <Typography variant="h2" paragraph>
+                At the core of Instalanes{' '}
+              </Typography>
             </Box>
-</Box></Container></Paper>
-           
 
-     <Paper elevation={0} square>
+            <Grid container>
+              {features.map((feature) => (
+                <Grid
+                  size={{ xs: 12, md: 4 }}
+                  key={feature.title}
+                  minHeight={160}
+                  sx={{
+                    '--Grid-borderWidth': '1px',
+                    borderTop: 'var(--Grid-borderWidth) solid',
+                    borderLeft: 'var(--Grid-borderWidth) solid',
+                    borderColor: 'divider',
+                    '& > div': {
+                      borderRight: 'var(--Grid-borderWidth) solid',
+                      borderBottom: 'var(--Grid-borderWidth) solid',
+                      borderColor: 'divider',
+                    },
+                  }}
+                >
+                  <Card elevation={0} sx={{ height: '100%' }}>
+                    <CardContent sx={{ p: 3 }}>
+                      <Box mb={1}>
+                        <feature.icon fontSize="large" />
+                      </Box>
+                      <Typography variant="h5" gutterBottom >
+                        {feature.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {feature.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+      </Paper>
+
+
+
+
+      <Paper elevation={0} square>
         <Container maxWidth="lg" >
           <Grid container spacing={5} >
             {/* Left Column */}
@@ -228,7 +228,7 @@ const AboutUs = () => {
                 gap={1}
                 mt={2}
                 alignItems={"center"}>
-               
+
                 <Button variant="contained" endIcon={<ArrowForwardIcon />} href="/careers" component="a">
                   View Open Positions
                 </Button>
