@@ -30,6 +30,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 import CorporateFareOutlinedIcon from '@mui/icons-material/CorporateFareOutlined';
+import DoneIcon from '@mui/icons-material/Done'; 
 const Partners = () => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -156,7 +157,7 @@ const Partners = () => {
                       </Box>
                      
                       <Box>
-                        <Typography variant="subtitle1">
+                        <Typography variant="h6">
                           Key activities
                         </Typography>
                         <Stack>
@@ -175,9 +176,11 @@ const Partners = () => {
                           >
                             {item.activities.map((activity) => (
                               <ListItem key={activity} >
-                                <ListItemIcon>
-                                  <ArrowRightIcon />
-                                </ListItemIcon>
+                                
+                                  <ListItemIcon sx={{ mt: 1 }}>
+                              <DoneIcon fontSize="small" />
+                            </ListItemIcon>
+                                
                                 <ListItemText primary={activity} />
                               </ListItem>
                             ))}
@@ -186,7 +189,7 @@ const Partners = () => {
                       </Box>
                     
                       <Box>
-                        <Typography variant="subtitle1">
+                        <Typography variant="h6">
                           % Commission, applicable period
                         </Typography>
                         <Stack>
@@ -205,9 +208,9 @@ const Partners = () => {
                           >
                             {item.commission.map((comm) => (
                               <ListItem key={comm}>
-                                <ListItemIcon>
-                                  <ArrowRightIcon />
-                                </ListItemIcon>
+                                   <ListItemIcon sx={{ mt: 1 }}>
+                              <DoneIcon fontSize="small" />
+                            </ListItemIcon>
                                 <ListItemText primary={comm} />
                               </ListItem>
                             ))}
@@ -248,7 +251,7 @@ const Partners = () => {
                 </Box>
                 <Grid container spacing={3}>
                   <Grid size={{ xs: 12, md: 6 }}>
-                    <Card sx={{ height: '100%' }}>
+                    <Card sx={{ height: '100%' }} variant="elevation" elevation={2}>
                       <CardContent sx={{ p: 3 }}>
                         <Typography
                           variant="h6"
@@ -290,7 +293,7 @@ const Partners = () => {
                   </Grid>
 
                   <Grid size={{ xs: 12, md: 6 }}>
-                    <Card sx={{ height: '100%' }}>
+                    <Card sx={{ height: '100%' }} variant='elevation' elevation={2}>
                       <CardContent sx={{ p: 3 }}>
                         <Typography
                            variant="h6"
