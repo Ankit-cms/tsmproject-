@@ -122,24 +122,35 @@ const Faq = () => {
     <Box>
       <Header />
 
-      <Paper elevation={0} square >
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-
-            <Typography sx={{ color: 'text.primary' }}>FAQs</Typography>
-          </Breadcrumbs>
-          <Divider />
-          <Box py={4}>
-            <Typography variant="h3" gutterBottom>
+         
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+          <Box >
+              <Typography variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}>
               Frequently asked questions{' '}
             </Typography>
-            <Typography variant="h5" paragraph>
+            <Typography variant="h2" paragraph>
               Quick answers to common questions. Need more? Get in touch.
             </Typography>
-            <Box mt={4}>
+          </Box>
+
+</Box>
+        </Container>
+      </Paper>
+
+      <Paper elevation={0} square >
+        <Container maxWidth="lg">
+         
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Box >
+
               {faqs.map((faq, index) => (
                 <Accordion
                   key={index}
@@ -161,7 +172,7 @@ const Faq = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+    
 
       <Footer />
     </Box>

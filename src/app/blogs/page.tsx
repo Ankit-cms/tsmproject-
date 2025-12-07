@@ -24,7 +24,7 @@ const BlogDetail = () => {
       <>
         <Header />
 
-        <Paper elevation={0} square >
+        <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
           <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
               <Typography variant="h6"
@@ -40,10 +40,10 @@ const BlogDetail = () => {
                 Stay updated with our latest articles and insights
               </Typography>
             
-            <Card>
+            <Card sx={{ bgcolor: "transparent" }}>
               <CardContent sx={{p:3}}>
                 <Grid container spacing={8}>
-                  <Grid size={{ xs: 6 }}>
+                  <Grid size={{ xs: 12, md: 6 }} >
                     <Card elevation={2} >
                       <CardMedia
                         component="img"
@@ -54,7 +54,7 @@ const BlogDetail = () => {
                       />
                     </Card>
                   </Grid>
-                  <Grid size={{ xs: 6 }} alignContent={'center'}>
+                  <Grid size={{ xs: 12, md: 6 }} alignContent={'center'}>
                     <Chip
                       label={'FREIGHT'}
                       variant="outlined" 
@@ -89,7 +89,7 @@ const BlogDetail = () => {
             </Container>
         </Paper>
 
-          <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+          <Paper elevation={0} square >
                 <Container maxWidth="lg"> 
             <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Typography
@@ -144,7 +144,7 @@ const BlogDetail = () => {
                 },
               ].map((blog, index) => (
                 <Grid key={index} size={{ xs: 12, md: 4 }}>
-                  <Card elevation={2} variant="outlined">
+                  <Card variant="elevation" elevation={6}   >
                     <CardContent>
                       <CardMedia
                         component="img"

@@ -70,26 +70,33 @@ const AboutUs = () => {
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square >
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
 
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography
-              variant="h6"
-              gutterBottom
-              textTransform="uppercase"
-              color="primary.dark"
-              display="flex"
-              alignItems="center"
-              gap={1}
-            >
-              About us
-            </Typography>
-            <Typography variant="h2" paragraph>
-              We are team of problem solvers who love technology{' '}
-            </Typography>
 
-            <Grid container spacing={4} my={3}>
+
+            <Grid container spacing={4} my={3} justifyContent="center" alignItems="center">
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  textTransform="uppercase"
+                  color="primary.dark"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}
+                >
+                  About us
+                </Typography>
+                <Typography variant="h1" paragraph>
+                  We are team of problem solvers who love technology{' '}
+                </Typography>
+              </Grid>
+
+
+
+
               <Grid size={{ xs: 12, md: 6 }}>
                 <CardMedia
                   component="img"
@@ -99,10 +106,17 @@ const AboutUs = () => {
                   sx={{ borderRadius: 4, boxShadow: 4 }}
                 />
               </Grid>
-
+            </Grid>
+          </Box>
+        </Container>
+      </Paper>
+      <Paper elevation={0} square >
+        <Container maxWidth="lg">
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Grid container spacing={4} >
               <Grid size={{ xs: 12, md: 6 }}>
-                <Card sx={{ mb: 2 }} elevation={8}
-                  variant="outlined"
+                <Card sx={{ mb: 2, bgcolor: "common.whiteSmoke" }} variant='elevation' elevation={8}
+
                 >
                   <CardContent sx={{ p: 3 }}>
                     <Box display={"flex"} alignItems="start" gap={1}>
@@ -120,9 +134,9 @@ const AboutUs = () => {
                     </Typography>
                   </CardContent>
                 </Card>
-
-                <Card elevation={8}
-                  variant="outlined">
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Card sx={{ mb: 2, bgcolor: "common.whiteSmoke" }} variant='elevation' elevation={8}>
                   <CardContent sx={{ p: 3 }}>
                     <Box display={"flex"} alignItems="start" gap={1}>
                       <RadarOutlinedIcon />
@@ -163,26 +177,23 @@ const AboutUs = () => {
               </Typography>
             </Box>
 
-            <Grid container>
+            <Grid container spacing={3}>
               {features.map((feature) => (
                 <Grid
-                  size={{ xs: 12, md: 4 }}
+                
                   key={feature.title}
-                  minHeight={160}
-                  sx={{
-                    '--Grid-borderWidth': '1px',
-                    borderTop: 'var(--Grid-borderWidth) solid',
-                    borderLeft: 'var(--Grid-borderWidth) solid',
-                    borderColor: 'divider',
-                    '& > div': {
-                      borderRight: 'var(--Grid-borderWidth) solid',
-                      borderBottom: 'var(--Grid-borderWidth) solid',
-                      borderColor: 'divider',
-                    },
-                  }}
+                 
+                  size={{ xs: 12, md: 6, lg: 4 }}
                 >
-                  <Card elevation={0} sx={{ height: '100%' }}>
-                    <CardContent sx={{ p: 3 }}>
+                  <Card    elevation={3}
+                    variant="elevation"
+                    sx={{
+                      height: "100%",
+                      width: "100%",
+                      bgcolor: "common.white",
+                      color: "common.black",
+                    }}>
+                    <CardContent sx={{ textAlign: "start", p: 3 }}>
                       <Box mb={1}>
                         <feature.icon fontSize="large" />
                       </Box>
@@ -206,6 +217,7 @@ const AboutUs = () => {
 
       <Paper elevation={0} square>
         <Container maxWidth="lg" >
+
           <Grid container spacing={5} >
             {/* Left Column */}
             <Grid size={{ xs: 12, md: 5 }}>
