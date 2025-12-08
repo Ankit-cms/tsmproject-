@@ -126,9 +126,33 @@ const AboutUs = () => {
             <Grid container spacing={4}  >
               <Grid size={{ xs: 12, md: 12 }}  >
                
-                <Typography variant="h2" color='black' paragraph textAlign="left">
-                  At <br /><Typography fontSize={"6rem"} color='#111111'>Gravity44/</Typography>We build SaaS that delivers visibility, collaboration, and world-class experiences.
-                </Typography>
+                <Typography
+  variant="h2"
+  color="black"
+  paragraph
+  textAlign="left"
+>
+  At <br />
+
+  <Typography
+    component="span"
+    sx={{
+      fontSize: {
+        xs: "2.5rem",  
+        sm: "3.5rem", 
+        md: "5rem",   
+        lg: "6rem", 
+      },
+      color: "#111111",
+    }}
+  >
+    Gravity44/
+  </Typography>
+  <br />
+We build SaaS that delivers visibility, collaboration,
+  and world-class experiences.
+</Typography>
+
                 <Button variant="contained" endIcon={<ArrowForwardIcon />} href="/contact" component="a" sx={{ mt: 2 }}>
                   Contact us
                 </Button>
@@ -189,8 +213,8 @@ const AboutUs = () => {
                   <CardContent sx={{ p: 3 }}>
                     <Box display={"flex"} alignItems="start" gap={1}>
                       <FlagOutlinedIcon />
-                      <Typography variant="h5" component="h3" gutterBottom>
-                        <strong>Purpose</strong> 
+                      <Typography variant="h5" fontWeight="bold" component="h3" gutterBottom>
+                        Purpose 
                       </Typography>
                     </Box>
 
@@ -213,7 +237,7 @@ const AboutUs = () => {
     paragraph
     sx={{
       textAlign: "left",
-    ml: { xs: 0, md: 2 },
+    ml: 2
     }}
   >
     To build the most scalable software platforms that elevates visibility,
@@ -242,8 +266,8 @@ const AboutUs = () => {
                     <Box display={"flex"} alignItems="start" gap={1}>
                       <RadarOutlinedIcon />
 
-                      <Typography variant="h5" component="h3" gutterBottom>
-                       <strong> Mission</strong>
+                      <Typography variant="h5" component="h3" fontWeight="bold" gutterBottom>
+                       Mission
                       </Typography>
                     </Box>
                               <Box position="relative" sx={{ px: 4, py: 2 }}>
@@ -266,7 +290,7 @@ const AboutUs = () => {
     paragraph
     sx={{
        textAlign: "left",
-    ml: { xs: 0, md: 2 },
+    ml: 2,
       
     }}
   >
