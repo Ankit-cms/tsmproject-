@@ -383,7 +383,7 @@ const PropertyDetails = () => {
                       subtitle: "Price between ₹ 2.9 Cr - ₹ 5.5 Cr",
                     },
                   ].map((brand) => (
-                    <Grid key={brand.title} size={6}>
+                    <Grid key={brand.title} size={4}>
                       <Card elevation={0} sx={{ p: 2, height: "100%" }}>
                         {/* Main flex container: icon left, text right */}
                         <Box display="flex" alignItems="flex-start" gap={1.5}>

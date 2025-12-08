@@ -171,7 +171,7 @@ const PrivacyPolicy = () => {
 
               <Box>
                 <Typography variant="h5" gutterBottom>
-                  10. Contact Us
+                  10. Contact us
                 </Typography>
                 <Typography variant="body1" paragraph  >
                   If you have questions about this Privacy Policy, please

@@ -71,28 +71,67 @@ const AboutUs = () => {
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square sx={{
-    background: "linear-gradient(135deg, #6e8efb,         #ffb7e6, #a792ff)",
-    backgroundSize: "400% 400%",
-    animation: "gradientAnimation 12s ease infinite",
-    '@keyframes gradientAnimation': {
-      '0%': { backgroundPosition: '0% 50%' },
-      '50%': { backgroundPosition: '100% 50%' },
-      '100%': { backgroundPosition: '0% 50%' },
-    }
+<Paper
+  elevation={0}
+  square
+  sx={{
+    position: "relative",
+    overflow: "hidden",
+
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      inset: 0,
+      background: `
+        radial-gradient(circle at center,
+          rgba(40, 80, 255, 0.95) 0%,
+          rgba(90, 110, 255, 0.75) 20%,
+          rgba(160, 120, 255, 0.55) 40%,
+          rgba(255, 160, 220, 0.60) 60%,
+          rgba(255, 200, 230, 0.45) 80%,
+          rgba(255, 240, 250, 0.40) 100%
+        )
+      `,
+      backgroundSize: "200% 200%",
+      animation: "radiusMove 18s ease-in-out infinite",
+      zIndex: 0,
+    },
+
+    "@keyframes radiusMove": {
+      "0%":   { backgroundPosition: "50% 50%" },
+      "50%":  { backgroundPosition: "70% 60%" },
+      "100%": { backgroundPosition: "50% 50%" }
+    },
+
+    // Make your content appear above the gradient
+    // position: "relative",
+    // zIndex: 1,
   }}
 >
         <Container maxWidth="lg">
 
-          <Box sx={{ py: { xs: 4, md: 8 } }}>
+<Box
+  sx={{
+    height: "calc(100vh - 128px)",
+    py: { xs: 4, md: 8 },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    zIndex: 1,
+  }}
+>
 
 
-            <Grid container spacing={4} my={3} justifyContent="center" alignItems="center" >
-              <Grid size={{ xs: 12, md: 12 }}>
+            <Grid container spacing={4}  >
+              <Grid size={{ xs: 12, md: 12 }}  >
                
-                <Typography variant="h1" paragraph textAlign="center">
-                  Acrebytes
+                <Typography variant="h2" color='black' paragraph textAlign="left">
+                  At <br /><Typography fontSize={"6rem"} color='#111111'>Gravity44/</Typography>We build SaaS that delivers visibility, collaboration, and world-class experiences.
                 </Typography>
+                <Button variant="contained" endIcon={<ArrowForwardIcon />} href="/contact" component="a" sx={{ mt: 2 }}>
+                  Contact us
+                </Button>
               </Grid>
 
             </Grid>
@@ -151,7 +190,7 @@ const AboutUs = () => {
                     <Box display={"flex"} alignItems="start" gap={1}>
                       <FlagOutlinedIcon />
                       <Typography variant="h5" component="h3" gutterBottom>
-                        Purpose
+                        <strong>Purpose</strong> 
                       </Typography>
                     </Box>
 
@@ -173,8 +212,8 @@ const AboutUs = () => {
     fontWeight={400}
     paragraph
     sx={{
-      textAlign: "center",
-    
+      textAlign: "left",
+    ml: { xs: 0, md: 2 },
     }}
   >
     To build the most scalable software platforms that elevates visibility,
@@ -204,7 +243,7 @@ const AboutUs = () => {
                       <RadarOutlinedIcon />
 
                       <Typography variant="h5" component="h3" gutterBottom>
-                        Mission
+                       <strong> Mission</strong>
                       </Typography>
                     </Box>
                               <Box position="relative" sx={{ px: 4, py: 2 }}>
@@ -226,7 +265,8 @@ const AboutUs = () => {
     fontWeight={400}
     paragraph
     sx={{
-      textAlign: "center",
+       textAlign: "left",
+    ml: { xs: 0, md: 2 },
       
     }}
   >
@@ -263,6 +303,7 @@ const AboutUs = () => {
                 gutterBottom
                 textTransform="uppercase"
                 color="primary.dark"
+                
               >
                 Our Values
               </Typography>
@@ -336,7 +377,7 @@ const AboutUs = () => {
                 alignItems={"center"}>
 
                 <Button variant="contained" endIcon={<ArrowForwardIcon />} href="/careers" component="a">
-                  View Open Positions
+                  View jobs
                 </Button>
               </Box>
             </Grid>
