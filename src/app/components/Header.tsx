@@ -67,7 +67,6 @@ const Header = () => {
             variant="h5"
             noWrap
             component="a"
-            fontWeight="bold"
             color="common.black"
             href="/"
             sx={{
