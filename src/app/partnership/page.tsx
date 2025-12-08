@@ -157,7 +157,7 @@ const Partners = () => {
                       </Box>
                      
                       <Box>
-                        <Typography variant="h6">
+                        <Typography variant="h6" sx={{fontWeight: 'bold'}}>
                           Key activities
                         </Typography>
                         <Stack>
@@ -189,7 +189,7 @@ const Partners = () => {
                       </Box>
                     
                       <Box>
-                        <Typography variant="h6">
+                        <Typography variant="h6" sx={{fontWeight: 'bold',mt:2}}>
                           % Commission, applicable period
                         </Typography>
                         <Stack>

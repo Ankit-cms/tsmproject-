@@ -7,6 +7,10 @@ import {
   Link,
   Paper,
   Typography,
+  Grid,
+  CardMedia,
+  Card,
+  CardContent,
 } from '@mui/material';
 
 import React from 'react';
@@ -126,7 +130,9 @@ const Faq = () => {
         <Container maxWidth="lg">
          
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-          <Box >
+            <Grid container spacing={8}>
+                                 <Grid size={{ xs: 12, md: 6 }} alignContent={'center'}>
+  <Box >
               <Typography variant="h6"
                 gutterBottom
                 textTransform="uppercase"
@@ -136,10 +142,26 @@ const Faq = () => {
                 gap={1}>
               Frequently asked questions{' '}
             </Typography>
-            <Typography variant="h2" paragraph>
+            <Typography variant="h1" paragraph>
               Quick answers to common questions. Need more? Get in touch.
             </Typography>
           </Box>
+
+
+                                 </Grid>
+                                 <Grid size={{ xs: 12, md: 6 }} >
+                    
+                      <CardMedia
+                        component="img"
+                        height="350"
+                        image="/img/faq/faq-img.avif"
+                        alt="green iguana"
+                        sx={{ borderRadius: 4, boxShadow: 4 }}
+                      />
+                  
+                  </Grid>
+                  </Grid>
+        
 
 </Box>
         </Container>
