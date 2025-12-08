@@ -24,6 +24,7 @@ import {
   ArrowForward,
   Dashboard,
   Folder,
+  FormatQuote,
   NotificationsActive,
   ReceiptLong,
   Smartphone,
@@ -70,13 +71,41 @@ const AboutUs = () => {
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+      <Paper elevation={0} square sx={{
+    background: "linear-gradient(135deg, #6e8efb,         #ffb7e6, #a792ff)",
+    backgroundSize: "400% 400%",
+    animation: "gradientAnimation 12s ease infinite",
+    '@keyframes gradientAnimation': {
+      '0%': { backgroundPosition: '0% 50%' },
+      '50%': { backgroundPosition: '100% 50%' },
+      '100%': { backgroundPosition: '0% 50%' },
+    }
+  }}
+>
         <Container maxWidth="lg">
 
           <Box sx={{ py: { xs: 4, md: 8 } }}>
 
 
-            <Grid container spacing={4} my={3} justifyContent="center" alignItems="center">
+            <Grid container spacing={4} my={3} justifyContent="center" alignItems="center" >
+              <Grid size={{ xs: 12, md: 12 }}>
+               
+                <Typography variant="h1" paragraph textAlign="center">
+                  Acrebytes
+                </Typography>
+              </Grid>
+
+            </Grid>
+          </Box>
+        </Container>
+      </Paper>
+      <Paper elevation={0} square  sx={{bgcolor: "common.whiteSmoke"}}>
+        <Container maxWidth="lg">
+
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+
+
+            <Grid container spacing={4} my={3} justifyContent="center" alignItems="center" >
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography
                   variant="h6"
@@ -115,7 +144,7 @@ const AboutUs = () => {
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Grid container spacing={4} >
               <Grid size={{ xs: 12, md: 6 }}>
-                <Card sx={{ mb: 2, bgcolor: "common.whiteSmoke" }} variant='elevation' elevation={8}
+                <Card sx={{ mb: 2, bgcolor: "common.whiteSmoke",height: "100%" }} variant='elevation' elevation={8}
 
                 >
                   <CardContent sx={{ p: 3 }}>
@@ -125,18 +154,51 @@ const AboutUs = () => {
                         Purpose
                       </Typography>
                     </Box>
-                    <Typography variant="body1" fontWeight={400} paragraph color="text.secondary">
-                      Instalanes was launched in 2024 as a technology company by
-                      a team of supply chain industry leaders and technology
-                      enthusiasts. We are a team of technology enthusiasts who
-                      love to solve complex problems and build better products
-                      that deliver an amazing experience
-                    </Typography>
+
+                <Box position="relative" sx={{ px: 4, py: 2 }}>
+  {/* Left Quote Icon */}
+  <FormatQuote
+    sx={{
+      position: "absolute",
+      left: 0,
+      top: 0,
+      fontSize: 40,
+      opacity: 0.2,
+       transform: "rotate(180deg)",
+    }}
+  />
+
+  <Typography
+    variant="body1"
+    fontWeight={400}
+    paragraph
+    sx={{
+      textAlign: "center",
+    
+    }}
+  >
+    To build the most scalable software platforms that elevates visibility,
+    collaboration, growth, and efficiency for businesses.
+  </Typography>
+
+  
+  <FormatQuote
+    sx={{
+      position: "absolute",
+      right: 0,
+      bottom: 0,
+      fontSize: 40,
+      opacity: 0.2,
+     
+    }}
+  />
+</Box>
+
                   </CardContent>
                 </Card>
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
-                <Card sx={{ mb: 2, bgcolor: "common.whiteSmoke" }} variant='elevation' elevation={8}>
+                <Card sx={{ mb: 2, bgcolor: "common.whiteSmoke",height: "100%" }} variant='elevation' elevation={8}>
                   <CardContent sx={{ p: 3 }}>
                     <Box display={"flex"} alignItems="start" gap={1}>
                       <RadarOutlinedIcon />
@@ -145,13 +207,45 @@ const AboutUs = () => {
                         Mission
                       </Typography>
                     </Box>
-                    <Typography variant="body1" fontWeight={400} paragraph color="text.secondary">
-                      With the purpose of “building technology platforms that
-                      deliver amazing life experiences”, we are on a mission to
-                      “build the most global, scalable transport management
-                      platform that helps businesses improve their supply chain
-                      visibility, collaboration, growth, and process efficiency
-                    </Typography>
+                              <Box position="relative" sx={{ px: 4, py: 2 }}>
+  {/* Left Quote Icon */}
+  <FormatQuote
+    sx={{
+      position: "absolute",
+      left: 0,
+      top: 0,
+      fontSize: 40,
+      opacity: 0.2,
+       transform: "rotate(180deg)",
+    }}
+  />
+
+  {/* Quote Text */}
+  <Typography
+    variant="body1"
+    fontWeight={400}
+    paragraph
+    sx={{
+      textAlign: "center",
+      
+    }}
+  >
+       To build better software Products that deliver amazing experiences.
+  </Typography>
+
+
+  <FormatQuote
+    sx={{
+      position: "absolute",
+      right: 0,
+      bottom: 0,
+      fontSize: 40,
+      opacity: 0.2,
+      
+    }}
+  />
+</Box>
+
                   </CardContent>
                 </Card>
               </Grid>

@@ -8,6 +8,8 @@ import {
   Link,
   Paper,
   Typography,
+  Card,
+  CardContent,
 } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -16,32 +18,39 @@ const PrivacyPolicy = () => {
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square >
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
         <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3,pl:0 }}>
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography sx={{ color: 'text.primary' }}>
-              Privacy Policy
-            </Typography>
-          </Breadcrumbs>
-          <Divider />
-          <Box py={5}>
+          
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography variant="h3"  gutterBottom>
+              <Typography variant="h6"
+                  gutterBottom
+                  textTransform="uppercase"
+                  color="primary.dark"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}>
                 Privacy Policy
               </Typography>
-              <Typography variant="subtitle1"  >
+              <Typography variant="h2" paragraph  >
                 Please read our Privacy Policy carefully to understand how we
                 collect, use, and protect your personal information.
               </Typography>
             </Box>
-            <Divider />
+            </Box>
+                   </Container>
+                 </Paper>
+           
+                  <Paper elevation={0} square >
+                   <Container maxWidth="lg">
+                     
+                     <Box sx={{ py: { xs: 4, md: 8 } }}>
 
-            <Box display="flex" flexDirection="column" gap={2} mt={2}>
-              <Box>
-                <Typography variant="h6" gutterBottom>
+            <Card elevation={6} variant="elevation" sx={{ borderRadius: 2, p: 2 ,}}>
+         <CardContent  >
+     <Box display="flex" flexDirection="column" gap={2} >
+              <Box   >
+                <Typography variant="h5" gutterBottom>
                   1. Introduction
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -54,7 +63,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   2. Information We Collect
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -67,7 +76,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   3. How We Use Your Information
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -91,7 +100,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   4. Sharing Your Information
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -103,7 +112,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   5. Data Security
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -115,7 +124,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   6. Your Rights
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -126,7 +135,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   7. Cookies
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -138,7 +147,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   8. Third-Party Links
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -149,7 +158,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   9. Changes to This Policy
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -161,7 +170,7 @@ const PrivacyPolicy = () => {
               </Box>
 
               <Box>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   10. Contact Us
                 </Typography>
                 <Typography variant="body1" paragraph  >
@@ -181,10 +190,13 @@ const PrivacyPolicy = () => {
                 </Typography>
               </Box>
             </Box>
+
+          </CardContent>
+            </Card>
           </Box>
         </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+   
 
       <Footer />
     </Box>

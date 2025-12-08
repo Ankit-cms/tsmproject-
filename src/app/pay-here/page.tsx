@@ -40,7 +40,7 @@ const PayHere = () => {
     createData(
       'Step 3',
       <>
-        Send payment screenshot / photo a
+        Send payment screenshot / photo a &nbsp;
         <Chip icon={<WhatsApp />} label="+91 9818106472" />
       </>
     ),
@@ -50,35 +50,44 @@ const PayHere = () => {
       <Header />
       <Paper elevation={0} square >
           <Container maxWidth="lg">
-            <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3,pl:0 }}>
-              <Link underline="hover" color="inherit" href="/">
-                Home
-              </Link>
-              <Typography sx={{ color: 'text.primary' }}>Pay-here</Typography>
-            </Breadcrumbs>
-            <Divider />
-      <Box py={4}>
-            <Typography variant="h3" component="h2" gutterBottom>
+            
+      <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}>
               Pay us here
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
+            <Typography variant="h2" paragraph>
               Complete your payment quickly and safely using the QR code or bank
               transfer details below.
             </Typography>
-            <Divider sx={{ my: 2 }} />
+        </Box>
+          </Container>
+      </Paper>
+
+            <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+          <Container maxWidth="lg">
+            
+      <Box sx={{ py: { xs: 4, md: 8 } }}>
+           
             <Grid container spacing={2} my={4}>
               <Grid size={{ xs: 12, md: 6 }} p={0}>
                 <Card sx={{ height: '100%' }}>
-                  <CardContent>
+                  <CardContent >
+
                     <Stack spacing={2}>
                       <Typography variant="h4" component="h2" gutterBottom>
                         Company Info
                       </Typography>
-                      <Divider sx={{ my: 2 }} />
+                      
 
                       <Box display={'flex'} justifyContent={'space-between'}>
-                        <Typography variant="body1">Company name</Typography>
-                        <Typography textAlign={'end'} variant="body1">
+                        <Typography variant="body1">Company name </Typography>
+                        <Typography variant="body1">
                           GRAVITY44 PLATFORM SOLUTIONS PRIVATE LIMITED
                         </Typography>
                       </Box>
@@ -135,7 +144,7 @@ const PayHere = () => {
                       <Typography variant="h4" component="h2" gutterBottom>
                         Bank Details
                       </Typography>
-                      <Divider sx={{ my: 2 }} />
+                     
 
                       <Box display={'flex'} justifyContent={'space-between'}>
                         <Typography variant="body1">Bank name</Typography>
@@ -176,7 +185,14 @@ const PayHere = () => {
                 </Card>
               </Grid>
             </Grid>
-            <Divider sx={{ my: 2 }} />
+ </Box>
+          </Container>
+      </Paper>
+    
+         <Paper elevation={0} square >
+          <Container maxWidth="lg">
+            
+      <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Grid container spacing={2} mt={4}>
               <Grid size={{ xs: 12, md: 6 }} spacing={3}>
                 <Card sx={{ height: '100%' }}>
@@ -187,7 +203,7 @@ const PayHere = () => {
                     <Typography variant="body1" gutterBottom>
                       Scan and pay by any UPI app
                     </Typography>
-                    <Divider sx={{ my: 2 }} />
+                 
                     <Card sx={{ width: 'fit-content', mx: 'auto' }}>
                       <CardContent>
                         <Box display="flex" justifyContent="center">
@@ -205,7 +221,7 @@ const PayHere = () => {
                       </CardContent>
                     </Card>
 
-                    <Divider sx={{ my: 2 }} />
+                   
                     <Table aria-label="simple table" padding="none">
                       <TableBody sx={{ p: 0 }}>
                         {data.map((row) => (
@@ -240,7 +256,7 @@ const PayHere = () => {
                     <Typography variant="body1" gutterBottom>
                       Scan and pay by any UPI app
                     </Typography>
-                    <Divider sx={{ my: 2 }} />
+                   
                     <Card sx={{ width: 'fit-content', mx: 'auto' }}>
                       <CardContent>
                         <Box display="flex" justifyContent="center">
@@ -258,7 +274,7 @@ const PayHere = () => {
                       </CardContent>
                     </Card>
 
-                    <Divider sx={{ my: 2 }} />
+            
 
                     <Table
                       aria-label="simple table"
@@ -285,7 +301,7 @@ const PayHere = () => {
                               component="th"
                               scope="row"
                               width={100}
-                              padding="none" // ✅ extra safety
+                            sx={{p:8}}
                             >
                               {row.step}
                             </TableCell>
@@ -303,7 +319,7 @@ const PayHere = () => {
         </Box>
           </Container>
       </Paper>
-      <Divider sx={{ my: 2 }} />
+    
       <Footer />
     </Box>
   );

@@ -7,6 +7,7 @@ import {
   Box,
   Breadcrumbs,
   Button,
+  CardMedia,
   Chip,
   Container,
   Divider,
@@ -14,12 +15,13 @@ import {
   Paper,
   Stack,
   Typography,
+  Grid
 } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
 const jobCategories = [
   {
     category: 'Product',
@@ -30,6 +32,7 @@ const jobCategories = [
         location: 'Noida',
         workType: 'Remote',
         contractType: 'Part time',
+        experience: '3+ years',
       },
     ],
   },
@@ -42,6 +45,7 @@ const jobCategories = [
         location: 'Noida',
         workType: 'Remote',
         contractType: 'Part time',
+        experience: '3+ years',
       },
     ],
   },
@@ -51,92 +55,143 @@ const Career = () => {
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square  sx={{ bgcolor: "common.whiteSmoke" }}>
-        
-          <Container maxWidth="lg">
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
 
-     
-        <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography  variant="h6"
-                gutterBottom
-                textTransform="uppercase"
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}>
-              Enhance your Career, join us
-            </Typography>
-            <Typography variant="h2" paragraph>
-              We are building global scalable platforms for enterprises. Change
-              the way business processes work.
-            </Typography>
+        <Container maxWidth="lg">
 
-               </Box>
-          </Container>
+
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Grid container spacing={4} my={3} justifyContent="center" alignItems="center">
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Typography variant="h6"
+                  gutterBottom
+                  textTransform="uppercase"
+                  color="primary.dark"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}>
+                  Enhance your Career, join us
+                </Typography>
+                <Typography variant="h1" paragraph>
+                  We are building global scalable platforms for enterprises. Change
+                  the way business processes work.
+                </Typography>
+
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <CardMedia
+                  component="img"
+                  height="400"
+                  image="/img/career/career-img.avif"
+                  alt="about-us"
+                  sx={{ borderRadius: 4, boxShadow: 4 }}
+                />
+              </Grid>
+            </Grid>
+
+
+          </Box>
+        </Container>
       </Paper>
-               <Paper elevation={0} square >
-        
-          <Container maxWidth="lg">
+      <Paper elevation={0} square >
 
-     
-        <Box sx={{ py: { xs: 4, md: 8 } }}>
-            {jobCategories.map((section) => (
-              <Box key={section.category} sx={{ mt: 3 }}>
+        <Container maxWidth="lg">
+
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography variant="h6"
+              gutterBottom
+              textTransform="uppercase"
+              color="primary.dark"
+              display="flex"
+              alignItems="center"
+              gap={1}
+              mb={4}>
+              Open Positions
+            </Typography>
+            {jobCategories.map((section, index) => (
+              <Box key={index} sx={{ mt: 2 }}>
                 {section.jobs.map((job) => (
-                  <Box key={job.title}>
-                    <Accordion disableGutters sx={{ p: 2 }}>
-                      <AccordionSummary
-                        expandIcon={<ArrowForwardIcon fontSize="small" />}
-                      >
-                        <Stack spacing={1}>
-                          <Box display={'flex'} gap={2}>
-                            <Chip
-                              sx={{ width: 'fit-content' }}
-                              label={section.category} 
-                              variant="outlined"
-                            />
-                            <Typography variant="h5">{job.Project}</Typography>
-                            <Typography variant="h5">{job.title}</Typography>
-                          </Box>
+                  <Accordion
+                    key={job.title}
+                    disableGutters
 
-                          <Box display="flex" alignItems="center" gap={0.5}>
-                            <LocationOnOutlinedIcon fontSize="small" />
-                            <Typography variant="body2" color="text.secondary">
-                              {job.location}
-                            </Typography>{' '}
+                    square={false}
+                    sx={{
+                      borderRadius: 2,
+                      mb: 2,
+                    }}
+                  >
+                    <AccordionSummary expandIcon={<ArrowForwardIcon fontSize="small" />}>
+                      <Stack spacing={1}>
+
+                        <Typography variant="h4">{job.title}</Typography>
+
+                        <Stack direction="row" spacing={1}>
+                          <WidgetsOutlinedIcon fontSize="small" />
+                          <Typography variant="body2" >
+                            {job.Project}
+                          </Typography>
+                          <Typography>
                             |
-                            <Typography variant="body2" color="text.secondary">
-                              {job.workType} |
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                              {job.contractType}
-                            </Typography>
-                          </Box>
+                          </Typography>
+                          <Typography variant="body2" >
+                            {section.category}
+                          </Typography>
+                          <Typography>
+                            |
+                          </Typography>
+                          <Typography variant="body2" >
+                            {job.experience}
+                          </Typography>
                         </Stack>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <Typography paragraph>
-                          Requirements: 3+ years of experience in SaaS
-                          implementation, onboarding, or project management.
-                          Strong communication, client management, and
-                          problem-solving skills. Experience with enterprise
-                          software, data migration, and integrations preferred.
-                          Ability to manage multiple projects simultaneously in
-                          a fast-paced environment.
-                        </Typography>
-                        <Box textAlign={'end'}>
-                          <Button variant="contained">Apply</Button>
-                        </Box>
-                      </AccordionDetails>
-                    </Accordion>
-                  </Box>
+
+                        <Stack direction="row" spacing={1} alignItems="center">
+
+
+                          <LocationOnOutlinedIcon fontSize="small" />
+
+                          <Typography variant="body2" >
+                            {job.location}
+                          </Typography>
+                          <Typography>
+                            |
+                          </Typography>
+                          <Typography variant="body2" >
+                            {job.workType}
+                          </Typography>
+                          <Typography>
+                            |
+                          </Typography>
+                          <Typography variant="body2" >
+                            {job.contractType}
+                          </Typography>
+                        </Stack>
+                      </Stack>
+                    </AccordionSummary>
+
+                    <AccordionDetails>
+                      <Typography variant="h6" paragraph>
+                        Requirements: 3+ years of experience in SaaS
+                        implementation, onboarding, or project management.
+                        Strong communication, client management, and
+                        problem-solving skills. Experience with enterprise
+                        software, data migration, and integrations preferred.
+                        Ability to manage multiple projects simultaneously in
+                        a fast-paced environment.            </Typography>
+
+                      <Box textAlign="end">
+                        <Button variant="contained">Apply</Button>
+                      </Box>
+                    </AccordionDetails>
+                  </Accordion>
                 ))}
               </Box>
             ))}
-        </Box>
-          </Container>
+          </Box>
+
+        </Container>
       </Paper>
-      
+
       <Footer />
     </Box>
   );
