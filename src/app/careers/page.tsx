@@ -114,11 +114,13 @@ const Career = () => {
                   <Accordion
                     key={job.title}
                     disableGutters
-
+variant='elevation'
+elevation={0}
                     square={false}
                     sx={{
                       borderRadius: 2,
                       mb: 2,
+                      boxShadow: "0 1px 3px gainsboro",
                     }}
                   >
                     <AccordionSummary expandIcon={<ArrowForwardIcon fontSize="small" />}>

@@ -4,8 +4,10 @@ import {
   Autocomplete,
   Box,
   Breadcrumbs,
+  Button,
   Card,
   CardContent,
+  CardMedia,
   Checkbox,
   Container,
   Divider,
@@ -58,6 +60,7 @@ import {
   ListAltOutlined,
   AccountBalanceOutlined,
   WarningAmberOutlined,
+  WhatsApp,
 } from '@mui/icons-material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -235,28 +238,13 @@ const Pricing = () => {
       <Paper elevation={0} square >
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Grid container spacing={2} alignItems="stretch">
+            <Grid container spacing={2} alignItems="stretch" mb={4}>
               <Grid size={12} sx={{ display: 'flex' }}>
-                <Card
-                  sx={{
-                    flexGrow: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                  }}
-                >
-                  <CardContent
-                    sx={{
-                      flexGrow: 1,
-                      p: 3,
-                      display: 'flex',
-                      flexDirection: 'column',
-                    }}
-                  >
+               
                     <Grid container spacing={2}>
                       {/* Left Card */}
                       <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%' }}>
+                        <Card sx={{ height: '100%' }}   variant='elevation'>
                           <CardContent>
                             <Typography variant="h4" mb={4} gutterBottom>
                               Input Business Details
@@ -420,7 +408,7 @@ const Pricing = () => {
 
                       {/* Right Card */}
                       <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%' }}>
+                        <Card sx={{ height: '100%' }} variant='elevation'>
                           <CardContent>
                             <Typography variant="h4" mb={4}>
                               Services scope details{' '}
@@ -477,8 +465,16 @@ const Pricing = () => {
                  
 
 
+            
+                    </Grid>
+                 
+              </Grid>
+               </Grid>
+     
+  <Grid container spacing={2}>  
+
                 <Grid size={{ xs: 12, md: 6 }}>
-                  <Card sx={{ height: '100%' }}>
+                  <Card sx={{ height: '100%' }} variant='elevation'>
                     <CardContent>
                       <Typography variant="h6" gutterBottom>
                         Contact
@@ -491,7 +487,7 @@ const Pricing = () => {
                 </Grid>
                 
                       <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%' }}>
+                        <Card sx={{ height: '100%' }} variant='elevation'>
                           <CardContent>
                             <Typography variant="h6" gutterBottom>
                               Quotation details{' '}
@@ -502,15 +498,17 @@ const Pricing = () => {
                           </CardContent>
                         </Card>
                       </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-              </Grid>
+            </Grid>
+            </Box>
+          </Container>
+        </Paper>  
+
+ <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
+        <Container maxWidth="lg">
+          <Box sx={{ py: { xs: 4, md: 8 } }}> 
+
               <Grid size={12} sx={{ display: 'flex' }}>
-                <Card
-                  sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                
                     <Grid container spacing={2} alignItems="stretch">
                       {pricingSections.map((section, i) => (
                         <Grid
@@ -523,10 +521,12 @@ const Pricing = () => {
                               flexGrow: 1,
                               display: 'flex',
                               flexDirection: 'column',
+                              bgcolor:"transparent",
                             }}
+                            
                           >
                             <CardContent sx={{ flexGrow: 1, p: 2 }}>
-                              <Typography variant="h6" gutterBottom>
+                              <Typography variant="h6" paragraph fontWeight="bold">
                                 {section.heading}
                               </Typography>
 
@@ -597,7 +597,10 @@ const Pricing = () => {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             color: 'inherit',
+                                          
                                           }}
+                                          fontWeight='bold'
+                                          
                                         >
                                           {option.icon}
                                         </Box>
@@ -622,14 +625,45 @@ const Pricing = () => {
                         </Grid>
                       ))}
                     </Grid>
-                  </CardContent>
-                </Card>
+                 
               </Grid>
-            </Grid>
+           
           </Box>
         </Container>
       </Paper>
 
+ <Paper elevation={0} square >
+        <Container maxWidth="lg" >
+          <Grid container spacing={5} >
+            {/* Left Column */}
+            <Grid size={{ xs: 12, md: 5 }}>
+              <CardMedia
+                component="img"
+                image="/img/client/partner-header.webp"
+                alt="Become a Partner"
+                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>
+              <Typography variant="h3" gutterBottom>
+                Ready to grow your Real Estate business?
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+                Join AcreBytes and unlock the tools, visibility, and high-intent leads built to help agents win more deals.
+              </Typography>
+              <Box
+                display={"flex"}
+                gap={1}
+                mt={2}
+                alignItems={"center"}>
+                <Button variant="contained" startIcon={<WhatsApp />}>
+                  Yes, I&apos;d like to Partner
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Paper>
       <Footer />
     </Box>
   );

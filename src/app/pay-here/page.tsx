@@ -74,7 +74,7 @@ const PayHere = () => {
             
       <Box sx={{ py: { xs: 4, md: 8 } }}>
            
-            <Grid container spacing={2} my={4}>
+            <Grid container spacing={2}>
               <Grid size={{ xs: 12, md: 6 }} p={0}>
                 <Card sx={{ height: '100%' }}>
                   <CardContent >
@@ -193,14 +193,20 @@ const PayHere = () => {
           <Container maxWidth="lg">
             
       <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Grid container spacing={2} mt={4}>
+            <Grid container spacing={2} >
               <Grid size={{ xs: 12, md: 6 }} spacing={3}>
-                <Card sx={{ height: '100%' }}>
+                <Card sx={{ height: '100%' }} variant='elevation'>
                   <CardContent>
-                    <Typography variant="h4" component="h2" gutterBottom>
+                    <Typography variant="h6"
+                  gutterBottom
+                  textTransform="uppercase"
+                  color="primary.dark"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}>
                       QR Code
                     </Typography>
-                    <Typography variant="body1" gutterBottom>
+                    <Typography variant="h2" paragraph>
                       Scan and pay by any UPI app
                     </Typography>
                  
@@ -222,7 +228,7 @@ const PayHere = () => {
                     </Card>
 
                    
-                    <Table aria-label="simple table" padding="none">
+                    <Table aria-label="simple table" size='small'>
                       <TableBody sx={{ p: 0 }}>
                         {data.map((row) => (
                           <TableRow
@@ -231,14 +237,14 @@ const PayHere = () => {
                               '&:last-child td, &:last-child th': {
                                 border: 0,
                               },
-                              p: 0,
+                              
                             }}
                           >
-                            <TableCell component="th" scope="row" width={100}>
-                              {row.step}
+                            <TableCell component="th" scope="row">
+                             <Typography variant="body2" fontWeight="bold">{row.step}</Typography>
                             </TableCell>
-                            <TableCell align="left">
-                              {row.description}
+                            <TableCell >
+                              <Typography variant="body2">{row.description}</Typography>
                             </TableCell>
                           </TableRow>
                         ))}
@@ -248,15 +254,21 @@ const PayHere = () => {
                 </Card>
               </Grid>
               <Grid size={{ xs: 12, md: 6 }} spacing={3}>
-                <Card sx={{ height: '100%' }}>
+                <Card sx={{ height: '100%' }} variant='elevation' >
                   <CardContent>
-                    <Typography variant="h4" component="h2" gutterBottom>
+                    <Typography variant="h6"
+                  gutterBottom
+                  textTransform="uppercase"
+                  color="primary.dark"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}>
                       QR Code
                     </Typography>
-                    <Typography variant="body1" gutterBottom>
+                    <Typography variant="h2" paragraph>
                       Scan and pay by any UPI app
                     </Typography>
-                   
+                 
                     <Card sx={{ width: 'fit-content', mx: 'auto' }}>
                       <CardContent>
                         <Box display="flex" justifyContent="center">
@@ -274,39 +286,24 @@ const PayHere = () => {
                       </CardContent>
                     </Card>
 
-            
-
-                    <Table
-                      aria-label="simple table"
-                      size="small"
-                      padding="none"
-                      sx={{
-                        '& .MuiTableCell-root': {
-                          padding: 0,
-                        },
-                        '& .MuiTableRow-root': {
-                          borderBottom: 'none',
-                        },
-                      }}
-                    >
-                      <TableBody>
+                   
+                    <Table aria-label="simple table" size='small'>
+                      <TableBody sx={{ p: 0 }}>
                         {data.map((row) => (
                           <TableRow
                             key={row.step}
                             sx={{
-                              '&:last-child td, &:last-child th': { border: 0 },
+                              '&:last-child td, &:last-child th': {
+                                border: 0,
+                              },
+                              
                             }}
                           >
-                            <TableCell
-                              component="th"
-                              scope="row"
-                              width={100}
-                            sx={{p:8}}
-                            >
-                              {row.step}
+                            <TableCell component="th" scope="row">
+                             <Typography variant="body2" fontWeight="bold">{row.step}</Typography>
                             </TableCell>
-                            <TableCell align="left" padding="none">
-                              {row.description}
+                            <TableCell >
+                              <Typography variant="body2">{row.description}</Typography>
                             </TableCell>
                           </TableRow>
                         ))}

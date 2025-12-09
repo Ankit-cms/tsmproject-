@@ -194,7 +194,7 @@ const Footer = () => {
             py={3}
             gutterBottom
             textAlign="center"
-            fontWeight="bold"
+           
             sx={{ fontSize: { xs: "6.2vh", md: "26vh" } , mb: 0 }}>
             Instalanes TMS
           </Typography>
