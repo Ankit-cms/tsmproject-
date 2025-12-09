@@ -25,36 +25,31 @@ const BlogDetail = () => {
   return (
     <>
       <Header />
-      <Paper elevation={0} square >
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Breadcrumbs aria-label="breadcrumb" sx={{ p: 3, pl: 0 }}>
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography sx={{ color: 'text.primary' }}>Blog Detail</Typography>
-          </Breadcrumbs>
-          <Divider />
-          <Grid container justifyContent={'center'}>
-            <Box my={4}>
-              <Typography variant="h3" component="h1" gutterBottom>
+         
+        <Box  sx={{ py: { xs: 4, md: 8 } }}>
+            <Grid container justifyContent={'center'}>
+            <Box mb={4}>
+              <Typography variant="h1" component="h1" gutterBottom>
                 Deliver 2024 fostering innovation and impact
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 August 19, 2024
               </Typography>
-              <Divider sx={{ mt: 2 }} />
+              
             </Box>
             <Grid container spacing={4} justifyContent={'center'}>
               <Grid size={{ xs: 12, md: 10 }}>
-                <Card variant="outlined" sx={{ p: 3 }}>
-                  <Card elevation={1} sx={{ mb: 4 }}>
+                <Card variant="elevation" elevation={2} >
+                  
                     <CardMedia
                       component="img"
                       image="/img/blog.jpg"
                       alt="Deliver 2024 Event"
                       height="450"
                     />
-                  </Card>
+                  <CardContent  sx={{ flexGrow: 1, p: 2 }}>
 
                   <Typography variant="body1" paragraph>
                     Deliver 2024 marks 22 years of hosting industry leaders,
@@ -134,19 +129,29 @@ const BlogDetail = () => {
                       />
                     </ListItem>
                   </List>
+                  </CardContent>
                 </Card>
               </Grid>
             </Grid>
           </Grid>
+        </Box>
         </Container>
       </Paper>
-      <Paper elevation={0} square sx={{ pb: 8, pt: 4 }}>
+
+      <Paper elevation={0} square >
         <Container maxWidth="lg">
-          <Box mt={5}>
-            <Typography variant="h4" gutterBottom mb={3}>
+          <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography   variant="h6"
+                gutterBottom
+                textTransform="uppercase"
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}
+                mb={4}>
               Read more blogs
             </Typography>
-          </Box>
+          
           <Grid container spacing={4}>
             {[
               {
@@ -169,14 +174,15 @@ const BlogDetail = () => {
               },
             ].map((blog, index) => (
               <Grid key={index} size={{ xs: 12, md: 4 }}>
-                <Card elevation={2} >
-                  <CardContent>
-                    <CardMedia
+                <Card variant="elevation" elevation={2} sx={{ height: "100%" }} >
+                   <CardMedia
                       component="img"
                       height="180"
                       image="/img/blog.jpg"
                       alt="green iguana"
                     />
+                  <CardContent>
+                   
                     <Chip
                       label={blog.category}
                       variant="outlined" 
@@ -202,6 +208,7 @@ const BlogDetail = () => {
               </Grid>
             ))}
           </Grid>
+          </Box>
         </Container>
       </Paper>
       <Divider />

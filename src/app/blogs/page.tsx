@@ -173,7 +173,7 @@ const BlogDetail = () => {
                 },
               ].map((blog, index) => (
                 <Grid  key={index} size={{ xs: 12, md: 4 }} >
-                  <Card variant="elevation" elevation={6} sx={{ height: "100%" }} >
+                  <Card variant="elevation" elevation={2} sx={{ height: "100%" }} >
                     <CardMedia
                       component="img"
                       height="180"
