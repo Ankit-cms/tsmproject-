@@ -65,16 +65,17 @@ const Career = () => {
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h6"
                   gutterBottom
-                  textTransform="uppercase"
                   color="primary.dark"
                   display="flex"
                   alignItems="center"
                   gap={1}>
-                  Enhance your Career, join us
+                  Careers
                 </Typography>
-                <Typography variant="h1" paragraph>
-                  We are building global scalable platforms for enterprises. Change
-                  the way business processes work.
+                <Typography variant='h1' paragraph>
+                 Join us to create Impact at scale                
+                 </Typography>
+                <Typography variant="h2" paragraph>
+                 Build technology that transforms business processes across the world.
                 </Typography>
 
               </Grid>
@@ -100,92 +101,94 @@ const Career = () => {
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Typography variant="h6"
               gutterBottom
-              textTransform="uppercase"
               color="primary.dark"
               display="flex"
               alignItems="center"
               gap={1}
-              mb={4}>
-              Open Positions
+              mb={1}>
+              Current openings
             </Typography>
+            <Typography variant="h2" paragraph>
+             Explore roles where you can make an immediate impact.
+              </Typography>
             {jobCategories.map((section, index) => (
               <Box key={index} sx={{ mt: 2 }}>
                 {section.jobs.map((job) => (
-                  <Accordion
-                    key={job.title}
-                    disableGutters
-variant='elevation'
-elevation={0}
-                    square={false}
-                    sx={{
-                      borderRadius: 2,
-                      mb: 2,
-                      boxShadow: "0 1px 3px gainsboro",
-                    }}
-                  >
-                    <AccordionSummary expandIcon={<ArrowForwardIcon fontSize="small" />}>
-                      <Stack spacing={1}>
+                <Accordion
+  key={job.title}
+  disableGutters
+  variant="elevation"
+  elevation={0}
+  square={false}
+  sx={{
+    border: "1px solid",
+    borderColor: "grey.300",
+    mb: 2,
+    backgroundColor: "background.default",
+    p: 1,
+  }}
+>
+  <AccordionSummary
+    expandIcon={null}
+    sx={{
+      flexDirection: "column",
+      alignItems: "flex-start",
+      gap: 1,
+      position: "relative",
+    }}
+  >
+    
+    <ArrowForwardIcon
+      fontSize="small"
+      sx={{
+        position: "absolute",
+        right: 16,
+        top: 8,
+        transform: "rotate(0deg)",
+        transition: "transform 0.3s",
+        ".Mui-expanded &": {
+          transform: "rotate(90deg)",
+        },
+      }}
+    />
+    <Stack spacing={1}>
+      <Typography variant="h6" fontWeight="bold">{job.title}</Typography>
 
-                        <Typography variant="h4">{job.title}</Typography>
+      <Stack direction="row" spacing={1}>
+        <Typography variant="body2">{job.Project}</Typography>
+        <Typography>|</Typography>
+        <Typography variant="body2">{section.category}</Typography>
+        <Typography>|</Typography>
+        <Typography variant="body2">{job.experience}</Typography>
+      </Stack>
 
-                        <Stack direction="row" spacing={1}>
-                          <WidgetsOutlinedIcon fontSize="small" />
-                          <Typography variant="body2" >
-                            {job.Project}
-                          </Typography>
-                          <Typography>
-                            |
-                          </Typography>
-                          <Typography variant="body2" >
-                            {section.category}
-                          </Typography>
-                          <Typography>
-                            |
-                          </Typography>
-                          <Typography variant="body2" >
-                            {job.experience}
-                          </Typography>
-                        </Stack>
+      <Stack direction="row" spacing={1} alignItems="center">
+        <LocationOnOutlinedIcon fontSize="small" />
+        <Typography variant="body2">{job.location}</Typography>
+        <Typography>|</Typography>
+        <Typography variant="body2">{job.workType}</Typography>
+        <Typography>|</Typography>
+        <Typography variant="body2">{job.contractType}</Typography>
+      </Stack>
+    </Stack>
+  </AccordionSummary>
 
-                        <Stack direction="row" spacing={1} alignItems="center">
-
-
-                          <LocationOnOutlinedIcon fontSize="small" />
-
-                          <Typography variant="body2" >
-                            {job.location}
-                          </Typography>
-                          <Typography>
-                            |
-                          </Typography>
-                          <Typography variant="body2" >
-                            {job.workType}
-                          </Typography>
-                          <Typography>
-                            |
-                          </Typography>
-                          <Typography variant="body2" >
-                            {job.contractType}
-                          </Typography>
-                        </Stack>
-                      </Stack>
-                    </AccordionSummary>
-
-                    <AccordionDetails>
-                      <Typography variant="h6" paragraph>
-                        Requirements: 3+ years of experience in SaaS
+  <AccordionDetails>
+    <Typography variant="body1" paragraph>
+Requirements: 3+ years of experience in SaaS
                         implementation, onboarding, or project management.
                         Strong communication, client management, and
                         problem-solving skills. Experience with enterprise
                         software, data migration, and integrations preferred.
                         Ability to manage multiple projects simultaneously in
-                        a fast-paced environment.            </Typography>
+                        a fast-paced environment.</Typography>
 
-                      <Box textAlign="end">
-                        <Button variant="contained">Apply</Button>
-                      </Box>
-                    </AccordionDetails>
-                  </Accordion>
+    <Box textAlign="end">
+      <Button variant="contained">Apply</Button>
+    </Box>
+  </AccordionDetails>
+</Accordion>
+
                 ))}
               </Box>
             ))}

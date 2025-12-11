@@ -27,7 +27,6 @@ const contact = () => {
               <Typography
                variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"
@@ -35,15 +34,10 @@ const contact = () => {
               >
                 Get in touch
               </Typography>
-              <Typography variant="h2" paragraph>
-                Your Universal Link to Support
-                </Typography>
-              <Typography variant="body1" fontWeight={400} paragraph>
-                We would love to hear from you! Whether you have questions about
-                our services, need assistance, or want to explore partnership
-                opportunities, our team is here to help. Reach out to us through
-                any of the following methods:
-              </Typography>
+              <Typography variant="h2" paragraph sx={{fontSize: { xs: '1.5rem', md: '3rem' },
+}}>
+We’re here to connect, support, and help you move forward.                </Typography>
+              
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
               <CardMedia

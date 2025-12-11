@@ -103,7 +103,7 @@ const Features = () => {
         <Container maxWidth="lg">
           <Box pt={8}>
             <Box mb={6}>
-              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+              <Typography variant="h6" gutterBottom  color='primary.dark'>
                 TMS features
               </Typography>
               <Typography variant="h2" paragraph>

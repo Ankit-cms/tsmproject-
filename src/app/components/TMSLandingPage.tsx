@@ -64,11 +64,12 @@ import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDes
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
-import { CallOutlined, FormatQuote } from "@mui/icons-material";
+import { CallOutlined, FormatQuote, WhatsApp } from "@mui/icons-material";
 import PhonelinkIcon from '@mui/icons-material/Phonelink';
 import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
 import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined';
 import ChecklistOutlinedIcon from '@mui/icons-material/ChecklistOutlined';
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -173,7 +174,6 @@ const TMSLandingPage = () => {
               variant="h6"
               color="primary.dark"
               gutterBottom
-              textTransform="uppercase"
             >
               Why Instalanes?
             </Typography>
@@ -257,10 +257,9 @@ const TMSLandingPage = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
-                SOLVING THE BIG CHALLENGE
+                Solving the big challenge
               </Typography>
               <Typography variant="h2" paragraph>
                 Simplifying the complex manual chaos, digitally.
@@ -423,19 +422,19 @@ const TMSLandingPage = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
-                Instalanes TMS – Digital Solution Deep Dive
+                Instalanes TMS – Digital solution deep dive
               </Typography>
               <Typography variant="h2" paragraph>
-                Explore the modules and workflows that streamline, automate, and elevate your logistics.
+                Explore modules and workflows that streamline, automate, and elevate your logistics.
               </Typography>
             </Box>
-            <Typography variant="h6" paragraph fontWeight="bold">
+            <Card sx={{ p: 2, border:"1px solid", borderColor:"primary.dark",backgroundColor:"background.default" }}>
+            <Typography variant="h6" paragraph >
               Transportation process
             </Typography>
-            <Grid container spacing={2} sx={{ mb: { xs: 2, md: 4 } }}>
+            <Grid container spacing={2} >
               {[
                 {
                   title: "Dispatch plan",
@@ -504,22 +503,26 @@ const TMSLandingPage = () => {
                 </Grid>
               ))}
             </Grid>
+</Card>
 
             <Grid
               container
               spacing={2}
+              mt={2}
               alignItems="start"
-              sx={{ mb: { xs: 2, md: 4 } }}
+              // sx={{ mb: { xs: 2, md: 4 } }}
             >
               <Grid size={{ md: 3 }}>
-                <Typography variant="h6" paragraph fontWeight="bold">
-                  TMS implementaion
+                            <Card sx={{ p: 2, border:"1px solid", borderColor:"primary.dark",backgroundColor:"background.default" }}>
+
+                <Typography variant="h6" paragraph>
+                  TMS implementation
                 </Typography>
 
                 <Grid container spacing={2}>
                   {[
                     {
-                      title: "Account users",
+                      title: "Users",
                       icon: GroupOutlinedIcon,
                     },
                     {
@@ -527,19 +530,19 @@ const TMSLandingPage = () => {
                       icon: WebhookOutlinedIcon,
                     },
                     {
-                      title: "Rates master",
+                      title: "Rates",
                       icon: CreditScoreOutlinedIcon,
                     },
                     {
-                      title: "Lanes master",
+                      title: "Lanes",
                       icon: RouteOutlinedIcon,
                     },
                     {
-                      title: "Vehicle master",
+                      title: "Vehicle",
                       icon: LocalShippingOutlinedIcon,
                     },
                     {
-                      title: "Driver master",
+                      title: "Driver",
                       icon: GroupAddOutlinedIcon,
                     },
                   ].map((data, index) => (
@@ -577,9 +580,12 @@ const TMSLandingPage = () => {
                     </Grid>
                   ))}
                 </Grid>
+                </Card>
               </Grid>
               <Grid size={{ md: 6 }}>
-                <Typography variant="h6" paragraph fontWeight="bold">
+                            <Card sx={{ p: 2, border:"1px solid", borderColor:"primary.dark",backgroundColor:"background.default" }}>
+
+                <Typography variant="h6" paragraph >
                   Capability enablers
                 </Typography>
                 <Grid container spacing={2}>
@@ -649,9 +655,12 @@ const TMSLandingPage = () => {
                     </Grid>
                   ))}
                 </Grid>
+                </Card>
               </Grid>
               <Grid size={{ md: 3 }}>
-                <Typography variant="h6" paragraph fontWeight="bold">
+                            <Card sx={{ p: 2, border:"1px solid", borderColor:"primary.dark",backgroundColor:"background.default" }}>
+
+                <Typography variant="h6" paragraph>
                   Business outcomes
                 </Typography>
                 <Grid container spacing={2}>
@@ -715,6 +724,7 @@ const TMSLandingPage = () => {
                     </Grid>
                   ))}
                 </Grid>
+                </Card>
               </Grid>
             </Grid>
           </Box>
@@ -723,12 +733,11 @@ const TMSLandingPage = () => {
       {/* <Features /> */}
       <Paper elevation={0} square >
         <Container maxWidth="lg">
-          <Box sx={{ pt: { xs: 4, md: 8 } }}>
+          <Box sx={{ pt: { xs: 4, md: 8 }, pb: { xs: 4, md: 8 } }}>
             <Box mb={4}>
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
                 Instalanes TMS features
@@ -807,14 +816,13 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
-      <Paper elevation={0} square>
+      <Paper elevation={0} square sx={{ bgcolor: "background.default" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
                 TMS capabilities
@@ -918,6 +926,7 @@ const TMSLandingPage = () => {
           </Box>
         </Container>
       </Paper>
+      <Client />
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
@@ -925,7 +934,6 @@ const TMSLandingPage = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
                 What our Customers say
@@ -1013,13 +1021,13 @@ const TMSLandingPage = () => {
         </Container>
       </Paper>
 
-      <Client />
+      
 
       {/* <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box py={5}>
             <Box pb={4}>
-              <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+              <Typography variant="h6" gutterBottom color='primary.dark'>
                 Blog posts
               </Typography>
               <Typography variant="h2" paragraph>
@@ -1085,28 +1093,61 @@ const TMSLandingPage = () => {
         </Container>
       </Paper> */}
 
-      <Paper elevation={0} square>
-        <Box
-          id="contact"
-          sx={{ py: { xs: 4, md: 8 }, bgcolor: "common.whiteSmoke" }}
-        >
-          <Container maxWidth="lg">
-            <Typography
-              variant="h6"
-              gutterBottom
-              textTransform="uppercase"
-              color="primary.dark"
-            >
-              Contact us
-            </Typography>
-            <Typography variant="h2" paragraph mb={0}>
-              Discover how Instalanes TMS can simplify and streamline all your
-              moves – FCL, FTL, PTL, ODC, and warehouse. Our experts are here to
-              help with features, pricing, and implementation
-            </Typography>
-          </Container>
-        </Box>
-        <Container maxWidth="lg">
+    <Paper
+  elevation={0}
+  square
+  sx={{
+    position: "relative",
+    overflow: "hidden",
+    background: "linear-gradient(120deg, #d8c7ff, #f6d1e8, #bfd7ff)",
+    backgroundSize: "300% 300%",
+    animation: "simpleGradient 18s ease infinite",
+
+    "@keyframes simpleGradient": {
+      "0%": { backgroundPosition: "0% 50%" },
+      "50%": { backgroundPosition: "100% 50%" },
+      "100%": { backgroundPosition: "0% 50%" },
+    },
+  }}
+>
+
+            <Container maxWidth="lg" >
+              <Grid container spacing={{xs:1,md:5}} >
+                {/* Left Column */}
+                <Grid size={{ xs: 12, md: 5 }}>
+                  <CardMedia
+                    component="img"
+                    image="/img/client/partner-header.webp"
+                    alt="Become a Partner"
+                    sx={{ height: "100%", mt: { xs: 2, md: 0 } }}
+                  />
+                </Grid>
+                <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>
+                  <Typography variant="h3" gutterBottom>
+Ready to transform your logistics ?
+                  </Typography>
+                  <Typography variant="subtitle1" gutterBottom>
+                    Discover how Instalanes TMS can simplify and streamline all your moves – FCL, FTL, PTL, ODC, and warehouse.
+                  </Typography>
+                  <Box
+                    display={"flex"}
+                    gap={1}
+                    mt={2}
+                    alignItems={"center"}>
+                    <Button variant="contained" startIcon={<WhatsApp />}>
+                      Contact Sales
+                    </Button>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Container>
+          </Paper>
+            <Paper
+  elevation={0}
+  square
+ 
+>
+          <Container maxWidth="lg" >
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Typography
               variant="h6"
@@ -1517,9 +1558,9 @@ const TMSLandingPage = () => {
             </Grid>
           </Box>
         </Container>
-      </Paper>
+          </Paper>
       <Box position={"fixed"} bottom={16} right={16}>
-        <Fab variant="extended" color="primary" href="/contact" component="a">
+        <Fab variant="extended" size="medium" color="primary" href="/contact" component="a">
           <CallOutlined sx={{ mr: 1 }} />
           Contact us
         </Fab>

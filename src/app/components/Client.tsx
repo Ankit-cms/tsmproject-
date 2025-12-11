@@ -16,7 +16,7 @@ const Client = () => {
       <Container maxWidth="lg">
         <Box sx={{ py: { xs: 4, md: 8 }}}>
           <Box mb={4}>
-            <Typography variant="h6" gutterBottom textTransform="uppercase" color='primary.dark'>
+            <Typography variant="h6" gutterBottom color='primary.dark'>
               Trusted by Logistics Supply Chains enterprises 
             </Typography>
             <Typography variant="h2" paragraph>

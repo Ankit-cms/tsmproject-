@@ -66,10 +66,10 @@ const Footer = () => {
                     textDecoration: "none",
                   }}
                 >
-                  Instalanes TMS
+                  Gravity44
                 </Typography>
               </Box>
-              <Typography variant="h4" paragraph>
+              <Typography variant="h6" paragraph>
                 Collaborative logistics. Faster decisions. Complete visibility
               </Typography>
               <Box>
@@ -97,7 +97,7 @@ const Footer = () => {
             <Grid size={{ md: 8 }}>
               <Grid container spacing={4} mb={2}>
                 <Grid size={{ xs: 6, md: 3 }}>
-                  <Typography variant="h5" gutterBottom fontWeight="bold">
+                  <Typography variant="h5" gutterBottom >
                     Company
                   </Typography>
                   <List dense disablePadding>
@@ -115,7 +115,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 6, md: 3 }}>
-                  <Typography variant="h5" gutterBottom fontWeight="bold">
+                  <Typography variant="h5" gutterBottom >
                     Capabilities
                   </Typography>
                   <List dense disablePadding>
@@ -138,7 +138,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 6, md: 3 }}>
-                  <Typography variant="h5" gutterBottom fontWeight="bold">
+                  <Typography variant="h5" gutterBottom >
                     Resources
                   </Typography>
                   <List dense disablePadding>
@@ -164,7 +164,7 @@ const Footer = () => {
                   </List>
                 </Grid>
                 <Grid size={{ xs: 6, md: 3 }}>
-                  <Typography variant="h5" gutterBottom fontWeight="bold">
+                  <Typography variant="h5" gutterBottom >
                     Other
                   </Typography>
                   <List dense disablePadding>
@@ -191,7 +191,7 @@ const Footer = () => {
           <Typography
             variant="h1"
             component={"h2"}
-            py={3}
+            py={6}
             gutterBottom
             textAlign="center"
            

@@ -291,7 +291,6 @@ const AcreBytes = () => {
                 variant="h6"
                 color="primary.dark"
                 gutterBottom
-                textTransform="uppercase"
               >
                 Real Estate Platform for
               </Typography>
@@ -336,7 +335,6 @@ const AcreBytes = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"
@@ -412,7 +410,6 @@ const AcreBytes = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
                 Why Acrebytes?
@@ -515,7 +512,6 @@ const AcreBytes = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
                 Trusted by Customers & Consultants
@@ -609,13 +605,12 @@ const AcreBytes = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"
                 gap={1}
               >
-                top Real Estate groups <ArrowOutwardIcon fontSize="small" />
+                Top Real Estate groups <ArrowOutwardIcon fontSize="small" />
               </Typography>
               <Typography variant="h2" paragraph>
                 Partnering with leading builders to bring verified projects to you.
@@ -662,7 +657,6 @@ const AcreBytes = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
                 FAQs
@@ -741,7 +735,6 @@ const AcreBytes = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
               >
                 How it works

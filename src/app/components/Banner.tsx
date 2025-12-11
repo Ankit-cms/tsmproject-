@@ -17,8 +17,8 @@ const Banner = () => {
                 <Container maxWidth="lg">
                     <Grid container spacing={4} alignItems="center" my={2}>
                         <Grid size={{ xs: 12, md: 6 }}>
-                            <Typography variant="h6" color="primary.dark" gutterBottom textTransform="uppercase">
-                                Transport management Software for
+                            <Typography variant="h6" color="primary.dark" gutterBottom >
+                                Transport management software for
                             </Typography>
                             <Typography
                                 variant="h1"
@@ -32,7 +32,7 @@ const Banner = () => {
                                 platform built for 3PLs, Shippers, and Carriers.
                             </Typography>
                             <Button sx={{ mt: 1 }} variant="contained" size="large">
-                                <ComputerIcon sx={{ mr: 1 }} /> Schedule a Demo
+                                <ComputerIcon sx={{ mr: 1 }} /> Get Demo
                             </Button>
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }}>
