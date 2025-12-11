@@ -46,7 +46,7 @@ const Hero = () => {
                                 visibility platform built for 3PLs, Shippers, and Carriers.
                             </Typography>
                             <Button variant="contained">
-                                <ComputerIcon sx={{ mr: 1 }} /> Schedule a Demo
+                                <ComputerIcon sx={{ mr: 1 }} /> Get Demo
                             </Button>
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }}>

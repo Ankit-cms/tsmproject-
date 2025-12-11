@@ -2,7 +2,7 @@ const palette = {
   primary: {
     main: '#1b1b1e',
     light: '#42a5f5',
-    dark: '#0F62FE',
+    dark: '#2979ff',
     contrastText: '#ffffff',
   },
   secondary: {  

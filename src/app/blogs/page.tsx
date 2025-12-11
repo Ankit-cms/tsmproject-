@@ -35,8 +35,8 @@ const BlogDetail = () => {
                 <Typography variant="h6"
                   color="primary.dark"
                   gutterBottom
-                  textTransform="uppercase">
-                  Insights and Trends Blog
+                  >
+                  Insights and Blogs
                 </Typography>
                 <Typography variant="h1"
                   component="h1"
@@ -120,7 +120,6 @@ const BlogDetail = () => {
             <Typography
                  variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"

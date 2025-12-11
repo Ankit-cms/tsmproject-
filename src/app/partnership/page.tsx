@@ -83,7 +83,6 @@ const Partners = () => {
             <Box mb={3}>
               <Typography variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"
@@ -144,7 +143,7 @@ const Partners = () => {
                       height={200}
                     />
                     <CardContent>
-                      <Box>
+                      <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
                         <Typography variant="h4">{item.title}</Typography>
                         {/* <Typography variant="subtitle1" gutterBottom>
                           {item.subtitle}
@@ -235,7 +234,6 @@ const Partners = () => {
                   <Typography
                   variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"
@@ -256,13 +254,11 @@ const Partners = () => {
                         <Typography
                           variant="h6"
                 gutterBottom
-                textTransform="uppercase"
-                color="primary.dark"
                 display="flex"
                 alignItems="center"
                 gap={1}
+                fontWeight="bold"
                         >
-                          <CorporateFareOutlinedIcon fontSize="large" />
                           Submit Prospect information
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom>
@@ -298,13 +294,11 @@ const Partners = () => {
                         <Typography
                            variant="h6"
                 gutterBottom
-                textTransform="uppercase"
-                color="primary.dark"
                 display="flex"
                 alignItems="center"
                 gap={1}
+                          fontWeight="bold"
                         >
-                          <HandshakeOutlinedIcon fontSize="large" />
                           Channel partners details
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom>
@@ -355,7 +349,6 @@ const Partners = () => {
             <Box mb={4}>
               <Typography  variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"

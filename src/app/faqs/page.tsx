@@ -135,7 +135,6 @@ const Faq = () => {
   <Box >
               <Typography variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"

@@ -143,7 +143,6 @@ const BlogDetail = () => {
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Typography   variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"

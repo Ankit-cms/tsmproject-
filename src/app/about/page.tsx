@@ -173,7 +173,6 @@ We build SaaS that delivers visibility, collaboration,
                 <Typography
                   variant="h6"
                   gutterBottom
-                  textTransform="uppercase"
                   color="primary.dark"
                   display="flex"
                   alignItems="center"
@@ -325,14 +324,13 @@ We build SaaS that delivers visibility, collaboration,
               <Typography
                 variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 
               >
                 Our Values
               </Typography>
               <Typography variant="h2" paragraph>
-                At the core of Instalanes{' '}
+                At the core of Gravity44{' '}
               </Typography>
             </Box>
 

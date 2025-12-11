@@ -258,7 +258,6 @@ const Leads = () => {
                 variant="h6"
                 color="primary.dark"
                 gutterBottom
-                textTransform="uppercase"
               >
                 Become AcreBytes Agent Partner
               </Typography>
@@ -298,7 +297,7 @@ const Leads = () => {
               variant="h6"
               color="primary.dark"
               gutterBottom
-              textTransform="uppercase">
+              >
               Why Real Estate agents love to Partner with AcreBytes
             </Typography>
             <Typography
@@ -378,7 +377,7 @@ const Leads = () => {
               variant="h6"
               color="primary.dark"
               gutterBottom
-              textTransform="uppercase">
+              >
               Challenges Agents face, and How AcreBytes solves them
             </Typography>
             <Typography
@@ -482,7 +481,7 @@ const Leads = () => {
               variant="h6"
               color="primary.dark"
               gutterBottom
-              textTransform="uppercase">
+              >
               What AcreBytes Offers to Our Real Estate Agent Partners
             </Typography>
             <Typography
@@ -554,7 +553,6 @@ const Leads = () => {
                 variant="h6"
                 color="primary.dark"
                 gutterBottom
-                textTransform="uppercase"
               >
                 Trusted by Agents & Real Estate Agencies
               </Typography>
@@ -658,7 +656,7 @@ const Leads = () => {
                 variant="h6"
                 color="primary.dark"
                 gutterBottom
-                textTransform="uppercase">
+                >
                 FAQs
               </Typography>
               <Typography variant="h2" paragraph>

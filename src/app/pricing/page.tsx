@@ -220,7 +220,6 @@ const Pricing = () => {
             <Box mb={4}>
               <Typography variant="h6"
                 gutterBottom
-                textTransform="uppercase"
                 color="primary.dark"
                 display="flex"
                 alignItems="center"

@@ -79,17 +79,14 @@ const ContactForm = () => {
                     <Box mb={4}>
                         <Typography variant="h6"
                             gutterBottom
-                            textTransform="uppercase"
                             color="primary.dark"
                             display="flex"
                             alignItems="center"
                             gap={1}>
-                            Let’s Connect
+                            Contact us
                         </Typography>
                         <Typography variant="h2" paragraph >
-                            Explore how Instalanes TMS can simplify your operations. We’re
-                            here to help you with features, pricing, implementation and
-                            support.
+                            We&apos;d love to talk about how we can work together
                         </Typography>
                     </Box>
                     <Grid container spacing={4}>

@@ -72,8 +72,9 @@ const Header = () => {
             sx={{
               display: { xs: 'none', md: 'flex' },  
               textDecoration: 'none', 
+              fontWeight:"bold"
             }}>
-            Instalanes TMS
+            Instalanes
           </Typography>
 
           <Box sx={{ display: { xs: 'inline-flex', md: 'none' } }}>
@@ -105,7 +106,7 @@ const Header = () => {
               {/* Static items with icons and links */}
               <MenuItem onClick={handleCloseNavMenu} component="a" href={`/`} >
                 <AppsIcon sx={{ mr: 1, color: 'common.black' }} />
-                <Typography textAlign="center" color="common.black">TMS Solutions</Typography>
+                <Typography textAlign="center" color="common.black" variant='subtitle2'>Solutions</Typography>
               </MenuItem>
               <MenuItem onClick={handleOpen}>
                 <ReceiptLongIcon sx={{ mr: 1, color: 'common.black' }} />
@@ -140,7 +141,7 @@ const Header = () => {
               flexGrow: 1, 
               textDecoration: 'none',
             }}>
-            Instalanes TMS
+            Instalanes
           </Typography>
           <Box
             sx={{
@@ -159,7 +160,7 @@ const Header = () => {
                 gap: 1,
               }}>
               <AppsIcon fontSize="small" />
-              TMS Solutions
+              Solutions
             </Button>
 
             <Button
@@ -283,9 +284,9 @@ const Header = () => {
                 minWidth: 'auto',
               }}>
               <ComputerIcon fontSize="small" sx={{ display: { xs: 'none', md: 'inline' } }} />
-              <Box component="span" >
+              {/* <Box component="span" > */}
                 Get Demo
-              </Box>
+              {/* </Box> */}
             </Button>
           </Box>
         </Toolbar>
