@@ -14,12 +14,12 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  Breadcrumbs,
   Link,
 } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import Heading from '../components/Heading';
 
 const BlogDetail = () => {
   return (
@@ -141,15 +141,8 @@ const BlogDetail = () => {
       <Paper elevation={0} square >
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography   variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}
-                mb={4}>
-              Read more blogs
-            </Typography>
+            <Heading primaryText='Read more blogs' secondaryText=''/>
+            
           
           <Grid container spacing={4}>
             {[

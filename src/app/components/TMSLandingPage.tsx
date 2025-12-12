@@ -22,23 +22,17 @@ import {
 } from "@mui/material";
 import { Grid } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import SubdirectoryArrowRightIcon from "@mui/icons-material/SubdirectoryArrowRight";
 import Link from "next/link";
-import Features from "./Features";
 import Header from "./Header";
 import Footer from "./Footer";
 import Client from "./Client";
 import Banner from "./Banner";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
 import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
@@ -54,7 +48,7 @@ import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import CellTowerOutlinedIcon from "@mui/icons-material/CellTowerOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import MobileFriendlyOutlinedIcon from "@mui/icons-material/MobileFriendlyOutlined";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import DifferenceOutlinedIcon from "@mui/icons-material/DifferenceOutlined";
 import TvOutlinedIcon from "@mui/icons-material/TvOutlined";
@@ -69,6 +63,7 @@ import PhonelinkIcon from '@mui/icons-material/Phonelink';
 import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
 import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined';
 import ChecklistOutlinedIcon from '@mui/icons-material/ChecklistOutlined';
+import Heading from "./Heading";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -170,24 +165,10 @@ const TMSLandingPage = () => {
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography
-              variant="h6"
-              color="primary.dark"
-              gutterBottom
-            >
-              Why Instalanes?
-            </Typography>
-            <Typography
-              variant="h2"
-              component="h3"
-              gutterBottom
-              color="common.black"
-              mb={4}
-            >
-              The Collaborative TMS Built for Shippers, Carriers, and Logistics
+            <Heading primaryText='Why Instalanes?' secondaryText='The Collaborative TMS Built for Shippers, Carriers, and Logistics
               professionals for Real-time visibility, and Optimized logistics
-              operations that drive meaningful Business outcomes
-            </Typography>
+              operations that drive meaningful Business outcomes'/>
+            
             <Grid container spacing={3}>
               {[
                 {
@@ -253,26 +234,7 @@ const TMSLandingPage = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box sx={{ pt: { xs: 4, md: 8 } }}>
-            <Box>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                Solving the big challenge
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Simplifying the complex manual chaos, digitally.
-              </Typography>
-              <Alert severity="error" sx={{ mb: 2 }}>
-                Modern supply chains lack real-time visibility and smooth
-                coordination because teams still rely on emails, spreadsheets,
-                and disconnected systems. This siloed and manual way of working
-                slows information flow and creates visibility gaps, leading to
-                delays, higher logistics costs, and a poor experience for
-                customers, partners, and internal teams
-              </Alert>
-            </Box>
+            <Heading primaryText='Solving the big challenge' secondaryText='Simplifying the complex manual chaos, digitally.'/>
             <Grid container spacing={2} sx={{ mb: 2 }}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Card
@@ -419,16 +381,7 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                Instalanes TMS – Digital solution deep dive
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Explore modules and workflows that streamline, automate, and elevate your logistics.
-              </Typography>
+              <Heading primaryText='Instalanes TMS – Digital solution deep dive' secondaryText='Explore modules and workflows that streamline, automate, and elevate your logistics.'/>
             </Box>
             <Card sx={{ p: 2, border:"1px solid", borderColor:"primary.dark",backgroundColor:"background.default" }}>
             <Typography variant="h6" paragraph >
@@ -735,16 +688,7 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box sx={{ pt: { xs: 4, md: 8 }, pb: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                Instalanes TMS features
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Powerful features designed to elevate your logistics performance.
-              </Typography>
+              <Heading primaryText='Instalanes TMS features' secondaryText='Powerful features designed to elevate your logistics performance.'/>
             </Box>
             <Grid container spacing={2}>
               {[
@@ -820,17 +764,7 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                TMS capabilities
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Unlock powerful tools to plan, execute, and monitor
-                transportation seamlessly—anytime, anywhere
-              </Typography>
+              <Heading primaryText='TMS capabilities' secondaryText='Unlock powerful tools to plan, execute, and monitor transportation seamlessly—anytime, anywhere'/>
             </Box>
             <Grid spacing={3} container py={2}>
               {[
@@ -931,17 +865,8 @@ const TMSLandingPage = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                What our Customers say
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Insights from teams simplifying their logistics journey with
-                Instalanes
-              </Typography>
+              <Heading primaryText='What our Customers say' secondaryText=' Insights from teams simplifying their logistics journey with
+                Instalanes'/>
             </Box>
             <Grid container spacing={4}>
               {[
@@ -1149,17 +1074,8 @@ Ready to transform your logistics ?
 >
           <Container maxWidth="lg" >
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography
-              variant="h6"
-              gutterBottom
-              textTransform="uppercase"
-              color="primary.dark"
-            >
-              Contact us
-            </Typography>
-            <Typography variant="h2" paragraph mb={4}>
-              We&apos;d love to talk about how we can work together
-            </Typography>
+            <Heading primaryText='Contact us' secondaryText='We&apos;d love to talk about how we can work together'/>
+           
             <Grid container spacing={4}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography

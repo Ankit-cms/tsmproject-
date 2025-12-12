@@ -10,13 +10,9 @@ import {
   CardMedia,
   Chip,
   Container,
-  Divider,
-  Fab,
   Grid,
-  Link,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemIcon,
   ListItemText,
   Paper,
@@ -40,6 +36,7 @@ import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOu
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
+import Heading from '../components/Heading';
 
 
 const Leads = () => {
@@ -293,23 +290,8 @@ const Leads = () => {
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography
-              variant="h6"
-              color="primary.dark"
-              gutterBottom
-              >
-              Why Real Estate agents love to Partner with AcreBytes
-            </Typography>
-            <Typography
-              variant="h2"
-              component="h3"
-              gutterBottom
-              color="common.black"
-              mb={4}
-            >
-              Access better projects, verified leads, and tools designed to grow your business.
-            </Typography>
-            <Grid container spacing={3}>
+            <Heading  primaryText='Why Real Estate agents love to Partner with AcreBytes' secondaryText='Access better projects, verified leads, and tools designed to grow your business.'/>
+            <Grid container spacing={3} mt={4}>
               {[
                 {
                   icon: <VerifiedOutlinedIcon fontSize="large" />,
@@ -373,22 +355,8 @@ const Leads = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography
-              variant="h6"
-              color="primary.dark"
-              gutterBottom
-              >
-              Challenges Agents face, and How AcreBytes solves them
-            </Typography>
-            <Typography
-              variant="h2"
-              component="h3"
-              gutterBottom
-              color="common.black"
-              mb={4}>
-              Clear visibility, quality leads, and tools built to help you close faster.
-            </Typography>
-            <Grid container spacing={3}>
+            <Heading primaryText='Challenges Agents face, and How AcreBytes solves them' secondaryText='Clear visibility, quality leads, and tools built to help you close faster.'/>
+            <Grid container spacing={3} mt={4}>
               <Grid size={{ xs: 12 }}>
                 <Card
                   elevation={3}
@@ -477,24 +445,9 @@ const Leads = () => {
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography
-              variant="h6"
-              color="primary.dark"
-              gutterBottom
-              >
-              What AcreBytes Offers to Our Real Estate Agent Partners
-            </Typography>
-            <Typography
-              variant="h2"
-              component="h3"
-              gutterBottom
-              color="common.black"
-              mb={4}>
-              Tools, visibility, digital presence and high-intent leads designed to help you grow your business faster.
-            </Typography>
-
-
-            <Grid container spacing={4}>
+            <Heading primaryText='What AcreBytes Offers to Our Real Estate Agent Partners' secondaryText='Tools, visibility, digital presence and high-intent leads designed to help you grow your business faster.'/>
+            
+            <Grid container spacing={4} mt={4}>
               {featureCards.map(card => (
                 <Grid size={{ xs: 12, md: 6 }} key={card.id}>
                   <Card elevation={2} variant="elevation" sx={{ height: '100%', width: '100%' }}>
@@ -549,16 +502,7 @@ const Leads = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                color="primary.dark"
-                gutterBottom
-              >
-                Trusted by Agents & Real Estate Agencies
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Building confidence through verified leads, transparent processes, and results that matter.
-              </Typography>
+              <Heading primaryText='Trusted by Agents & Real Estate Agencies' secondaryText='Building confidence through verified leads, transparent processes, and results that matter.'/>
             </Box>
             <Grid container spacing={4}>
               {[
@@ -652,16 +596,7 @@ const Leads = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                color="primary.dark"
-                gutterBottom
-                >
-                FAQs
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Everything you should know before becoming an AcreBytes Partner.
-              </Typography>
+              <Heading primaryText='FAQs' secondaryText='Everything you should know before becoming an AcreBytes Partner.'/>
             </Box>
 
             <Grid container>

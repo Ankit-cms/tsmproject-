@@ -2,10 +2,7 @@
 import React from 'react';
 import {
   Box,
-  Breadcrumbs,
   Container,
-  Divider,
-  Link,
   Paper,
   Typography,
   Card,
@@ -13,6 +10,7 @@ import {
 } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Heading from '../components/Heading';
 
 const Terms = () => {
   const terms = [
@@ -95,23 +93,11 @@ const Terms = () => {
       <Header />
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          
           <Box sx={{ pt: { xs: 4, md: 8 }, pb: 2 } }>
             <Box mb={4}>
-              <Typography  variant="h6"
-                  gutterBottom
-                  color="primary.dark"
-                  display="flex"
-                  alignItems="center"
-                  gap={1}>
-                Terms of Service
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Please read these Terms of Service carefully before using our
-                website and services.
-              </Typography>
+              <Heading primaryText='Terms of Service' secondaryText='Please read these Terms of Service carefully before using our website and services.'/>
             </Box>
-            </Box>
+          </Box>
         </Container>
       </Paper>
 

@@ -1,6 +1,5 @@
 import {
   Box,
-  Breadcrumbs,
   Button,
   Card,
   CardContent,
@@ -8,10 +7,8 @@ import {
   Checkbox,
   Chip,
   Container,
-  Divider,
   Fab,
   Grid,
-  Link,
   List,
   ListItem,
   ListItemIcon,
@@ -26,11 +23,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import { WhatsApp } from '@mui/icons-material';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
-import CorporateFareOutlinedIcon from '@mui/icons-material/CorporateFareOutlined';
 import DoneIcon from '@mui/icons-material/Done'; 
+import Heading from '../components/Heading';
 const Partners = () => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -81,20 +76,9 @@ const Partners = () => {
 
           <Box sx= {{ py: { xs: 4, md: 8 } }}>
             <Box mb={3}>
-              <Typography variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}>
-                Growth Partners
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Select your scope - Let us know what fits for your
-                Transportation business process
-              </Typography>
+              <Heading primaryText='Growth Partners' secondaryText='Select your scope - Let us know what fits for your
+                Transportation business process'/>
             </Box>
-            
 
             <Grid container spacing={3} py={1}>
               {[
@@ -231,21 +215,8 @@ const Partners = () => {
             <Card >
               <CardContent>
                 <Box mb={4}>
-                  <Typography
-                  variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}
-                  >
-                   Lead submission form
-                  </Typography>
-                  <Typography variant="h2" paragraph >
-                    Share qualified prospect details to initiate evaluation and
-                    registration.
-                  </Typography>
-                  
+                  <Heading primaryText='Lead submission form' secondaryText='Share qualified prospect details to initiate evaluation and
+                    registration.'/> 
                 </Box>
           <Card variant='elevation'  elevation={2} >
                   <Grid container spacing={3} >
@@ -349,20 +320,10 @@ const Partners = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography  variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}>
-                Why Partner with Us?
-              </Typography>
-              <Typography variant="h2" paragraph>
-                At Instalanes, we believe in the power of collaboration to drive
+              <Heading primaryText='Why Partner with Us?' secondaryText='At Instalanes, we believe in the power of collaboration to drive
                 mutual success. We are always looking to build strong,
                 meaningful partnerships that benefit our customers and enhance
-                our service offerings.
-              </Typography>
+                our service offerings.'/>
             </Box>
 
             <Grid container spacing={3}>
@@ -434,7 +395,19 @@ const Partners = () => {
         </Container>
       </Paper>
      
-      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+      <Paper elevation={0} square sx={{
+    position: "relative",
+    overflow: "hidden",
+    background: "linear-gradient(120deg, #d8c7ff, #f6d1e8, #bfd7ff)",
+    backgroundSize: "300% 300%",
+    animation: "simpleGradient 18s ease infinite",
+
+    "@keyframes simpleGradient": {
+      "0%": { backgroundPosition: "0% 50%" },
+      "50%": { backgroundPosition: "100% 50%" },
+      "100%": { backgroundPosition: "0% 50%" },
+    },
+  }}>
         <Container maxWidth="lg" >
           <Grid container spacing={5} >
             {/* Left Column */}
