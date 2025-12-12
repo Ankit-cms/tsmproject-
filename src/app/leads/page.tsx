@@ -739,7 +739,7 @@ const Leads = () => {
                 component="img"
                 image="/img/client/partner-header.webp"
                 alt="Become a Partner"
-                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+                sx={{ height: "100%", mx:0 }}
               />
             </Grid>
             <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>

@@ -155,7 +155,7 @@ const Partners = () => {
                            />
                       </Box>
                      
-                      <Box>
+                      <Box mt={2}>
                         <Typography variant="h6" sx={{fontWeight: 'bold'}}>
                           Key activities
                         </Typography>
@@ -228,9 +228,9 @@ const Partners = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Card>
+            <Card >
               <CardContent>
-                <Box>
+                <Box mb={4}>
                   <Typography
                   variant="h6"
                 gutterBottom
@@ -239,17 +239,18 @@ const Partners = () => {
                 alignItems="center"
                 gap={1}
                   >
-                    <FeedOutlinedIcon /> Lead submission form
+                   Lead submission form
                   </Typography>
-                  <Typography variant="h2" paragraph>
+                  <Typography variant="h2" paragraph >
                     Share qualified prospect details to initiate evaluation and
                     registration.
                   </Typography>
                   
                 </Box>
-                <Grid container spacing={3}>
+          <Card variant='elevation'  elevation={2} >
+                  <Grid container spacing={3} >
                   <Grid size={{ xs: 12, md: 6 }}>
-                    <Card sx={{ height: '100%' }} variant="elevation" elevation={2}>
+                    <Card sx={{ height: '100%' }} >
                       <CardContent sx={{ p: 3 }}>
                         <Typography
                           variant="h6"
@@ -289,7 +290,7 @@ const Partners = () => {
                   </Grid>
 
                   <Grid size={{ xs: 12, md: 6 }}>
-                    <Card sx={{ height: '100%' }} variant='elevation' elevation={2}>
+                    <Card sx={{ height: '100%' }} >
                       <CardContent sx={{ p: 3 }}>
                         <Typography
                            variant="h6"
@@ -325,18 +326,19 @@ const Partners = () => {
                     </Card>
                   </Grid>
                 </Grid>
-                <Typography variant="body2" mt={3}>
+                <Typography variant="body2" m={2}>
                   <Checkbox {...label} defaultChecked />
                   By submitting this lead, you confirm that the information
                   provided is accurate and obtained with the prospect’s consent.
                   The company reserves the right to review and validate all
                   submitted leads before approval.
                 </Typography>
-                <Grid size={{ xs: 12 }} textAlign="end" mt={2}>
-                  <Button variant="contained" size="large">
+                <Grid size={{ xs: 12 }}  m={2} display="flex" justifyContent="flex-end">
+                  <Button variant="contained"  size="large" >
                     Submit
                   </Button>
                 </Grid>
+          </Card>
               </CardContent>
             </Card>
           </Box>
