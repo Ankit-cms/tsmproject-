@@ -64,7 +64,7 @@ import {
 } from '@mui/icons-material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 const Pricing = () => {
   const [selected, setSelected] = useState<string[]>([]);
   console.log('this is selected', selected);
@@ -211,13 +211,15 @@ const Pricing = () => {
     { value: '+44', label: 'UK (+44)' },
     { value: '+61', label: 'Australia (+61)' },
   ];
+  const topFullWidthSections = pricingSections.slice(0, 2);
+  const bottomSideSections = pricingSections.slice(2);
   return (
     <Box>
       <Header />
-      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
+      <Paper elevation={0} square  >
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Box mb={4}>
+            <Box >
               <Typography variant="h6"
                 gutterBottom
                 color="primary.dark"
@@ -226,412 +228,559 @@ const Pricing = () => {
                 gap={1}>
                 Instalanes TMS - Pricing
               </Typography>
-              <Typography variant="h2" paragraph >
-                Select your scope - Let us know what fits your transportation
-                business process.
+              <Typography variant="h2"  >
+
+                Tell us your operational scope and get the right TMS setup for your transport business.
               </Typography>
             </Box>
           </Box>
         </Container>
       </Paper>
-      <Paper elevation={0} square >
+
+      <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Grid container spacing={2} alignItems="stretch" mb={4}>
-              <Grid size={12} sx={{ display: 'flex' }}>
-               
-                    <Grid container spacing={2}>
-                      {/* Left Card */}
-                      <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%' }}   variant='elevation'>
-                          <CardContent>
-                            <Typography variant="h4" mb={4} gutterBottom>
-                              Input Business Details
-                            </Typography>
+            <Box >
+              <Typography variant="h6"
+                gutterBottom
+                color="primary.dark"
+                display="flex"
+                alignItems="center"
+                gap={1}>
+                Configure your TMS Solution
+              </Typography>
+              <Typography variant="h2" mb={4}  >
 
-                            <Grid container spacing={2}>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <TextField
-                                  fullWidth
-                                  label="Shipments / Month"
-                                  variant="outlined"
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <TextField
-                                  fullWidth
-                                  label="Partners (Customers + Vendors)"
-                                  variant="outlined"
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <TextField
-                                  fullWidth
-                                  label="~ Av. Shipments duration (Days)"
-                                  variant="outlined"
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <TextField
-                                  fullWidth
-                                  label="Managed Vehicle (Owned + Leased)"
-                                  variant="outlined"
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <TextField
-                                  fullWidth
-                                  label="Company name"
-                                  variant="outlined"
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <Autocomplete
-                                  freeSolo
-                                  id="free-solo-2-demo"
-                                  disableClearable
-                                  options={countries.map((country) => country)}
-                                  renderInput={(params) => (
-                                    <TextField
-                                      {...params}
-                                      label="Country"
-                                      slotProps={{
-                                        input: {
-                                          ...params.InputProps,
-                                          type: 'search',
-                                        },
-                                      }}
-                                    />
-                                  )}
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <TextField
-                                  fullWidth
-                                  label="Phone number"
-                                  inputProps={{ maxLength: 15 }}
-                                  type="number"
-                                  inputMode="numeric"
-                                  InputProps={{
-                                    startAdornment: (
-                                      <InputAdornment position="start">
-                                        <TextField
-                                          select
-                                          variant="standard"
-                                          value={countryCode}
-                                          onChange={(e) =>
-                                            setCountryCode(e.target.value)
-                                          }
-                                          InputProps={{ disableUnderline: true }}
-                                          SelectProps={{
-                                            MenuProps: {
-                                              disableScrollLock: true,
-                                            },
-                                          }}
-                                          sx={{
-                                            '& .MuiSelect-select': {
-                                              paddingRight: '24px',
-                                            },
-                                            minWidth: 80,
-                                          }}
-                                        >
-                                          {countryCodes.map((option) => (
-                                            <MenuItem
-                                              key={option.value}
-                                              value={option.value}
-                                            >
-                                              {option.label}
-                                            </MenuItem>
-                                          ))}
-                                        </TextField>
-                                      </InputAdornment>
-                                    ),
-                                  }}
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12, md: 6 }}>
-                                <TextField
-                                  fullWidth
-                                  label="Email"
-                                  variant="outlined"
-                                />
-                              </Grid>
-                              <Grid size={{ xs: 12 }}>
-                                <Box
-                                  display="flex"
-                                  alignItems="center"
-                                  gap={2}
-                                  p={2}
-                                  border={1}
-                                  borderColor="grey.300"
-                                  borderRadius={1}
-                                >
-                                  <Checkbox size="large" />
-                                  <Box>
-                                    <Typography variant="body2">
-                                      I am not a robot
-                                    </Typography>
-                                    <Box display="flex" gap={1}>
-                                      <Typography
-                                        variant="caption"
-                                        color="text.secondary"
-                                      >
-                                        reCAPTCHA
-                                      </Typography>
-                                      <Typography
-                                        variant="caption"
-                                        color="text.secondary"
-                                      >
-                                        Privacy
-                                      </Typography>
-                                      <Typography
-                                        variant="caption"
-                                        color="text.secondary"
-                                      >
-                                        -
-                                      </Typography>
-                                      <Typography
-                                        variant="caption"
-                                        color="text.secondary"
-                                      >
-                                        Terms
-                                      </Typography>
-                                    </Box>
-                                  </Box>
-                                </Box>
-                              </Grid>
-                            </Grid>
-                          </CardContent>
-                        </Card>
-                      </Grid>
+                Select modules you need and enter operational details to generate quotation for your transportation business.
+              </Typography>
+            </Box>
+            <Grid container spacing={2} >
 
-                      {/* Right Card */}
-                      <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%' }} variant='elevation'>
-                          <CardContent>
-                            <Typography variant="h4" mb={4}>
-                              Services scope details{' '}
-                            </Typography>
-                            <TableContainer component={Paper}>
-                              <Table
-                                sx={{ minWidth: 650 }}
-                                aria-label="simple table"
+              <Grid size={{ xs: 12 }} >
+
+                <Grid container spacing={2} alignItems="stretch">
+
+                  {pricingSections.slice(0, 2).map((section, i) => (
+                    <Grid
+                      key={i}
+                      size={{ xs: 12 }}
+                      sx={{ display: 'flex' }}
+
+
+                    >
+                      <Card
+                        sx={{
+                          flexGrow: 1,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          bgcolor: "transparent",
+                        }}
+
+                      >
+                        <CardContent sx={{ p: 0 }}>
+                          <Typography variant="h4" paragraph  >
+                            {section.heading}
+                          </Typography>
+
+                          <Grid container spacing={2} alignItems="stretch">
+                            {section.subheadings.map((option, index) => (
+                              <Grid
+                                key={index}
+                                size={{ xs: 12, sm: 6, md: 2 }}
+                                sx={{ display: 'flex' }}
                               >
-                                <TableHead>
-                                  <TableRow>
-                                    <TableCell>TMS services / scope</TableCell>
-                                    <TableCell align="right">Unit</TableCell>
-                                    <TableCell align="right">Qty.</TableCell>
-                                    <TableCell align="right">Frequency</TableCell>
-                                    <TableCell align="right">
-                                      Price Range
-                                    </TableCell>
-                                  </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                  {rows.map((row) => (
-                                    <TableRow
-                                      key={row.name}
-                                      sx={{
-                                        '&:last-child td, &:last-child th': {
-                                          border: 0,
+                                <ToggleButtonGroup
+                                  value={selected}
+                                  onChange={handleSelect}
+                                  aria-label="transport options"
+                                  fullWidth
+                                  sx={{ flexGrow: 1, display: 'flex' }}
+                                >
+                                  <ToggleButton
+                                    value={option.title}
+                                    sx={{
+                                      width: '100%',
+                                      height: '100%',
+                                      display: 'flex',
+                                      flexDirection: 'row',
+                                      justifyContent: 'flex-start',
+                                      alignItems: 'center',
+                                      textTransform: 'none',
+                                      borderRadius: 1,
+                                      boxShadow: 1,
+                                      border: '1px solid',
+                                      gap: 1,
+                                      borderColor: (theme) =>
+                                        selected.includes(option.title)
+                                          ? theme.palette.primary.main
+                                          : theme.palette.grey[300],
+                                      transition: 'all 0.2s ease',
+                                      color: (theme) =>
+                                        selected.includes(option.title)
+                                          ? theme.palette.primary.main
+                                          : theme.palette.text.primary,
+                                      backgroundColor: (theme) =>
+                                        selected.includes(option.title)
+                                          ? theme.palette.primary.light + '20'
+                                          : theme.palette.background.paper,
+                                      '&:hover': {
+                                        boxShadow: 2,
+                                        backgroundColor: (theme) =>
+                                          selected.includes(option.title)
+                                            ? theme.palette.primary.light +
+                                            '40'
+                                            : theme.palette.grey[100],
+                                      },
+                                      '&.Mui-selected': {
+                                        backgroundColor: (theme) =>
+                                          theme.palette.primary.main,
+                                        color: (theme) =>
+                                          theme.palette.primary.contrastText,
+                                        '&:hover': {
+                                          backgroundColor: (theme) =>
+                                            theme.palette.primary.dark,
                                         },
+                                      },
+                                    }}
+                                  >
+                                    <Box
+                                      sx={{
+                                        height: 45,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: 'inherit',
+
+                                      }}
+                                      fontWeight='bold'
+
+                                    >
+                                      {option.icon}
+                                    </Box>
+
+                                    <Typography
+                                      variant="body2"
+                                      textAlign="center"
+                                      sx={{
+                                        lineHeight: 1.2,
+                                        color: 'inherit',
+                                        fontSize: 14,
                                       }}
                                     >
-                                      <TableCell component="th" scope="row">
-                                        {row.name}
-                                      </TableCell>
-                                      <TableCell align="right">
-                                        {row.calories}
-                                      </TableCell>
-                                      <TableCell align="right">
-                                        {row.fat}
-                                      </TableCell>
-                                      <TableCell align="right">
-                                        {row.carbs}
-                                      </TableCell>
-                                      <TableCell align="right">
-                                        {row.protein}
-                                      </TableCell>
-                                    </TableRow>
-                                  ))}
-                                </TableBody>
-                              </Table>
-                            </TableContainer>
-                          </CardContent>
-                        </Card>
-                      </Grid>
-                 
-
-
-            
-                    </Grid>
-                 
-              </Grid>
-               </Grid>
-     
-  <Grid container spacing={2}>  
-
-                <Grid size={{ xs: 12, md: 6 }}>
-                  <Card sx={{ height: '100%' }} variant='elevation'>
-                    <CardContent>
-                      <Typography variant="h6" gutterBottom>
-                        Contact
-                      </Typography>
-                      <Card>
-                        <CardContent>hi</CardContent>
+                                      {option.title}
+                                    </Typography>
+                                  </ToggleButton>
+                                </ToggleButtonGroup>
+                              </Grid>
+                            ))}
+                          </Grid>
+                        </CardContent>
                       </Card>
-                    </CardContent>
-                  </Card>
+                    </Grid>
+                  ))}
                 </Grid>
-                
-                      <Grid size={{ xs: 12, md: 6 }}>
-                        <Card sx={{ height: '100%' }} variant='elevation'>
-                          <CardContent>
-                            <Typography variant="h6" gutterBottom>
-                              Quotation details{' '}
-                            </Typography>
-                            <Card>
-                              <CardContent>hello</CardContent>
-                            </Card>
-                          </CardContent>
-                        </Card>
-                      </Grid>
-            </Grid>
-            </Box>
-          </Container>
-        </Paper>  
 
- <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
-        <Container maxWidth="lg">
-          <Box sx={{ py: { xs: 4, md: 8 } }}> 
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }} >
 
-              <Grid size={12} sx={{ display: 'flex' }}>
-                
-                    <Grid container spacing={2} alignItems="stretch">
-                      {pricingSections.map((section, i) => (
-                        <Grid
-                          key={i}
-                          size={{ xs: 12, md: 4 }}
-                          sx={{ display: 'flex' }}
-                        >
-                          <Card
-                            sx={{
-                              flexGrow: 1,
-                              display: 'flex',
-                              flexDirection: 'column',
-                              bgcolor:"transparent",
-                            }}
-                            
-                          >
-                            <CardContent sx={{ flexGrow: 1, p: 2 }}>
-                              <Typography variant="h6" paragraph fontWeight="bold">
-                                {section.heading}
+                <Grid container spacing={1} alignItems="stretch">
+
+                  {pricingSections.slice(2).map((section, i) => (
+                    <Grid
+                      key={i}
+                      size={{ xs: 12 }}
+                      sx={{ display: 'flex' }}
+
+
+                    >
+                      <Card
+                        sx={{
+                          flexGrow: 1,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          bgcolor: "transparent",
+                        }}
+
+                      >
+                        <CardContent sx={{ p: 0 }}>
+                          <Typography variant="h4" paragraph >
+                            {section.heading}
+                          </Typography>
+
+                          <Grid container spacing={2} alignItems="stretch">
+                            {section.subheadings.map((option, index) => (
+                              <Grid
+                                key={index}
+                                size={{ xs: 12, sm: 6, md: 4 }}
+                                sx={{ display: 'flex' }}
+                              >
+                                <ToggleButtonGroup
+                                  value={selected}
+                                  onChange={handleSelect}
+                                  aria-label="transport options"
+                                  fullWidth
+                                  sx={{ flexGrow: 1, display: 'flex' }}
+                                >
+                                  <ToggleButton
+                                    value={option.title}
+                                    sx={{
+                                      width: '100%',
+                                      height: '100%',
+                                      display: 'flex',
+                                      flexDirection: 'row',
+                                      justifyContent: 'flex-start',
+                                      alignItems: 'center',
+                                      textTransform: 'none',
+                                      borderRadius: 1,
+                                      boxShadow: 1,
+                                      border: '1px solid',
+                                      gap: 1,
+                                      borderColor: (theme) =>
+                                        selected.includes(option.title)
+                                          ? theme.palette.primary.main
+                                          : theme.palette.grey[300],
+                                      transition: 'all 0.2s ease',
+                                      color: (theme) =>
+                                        selected.includes(option.title)
+                                          ? theme.palette.primary.main
+                                          : theme.palette.text.primary,
+                                      backgroundColor: (theme) =>
+                                        selected.includes(option.title)
+                                          ? theme.palette.primary.light + '20'
+                                          : theme.palette.background.paper,
+                                      '&:hover': {
+                                        boxShadow: 2,
+                                        backgroundColor: (theme) =>
+                                          selected.includes(option.title)
+                                            ? theme.palette.primary.light +
+                                            '40'
+                                            : theme.palette.grey[100],
+                                      },
+                                      '&.Mui-selected': {
+                                        backgroundColor: (theme) =>
+                                          theme.palette.primary.main,
+                                        color: (theme) =>
+                                          theme.palette.primary.contrastText,
+                                        '&:hover': {
+                                          backgroundColor: (theme) =>
+                                            theme.palette.primary.dark,
+                                        },
+                                      },
+                                    }}
+                                  >
+                                    <Box
+                                      sx={{
+                                        height: 48,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: 'inherit',
+
+                                      }}
+                                      fontWeight='bold'
+
+                                    >
+                                      {option.icon}
+                                    </Box>
+
+                                    <Typography
+                                      variant="body2"
+                                      textAlign="center"
+                                      sx={{
+                                        lineHeight: 1.2,
+                                        color: 'inherit',
+                                        fontSize: 12,
+                                      }}
+                                    >
+                                      {option.title}
+                                    </Typography>
+                                  </ToggleButton>
+                                </ToggleButtonGroup>
+                              </Grid>
+                            ))}
+                          </Grid>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+
+              </Grid>
+
+
+              <Grid size={{ xs: 12, md: 6 }} sx={{ display: 'flex' }}>
+                <Card variant='elevation' sx={{ backgroundColor: "transparent", boxShadow: "none" }} >
+                  <Grid container spacing={2} alignItems="stretch" mt={2}>
+                    <Grid size={12} sx={{ display: 'flex' }}>
+
+                      <Grid container spacing={2} mt={4} >
+                        {/* Left Card */}
+                        <Grid size={{ xs: 12 }}>
+                          <Card sx={{ height: '100%', }}   >
+                            <CardContent >
+                              <Typography variant="h4" mb={2}>
+                                Enter Operations details
                               </Typography>
 
-                              <Grid container spacing={2} alignItems="stretch">
-                                {section.subheadings.map((option, index) => (
-                                  <Grid
-                                    key={index}
-                                    size={{ xs: 12, sm: 6, md: 4 }}
-                                    sx={{ display: 'flex' }}
-                                  >
-                                    <ToggleButtonGroup
-                                      value={selected}
-                                      onChange={handleSelect}
-                                      aria-label="transport options"
-                                      fullWidth
-                                      sx={{ flexGrow: 1, display: 'flex' }}
-                                    >
-                                      <ToggleButton
-                                        value={option.title}
-                                        sx={{
-                                          width: '100%',
-                                          height: '100%',
-                                          display: 'flex',
-                                          flexDirection: 'column',
-                                          justifyContent: 'flex-start',
-                                          alignItems: 'center',
-                                          textTransform: 'none',
-                                          borderRadius: 1,
-                                          boxShadow: 1,
-                                          border: '1px solid',
-                                          borderColor: (theme) =>
-                                            selected.includes(option.title)
-                                              ? theme.palette.primary.main
-                                              : theme.palette.grey[300],
-                                          transition: 'all 0.2s ease',
-                                          color: (theme) =>
-                                            selected.includes(option.title)
-                                              ? theme.palette.primary.main
-                                              : theme.palette.text.primary,
-                                          backgroundColor: (theme) =>
-                                            selected.includes(option.title)
-                                              ? theme.palette.primary.light + '20'
-                                              : theme.palette.background.paper,
-                                          '&:hover': {
-                                            boxShadow: 2,
-                                            backgroundColor: (theme) =>
-                                              selected.includes(option.title)
-                                                ? theme.palette.primary.light +
-                                                '40'
-                                                : theme.palette.grey[100],
-                                          },
-                                          '&.Mui-selected': {
-                                            backgroundColor: (theme) =>
-                                              theme.palette.primary.main,
-                                            color: (theme) =>
-                                              theme.palette.primary.contrastText,
-                                            '&:hover': {
-                                              backgroundColor: (theme) =>
-                                                theme.palette.primary.dark,
-                                            },
-                                          },
-                                        }}
-                                      >
-                                        <Box
-                                          sx={{
-                                            height: 48,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            color: 'inherit',
-                                          
-                                          }}
-                                          fontWeight='bold'
-                                          
-                                        >
-                                          {option.icon}
-                                        </Box>
-
-                                        <Typography
-                                          variant="body2"
-                                          textAlign="center"
-                                          sx={{
-                                            lineHeight: 1.2,
-                                            color: 'inherit',
-                                          }}
-                                        >
-                                          {option.title}
-                                        </Typography>
-                                      </ToggleButton>
-                                    </ToggleButtonGroup>
-                                  </Grid>
-                                ))}
+                              <Grid container spacing={2}>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Shipments / Month"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Partners (Customers + Vendors)"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="~ Av. Shipments duration (Days)"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Managed Vehicle (Owned + Leased)"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Enter number of Users"
+                                    variant="outlined"
+                                  />
+                                </Grid>
                               </Grid>
                             </CardContent>
                           </Card>
                         </Grid>
-                      ))}
+
+
+
+                        {/* Right Card */}
+                        <Grid size={{ xs: 12 }}>
+                          <Card sx={{ height: '100%' }} >
+                            <CardContent>
+                              <Typography variant="h4" mb={2}>
+                                Quotation details{' '}
+                              </Typography>
+                              <TableContainer component={Paper}>
+                                <Table
+                                  sx={{ minWidth: 650 }}
+                                  aria-label="simple table"
+                                >
+                                  <TableHead>
+                                    <TableRow>
+                                      <TableCell sx={{ fontWeight: "bold" }}>TMS services / scope</TableCell>
+                                      <TableCell align="right" sx={{ fontWeight: "bold" }}>Unit</TableCell>
+                                      <TableCell align="right" sx={{ fontWeight: "bold" }}>Qty.</TableCell>
+                                      <TableCell align="right" sx={{ fontWeight: "bold" }}>Frequency</TableCell>
+                                      <TableCell align="right" sx={{ fontWeight: "bold" }}>
+                                        Price Range
+                                      </TableCell>
+                                    </TableRow>
+                                  </TableHead>
+                                  <TableBody>
+                                    {rows.map((row) => (
+                                      <TableRow
+                                        key={row.name}
+                                        sx={{
+                                          '&:last-child td, &:last-child th': {
+                                            border: 0,
+                                          },
+                                        }}
+                                      >
+                                        <TableCell component="th" scope="row">
+                                          {row.name}
+                                        </TableCell>
+                                        <TableCell align="right">
+                                          {row.calories}
+                                        </TableCell>
+                                        <TableCell align="right">
+                                          {row.fat}
+                                        </TableCell>
+                                        <TableCell align="right">
+                                          {row.carbs}
+                                        </TableCell>
+                                        <TableCell align="right">
+                                          {row.protein}
+                                        </TableCell>
+                                      </TableRow>
+                                    ))}
+                                  </TableBody>
+                                </Table>
+                              </TableContainer>
+                            </CardContent>
+                          </Card>
+
+                        </Grid>
+
+                        <Grid size={{ xs: 12 }}>
+                          <Card sx={{ height: '100%' }}   >
+                            <CardContent>
+                              <Typography variant="h4" gutterBottom mb={2}>
+                                Contact Details
+                              </Typography>
+
+                              <Grid container spacing={2}>
+
+
+
+
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Company name"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <Autocomplete
+                                    freeSolo
+                                    id="free-solo-2-demo"
+                                    disableClearable
+                                    options={countries.map((country) => country)}
+                                    renderInput={(params) => (
+                                      <TextField
+                                        {...params}
+                                        label="Country"
+                                        slotProps={{
+                                          input: {
+                                            ...params.InputProps,
+                                            type: 'search',
+                                          },
+                                        }}
+                                      />
+                                    )}
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Phone number"
+                                    inputProps={{ maxLength: 15 }}
+                                    type="number"
+                                    inputMode="numeric"
+                                    InputProps={{
+                                      startAdornment: (
+                                        <InputAdornment position="start">
+                                          <TextField
+                                            select
+                                            variant="standard"
+                                            value={countryCode}
+                                            onChange={(e) =>
+                                              setCountryCode(e.target.value)
+                                            }
+                                            InputProps={{ disableUnderline: true }}
+                                            SelectProps={{
+                                              MenuProps: {
+                                                disableScrollLock: true,
+                                              },
+                                            }}
+                                            sx={{
+                                              '& .MuiSelect-select': {
+                                                paddingRight: '24px',
+                                              },
+                                              minWidth: 80,
+                                            }}
+                                          >
+                                            {countryCodes.map((option) => (
+                                              <MenuItem
+                                                key={option.value}
+                                                value={option.value}
+                                              >
+                                                {option.label}
+                                              </MenuItem>
+                                            ))}
+                                          </TextField>
+                                        </InputAdornment>
+                                      ),
+                                    }}
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Email"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+
+                              </Grid>
+                            </CardContent>
+                          </Card>
+                        </Grid>
+                      </Grid>
+
                     </Grid>
-                 
+                  </Grid>
+
+                </Card>
               </Grid>
-           
+         <Grid size={{ xs: 12 }}>
+  <Card sx={{ p: 2 }}>
+
+    <Box
+      display="flex"
+      alignItems="center"
+      gap={2}
+      border="1px solid"
+      borderRadius={1}
+   
+      borderColor="grey.300"
+    >
+      <Checkbox size="large" />
+
+      <Box>
+        <Typography variant="body2">I am not a robot</Typography>
+
+        <Box display="flex" gap={1}>
+          <Typography variant="caption" color="text.secondary">
+            reCAPTCHA
+          </Typography>
+          <Typography variant="caption" color="text.secondary">
+            Privacy
+          </Typography>
+          <Typography variant="caption" color="text.secondary">
+            -
+          </Typography>
+          <Typography variant="caption" color="text.secondary">
+            Terms
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
+
+    {/* Button aligned properly below */}
+    <Box  mt={2}>
+      <Button
+        variant="contained"
+        size="large"
+        startIcon={<DescriptionOutlinedIcon />}
+      >
+        Generate Quotation
+      </Button>
+    </Box>
+  </Card>
+</Grid>
+
+
+
+            </Grid>
           </Box>
         </Container>
       </Paper>
 
- <Paper elevation={0} square >
+
+      <Paper elevation={0} square >
         <Container maxWidth="lg" >
           <Grid container spacing={5} >
             {/* Left Column */}
