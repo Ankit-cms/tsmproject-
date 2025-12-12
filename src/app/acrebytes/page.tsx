@@ -47,6 +47,7 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined"; 
+import Heading from "../components/Heading";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -332,19 +333,7 @@ const AcreBytes = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={3}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}
-              >
-                Popular Properties <ArrowOutwardIcon fontSize="small" />
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Discover Projects, Customers are exploring right now.
-              </Typography>
+              <Heading primaryText='Popular Properties' secondaryText='Discover Projects, Customers are exploring right now.' primaryEndIcon={<ArrowOutwardIcon fontSize="small" />}/>
             </Box>
             <Grid container spacing={3} justifyContent="center">
               {properties.map((property) => (
@@ -407,17 +396,8 @@ const AcreBytes = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                Why Acrebytes?
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Because Customers deserve transparency, Agents deserve trust,
-                and Properties deserve visibility.
-              </Typography>
+              <Heading primaryText='Why Acrebytes?' secondaryText='Because Customers deserve transparency, Agents deserve trust,
+                and Properties deserve visibility.'/>
             </Box>
             <Grid container spacing={2} sx={{ mb: 4 }}>
               <Grid size={{ xs: 12, md: 6 }}>
@@ -509,16 +489,7 @@ const AcreBytes = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                Trusted by Customers & Consultants
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Creating clarity with every enquiry, every connection, every deal.
-              </Typography>
+              <Heading primaryText='Trusted by Customers & Consultants' secondaryText='Creating clarity with every enquiry, every connection, every deal.'/>
             </Box>
             <Grid container spacing={4}>
               {[
@@ -602,19 +573,7 @@ const AcreBytes = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}
-              >
-                Top Real Estate groups <ArrowOutwardIcon fontSize="small" />
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Partnering with leading builders to bring verified projects to you.
-              </Typography>
+              <Heading primaryText='Top Real Estate groups' secondaryText='Partnering with leading builders to bring verified projects to you.' primaryEndIcon={<ArrowOutwardIcon fontSize="small" />}/>
             </Box>
             <Grid
               container
@@ -731,19 +690,7 @@ const AcreBytes = () => {
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Box>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-              >
-                How it works
-              </Typography>
-              <Typography variant="h2" paragraph>
-                Enquire. Connect. Rate. Experience Better Real Estate.
-              </Typography>
-            </Box>
-
+            <Heading primaryText='How it works' secondaryText='Enquire. Connect. Rate. Experience Better Real Estate.'/>
             <Grid container spacing={2}>
               {steps?.map((data, index) => (
                 <Grid key={index} size={{ xs: 12, md: 6, lg: 3 }}>

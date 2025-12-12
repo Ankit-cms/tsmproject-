@@ -22,10 +22,10 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import {
     Dialog,
-    DialogTitle,
     DialogContent,
     DialogActions,
 } from "@mui/material";
+import Heading from './Heading';
 
 const ContactForm = () => {
 
@@ -77,17 +77,7 @@ const ContactForm = () => {
             <Container maxWidth="lg">
                 <Box sx={{ py: { xs: 4, md: 8 } }}>
                     <Box mb={4}>
-                        <Typography variant="h6"
-                            gutterBottom
-                            color="primary.dark"
-                            display="flex"
-                            alignItems="center"
-                            gap={1}>
-                            Contact us
-                        </Typography>
-                        <Typography variant="h2" paragraph >
-                            We&apos;d love to talk about how we can work together
-                        </Typography>
+                        <Heading primaryText='Contact us' secondaryText='We&apos;d love to talk about how we can work together'/>
                     </Box>
                     <Grid container spacing={4}>
                         <Grid size={{ xs: 12, md: 6 }}>

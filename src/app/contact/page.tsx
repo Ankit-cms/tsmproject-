@@ -3,11 +3,8 @@ import {
   Container,
   Typography,
   Paper,
-  Divider,
   CardMedia,
   Grid,
-  Breadcrumbs,
-  Link,
   Box,
 } from '@mui/material';
 import Header from '../components/Header';
@@ -36,7 +33,7 @@ const contact = () => {
               </Typography>
               <Typography variant="h2" paragraph sx={{fontSize: { xs: '1.5rem', md: '3rem' },
 }}>
-We’re here to connect, support, and help you move forward.                </Typography>
+We&apos;re here to connect, support, and help you move forward.                </Typography>
               
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>

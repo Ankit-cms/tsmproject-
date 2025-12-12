@@ -2,10 +2,7 @@
 import React from 'react';
 import {
   Box,
-  Breadcrumbs,
   Container,
-  Divider,
-  Link,
   Paper,
   Typography,
   Card,

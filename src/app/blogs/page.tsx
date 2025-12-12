@@ -7,10 +7,8 @@ import {
   CardContent,
   Paper,
   Chip,
-  Divider,
   CardMedia,
   Grid,
-  Breadcrumbs,
   Link,
   Button,
 } from '@mui/material';
@@ -18,6 +16,7 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Heading from '../components/Heading';
 const BlogDetail = () => {
 
   return (
@@ -117,20 +116,7 @@ const BlogDetail = () => {
       <Paper elevation={0} square >
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography
-                 variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}
-            >
-              Popular Posts
-            </Typography>
- <Typography variant="h2" mb={4}>
-               The essential reading list featuring our all-time favorite and trending topics.
-              </Typography>
-
+            <Heading primaryText='Popular Posts' secondaryText='The essential reading list featuring our all-time favorite and trending topics.'/>
             <Grid container spacing={4} >
               {/* <Grid size={{ xs: 12 }}></Grid> */}
               {[

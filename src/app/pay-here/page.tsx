@@ -2,18 +2,14 @@ import React from 'react';
 import Header from '../components/Header';
 import {
   Box,
-  Breadcrumbs,
   Button,
   Card,
   CardContent,
   CardMedia,
   Chip,
   Container,
-  Divider,
   Grid,
-  Link,
   Paper,
-  Stack,
   Table,
   TableBody,
   TableCell,
@@ -22,6 +18,7 @@ import {
 } from '@mui/material';
 import Footer from '../components/Footer';
 import { WhatsApp } from '@mui/icons-material';
+import Heading from '../components/Heading';
 
 interface RowData {
   step: string;
@@ -41,8 +38,8 @@ const PayHere = () => {
     createData(
       'Step 3',
       <>
-        Send payment screenshot / photo a &nbsp;
-        <Chip icon={<WhatsApp />} label="+91 9818106472" />
+        Send payment screenshot / photo to &nbsp;
+        <Chip size='small' icon={<WhatsApp />} label="+91 9818106472" />
       </>
     ),
   ];
@@ -52,24 +49,13 @@ const PayHere = () => {
       <Paper elevation={0} square >
           <Container maxWidth="lg">
             
-      <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}>
-              Pay us here
-            </Typography>
-            <Typography variant="h2" paragraph>
-              Complete your payment quickly and safely using the QR code or bank
-              transfer details below.
-            </Typography>
+      <Box sx={{ pt: { xs: 4, md: 8 }, pb: 2 }}>
+        <Heading primaryText='Pay us here' secondaryText='Complete your payment quickly and safely using the QR code or bank transfer details below.'/>
         </Box>
           </Container>
       </Paper>
 
-            <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
+        <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
           <Container maxWidth="lg">
             
       <Box sx={{ py: { xs: 4, md: 8 } }}>

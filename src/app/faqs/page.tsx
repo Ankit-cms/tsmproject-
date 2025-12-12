@@ -1,16 +1,11 @@
 'use client';
 import {
   Box,
-  Breadcrumbs,
   Container,
-  Divider,
-  Link,
   Paper,
   Typography,
   Grid,
   CardMedia,
-  Card,
-  CardContent,
 } from '@mui/material';
 
 import React from 'react';
@@ -145,10 +140,8 @@ const Faq = () => {
               Quick answers to common questions. Need more? Get in touch.
             </Typography>
           </Box>
-
-
-                                 </Grid>
-                                 <Grid size={{ xs: 12, md: 6 }} >
+       </Grid>
+              <Grid size={{ xs: 12, md: 6 }} >
                     
                       <CardMedia
                         component="img"

@@ -5,13 +5,9 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
-  Breadcrumbs,
   Button,
   CardMedia,
-  Chip,
   Container,
-  Divider,
-  Link,
   Paper,
   Stack,
   Typography,
@@ -21,7 +17,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
+import Heading from '../components/Heading';
 const jobCategories = [
   {
     category: 'Product',
@@ -99,18 +95,7 @@ const Career = () => {
         <Container maxWidth="lg">
 
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Typography variant="h6"
-              gutterBottom
-              color="primary.dark"
-              display="flex"
-              alignItems="center"
-              gap={1}
-              mb={1}>
-              Current openings
-            </Typography>
-            <Typography variant="h2" paragraph>
-             Explore roles where you can make an immediate impact.
-              </Typography>
+            <Heading primaryText='Current openings' secondaryText='Explore roles where you can make an immediate impact.'/>
             {jobCategories.map((section, index) => (
               <Box key={index} sx={{ mt: 2 }}>
                 {section.jobs.map((job) => (

@@ -3,17 +3,14 @@ import React, { useState } from 'react';
 import {
   Autocomplete,
   Box,
-  Breadcrumbs,
   Button,
   Card,
   CardContent,
   CardMedia,
   Checkbox,
   Container,
-  Divider,
   Grid,
   InputAdornment,
-  Link,
   MenuItem,
   Paper,
   Table,
@@ -65,6 +62,7 @@ import {
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import Heading from '../components/Heading';
 const Pricing = () => {
   const [selected, setSelected] = useState<string[]>([]);
   console.log('this is selected', selected);
@@ -218,21 +216,8 @@ const Pricing = () => {
       <Header />
       <Paper elevation={0} square  >
         <Container maxWidth="lg">
-          <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Box >
-              <Typography variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}>
-                Instalanes TMS - Pricing
-              </Typography>
-              <Typography variant="h2"  >
-
-                Tell us your operational scope and get the right TMS setup for your transport business.
-              </Typography>
-            </Box>
+          <Box sx={{ pt: { xs: 4, md: 8 },pb:2 } }>
+            <Heading primaryText='Instalanes TMS - Pricing' secondaryText='Tell us your operational scope and get the right TMS setup for your transport business.'/>
           </Box>
         </Container>
       </Paper>
@@ -240,20 +225,7 @@ const Pricing = () => {
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Box >
-              <Typography variant="h6"
-                gutterBottom
-                color="primary.dark"
-                display="flex"
-                alignItems="center"
-                gap={1}>
-                Configure your TMS Solution
-              </Typography>
-              <Typography variant="h2" mb={4}  >
-
-                Select modules you need and enter operational details to generate quotation for your transportation business.
-              </Typography>
-            </Box>
+            <Heading primaryText='Configure your TMS Solution' secondaryText='Select modules you need and enter operational details to generate quotation for your transportation business.'/>
             <Grid container spacing={2} >
 
               <Grid size={{ xs: 12 }} >

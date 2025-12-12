@@ -2,15 +2,12 @@
 import React from 'react';
 import {
   Box,
-  Breadcrumbs,
   Button,
   Card,
   CardContent,
   CardMedia,
   Container,
-  Divider,
   Grid,
-  Link,
   Paper,
   Typography,
 } from '@mui/material';
@@ -30,6 +27,7 @@ import {
   Smartphone,
 } from '@mui/icons-material';
 import Footer from '../components/Footer';
+import Heading from '../components/Heading';
 const AboutUs = () => {
   const features = [
     {
@@ -170,24 +168,8 @@ We build SaaS that delivers visibility, collaboration,
 
             <Grid container spacing={4} my={3} justifyContent="center" alignItems="center" >
               <Grid size={{ xs: 12, md: 6 }}>
-                <Typography
-                  variant="h6"
-                  gutterBottom
-                  color="primary.dark"
-                  display="flex"
-                  alignItems="center"
-                  gap={1}
-                >
-                  About us
-                </Typography>
-                <Typography variant="h1" paragraph>
-                  We are team of problem solvers who love technology{' '}
-                </Typography>
+                <Heading primaryText='About us' secondaryText='We are team of problem solvers who love technology '/>
               </Grid>
-
-
-
-
               <Grid size={{ xs: 12, md: 6 }}>
                 <CardMedia
                   component="img"
@@ -321,17 +303,7 @@ We build SaaS that delivers visibility, collaboration,
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Typography
-                variant="h6"
-                gutterBottom
-                color="primary.dark"
-                
-              >
-                Our Values
-              </Typography>
-              <Typography variant="h2" paragraph>
-                At the core of Gravity44{' '}
-              </Typography>
+              <Heading primaryText='Our Values' secondaryText='At the core of Gravity44 '/>
             </Box>
 
             <Grid container spacing={3}>
