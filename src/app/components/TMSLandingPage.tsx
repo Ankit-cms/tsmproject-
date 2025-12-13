@@ -713,7 +713,7 @@ const TMSLandingPage = () => {
                   icon: PlaylistAddCheckOutlinedIcon,
                 },
                 {
-                  title: "API-Enabled",
+                  title: "API enabled",
                   icon: HubOutlinedIcon,
                 },
               ].map((data, index) => (
@@ -751,7 +751,7 @@ const TMSLandingPage = () => {
                   <Alert
                     icon={<data.icon />}
                     severity="info"
-                    sx={{ textAlign: "center" }}>
+                    sx={{md:{textAlign:"center"}, textAlign: "left" }}>
                     {data.title}
                   </Alert>
                 </Grid>
@@ -1076,7 +1076,7 @@ Ready to transform your logistics ?
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Heading primaryText='Contact us' secondaryText='We&apos;d love to talk about how we can work together'/>
            
-            <Grid container spacing={4}>
+            <Grid container spacing={4} pt={4}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography
                   variant="h4"

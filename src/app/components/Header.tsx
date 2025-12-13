@@ -229,7 +229,7 @@ const Header = () => {
               }}
             >
               <CallIcon fontSize="small" />
-              Contact Us
+              Contact us
             </Button> */}
           </Box>
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', gap: { xs: 1, md: 2 } }}>

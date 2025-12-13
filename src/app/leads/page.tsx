@@ -667,14 +667,14 @@ const Leads = () => {
       </Paper>
       <Paper elevation={0} square >
         <Container maxWidth="lg" >
-          <Grid container spacing={5} >
+          <Grid container spacing={{md:5,xs:0}} pt={2} >
             {/* Left Column */}
             <Grid size={{ xs: 12, md: 5 }}>
               <CardMedia
                 component="img"
                 image="/img/client/partner-header.webp"
                 alt="Become a Partner"
-                sx={{ height: "100%", mx:0 }}
+                sx={{ height: "100%"}}
               />
             </Grid>
             <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>

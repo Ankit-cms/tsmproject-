@@ -93,7 +93,7 @@ const Terms = () => {
       <Header />
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }}>
         <Container maxWidth="lg">
-          <Box sx={{ pt: { xs: 4, md: 8 }, pb: 2 } }>
+          <Box sx={{ pt: { xs: 4, md: 8 }, pb: 4 } }>
             <Box mb={4}>
               <Heading primaryText='Terms of Service' secondaryText='Please read these Terms of Service carefully before using our website and services.'/>
             </Box>
@@ -105,9 +105,9 @@ const Terms = () => {
         <Container maxWidth="lg">
           
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-             <Card elevation={6} variant="elevation" sx={{ borderRadius: 2, p: {xs:1,md:2} ,}}>
+             <Card elevation={6} variant='outlined' sx={{ borderRadius: 2, p: {xs:1,md:2} ,}}>
         <CardContent  >
-            <Box display="flex" flexDirection="column" gap={2} >
+            <Box display="flex" flexDirection="column" gap={1} >
               {terms.map((term) => (
                 <Box key={term.id}>
                   <Typography variant="h6" gutterBottom>

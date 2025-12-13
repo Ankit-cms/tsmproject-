@@ -7,6 +7,7 @@ import {
   Checkbox,
   Chip,
   Container,
+  Divider,
   Fab,
   Grid,
   List,
@@ -22,7 +23,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LaptopIcon from '@mui/icons-material/Laptop';
-import { WhatsApp } from '@mui/icons-material';
+import { TouchAppOutlined, WhatsApp } from '@mui/icons-material';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 import DoneIcon from '@mui/icons-material/Done'; 
 import Heading from '../components/Heading';
@@ -127,7 +128,7 @@ const Partners = () => {
                       height={200}
                     />
                     <CardContent>
-                      <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
+                      <Box display={"flex"} justifyContent={"space-between"} mb={2} alignItems={"center"}>
                         <Typography variant="h4">{item.title}</Typography>
                         {/* <Typography variant="subtitle1" gutterBottom>
                           {item.subtitle}
@@ -135,11 +136,10 @@ const Partners = () => {
                         <Chip
                                               label={item.subtitle}
                                               variant="outlined" 
-                                              sx={{ mt: 1, mb: 1 }}
                            />
                       </Box>
-                     
-                      <Box mt={2}>
+                     <Divider/>
+                      <Box mt={1}>
                         <Typography variant="h6" sx={{fontWeight: 'bold'}}>
                           Key activities
                         </Typography>
@@ -212,16 +212,17 @@ const Partners = () => {
       <Paper elevation={0} square>
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
-            <Card >
+            <Card variant='outlined' 
+ >
               <CardContent>
                 <Box mb={4}>
                   <Heading primaryText='Lead submission form' secondaryText='Share qualified prospect details to initiate evaluation and
                     registration.'/> 
                 </Box>
-          <Card variant='elevation'  elevation={2} >
+          <Card  variant='outlined' >
                   <Grid container spacing={3} >
                   <Grid size={{ xs: 12, md: 6 }}>
-                    <Card sx={{ height: '100%' }} >
+                    <Card sx={{ height: '100%' }}  >
                       <CardContent sx={{ p: 3 }}>
                         <Typography
                           variant="h6"
@@ -297,6 +298,7 @@ const Partners = () => {
                     </Card>
                   </Grid>
                 </Grid>
+                <Divider/>
                 <Typography variant="body2" m={2}>
                   <Checkbox {...label} defaultChecked />
                   By submitting this lead, you confirm that the information
@@ -305,7 +307,7 @@ const Partners = () => {
                   submitted leads before approval.
                 </Typography>
                 <Grid size={{ xs: 12 }}  m={2} display="flex" justifyContent="flex-end">
-                  <Button variant="contained"  size="large" >
+                  <Button variant="contained"  size="large" startIcon={<TouchAppOutlined/>} >
                     Submit
                   </Button>
                 </Grid>
@@ -320,7 +322,7 @@ const Partners = () => {
         <Container maxWidth="lg">
           <Box sx={{ py: { xs: 4, md: 8 } }}>
             <Box mb={4}>
-              <Heading primaryText='Why Partner with Us?' secondaryText='At Instalanes, we believe in the power of collaboration to drive
+              <Heading primaryText='Why Partner with us?' secondaryText='At Instalanes, we believe in the power of collaboration to drive
                 mutual success. We are always looking to build strong,
                 meaningful partnerships that benefit our customers and enhance
                 our service offerings.'/>
@@ -373,7 +375,7 @@ const Partners = () => {
             <Grid container spacing={3} alignItems="center">
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography variant="h3" gutterBottom>
-                  Who We Partner With
+                  Who we Partner with
                 </Typography>
                 <Typography variant="h6" paragraph>
                   We are looking to partner with organizations that share our
@@ -409,35 +411,35 @@ const Partners = () => {
     },
   }}>
         <Container maxWidth="lg" >
-          <Grid container spacing={5} >
+          <Grid container spacing={{md:5,xs:0}} >
             {/* Left Column */}
-            <Grid size={{ xs: 12, md: 5 }}>
+            <Grid size={{ xs: 12, md: 5 }} mt={{xs:2}}>
               <CardMedia
                 component="img"
                 image="/img/client/partner-header.webp"
                 alt="Become a Partner"
-                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+                sx={{ height: "100%", }}
               />
             </Grid>
             <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>
               <Typography variant="h3" gutterBottom>
-               How to Become a Partner
+               How to become a Partner
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
                 Becoming a partner with Instalanes is straightforward. If you are interested in discussing a partnership, please fill out the contact form below, and our team will get back to you promptly.
               </Typography>
               <Box
                 display={"flex"}
-                gap={1}
-                mt={2}
+                gap={2}
+                mt={4}
                 alignItems={"center"}>
                    <Button variant="contained" startIcon={<LaptopIcon />}>
                 Get Demo
               </Button>
                <Button
-                variant="contained"
+                variant="outlined"
                 startIcon={<WhatsApp />}
-                sx={{ ml: 3 }}
+              
               >
                 Contact
               </Button>

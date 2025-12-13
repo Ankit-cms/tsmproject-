@@ -192,9 +192,9 @@ We build SaaS that delivers visibility, collaboration,
 
                 >
                   <CardContent sx={{ p: 3 }}>
-                    <Box display={"flex"} alignItems="start" gap={1}>
+                    <Box display={"flex"} alignItems="center" gap={1}>
                       <FlagOutlinedIcon />
-                      <Typography variant="h5" fontWeight="bold" component="h3" gutterBottom>
+                      <Typography variant="h5" fontWeight="bold" component="h3" >
                         Purpose 
                       </Typography>
                     </Box>
@@ -244,10 +244,10 @@ We build SaaS that delivers visibility, collaboration,
               <Grid size={{ xs: 12, md: 6 }}>
                 <Card sx={{ mb: 2, bgcolor: "common.whiteSmoke",height: "100%" }} variant='elevation' elevation={8}>
                   <CardContent sx={{ p: 3 }}>
-                    <Box display={"flex"} alignItems="start" gap={1}>
+                    <Box display={"flex"} alignItems="center" gap={1}>
                       <RadarOutlinedIcon />
 
-                      <Typography variant="h5" component="h3" fontWeight="bold" gutterBottom>
+                      <Typography variant="h5" component="h3" fontWeight="bold">
                        Mission
                       </Typography>
                     </Box>

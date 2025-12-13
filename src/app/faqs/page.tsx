@@ -137,7 +137,7 @@ const Faq = () => {
               Frequently asked questions{' '}
             </Typography>
             <Typography variant="h1" paragraph>
-              Quick answers to common questions. Need more? Get in touch.
+              Quick answers to common questions.
             </Typography>
           </Box>
        </Grid>
@@ -163,6 +163,9 @@ const Faq = () => {
         <Container maxWidth="lg">
          
           <Box sx={{ py: { xs: 4, md: 8 } }}>
+            <Typography variant="h2" gutterBottom mb={4} >
+Need help ?
+Find answers to the most common questions here.            </Typography>
             <Box >
 
               {faqs.map((faq, index) => (
