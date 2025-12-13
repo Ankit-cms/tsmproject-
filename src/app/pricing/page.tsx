@@ -216,17 +216,27 @@ const Pricing = () => {
       <Header />
       <Paper elevation={0} square  >
         <Container maxWidth="lg">
-          <Box sx={{ pt: { xs: 4, md: 8 },pb:2 } }>
-            <Heading primaryText='Instalanes TMS - Pricing' secondaryText='Tell us your operational scope and get the right TMS setup for your transport business.'/>
+          <Box sx={{ pt: { xs: 4, md: 8 },pb:4 } }>
+            <Typography variant="h6" color="primary.dark" gutterBottom >
+                                            Transport management software for
+                                        </Typography>
+                                        <Typography
+                                            variant="h1"
+                                            component="h1"
+                                            gutterBottom
+                                            sx={{mt: {md: 2}}}>
+                                           Tell us your operational scope and get the right TMS setup for your transport business.
+                                        </Typography>
+            {/* <Heading primaryText='Instalanes TMS - Pricing' secondaryText='Tell us your operational scope and get the right TMS setup for your transport business.'/> */}
           </Box>
         </Container>
       </Paper>
 
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
         <Container maxWidth="lg">
-          <Box sx={{ py: { xs: 4, md: 8 } }}>
+          <Box sx={{ pt: { xs: 4, md: 8 },}}>
             <Heading primaryText='Configure your TMS Solution' secondaryText='Select modules you need and enter operational details to generate quotation for your transportation business.'/>
-            <Grid container spacing={2} >
+            <Grid container spacing={2} mt={6} >
 
               <Grid size={{ xs: 12 }} >
 
@@ -269,52 +279,52 @@ const Pricing = () => {
                                   sx={{ flexGrow: 1, display: 'flex' }}
                                 >
                                   <ToggleButton
-                                    value={option.title}
-                                    sx={{
-                                      width: '100%',
-                                      height: '100%',
-                                      display: 'flex',
-                                      flexDirection: 'row',
-                                      justifyContent: 'flex-start',
-                                      alignItems: 'center',
-                                      textTransform: 'none',
-                                      borderRadius: 1,
-                                      boxShadow: 1,
-                                      border: '1px solid',
-                                      gap: 1,
-                                      borderColor: (theme) =>
-                                        selected.includes(option.title)
-                                          ? theme.palette.primary.main
-                                          : theme.palette.grey[300],
-                                      transition: 'all 0.2s ease',
-                                      color: (theme) =>
-                                        selected.includes(option.title)
-                                          ? theme.palette.primary.main
-                                          : theme.palette.text.primary,
-                                      backgroundColor: (theme) =>
-                                        selected.includes(option.title)
-                                          ? theme.palette.primary.light + '20'
-                                          : theme.palette.background.paper,
-                                      '&:hover': {
-                                        boxShadow: 2,
-                                        backgroundColor: (theme) =>
-                                          selected.includes(option.title)
-                                            ? theme.palette.primary.light +
-                                            '40'
-                                            : theme.palette.grey[100],
-                                      },
-                                      '&.Mui-selected': {
-                                        backgroundColor: (theme) =>
-                                          theme.palette.primary.main,
-                                        color: (theme) =>
-                                          theme.palette.primary.contrastText,
-                                        '&:hover': {
-                                          backgroundColor: (theme) =>
-                                            theme.palette.primary.dark,
-                                        },
-                                      },
-                                    }}
-                                  >
+  value={option.title}
+  sx={{
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    gap: 1,
+    textTransform: 'none',
+    borderRadius: 1,
+    boxShadow: 1,
+    border: '1px solid',
+    transition: 'all 0.2s ease',
+
+    borderColor: (theme) =>
+      selected.includes(option.title)
+        ? theme.palette.primary.main
+        : theme.palette.grey[300],
+
+    color: (theme) =>
+      selected.includes(option.title)
+        ? theme.palette.primary.contrastText
+        : theme.palette.text.primary,
+
+    backgroundColor: (theme) =>
+      selected.includes(option.title)
+        ? theme.palette.primary.main
+        : theme.palette.background.paper,
+
+    '&:hover': {
+      backgroundColor: (theme) => theme.palette.primary.main,
+      color: (theme) => theme.palette.primary.contrastText,
+      boxShadow: 2,
+    },
+
+    '&.Mui-selected': {
+      backgroundColor: (theme) => theme.palette.primary.main,
+      color: (theme) => theme.palette.primary.contrastText,
+    },
+
+    '&.Mui-selected:hover': {
+      backgroundColor: (theme) => theme.palette.primary.main,
+    },
+  }}
+>
+
                                     <Box
                                       sx={{
                                         height: 45,
@@ -332,7 +342,7 @@ const Pricing = () => {
 
                                     <Typography
                                       variant="body2"
-                                      textAlign="center"
+                                      textAlign="left"
                                       sx={{
                                         lineHeight: 1.2,
                                         color: 'inherit',
@@ -457,7 +467,7 @@ const Pricing = () => {
 
                                     <Typography
                                       variant="body2"
-                                      textAlign="center"
+                                      textAlign="left"
                                       sx={{
                                         lineHeight: 1.2,
                                         color: 'inherit',
@@ -486,60 +496,8 @@ const Pricing = () => {
                     <Grid size={12} sx={{ display: 'flex' }}>
 
                       <Grid container spacing={2} mt={4} >
-                        {/* Left Card */}
                         <Grid size={{ xs: 12 }}>
-                          <Card sx={{ height: '100%', }}   >
-                            <CardContent >
-                              <Typography variant="h4" mb={2}>
-                                Enter Operations details
-                              </Typography>
-
-                              <Grid container spacing={2}>
-                                <Grid size={{ xs: 12, md: 6 }}>
-                                  <TextField
-                                    fullWidth
-                                    label="Shipments / Month"
-                                    variant="outlined"
-                                  />
-                                </Grid>
-                                <Grid size={{ xs: 12, md: 6 }}>
-                                  <TextField
-                                    fullWidth
-                                    label="Partners (Customers + Vendors)"
-                                    variant="outlined"
-                                  />
-                                </Grid>
-                                <Grid size={{ xs: 12, md: 6 }}>
-                                  <TextField
-                                    fullWidth
-                                    label="~ Av. Shipments duration (Days)"
-                                    variant="outlined"
-                                  />
-                                </Grid>
-                                <Grid size={{ xs: 12, md: 6 }}>
-                                  <TextField
-                                    fullWidth
-                                    label="Managed Vehicle (Owned + Leased)"
-                                    variant="outlined"
-                                  />
-                                </Grid>
-                                <Grid size={{ xs: 12, md: 6 }}>
-                                  <TextField
-                                    fullWidth
-                                    label="Enter number of Users"
-                                    variant="outlined"
-                                  />
-                                </Grid>
-                              </Grid>
-                            </CardContent>
-                          </Card>
-                        </Grid>
-
-
-
-                        {/* Right Card */}
-                        <Grid size={{ xs: 12 }}>
-                          <Card sx={{ height: '100%' }} >
+                          <Card sx={{ height: '100%' }} variant='outlined'  >
                             <CardContent>
                               <Typography variant="h4" mb={2}>
                                 Quotation details{' '}
@@ -594,8 +552,72 @@ const Pricing = () => {
                           </Card>
 
                         </Grid>
+ <Grid size={{ xs: 12 }}>
+                          <Card sx={{ height: '100%', }} variant='outlined'   >
+                            <CardContent >
+                              <Typography variant="h4" mb={2}>
+                                Enter Operations details
+                              </Typography>
 
-                        <Grid size={{ xs: 12 }}>
+                              <Grid container spacing={2}>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Shipments / Month"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Partners (Customers + Vendors)"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="~ Av. Shipments duration (Days)"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Managed Vehicle (Owned + Leased)"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Enter number of Users"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                              </Grid>
+                            </CardContent>
+                          </Card>
+                        </Grid>
+ <Grid size={{ xs: 12 }}>
+                          <Card sx={{ height: '100%', }} variant='outlined'   >
+                            <CardContent >
+                              <Typography variant="h4" mb={2}>
+Tentative Price range                              </Typography>
+
+                              <Grid container spacing={2}>
+                                <Grid size={{ xs: 12, md:12}}>
+                                  <Typography variant="h2" >₹50 Cr <Typography component="span" variant='h6'>(Min)</Typography> - ₹80 Cr <Typography component="span" variant='h6'>(Max)</Typography></Typography>
+                                  <Typography variant="h6" >/Month</Typography>
+                                 
+                                </Grid>
+                               
+                                
+                              </Grid>
+                            </CardContent>
+                          </Card>
+                        </Grid>
+                        {/* <Grid size={{ xs: 12 }}>
                           <Card sx={{ height: '100%' }}   >
                             <CardContent>
                               <Typography variant="h4" gutterBottom mb={2}>
@@ -689,7 +711,7 @@ const Pricing = () => {
                               </Grid>
                             </CardContent>
                           </Card>
-                        </Grid>
+                        </Grid> */}
                       </Grid>
 
                     </Grid>
@@ -697,10 +719,102 @@ const Pricing = () => {
 
                 </Card>
               </Grid>
-         <Grid size={{ xs: 12 }}>
-  <Card sx={{ p: 2 }}>
+         <Grid size={{ xs: 12 }} mb={4}>
+           <Grid size={{ xs: 12 }}>
+                          <Card sx={{ height: '100%' }} variant='elevation'  >
+                            <CardContent>
+                              <Typography variant="h4" gutterBottom mb={2}>
+                                Contact details
+                              </Typography>
 
-    <Box
+                              <Grid container spacing={2}>
+
+
+
+
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Company name"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <Autocomplete
+                                    freeSolo
+                                    id="free-solo-2-demo"
+                                    disableClearable
+                                    options={countries.map((country) => country)}
+                                    renderInput={(params) => (
+                                      <TextField
+                                        {...params}
+                                        label="Country"
+                                        slotProps={{
+                                          input: {
+                                            ...params.InputProps,
+                                            type: 'search',
+                                          },
+                                        }}
+                                      />
+                                    )}
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Phone number"
+                                    inputProps={{ maxLength: 15 }}
+                                    type="number"
+                                    inputMode="numeric"
+                                    InputProps={{
+                                      startAdornment: (
+                                        <InputAdornment position="start">
+                                          <TextField
+                                            select
+                                            variant="standard"
+                                            value={countryCode}
+                                            onChange={(e) =>
+                                              setCountryCode(e.target.value)
+                                            }
+                                            InputProps={{ disableUnderline: true }}
+                                            SelectProps={{
+                                              MenuProps: {
+                                                disableScrollLock: true,
+                                              },
+                                            }}
+                                            sx={{
+                                              '& .MuiSelect-select': {
+                                                paddingRight: '24px',
+                                              },
+                                              minWidth: 80,
+                                            }}
+                                          >
+                                            {countryCodes.map((option) => (
+                                              <MenuItem
+                                                key={option.value}
+                                                value={option.value}
+                                              >
+                                                {option.label}
+                                              </MenuItem>
+                                            ))}
+                                          </TextField>
+                                        </InputAdornment>
+                                      ),
+                                    }}
+                                  />
+                                </Grid>
+                                <Grid size={{ xs: 12, md: 6 }}>
+                                  <TextField
+                                    fullWidth
+                                    label="Email"
+                                    variant="outlined"
+                                  />
+                                </Grid>
+
+                              </Grid>
+                            <Grid container spacing={2} mt={2}  >
+                        <Grid size={{ xs: 12,md:6 }}  >
+                     <Box
       display="flex"
       alignItems="center"
       gap={2}
@@ -730,9 +844,12 @@ const Pricing = () => {
         </Box>
       </Box>
     </Box>
+      </Grid>
+
+  <Grid size={{ xs: 12,md:6 }}  >
 
     {/* Button aligned properly below */}
-    <Box  mt={2}>
+    <Box  mt={2} textAlign={"right"}>
       <Button
         variant="contained"
         size="large"
@@ -741,11 +858,18 @@ const Pricing = () => {
         Generate Quotation
       </Button>
     </Box>
-  </Card>
+</Grid>
+</Grid>
+                            </CardContent>
+                          </Card>
+                        </Grid>
+  
+     
 </Grid>
 
 
 
+ 
             </Grid>
           </Box>
         </Container>
@@ -754,14 +878,14 @@ const Pricing = () => {
 
       <Paper elevation={0} square >
         <Container maxWidth="lg" >
-          <Grid container spacing={5} >
+          <Grid container spacing={{md:5,xs:0}} pt={2} >
             {/* Left Column */}
             <Grid size={{ xs: 12, md: 5 }}>
               <CardMedia
                 component="img"
                 image="/img/client/partner-header.webp"
                 alt="Become a Partner"
-                sx={{ height: "100%", mx: { xs: 2, md: 0 } }}
+                sx={{ height: "100%",  }}
               />
             </Grid>
             <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>

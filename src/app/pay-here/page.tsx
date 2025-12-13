@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Header from '../components/Header';
 import {
@@ -9,6 +10,7 @@ import {
   Chip,
   Container,
   Grid,
+  Link,
   Paper,
   Table,
   TableBody,
@@ -49,7 +51,7 @@ const PayHere = () => {
       <Paper elevation={0} square >
           <Container maxWidth="lg">
             
-      <Box sx={{ pt: { xs: 4, md: 8 }, pb: 2 }}>
+      <Box sx={{ pt: { xs: 4, md: 8 }, pb: 4 }}>
         <Heading primaryText='Pay us here' secondaryText='Complete your payment quickly and safely using the QR code or bank transfer details below.'/>
         </Box>
           </Container>
@@ -61,168 +63,7 @@ const PayHere = () => {
       <Box sx={{ py: { xs: 4, md: 8 } }}>
            
             <Grid container spacing={2}>
-              <Grid size={{ xs: 12, md: 6 }} p={0}>
-               <Card sx={{ height: "100%" }}>
-  <CardContent>
-    <Typography variant="h4" component="h2" gutterBottom >
-      Company Info
-    </Typography>
-
-    <Table  sx={{
-        "& .MuiTableCell-root": {
-          borderBottom: "none",     
-          paddingY: 1,     
-          paddingX: 1, 
-        },
-      }}>
-      <TableBody>
-        <TableRow>
-          <TableCell sx={{ fontWeight: "bold", width: "35%" }}>
-            Company name
-          </TableCell>
-          <TableCell>
-            GRAVITY44 PLATFORM SOLUTIONS PRIVATE LIMITED
-          </TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{ fontWeight: "bold" }}>CIN</TableCell>
-          <TableCell >
-            U72900DL2022PTC408726
-          </TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{fontWeight: "bold"}}>GST</TableCell>
-          <TableCell >
-            07AAKCG2159B1ZU
-          </TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{fontWeight: "bold" }}>
-            Address line 1
-          </TableCell>
-          <TableCell >
-            101, Pratap Nagar
-          </TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{ fontWeight: "bold" }}>
-            Address line 2
-          </TableCell>
-          <TableCell >
-            Mayur Vihar Phase-1, East Delhi
-          </TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{fontWeight: "bold"}}>City</TableCell>
-          <TableCell >New Delhi</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{ fontWeight: "bold" }}>State</TableCell>
-          <TableCell >New Delhi</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{ fontWeight: "bold" }}>Country</TableCell>
-          <TableCell >India</TableCell>
-        </TableRow>
-
-        <TableRow>
-          <TableCell sx={{ fontWeight: "bold" }}>Pin code</TableCell>
-          <TableCell >110091</TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  </CardContent>
-</Card>
-
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }} p={0}>
-  <Card sx={{ height: "100%" }}>
-    <CardContent>
-      <Typography variant="h4" component="h2" gutterBottom>
-        Bank Details
-      </Typography>
-
-      <Table
-        sx={{
-          "& .MuiTableCell-root": {
-            borderBottom: "none",   
-            paddingY: 1,  
-            paddingX: 1, 
-          },
-        }}
-      >
-        <TableBody>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold", width: "35%" }}>
-              Bank name
-            </TableCell>
-            <TableCell>HDFC BANK LTD</TableCell>
-          </TableRow>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold" }}>
-              Account holder
-            </TableCell>
-            <TableCell>
-              GRAVITY44 PLATFORM SOLUTIONS PVT LTD
-            </TableCell>
-          </TableRow>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold" }}>
-              Account number
-            </TableCell>
-            <TableCell>50200076533061</TableCell>
-          </TableRow>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold" }}>
-              Branch code
-            </TableCell>
-            <TableCell>HDFC0009629</TableCell>
-          </TableRow>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold" }}>
-              City
-            </TableCell>
-            <TableCell>Noida</TableCell>
-          </TableRow>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold" }}>
-              State
-            </TableCell>
-            <TableCell>Uttar Pradesh</TableCell>
-          </TableRow>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold" }}>
-              Country
-            </TableCell>
-            <TableCell>India</TableCell>
-          </TableRow>
-
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold" }}>
-              Pin code
-            </TableCell>
-            <TableCell>201306</TableCell>
-          </TableRow>
-
-        </TableBody>
-      </Table>
-    </CardContent>
-  </Card>
-</Grid>
+       
 
 
     
@@ -231,17 +72,13 @@ const PayHere = () => {
               <Grid size={{ xs: 12, md: 6 }} spacing={3}>
                 <Card sx={{ height: '100%' }} variant='elevation'>
                   <CardContent>
-                    <Typography variant="h6"
-                  gutterBottom
-                  color="primary.dark"
-                  display="flex"
-                  alignItems="center"
-                  gap={1}>
-                      QR Code
-                    </Typography>
-                    <Typography variant="h4" paragraph>
-                      Scan and pay by any UPI app
-                    </Typography>
+                   <Box p={2} textAlign="center">
+            <Typography variant="subtitle1">Make payment to</Typography>
+            <Typography variant="h4">Acrebytes</Typography>
+            <Typography variant="caption">
+              by Gravity44 Platform Solution Private Limited
+            </Typography>
+          </Box>
                  
                     <Card sx={{ width: 'fit-content', mx: 'auto' }} >
                       <CardContent>
@@ -253,15 +90,52 @@ const PayHere = () => {
                             sx={{
                               width: { xs: '150px', md: '200px' },
                               height: 'auto',
-                              my: 2,
+                              mb: 2,
                             }}
                           />
                         </Box>
                       </CardContent>
                     </Card>
-
+<Grid container spacing={2}>
+    <Grid  size={{xs:12, md:4}}>
+      <Card variant="outlined" sx={{ p: 2, height: '100%' }}>
+        <Typography variant="subtitle1"><strong>Scan</strong></Typography>
+        <Typography variant="body2">
+          Scan QR code, enter amount, and complete payment
+        </Typography>
+      </Card>
+    </Grid>
+    
+    <Grid  size={{xs:12, md:4}}>
+      <Card variant="outlined" sx={{ p: 2, height: '100%' }}>
+        <Typography variant="subtitle1"><strong>Pay</strong></Typography>
+       
+        <Typography variant="body2">
+          Take screenshot / photo of successful payment confirmation
+        </Typography>
+      </Card>
+    </Grid>
+    
+    <Grid  size={{xs:12, md:4}}>
+      <Card variant="outlined" sx={{ p: 2, height: '100%' }}>
+        <Typography variant="subtitle1"><strong>Send</strong></Typography>
+       
+        <Typography variant="body2">
+          Send screenshot / photo to{" "}
+          <Chip  size='small' icon={<WhatsApp />}
+            onClick={() => {
+              window.open("http://wa.me/+916303842726", "_blank");
+            }}
+            sx={{ cursor: 'pointer' }}
+          label="+916303842726"
+          />
+          {" "}for verification
+        </Typography>
+      </Card>
+    </Grid>
+  </Grid>
                    
-                    <Table aria-label="simple table" size='small' sx={{ "& .MuiTableCell-root": {
+                    {/* <Table aria-label="simple table" size='small' sx={{ "& .MuiTableCell-root": {
             borderBottom: "none",  
             paddingY: 1,          
             paddingX: 1,            
@@ -286,25 +160,20 @@ const PayHere = () => {
                           </TableRow>
                         ))}
                       </TableBody>
-                    </Table>
+                    </Table> */}
                   </CardContent>
                 </Card>
               </Grid>
               <Grid size={{ xs: 12, md: 6 }} spacing={3}>
                 <Card sx={{ height: '100%' }} variant='elevation' >
                   <CardContent>
-                    <Typography variant="h6"
-                  gutterBottom
-                  color="primary.dark"
-                  display="flex"
-                  alignItems="center"
-                  gap={1}>
-                      QR Code
-                    </Typography>
-                    <Typography variant="h4" paragraph>
-                      Scan and pay by any UPI app
-                    </Typography>
-                 
+                     <Box p={2} textAlign="center">
+            <Typography variant="subtitle1">Make payment to</Typography>
+            <Typography variant="h4">Acrebytes</Typography>
+            <Typography variant="caption">
+              by Gravity44 Platform Solution Private Limited
+            </Typography>
+          </Box>
                     <Card sx={{ width: 'fit-content', mx: 'auto' }}>
                       <CardContent>
                         <Box display="flex" justifyContent="center">
@@ -315,15 +184,52 @@ const PayHere = () => {
                             sx={{
                               width: { xs: '150px', md: '200px' },
                               height: 'auto',
-                              my: 2,
+                              mb: 2,
                             }}
                           />
                         </Box>
                       </CardContent>
                     </Card>
-
+ <Grid container spacing={2}>
+    <Grid  size={{xs:12, md:4}}>
+      <Card variant="outlined" sx={{ p: 2, height: '100%' }}>
+        <Typography variant="subtitle1"><strong>Scan</strong></Typography>
+        <Typography variant="body2">
+          Scan QR code, enter amount, and complete payment
+        </Typography>
+      </Card>
+    </Grid>
+    
+    <Grid  size={{xs:12, md:4}}>
+      <Card variant="outlined" sx={{ p: 2, height: '100%' }}>
+        <Typography variant="subtitle1"><strong>Pay</strong></Typography>
+       
+        <Typography variant="body2">
+          Take screenshot / photo of successful payment confirmation
+        </Typography>
+      </Card>
+    </Grid>
+    
+    <Grid  size={{xs:12, md:4}}>
+      <Card variant="outlined" sx={{ p: 2, height: '100%' }}>
+        <Typography variant="subtitle1"><strong>Send</strong></Typography>
+       
+        <Typography variant="body2">
+          Send screenshot / photo to{" "}
+          <Chip  size='small' icon={<WhatsApp />}
+            onClick={() => {
+              window.open("http://wa.me/+916303842726", "_blank");
+            }}
+            sx={{ cursor: 'pointer' }}
+          label="+916303842726"
+          />
+          {" "}for verification
+        </Typography>
+      </Card>
+    </Grid>
+  </Grid>
                    
-                    <Table aria-label="simple table" size='small' sx={{ "& .MuiTableCell-root": {
+                    {/* <Table aria-label="simple table" size='small' sx={{ "& .MuiTableCell-root": {
             borderBottom: "none",
             paddingY: 1,   
             paddingX: 1,     
@@ -348,10 +254,172 @@ const PayHere = () => {
                           </TableRow>
                         ))}
                       </TableBody>
-                    </Table>
+                    </Table> */}
                   </CardContent>
                 </Card>
               </Grid>
+                     <Grid size={{ xs: 12, md: 6 }} p={0}>
+               <Card sx={{ height: "100%" }}>
+  <CardContent>
+    <Typography variant="h4" component="h2" gutterBottom >
+      Company Info
+    </Typography>
+
+    <Table  sx={{
+        "& .MuiTableCell-root": {
+          borderBottom: "1px solid divider",     
+          paddingY: 1,     
+          paddingX: 1, 
+        },
+      }}>
+      <TableBody>
+        <TableRow>
+          <TableCell sx={{  width: "35%" ,color:"text.secondary"}} >
+            Company name
+          </TableCell>
+          <TableCell color="text.primary">
+            GRAVITY44 PLATFORM SOLUTIONS PRIVATE LIMITED
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}} >CIN</TableCell>
+          <TableCell >
+            U72900DL2022PTC408726
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}}>GST</TableCell>
+          <TableCell >
+            07AAKCG2159B1ZU
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}}>
+            Address line 1
+          </TableCell>
+          <TableCell >
+            101, Pratap Nagar
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}}>
+            Address line 2
+          </TableCell>
+          <TableCell >
+            Mayur Vihar Phase-1, East Delhi
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}}>City</TableCell>
+          <TableCell >New Delhi</TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}}>State</TableCell>
+          <TableCell >New Delhi</TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}}>Country</TableCell>
+          <TableCell >India</TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{color:"text.secondary"}}>Pin code</TableCell>
+          <TableCell >110091</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  </CardContent>
+</Card>
+
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }} p={0}>
+  <Card sx={{ height: "100%" }}>
+    <CardContent>
+      <Typography variant="h4" component="h2" gutterBottom>
+        Bank Details
+      </Typography>
+
+      <Table
+        sx={{
+          "& .MuiTableCell-root": {
+            borderBottom: "1px solid divider",   
+            paddingY: 1,  
+            paddingX: 1, 
+          },
+        }}
+      >
+        <TableBody>
+
+          <TableRow>
+            <TableCell sx={{  width: "35%",color:"text.secondary" }}>
+              Bank name
+            </TableCell>
+            <TableCell >HDFC BANK LTD</TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell sx={{color:"text.secondary"}}>
+              Account holder
+            </TableCell>
+            <TableCell>
+              GRAVITY44 PLATFORM SOLUTIONS PVT LTD
+            </TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell sx={{color:"text.secondary"}}>
+              Account number
+            </TableCell>
+            <TableCell>50200076533061</TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell sx={{color:"text.secondary"}}>
+              Branch code
+            </TableCell>
+            <TableCell>HDFC0009629</TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell sx={{color:"text.secondary"}}>
+              City
+            </TableCell>
+            <TableCell>Noida</TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell sx={{color:"text.secondary"}}>
+              State
+            </TableCell>
+            <TableCell>Uttar Pradesh</TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell sx={{color:"text.secondary"}}>
+              Country
+            </TableCell>
+            <TableCell>India</TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell sx={{color:"text.secondary"}}>
+              Pin code
+            </TableCell>
+            <TableCell>201306</TableCell>
+          </TableRow>
+
+        </TableBody>
+      </Table>
+    </CardContent>
+  </Card>
+</Grid>
             </Grid>
         </Box>
           </Container>
@@ -359,14 +427,14 @@ const PayHere = () => {
     
       <Paper elevation={0} square >
             <Container maxWidth="lg" >
-              <Grid container spacing={5} >
+              <Grid container spacing={{md:5,xs:0}} pt={2} >
                 {/* Left Column */}
                 <Grid size={{ xs: 12, md: 5 }}>
                   <CardMedia
                     component="img"
                     image="/img/client/partner-header.webp"
                     alt="Become a Partner"
-                    sx={{ height: "100%", mx:0 }}
+                    sx={{ height: "100%", }}
                   />
                 </Grid>
                 <Grid size={{ xs: 12, md: 7 }} sx={{ py: { xs: 4, md: 8 } }}>

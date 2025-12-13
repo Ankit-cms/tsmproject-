@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
       <Paper elevation={0} square sx={{ bgcolor: "common.whiteSmoke" }} >
         <Container maxWidth="lg">
           
-          <Box sx={{ pt: { xs: 4, md: 8 }, pb: 2 } }>
+          <Box sx={{ pt: { xs: 4, md: 8 }, pb: 4 } }>
             <Box mb={4}>
               <Typography variant="h6"
                   gutterBottom
@@ -107,7 +107,7 @@ const PrivacyPolicy = () => {
                      
                      <Box sx={{ py: { xs: 4, md: 8 } }}>
 
-            <Card elevation={6} variant="elevation" sx={{ borderRadius: 2, p: 2 ,}}>
+            <Card elevation={6} variant="outlined" sx={{ borderRadius: 2, p: 2 ,}}>
          <CardContent  >
      <Box display="flex" flexDirection="column" gap={2} >
               {privacySections.map((section) => (

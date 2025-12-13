@@ -29,18 +29,28 @@ const BlogDetail = () => {
         <Container maxWidth="lg">
          
         <Box  sx={{ py: { xs: 4, md: 8 } }}>
-            <Grid container justifyContent={'center'}>
-            <Box mb={4}>
-              <Typography variant="h1" component="h1" gutterBottom>
+            <Grid container>
+            
+            <Grid container spacing={4} justifyContent={'center'}>
+            
+              <Grid size={{ xs: 12, md: 10 }}>
+                <Box mb={4}>
+                   <Typography variant="h1" component="h1" gutterBottom>
                 Deliver 2024 fostering innovation and impact
               </Typography>
+              <Box
+                display={'flex'} alignItems={"center"} 
+                >
+                  <Chip
+                    label="FREIGHT"
+                    variant="outlined"
+                    sx={{ mr: 2 }}
+                  />
               <Typography variant="body1" color="text.secondary">
                 August 19, 2024
               </Typography>
-              
-            </Box>
-            <Grid container spacing={4} justifyContent={'center'}>
-              <Grid size={{ xs: 12, md: 10 }}>
+                </Box>
+                  </Box>
                 <Card variant="elevation" elevation={2} >
                   
                     <CardMedia
@@ -178,7 +188,7 @@ const BlogDetail = () => {
                     <Chip
                       label={blog.category}
                       variant="outlined" 
-                      sx={{ mt: 2, mb: 1 }}
+                      sx={{ mb: 1 }}
                     />
                     <Typography variant="h6" component="h3" gutterBottom>
                       {blog.title}
@@ -203,7 +213,6 @@ const BlogDetail = () => {
           </Box>
         </Container>
       </Paper>
-      <Divider />
       <Footer />
     </>
   );
