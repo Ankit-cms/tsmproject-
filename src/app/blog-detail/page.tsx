@@ -7,7 +7,6 @@ import {
   CardContent,
   Paper,
   Chip,
-  Divider,
   CardMedia,
   Grid,
   List,

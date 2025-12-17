@@ -413,7 +413,7 @@ const Partners = () => {
         <Container maxWidth="lg" >
           <Grid container spacing={{md:5,xs:0}} >
             {/* Left Column */}
-            <Grid size={{ xs: 12, md: 5 }} mt={{xs:2}}>
+            <Grid size={{ xs: 12, md: 5 }} mt={{xs:2,md:0}}>
               <CardMedia
                 component="img"
                 image="/img/client/partner-header.webp"
