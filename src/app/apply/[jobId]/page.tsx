@@ -26,6 +26,8 @@ import {
   RadioGroup,
   Radio,
   Chip,
+  InputLabel,
+  SelectChangeEvent,
 } from '@mui/material';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { TouchAppOutlined, UploadFile, Close } from '@mui/icons-material';
@@ -94,8 +96,7 @@ const JobApplication = () => {
     currentJobType: '',
     keyExpertSkills: '',
     totalRelevantExperience: '',
-      countryCode: '+91',
-  
+    countryCode: '+91',
   });
 
   const [technicalSkills, setTechnicalSkills] = useState({
@@ -145,6 +146,15 @@ const JobApplication = () => {
   const [resume, setResume] = useState<File | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [notRobot, setNotRobot] = useState(false);
+  const [role, setRole] = React.useState('');
+  const [initials, setInitials] = useState("Mr");
+  const [birthDate, setBirthDate] = useState<string>("");
+  const [birthMonth, setBirthMonth] = useState<string>("");
+  const [birthYear, setBirthYear] = useState<string>("");
+
+  const handleInitialChange = (event: SelectChangeEvent) => {
+    setInitials(event.target.value);
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -171,6 +181,9 @@ const JobApplication = () => {
     }));
   };
 
+  const handleRoleChange = (event: SelectChangeEvent) => {
+    setRole(event.target.value);
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -195,6 +208,18 @@ const JobApplication = () => {
   const handleRemoveResume = () => {
     setResume(null);
   };
+  
+  const handleBirthDate = (event: SelectChangeEvent) => {
+    setBirthDate(event.target.value);
+  };
+
+  const handleBirthMonth = (event: SelectChangeEvent) => {
+    setBirthMonth(event.target.value);
+  };
+
+  const handleBirthYear = (event: SelectChangeEvent) => {
+    setBirthYear(event.target.value);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -208,6 +233,7 @@ const JobApplication = () => {
     if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
     if (!resume) newErrors.resume = 'Resume is required';
     if (!notRobot) newErrors.notRobot = 'Please verify you are not a robot';
+    if (!birthDate || !birthMonth || !birthYear) newErrors.birthDate = 'Date of birth is required';
     
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -217,6 +243,9 @@ const JobApplication = () => {
     console.log('Form submitted:', { 
       candidateType,
       ...formData, 
+      birthDate,
+      birthMonth,
+      birthYear,
       technicalSkills,
       selfAssessment,
       resume 
@@ -225,11 +254,20 @@ const JobApplication = () => {
   };
 
   const renderSkillSlider = (label: string, value: number, name: string, onChange: (name: string, value: number) => void) => (
-    <Box sx={{ mb: 3, width: '100%' }}>
-      <Typography variant="subtitle1" fontWeight="medium" >
+    <Box sx={{ mb: 1, width: '100%' }}>
+      <Typography variant="subtitle1" fontWeight="medium">
         {label}
       </Typography>
-      <Box sx={{ display: 'flex',px:1, alignItems: 'center', gap: isMobile ? 1 : 2,  }}>
+      <Typography 
+        variant="caption" 
+        color="text.secondary" 
+        sx={{ 
+          display: 'block',
+        }}
+      >
+        {skillLabels[value]}
+      </Typography>
+      <Box sx={{ display: 'flex', px: 1, alignItems: 'center', gap: isMobile ? 1 : 2 }}>
         <Slider
           value={value}
           onChange={(_, newValue) => onChange(name, newValue as number)}
@@ -241,7 +279,6 @@ const JobApplication = () => {
           sx={{ 
             flexGrow: 1,
             width: '100%',
-            
           }}
         />
         <Typography 
@@ -252,20 +289,9 @@ const JobApplication = () => {
             textAlign: isMobile ? 'center' : 'right',
           }}
         >
-          {value}/5
+          <span style={{ fontSize: "1.3rem" }}><b>{value}</b></span>/5
         </Typography>
       </Box>
-      <Typography 
-        variant="caption" 
-        color="text.secondary" 
-        sx={{ 
-          mt: 1, 
-          display: 'block',
-          fontWeight:'bold'
-        }}
-      >
-        {skillLabels[value]}
-      </Typography>
     </Box>
   );
 
@@ -277,19 +303,17 @@ const JobApplication = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
-            <Typography variant="h6" color="primary.dark" gutterBottom >
-                                           Careers
-
-                                        </Typography>
-                                        <Typography
-                                            variant="h1"
-                                            component="h1"
-                                            gutterBottom
-                                            sx={{mt: {md: 2}}}>
-                                           Join us to create Impact at scale
-
-
-                                        </Typography>
+              <Typography variant="h6" color="primary.dark" gutterBottom>
+                Careers
+              </Typography>
+              <Typography
+                variant="h1"
+                component="h1"
+                gutterBottom
+                sx={{ mt: { md: 2 } }}
+              >
+                Join us to create Impact at scale
+              </Typography>
               <Typography variant="body1" fontWeight={400} paragraph>
                 Build technology that transforms business processes across the world.
               </Typography>
@@ -319,7 +343,7 @@ const JobApplication = () => {
         
         <Card variant='outlined' sx={{ mb: 4, p: { xs: 2, md: 3 } }}>
           <Stack spacing={2}>
-            <Typography variant="h5" fontWeight="bold" color="primary.main" >
+            <Typography variant="h5" fontWeight="bold" color="primary.main">
               {jobData.title}
             </Typography>
             
@@ -346,7 +370,6 @@ const JobApplication = () => {
               spacing={2} 
               alignItems="center" 
               flexWrap="wrap"
-             
             >
               <LocationOnOutlinedIcon fontSize="small" color="action" />
               <Typography variant="body2" color="text.secondary">
@@ -362,9 +385,9 @@ const JobApplication = () => {
               </Typography>
             </Stack>
             
-            <Divider sx={{ mb:{xs:1,md:2}}} />
+            <Divider sx={{ mb: { xs: 1, md: 2 } }} />
             
-            <Typography variant="body1" paragraph >
+            <Typography variant="body1" paragraph>
               Requirements: 3+ years of experience in SaaS implementation, onboarding, or project management.
               Strong communication, client management, and problem-solving skills. Experience with enterprise
               software, data migration, and integrations preferred. Ability to manage multiple projects 
@@ -379,15 +402,34 @@ const JobApplication = () => {
           sx={{ p: { xs: 2, md: 3 } }}
           variant='outlined'
         >
-          <Typography variant="h5" gutterBottom mb={1} sx={{fontWeight:"bold"}} >
+          <Typography variant="h5" gutterBottom mb={1} sx={{ fontWeight: "bold" }}>
             Job application form
           </Typography>
-          <Divider sx={{ mb:{xs:1,md:3}}} />
+          <Divider sx={{ mb: { xs: 1, md: 3 } }} />
           
-          <Grid container spacing={{xs:1,md:3}} alignItems="center">
+          <Grid container spacing={{ xs: 1, md: 3 }} alignItems="center">
             <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" >
+              <Typography variant="subtitle1">
                 Applicant type *
+              </Typography>
+            </Grid>
+            <Grid size={{ xs: 12, md: 8 }}>
+              <FormControl sx={{ display: "flex", alignItems: "flex-start" }}>
+                <RadioGroup
+                  row
+                  value={candidateType}
+                  onChange={(e) => setCandidateType(e.target.value as 'tech' | 'non-tech')} 
+                >
+                  <FormControlLabel sx={{ display: "flex", alignItems: "flex-start" }} value="non-tech" control={<Radio />} label="Non technical (QA / PM / BA / Scrum master / BD / Pre sales / Consultant / Data Analyst / Digital marketing / Sales / Product management)" />
+                  <FormControlLabel value="tech" control={<Radio />} label="Technical (Fullstack developer / App developer / UI developer / Devops)" />
+                </RadioGroup>
+              </FormControl>
+            </Grid>
+          </Grid>
+          <Grid container spacing={{ xs: 1, md: 3 }} alignItems="center">
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Typography variant="subtitle1">
+                Work type *
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
@@ -395,31 +437,63 @@ const JobApplication = () => {
                 <RadioGroup
                   row
                   value={candidateType}
-                  onChange={(e) => setCandidateType(e.target.value as 'tech' | 'non-tech')}
+                  onChange={(e) => setCandidateType(e.target.value as 'tech' | 'non-tech')} 
                 >
-                  <FormControlLabel value="non-tech" control={<Radio />} label="Non technical (QA / PM / BA / Scrum master / BD / Pre sales / Consultant / Data Analyst / Digital marketing / Sales / Product management)" />
-                  <FormControlLabel value="tech" control={<Radio />} label="Technical (Fullstack developer / App developer / UI developer / Devops)" />
+                  <FormControlLabel value="non-tech" control={<Radio />} label="Full time" />
+                  <FormControlLabel value="tech" control={<Radio />} label="Freelance" />
                 </RadioGroup>
               </FormControl>
             </Grid>
           </Grid>
+          <Grid container spacing={{ xs: 1, md: 3 }} alignItems="center">
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Typography variant="subtitle1">
+                Role applying for *
+              </Typography>
+            </Grid>
+            <Grid size={{ xs: 12, md: 8 }}>
+              <FormControl sx={{ m: 1, width: "100%" }} size="small">
+                <Select
+                  labelId="demo-select-small-label"
+                  id="demo-select-small"
+                  value={role}
+                  onChange={handleRoleChange}
+                >
+                  <MenuItem value={"Full stack developer"}>Full stack developer</MenuItem>
+                  <MenuItem value={"Devops Engineer"}>Devops Engineer</MenuItem>
+                  <MenuItem value={"UI Developer"}>UI Developer</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+          </Grid>
 
-          <Typography variant="h5" gutterBottom mt={4} mb={1} sx={{fontWeight:"bold"}}>
+          <Typography variant="h5" gutterBottom mt={4} mb={1} sx={{ fontWeight: "bold" }}>
             Applicant details
           </Typography>
-          <Divider sx={{ mb:{xs:1,md:3}}} />
+          <Divider sx={{ mb: { xs: 1, md: 3 } }} />
           
-          <Grid container   rowSpacing={{ xs: 0.5, md: 1.5 }}
-  columnSpacing={{ xs: 1, md: 3 }}>
-           
+          <Grid container rowSpacing={{ xs: 0.5, md: 1.5 }} columnSpacing={{ xs: 1, md: 3 }} alignItems="center">
             <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium" >
+              <Typography variant="subtitle1" fontWeight="medium">
                 Full name *
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
               <Grid container spacing={2}>
-                <Grid size={{ xs: 12, sm: 6 }}>
+                <Grid size={{ xs: 2, sm: 2 }}>
+                  <FormControl sx={{ width: "100%" }} size="small">
+                    <Select
+                      labelId="demo-select-small-label"
+                      id="demo-select-small"
+                      value={initials}
+                      onChange={handleInitialChange}
+                    >
+                      <MenuItem value={"Mr"}>Mr.</MenuItem>
+                      <MenuItem value={"Ms"}>Ms</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid size={{ xs: 5, sm: 5 }}>
                   <TextField
                     fullWidth
                     name="firstName"
@@ -428,10 +502,10 @@ const JobApplication = () => {
                     error={!!errors.firstName}
                     helperText={errors.firstName}
                     placeholder="First name"
-                    size={isMobile ? "small" : "small"}
+                    size="small"
                   />
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6 }}>
+                <Grid size={{ xs: 5, sm: 5 }}>
                   <TextField
                     fullWidth
                     name="lastName"
@@ -440,14 +514,14 @@ const JobApplication = () => {
                     error={!!errors.lastName}
                     helperText={errors.lastName}
                     placeholder="Last name"
-                    size={isMobile ? "small" : "small"}
+                    size="small"
                   />
                 </Grid>
               </Grid>
             </Grid>
        
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium"  >
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium">
                 Email address *
               </Typography>
             </Grid>
@@ -461,55 +535,134 @@ const JobApplication = () => {
                 error={!!errors.email}
                 helperText={errors.email}
                 placeholder="Email address"
-                size={isMobile ? "small" : "small"}
+                size="small"
               />
             </Grid>
             
-         <Grid size={{ xs: 12, md: 4 }}>
-  <Typography variant="subtitle1" fontWeight="medium">
-    Phone number *
-  </Typography>
-</Grid>
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium">
+                Phone number *
+              </Typography>
+            </Grid>
 
-<Grid size={{ xs: 12, md: 8 }}>
-  <TextField
-    fullWidth
-    name="phone"
-    value={formData.phone ?? ''}
-    onChange={handleInputChange}
-    error={!!errors.phone}
-    helperText={errors.phone || ' '}
-    placeholder="Phone number"
-    size="small"
-    InputProps={{
-      startAdornment: (
-        <InputAdornment position="start">
-          <Select
-            variant="standard"
-            disableUnderline
-            value={formData.countryCode}
-            onChange={(e) =>
-              setFormData(prev => ({ ...prev, countryCode: e.target.value }))
-            }
-            sx={{ fontSize: 14, minWidth: 60 }}
-          >
-            <MenuItem value="+91">+91</MenuItem>
-            <MenuItem value="+1">+1</MenuItem>
-            <MenuItem value="+44">+44</MenuItem>
-            <MenuItem value="+61">+61</MenuItem>
-            <MenuItem value="+971">+971</MenuItem>
-          </Select>
-        </InputAdornment>
-      ),
-    }}
-  />
-</Grid>
+            <Grid size={{ xs: 12, md: 8 }}>
+              <TextField
+                fullWidth
+                name="phone"
+                value={formData.phone ?? ''}
+                onChange={handleInputChange}
+                error={!!errors.phone}
+                // helperText={errors.phone || ' '}
+                placeholder="Phone number"
+                size="small"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Select
+                        variant="standard"
+                        disableUnderline
+                        value={formData.countryCode}
+                        onChange={(e) =>
+                          setFormData(prev => ({ ...prev, countryCode: e.target.value }))
+                        }
+                        sx={{ fontSize: 14, minWidth: 60 }}
+                      >
+                        <MenuItem value="+91">+91</MenuItem>
+                        <MenuItem value="+1">+1</MenuItem>
+                        <MenuItem value="+44">+44</MenuItem>
+                        <MenuItem value="+61">+61</MenuItem>
+                        <MenuItem value="+971">+971</MenuItem>
+                      </Select>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
+
+            {/* Date of Birth Section - Corrected */}
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium">
+                Date of birth *
+              </Typography>
+            </Grid>
+            
+            <Grid size={{ xs: 12, md: 8 }}>
+              <Grid container spacing={2}>
+                {/* Date */}
+                <Grid size={{ xs: 4 }}>
+                  <FormControl fullWidth size="small">
+                    <InputLabel id="date-select-label">Date</InputLabel>
+                    <Select
+                      labelId="date-select-label"
+                      value={birthDate}
+                      label="Date"
+                      onChange={handleBirthDate}
+                      error={!!errors.birthDate}
+                    >
+                      <MenuItem value="">Select</MenuItem>
+                      {Array.from({ length: 31 }, (_, i) => (i + 1).toString()).map((date) => (
+                        <MenuItem key={date} value={date}>
+                          {date.padStart(2, '0')}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                
+                {/* Month */}
+                <Grid size={{ xs: 4 }}>
+                  <FormControl fullWidth size="small">
+                    <InputLabel id="month-select-label">Month</InputLabel>
+                    <Select
+                      labelId="month-select-label"
+                      value={birthMonth}
+                      label="Month"
+                      onChange={handleBirthMonth}
+                      error={!!errors.birthDate}
+                    >
+                      <MenuItem value="">Select</MenuItem>
+                      {Array.from({ length: 12 }, (_, i) => (i + 1).toString()).map((month) => (
+                        <MenuItem key={month} value={month}>
+                          {month.padStart(2, '0')}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                
+                {/* Year */}
+                <Grid size={{ xs: 4 }}>
+                  <FormControl fullWidth size="small">
+                    <InputLabel id="year-select-label">Year</InputLabel>
+                    <Select
+                      labelId="year-select-label"
+                      value={birthYear}
+                      label="Year"
+                      onChange={handleBirthYear}
+                      error={!!errors.birthDate}
+                    >
+                      <MenuItem value="">Select</MenuItem>
+                      {Array.from({ length: 100 }, (_, i) => (new Date().getFullYear() - i).toString()).map((year) => (
+                        <MenuItem key={year} value={year}>
+                          {year}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+              {errors.birthDate && (
+                <FormHelperText error sx={{ mt: 0.5 }}>
+                  {errors.birthDate}
+                </FormHelperText>
+              )}
+            </Grid>
 
             <Grid size={{ xs: 12 }}>
-              <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
+              <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{ fontWeight: "bold" }}>
                 Qualification 
               </Typography>
-              <Divider sx={{ mb:{xs:1,md:3}}}/>
+              <Divider sx={{ mb: { xs: 1, md: 3 } }} />
             </Grid>
 
             {[
@@ -528,10 +681,10 @@ const JobApplication = () => {
               { label: 'Portfolio / Website', name: 'portfolioWebsite', placeholder: 'https://yourportfolio.com' },
               { label: 'Current location / City', name: 'presentLocation', placeholder: 'e.g., Bengaluru' },
               { label: 'Work location / City', name: 'workLocation', placeholder: 'e.g., Bengaluru' },
-            ].map((field) => (
+            ].map((field, index) => (
               <React.Fragment key={field.name}>
                 <Grid size={{ xs: 12, md: 4 }}>
-                  <Typography variant="subtitle1" fontWeight="medium" >
+                  <Typography variant="subtitle1" fontWeight="medium" mt={{ xs: index === 0 ? 0 : 1, sm: 0 }}>
                     {field.label}
                   </Typography>
                 </Grid>
@@ -542,7 +695,7 @@ const JobApplication = () => {
                     value={formData[field.name as keyof typeof formData] ?? ''}
                     onChange={handleInputChange}
                     placeholder={field.placeholder}
-                    size={isMobile ? "small" : "small"}
+                    size="small"
                     multiline={field.multiline}
                     rows={field.rows}
                   />
@@ -551,31 +704,48 @@ const JobApplication = () => {
             ))}
 
             <Grid size={{ xs: 12 }}>
-              <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
+              <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{ fontWeight: "bold" }}>
                 Availability (Hours)
               </Typography>
-              <Divider sx={{ mb:{xs:1,md:3}}} />
+              <Divider sx={{ mb: { xs: 1, md: 3 } }} />
             </Grid>
 
             {[
               { label: 'Available hours / week', name: 'availableHours', placeholder: candidateType === 'tech' ? 'e.g., 28 hours/week' : 'Available hours/week' },
               { label: candidateType === 'tech' ? 'Preferred work time slots / window' : 'Preferred work time slots / window', name: 'preferredTimeSlot', placeholder: 'e.g., After 6 PM' },
-            ].map((field) => (
+            ].map((field, index) => (
               <React.Fragment key={field.name}>
                 <Grid size={{ xs: 12, md: 4 }}>
-                  <Typography variant="subtitle1" fontWeight="medium" >
+                  <Typography variant="subtitle1" fontWeight="medium" mt={{ xs: index === 0 ? 0 : 1, sm: 0 }}>
                     {field.label}
                   </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, md: 8 }}>
-                  <TextField
-                    fullWidth
-                    name={field.name}
-                    value={formData[field.name as keyof typeof formData] ?? ''}
-                    onChange={handleInputChange}
-                    placeholder={field.placeholder}
-                    size={isMobile ? "small" : "small"}
-                  />
+                  {field.name === 'availableHours' ? (
+                    <FormControl fullWidth size="small">
+                      <Select
+                        displayEmpty
+                        name={field.name}
+                        value={formData.availableHours ?? ''}
+                        onChange={(e) => setFormData(prev => ({ ...prev, availableHours: e.target.value }))}
+                        inputProps={{ 'aria-label': 'Available hours per week' }}
+                      >
+                        <MenuItem value=""><em>Select hours/week</em></MenuItem>
+                        {Array.from({ length: 56 - 8 + 1 }, (_, i) => 8 + i).map((h) => (
+                          <MenuItem key={h} value={String(h)}>{h} hours / week</MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
+                  ) : (
+                    <TextField
+                      fullWidth
+                      name={field.name}
+                      value={formData[field.name as keyof typeof formData] ?? ''}
+                      onChange={handleInputChange}
+                      placeholder={field.placeholder}
+                      size="small"
+                    />
+                  )}
                 </Grid>
               </React.Fragment>
             ))}
@@ -583,15 +753,15 @@ const JobApplication = () => {
             {[
               { label: 'Available to work Saturday?', name: 'workSaturday', options: ['Yes', 'No'] },
               { label: 'Available to work Sunday?', name: 'workSunday', options: ['Yes', 'No'] },
-            ].map((field) => (
+            ].map((field, index) => (
               <React.Fragment key={field.name}>
-                <Grid size={{ xs: 12, md: 4 }}>
-                  <Typography variant="subtitle1" fontWeight="medium"  >
+                <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+                  <Typography variant="subtitle1" fontWeight="medium">
                     {field.label}
                   </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, md: 8 }}>
-                  <FormControl fullWidth size={isMobile ? "small" : "small"}>
+                  <FormControl fullWidth size="small">
                     <Select
                       name={field.name}
                       value={formData[field.name as keyof typeof formData] ?? ''}
@@ -611,28 +781,28 @@ const JobApplication = () => {
             ))}
 
             <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium"  >
+              <Typography variant="subtitle1" fontWeight="medium" mt={{ xs: 1, sm: 0 }}>
                 {candidateType === 'tech' ? 'Freelance Projects Before (how many)' : 'Any freelance / part time project before (how many ?)'}
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-                <TextField
-                  fullWidth
-                  name="freelanceProjectsCount"
-                  value={formData.freelanceProjectsCount ?? ''}
-                  onChange={handleInputChange}
+              <TextField
+                fullWidth
+                name="freelanceProjectsCount"
+                value={formData.freelanceProjectsCount ?? ''}
+                onChange={handleInputChange}
                 placeholder="e.g., 0 (number of projects)"
-                size={isMobile ? "small" : "small"}
+                size="small"
               />
             </Grid>
 
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium" >
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium">
                 Current Job type
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <FormControl fullWidth size={isMobile ? "small" : "small"}>
+              <FormControl fullWidth size="small">
                 <Select
                   name="currentJobType"
                   value={formData.currentJobType ?? ''}
@@ -652,16 +822,16 @@ const JobApplication = () => {
               </FormControl>
             </Grid>
             
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium" gutterBottom >
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium" gutterBottom>
                 Resume *
               </Typography>
-              <Typography variant="caption" color="text.secondary" display="block" >
+              <Typography variant="caption" color="text.secondary" display="block">
                 PDF, DOC, DOCX (Max 5MB)
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <Box display={"flex"} alignItems={"center"} gap={{xs:2,md:2}}>
+              <Box display="flex" alignItems="center" gap={{ xs: 2, md: 2 }}>
                 <input
                   accept=".pdf,.doc,.docx"
                   style={{ display: 'none' }}
@@ -674,7 +844,7 @@ const JobApplication = () => {
                     component="span"
                     variant="outlined"
                     startIcon={<UploadFile />}
-                    size={isMobile ? "small" : "small"}
+                    size="small"
                   >
                     Choose file
                   </Button>
@@ -686,7 +856,7 @@ const JobApplication = () => {
                 )}
                 {resume && (
                   <Box display="flex" alignItems="center" gap={1} flexWrap="wrap">
-                    <Typography variant="body2" >
+                    <Typography variant="body2">
                       {resume.name} ({(resume.size / 1024 / 1024).toFixed(2)} MB)
                     </Typography>
                     <IconButton size="small" onClick={handleRemoveResume}>
@@ -695,18 +865,17 @@ const JobApplication = () => {
                   </Box>
                 )}
                 {!resume && (
-                  <Typography variant="caption" color="text.secondary" display="block"  >
+                  <Typography variant="caption" color="text.secondary" display="block">
                     No file chosen
                   </Typography>
                 )}
               </Box>
             </Grid>
             
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium" gutterBottom >
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium" gutterBottom>
                 Cover letter
               </Typography>
-              
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
               <TextField
@@ -717,17 +886,17 @@ const JobApplication = () => {
                 multiline
                 rows={2}
                 placeholder="Tell us why you're interested in this position and why you'd be a good fit..."
-                size={isMobile ? "small" : "small"}
+                size="small"
               />
             </Grid>
             
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium"  >
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium">
                 Notice period
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <FormControl fullWidth size={isMobile ? "small" : "small"}>
+              <FormControl fullWidth size="small">
                 <Select
                   name="noticePeriod"
                   value={formData.noticePeriod ?? ''}
@@ -747,32 +916,32 @@ const JobApplication = () => {
               </FormControl>
             </Grid>
             
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium" >
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium">
                 Expected Salary (Annual)
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-                <TextField
+              <TextField
                 fullWidth
                 name="expectedSalary"
                 value={formData.expectedSalary ?? ''}
                 onChange={handleInputChange}
                 placeholder="Enter expected salary"
-                size={isMobile ? "small" : "small"}
+                size="small"
                 InputProps={{
                   startAdornment: <InputAdornment position="start">₹</InputAdornment>,
                 }}
               />
             </Grid>
             
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium" >
+            <Grid size={{ xs: 12, md: 4 }} mt={{ xs: 1, sm: 0 }}>
+              <Typography variant="subtitle1" fontWeight="medium">
                 How did you hear about us?
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <FormControl fullWidth size={isMobile ? "small" : "small"}>
+              <FormControl fullWidth size="small">
                 <Select
                   name="source"
                   value={formData.source ?? ''}
@@ -796,7 +965,7 @@ const JobApplication = () => {
             {formData.source === 'referral' && (
               <>
                 <Grid size={{ xs: 12, md: 4 }}>
-                  <Typography variant="subtitle1" fontWeight="medium" >
+                  <Typography variant="subtitle1" fontWeight="medium">
                     Referral Name
                   </Typography>
                 </Grid>
@@ -807,44 +976,42 @@ const JobApplication = () => {
                     value={formData.referralName ?? ''}
                     onChange={handleInputChange}
                     placeholder="Enter referral employee name"
-                    size={isMobile ? "small" : "small"}
+                    size="small"
                   />
                 </Grid>
               </>
             )}
 
             {candidateType === 'tech' && (
-              <Grid size={{ xs: 12 }}>
-                <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
+              <Grid size={{ xs: 12 }} mt={{ xs: 1, sm: 0 }}>
+                <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{ fontWeight: "bold" }}>
                   Technical Skills Self-Assessment (0-5 Scale)
                 </Typography>
                 <Box
-  sx={{
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 1,
-    mb: 2,
-  }}
->
-  {[
-    "0 – Can’t do",
-    "1 – No experience",
-    "2 – Basic",
-    "3 – Intermediate",
-    "4 – Advanced",
-    "5 – Expert",
-  ].map((item) => (
-    <Chip
-      key={item}
-      label={item}
-      size="small"
-      variant="outlined"
-    />
-  ))}
-</Box>
-
-                <Divider sx={{ mb:{xs:1,md:3}}} />
-
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 1,
+                    mb: 2,
+                  }}
+                >
+                  {[
+                    "0 – Can't do",
+                    "1 – No experience",
+                    "2 – Basic",
+                    "3 – Intermediate",
+                    "4 – Advanced",
+                    "5 – Expert",
+                  ].map((item) => (
+                    <Chip
+                      key={item}
+                      label={item}
+                      size="small"
+                      variant="outlined"
+                    />
+                  ))}
+                </Box>
+                <Divider sx={{ mb: { xs: 1, md: 3 } }} />
                 <Grid container spacing={isMobile ? 3 : 5}>
                   <Grid size={{ xs: 12, md: 6 }}>
                     {renderSkillSlider("Next.js (Pages, App Router, SSR/SSG)", technicalSkills.nextjs, "nextjs", handleTechnicalSkillChange)}
@@ -870,41 +1037,36 @@ const JobApplication = () => {
 
             {candidateType === 'non-tech' && (
               <Grid size={{ xs: 12 }}>
-           <Box display="flex" alignItems="center" mb={1}>
- 
-<Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
-                Professional Skills Assessment (0-5 Scale)
-              </Typography>
-</Box>
-
-<Box
-  sx={{
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 1,
-    mb: 2,
-  }}
->
-  {[
-    "0 – Can’t do",
-    "1 – No experience",
-    "2 – Basic",
-    "3 – Intermediate",
-    "4 – Advanced",
-    "5 – Expert",
-  ].map((item) => (
-    <Chip
-      key={item}
-      label={item}
-      size="small"
-      variant="outlined"
-    />
-  ))}
-</Box>
-
-
-                <Divider sx={{ mb:{xs:1,md:3}}} />
-                
+                <Box display="flex" alignItems="center" mb={1}>
+                  <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{ fontWeight: "bold" }}>
+                    Professional Skills Assessment (0-5 Scale)
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 1,
+                    mb: 2,
+                  }}
+                >
+                  {[
+                    "0 – Can't do",
+                    "1 – No experience",
+                    "2 – Basic",
+                    "3 – Intermediate",
+                    "4 – Advanced",
+                    "5 – Expert",
+                  ].map((item) => (
+                    <Chip
+                      key={item}
+                      label={item}
+                      size="small"
+                      variant="outlined"
+                    />
+                  ))}
+                </Box>
+                <Divider sx={{ mb: { xs: 1, md: 3 } }} />
                 <Grid container spacing={isMobile ? 0 : 5}>
                   <Grid size={{ xs: 12, md: 6 }}>
                     {renderSkillSlider("Google Sheet", selfAssessment.googleSheet, "googleSheet", handleSelfAssessmentChange)}
@@ -938,56 +1100,58 @@ const JobApplication = () => {
                 </Grid>
               </Grid>
             )}
-          <Grid size={{ xs: 12 }}>
-                                            <Box
-                                                display="flex"
-                                                alignItems="center"
-                                                gap={2}
-                                                p={2}
-                                                border={1}
-                                                borderColor="grey.300"
-                                                borderRadius={1}
-                                            >
-                                                    <Checkbox
-                                                      size="large"
-                                                      checked={notRobot}
-                                                      onChange={(e) => setNotRobot(e.target.checked)}
-                                                      inputProps={{ 'aria-label': 'I am not a robot' }}
-                                                    />
-                                                <Box>
-                                                    <Typography variant="body2">
-                                                        I am not a robot
-                                                    </Typography>
-                                                    <Box display="flex" gap={1}>
-                                                        <Typography variant="caption" color="text.secondary">
-                                                            reCAPTCHA
-                                                        </Typography>
-                                                        <Typography variant="caption" color="text.secondary">
-                                                            Privacy
-                                                        </Typography>
-                                                        <Typography variant="caption" color="text.secondary">
-                                                            -
-                                                        </Typography>
-                                                        <Typography variant="caption" color="text.secondary">
-                                                            Terms
-                                                        </Typography>
-                                                    </Box>
-                                                </Box>
-                                            </Box>
-                                              {errors.notRobot && (
-                                                <FormHelperText error sx={{ ml: 0, mt: 1 }}>
-                                                  {errors.notRobot}
-                                                </FormHelperText>
-                                              )}
-                                            </Grid>
+            
             <Grid size={{ xs: 12 }}>
-              <Box display="flex" justifyContent="flex-end" >
+              <Box
+                display="flex"
+                alignItems="center"
+                gap={2}
+                p={2}
+                border={1}
+                borderColor="grey.300"
+                borderRadius={1}
+              >
+                <Checkbox
+                  size="large"
+                  checked={notRobot}
+                  onChange={(e) => setNotRobot(e.target.checked)}
+                  inputProps={{ 'aria-label': 'I am not a robot' }}
+                />
+                <Box>
+                  <Typography variant="body2">
+                    I am not a robot
+                  </Typography>
+                  <Box display="flex" gap={1}>
+                    <Typography variant="caption" color="text.secondary">
+                      reCAPTCHA
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      Privacy
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      -
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      Terms
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+              {errors.notRobot && (
+                <FormHelperText error sx={{ ml: 0, mt: 1 }}>
+                  {errors.notRobot}
+                </FormHelperText>
+              )}
+            </Grid>
+            
+            <Grid size={{ xs: 12 }}>
+              <Box display="flex" justifyContent="flex-end">
                 <Button
                   type="submit"
                   variant="contained"
                   size="large"
                   startIcon={<TouchAppOutlined />}
-                 sx={{mt:{xs:2,md:0}}}
+                  sx={{ mt: { xs: 2, md: 0 } }}
                 >
                   Submit Application
                 </Button>
