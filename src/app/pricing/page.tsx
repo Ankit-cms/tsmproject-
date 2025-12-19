@@ -396,7 +396,7 @@ const Pricing = () => {
                                 size={{ xs: 12, sm: 6, md: 4 }}
                                 sx={{ display: 'flex' }}
                               >
-                                <ToggleButtonGroup
+                             <ToggleButtonGroup
                                   value={selected}
                                   onChange={handleSelect}
                                   aria-label="transport options"
@@ -404,55 +404,55 @@ const Pricing = () => {
                                   sx={{ flexGrow: 1, display: 'flex' }}
                                 >
                                   <ToggleButton
-                                    value={option.title}
-                                    sx={{
-                                      width: '100%',
-                                      height: '100%',
-                                      display: 'flex',
-                                      flexDirection: 'row',
-                                      justifyContent: 'flex-start',
-                                      alignItems: 'center',
-                                      textTransform: 'none',
-                                      borderRadius: 1,
-                                      boxShadow: 1,
-                                      border: '1px solid',
-                                      gap: 1,
-                                      borderColor: (theme) =>
-                                        selected.includes(option.title)
-                                          ? theme.palette.primary.main
-                                          : theme.palette.grey[300],
-                                      transition: 'all 0.2s ease',
-                                      color: (theme) =>
-                                        selected.includes(option.title)
-                                          ? theme.palette.primary.main
-                                          : theme.palette.text.primary,
-                                      backgroundColor: (theme) =>
-                                        selected.includes(option.title)
-                                          ? theme.palette.primary.light + '20'
-                                          : theme.palette.background.paper,
-                                      '&:hover': {
-                                        boxShadow: 2,
-                                        backgroundColor: (theme) =>
-                                          selected.includes(option.title)
-                                            ? theme.palette.primary.light +
-                                            '40'
-                                            : theme.palette.grey[100],
-                                      },
-                                      '&.Mui-selected': {
-                                        backgroundColor: (theme) =>
-                                          theme.palette.primary.main,
-                                        color: (theme) =>
-                                          theme.palette.primary.contrastText,
-                                        '&:hover': {
-                                          backgroundColor: (theme) =>
-                                            theme.palette.primary.dark,
-                                        },
-                                      },
-                                    }}
-                                  >
+  value={option.title}
+  sx={{
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    gap: 1,
+    textTransform: 'none',
+    borderRadius: 1,
+    boxShadow: 1,
+    border: '1px solid',
+    transition: 'all 0.2s ease',
+
+    borderColor: (theme) =>
+      selected.includes(option.title)
+        ? theme.palette.primary.main
+        : theme.palette.grey[300],
+
+    color: (theme) =>
+      selected.includes(option.title)
+        ? theme.palette.primary.contrastText
+        : theme.palette.text.primary,
+
+    backgroundColor: (theme) =>
+      selected.includes(option.title)
+        ? theme.palette.primary.main
+        : theme.palette.background.paper,
+
+    '&:hover': {
+      backgroundColor: (theme) => theme.palette.primary.main,
+      color: (theme) => theme.palette.primary.contrastText,
+      boxShadow: 2,
+    },
+
+    '&.Mui-selected': {
+      backgroundColor: (theme) => theme.palette.primary.main,
+      color: (theme) => theme.palette.primary.contrastText,
+    },
+
+    '&.Mui-selected:hover': {
+      backgroundColor: (theme) => theme.palette.primary.main,
+    },
+  }}
+>
+
                                     <Box
                                       sx={{
-                                        height: 48,
+                                        height: 45,
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
@@ -471,7 +471,7 @@ const Pricing = () => {
                                       sx={{
                                         lineHeight: 1.2,
                                         color: 'inherit',
-                                        fontSize: 12,
+                                        fontSize: 14,
                                       }}
                                     >
                                       {option.title}

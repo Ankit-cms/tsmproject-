@@ -25,6 +25,7 @@ import {
   FormControlLabel,
   RadioGroup,
   Radio,
+  Chip,
 } from '@mui/material';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { TouchAppOutlined, UploadFile, Close } from '@mui/icons-material';
@@ -50,7 +51,13 @@ const skillLabels = [
   '4 - Advanced, can work independently',
   '5 - Expert, can mentor others'
 ];
-
+const countryCodes = [
+  { code: '+91', label: 'India' },
+  { code: '+1', label: 'USA' },
+  { code: '+44', label: 'UK' },
+  { code: '+61', label: 'Australia' },
+  { code: '+971', label: 'UAE' },
+];
 const JobApplication = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -87,6 +94,8 @@ const JobApplication = () => {
     currentJobType: '',
     keyExpertSkills: '',
     totalRelevantExperience: '',
+      countryCode: '+91',
+  
   });
 
   const [technicalSkills, setTechnicalSkills] = useState({
@@ -161,6 +170,7 @@ const JobApplication = () => {
       [name]: value
     }));
   };
+
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -251,6 +261,7 @@ const JobApplication = () => {
         sx={{ 
           mt: 1, 
           display: 'block',
+          fontWeight:'bold'
         }}
       >
         {skillLabels[value]}
@@ -266,20 +277,20 @@ const JobApplication = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
-              <Typography 
-                variant="h6"
-                gutterBottom
-                color="primary.main"
-                display="flex"
-                alignItems="center"
-                gap={1}
-              >
-                Careers
-              </Typography>
-              <Typography variant="h3" gutterBottom sx={{ fontSize: { xs: '2rem', md: '2.5rem' } }}>
-                Join us to create Impact at scale                
-              </Typography>
-              <Typography variant="h5" color="text.secondary" sx={{ fontSize: { xs: '1.1rem', md: '1.5rem' } }}>
+            <Typography variant="h6" color="primary.dark" gutterBottom >
+                                           Careers
+
+                                        </Typography>
+                                        <Typography
+                                            variant="h1"
+                                            component="h1"
+                                            gutterBottom
+                                            sx={{mt: {md: 2}}}>
+                                           Join us to create Impact at scale
+
+
+                                        </Typography>
+              <Typography variant="body1" fontWeight={400} paragraph>
                 Build technology that transforms business processes across the world.
               </Typography>
             </Grid>
@@ -368,15 +379,15 @@ const JobApplication = () => {
           sx={{ p: { xs: 2, md: 3 } }}
           variant='outlined'
         >
-          <Typography variant="h5" gutterBottom mb={1} >
-            Candidate Type
+          <Typography variant="h5" gutterBottom mb={1} sx={{fontWeight:"bold"}} >
+            Job application form
           </Typography>
           <Divider sx={{ mb:{xs:1,md:3}}} />
           
           <Grid container spacing={{xs:1,md:3}} alignItems="center">
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle1" >
-                Are you a Tech or Non-Tech candidate? *
+                Applicant type *
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
@@ -386,19 +397,20 @@ const JobApplication = () => {
                   value={candidateType}
                   onChange={(e) => setCandidateType(e.target.value as 'tech' | 'non-tech')}
                 >
-                  <FormControlLabel value="non-tech" control={<Radio />} label="Non-Tech Candidate" />
-                  <FormControlLabel value="tech" control={<Radio />} label="Tech Candidate" />
+                  <FormControlLabel value="non-tech" control={<Radio />} label="Non technical (QA / PM / BA / Scrum master / BD / Pre sales / Consultant / Data Analyst / Digital marketing / Sales / Product management)" />
+                  <FormControlLabel value="tech" control={<Radio />} label="Technical (Fullstack developer / App developer / UI developer / Devops)" />
                 </RadioGroup>
               </FormControl>
             </Grid>
           </Grid>
 
-          <Typography variant="h5" gutterBottom mt={4} mb={1} >
-            Personal Information
+          <Typography variant="h5" gutterBottom mt={4} mb={1} sx={{fontWeight:"bold"}}>
+            Applicant details
           </Typography>
           <Divider sx={{ mb:{xs:1,md:3}}} />
           
-          <Grid container spacing={{xs:1,md:3}}>
+          <Grid container   rowSpacing={{ xs: 0.5, md: 1.5 }}
+  columnSpacing={{ xs: 1, md: 3 }}>
            
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle1" fontWeight="medium" >
@@ -415,8 +427,8 @@ const JobApplication = () => {
                     onChange={handleInputChange}
                     error={!!errors.firstName}
                     helperText={errors.firstName}
-                    placeholder="Enter your first name"
-                    size={isMobile ? "small" : "medium"}
+                    placeholder="First name"
+                    size={isMobile ? "small" : "small"}
                   />
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }}>
@@ -427,8 +439,8 @@ const JobApplication = () => {
                     onChange={handleInputChange}
                     error={!!errors.lastName}
                     helperText={errors.lastName}
-                    placeholder="Enter your last name"
-                    size={isMobile ? "small" : "medium"}
+                    placeholder="Last name"
+                    size={isMobile ? "small" : "small"}
                   />
                 </Grid>
               </Grid>
@@ -448,52 +460,74 @@ const JobApplication = () => {
                 onChange={handleInputChange}
                 error={!!errors.email}
                 helperText={errors.email}
-                placeholder="Enter your email address"
-                size={isMobile ? "small" : "medium"}
+                placeholder="Email address"
+                size={isMobile ? "small" : "small"}
               />
             </Grid>
             
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Typography variant="subtitle1" fontWeight="medium">
-                Phone number *
-              </Typography>
-            </Grid>
-            <Grid size={{ xs: 12, md: 8 }}>
-              <TextField
-                fullWidth
-                name="phone"
-                value={formData.phone ?? ''}
-                onChange={handleInputChange}
-                error={!!errors.phone}
-                helperText={errors.phone}
-                placeholder="Enter your phone number"
-                size={isMobile ? "small" : "medium"}
-              />
-            </Grid>
+         <Grid size={{ xs: 12, md: 4 }}>
+  <Typography variant="subtitle1" fontWeight="medium">
+    Phone number *
+  </Typography>
+</Grid>
+
+<Grid size={{ xs: 12, md: 8 }}>
+  <TextField
+    fullWidth
+    name="phone"
+    value={formData.phone ?? ''}
+    onChange={handleInputChange}
+    error={!!errors.phone}
+    helperText={errors.phone || ' '}
+    placeholder="Phone number"
+    size="small"
+    InputProps={{
+      startAdornment: (
+        <InputAdornment position="start">
+          <Select
+            variant="standard"
+            disableUnderline
+            value={formData.countryCode}
+            onChange={(e) =>
+              setFormData(prev => ({ ...prev, countryCode: e.target.value }))
+            }
+            sx={{ fontSize: 14, minWidth: 60 }}
+          >
+            <MenuItem value="+91">+91</MenuItem>
+            <MenuItem value="+1">+1</MenuItem>
+            <MenuItem value="+44">+44</MenuItem>
+            <MenuItem value="+61">+61</MenuItem>
+            <MenuItem value="+971">+971</MenuItem>
+          </Select>
+        </InputAdornment>
+      ),
+    }}
+  />
+</Grid>
 
             <Grid size={{ xs: 12 }}>
-              <Typography variant="h5" gutterBottom mt={2} mb={1}>
-                Education & Experience Details
+              <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
+                Qualification 
               </Typography>
               <Divider sx={{ mb:{xs:1,md:3}}}/>
             </Grid>
 
             {[
-              { label: candidateType === 'tech' ? 'Graduation Name' : 'Last Graduation Name', name: 'graduationName', placeholder: 'e.g., B.E. Computer Science' },
-              { label: 'Graduation Year', name: 'graduationYear', placeholder: 'e.g., 2022' },
-              { label: 'Graduation Marks', name: 'graduationMarks', placeholder: 'e.g., 8.75 CGPA' },
-              { label: '12th Marks (%)', name: 'twelfthMarks', placeholder: 'e.g., 92%' },
-              { label: '10th Marks (%)', name: 'tenthMarks', placeholder: 'e.g., 90%' },
-              { label: 'Total Work Experience', name: 'totalExperience', placeholder: 'e.g., 3 years' },
+              { label: candidateType === 'tech' ? 'Graduation Name' : 'Last Graduation', name: 'graduationName', placeholder: 'e.g., B.E. Computer Science' },
+              { label: 'Graduation year', name: 'graduationYear', placeholder: 'e.g., 2022' },
+              { label: 'Graduation marks', name: 'graduationMarks', placeholder: 'e.g., 8.75 CGPA' },
+              { label: '12th marks', name: 'twelfthMarks', placeholder: 'e.g., 92%' },
+              { label: '10th marks', name: 'tenthMarks', placeholder: 'e.g., 90%' },
+              { label: ' Work experience', name: 'totalExperience', placeholder: 'e.g., 3 years' },
               candidateType === 'tech' 
-                ? { label: 'Total Relevant Work Experience', name: 'totalRelevantExperience', placeholder: 'e.g., 2.5 years in frontend development' }
-                : { label: 'Key Expert Skills', name: 'keyExpertSkills', placeholder: 'e.g., Project Management, Client Communication', multiline: true, rows: 2 },
-              { label: 'Project Domains / Industries Worked On', name: 'projectDomains', placeholder: 'e.g., E-commerce, SAAS, Gaming' },
+                ? { label: ' Relevant work experience', name: 'totalRelevantExperience', placeholder: 'e.g., 2.5 years in frontend development' }
+                : { label: ' Expertise (Key skills)', name: 'keyExpertSkills', placeholder: 'e.g., Project Management, Client Communication', multiline: true, rows: 2 },
+              { label: 'Domains / Industries worked on', name: 'projectDomains', placeholder: 'e.g., E-commerce, SAAS, Gaming' },
               { label: 'Current Company', name: 'currentCompany', placeholder: 'Enter your current company name' },
-              { label: 'LinkedIn Profile URL', name: 'linkedinProfile', placeholder: 'https://linkedin.com/in/yourprofile' },
-              { label: 'Portfolio/Website', name: 'portfolioWebsite', placeholder: 'https://yourportfolio.com' },
-              { label: 'Present Location / City', name: 'presentLocation', placeholder: 'e.g., Bengaluru' },
-              { label: 'Work Location / City', name: 'workLocation', placeholder: 'e.g., Bengaluru' },
+              { label: 'LinkedIn profile URL', name: 'linkedinProfile', placeholder: 'https://linkedin.com/in/yourprofile' },
+              { label: 'Portfolio / Website', name: 'portfolioWebsite', placeholder: 'https://yourportfolio.com' },
+              { label: 'Current location / City', name: 'presentLocation', placeholder: 'e.g., Bengaluru' },
+              { label: 'Work location / City', name: 'workLocation', placeholder: 'e.g., Bengaluru' },
             ].map((field) => (
               <React.Fragment key={field.name}>
                 <Grid size={{ xs: 12, md: 4 }}>
@@ -508,7 +542,7 @@ const JobApplication = () => {
                     value={formData[field.name as keyof typeof formData] ?? ''}
                     onChange={handleInputChange}
                     placeholder={field.placeholder}
-                    size={isMobile ? "small" : "medium"}
+                    size={isMobile ? "small" : "small"}
                     multiline={field.multiline}
                     rows={field.rows}
                   />
@@ -517,15 +551,15 @@ const JobApplication = () => {
             ))}
 
             <Grid size={{ xs: 12 }}>
-              <Typography variant="h5" gutterBottom mt={2} mb={1}>
-                Freelance Availability
+              <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
+                Availability (Hours)
               </Typography>
               <Divider sx={{ mb:{xs:1,md:3}}} />
             </Grid>
 
             {[
-              { label: 'Available Hours/Week for Freelance', name: 'availableHours', placeholder: candidateType === 'tech' ? 'e.g., 28 hours/week' : 'Available hours/week for freelance' },
-              { label: candidateType === 'tech' ? 'Preferred Time Slots for Freelance Project' : 'Preferred Working Time Slot', name: 'preferredTimeSlot', placeholder: 'e.g., After 6 PM' },
+              { label: 'Available hours / week', name: 'availableHours', placeholder: candidateType === 'tech' ? 'e.g., 28 hours/week' : 'Available hours/week' },
+              { label: candidateType === 'tech' ? 'Preferred work time slots / window' : 'Preferred work time slots / window', name: 'preferredTimeSlot', placeholder: 'e.g., After 6 PM' },
             ].map((field) => (
               <React.Fragment key={field.name}>
                 <Grid size={{ xs: 12, md: 4 }}>
@@ -540,7 +574,7 @@ const JobApplication = () => {
                     value={formData[field.name as keyof typeof formData] ?? ''}
                     onChange={handleInputChange}
                     placeholder={field.placeholder}
-                    size={isMobile ? "small" : "medium"}
+                    size={isMobile ? "small" : "small"}
                   />
                 </Grid>
               </React.Fragment>
@@ -557,7 +591,7 @@ const JobApplication = () => {
                   </Typography>
                 </Grid>
                 <Grid size={{ xs: 12, md: 8 }}>
-                  <FormControl fullWidth size={isMobile ? "small" : "medium"}>
+                  <FormControl fullWidth size={isMobile ? "small" : "small"}>
                     <Select
                       name={field.name}
                       value={formData[field.name as keyof typeof formData] ?? ''}
@@ -578,7 +612,7 @@ const JobApplication = () => {
 
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle1" fontWeight="medium"  >
-                {candidateType === 'tech' ? 'Freelance Projects Before (how many)' : 'Have you done freelance / part time project before (how many)'}
+                {candidateType === 'tech' ? 'Freelance Projects Before (how many)' : 'Any freelance / part time project before (how many ?)'}
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
@@ -588,17 +622,17 @@ const JobApplication = () => {
                   value={formData.freelanceProjectsCount ?? ''}
                   onChange={handleInputChange}
                 placeholder="e.g., 0 (number of projects)"
-                size={isMobile ? "small" : "medium"}
+                size={isMobile ? "small" : "small"}
               />
             </Grid>
 
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle1" fontWeight="medium" >
-                Current Job Type
+                Current Job type
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <FormControl fullWidth size={isMobile ? "small" : "medium"}>
+              <FormControl fullWidth size={isMobile ? "small" : "small"}>
                 <Select
                   name="currentJobType"
                   value={formData.currentJobType ?? ''}
@@ -640,9 +674,9 @@ const JobApplication = () => {
                     component="span"
                     variant="outlined"
                     startIcon={<UploadFile />}
-                    size={isMobile ? "small" : "medium"}
+                    size={isMobile ? "small" : "small"}
                   >
-                    Choose File
+                    Choose file
                   </Button>
                 </label>
                 {errors.resume && (
@@ -670,7 +704,7 @@ const JobApplication = () => {
             
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle1" fontWeight="medium" gutterBottom >
-                Cover Letter
+                Cover letter
               </Typography>
               
             </Grid>
@@ -683,17 +717,17 @@ const JobApplication = () => {
                 multiline
                 rows={2}
                 placeholder="Tell us why you're interested in this position and why you'd be a good fit..."
-                size={isMobile ? "small" : "medium"}
+                size={isMobile ? "small" : "small"}
               />
             </Grid>
             
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle1" fontWeight="medium"  >
-                Notice Period
+                Notice period
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <FormControl fullWidth size={isMobile ? "small" : "medium"}>
+              <FormControl fullWidth size={isMobile ? "small" : "small"}>
                 <Select
                   name="noticePeriod"
                   value={formData.noticePeriod ?? ''}
@@ -725,7 +759,7 @@ const JobApplication = () => {
                 value={formData.expectedSalary ?? ''}
                 onChange={handleInputChange}
                 placeholder="Enter expected salary"
-                size={isMobile ? "small" : "medium"}
+                size={isMobile ? "small" : "small"}
                 InputProps={{
                   startAdornment: <InputAdornment position="start">₹</InputAdornment>,
                 }}
@@ -738,7 +772,7 @@ const JobApplication = () => {
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <FormControl fullWidth size={isMobile ? "small" : "medium"}>
+              <FormControl fullWidth size={isMobile ? "small" : "small"}>
                 <Select
                   name="source"
                   value={formData.source ?? ''}
@@ -773,7 +807,7 @@ const JobApplication = () => {
                     value={formData.referralName ?? ''}
                     onChange={handleInputChange}
                     placeholder="Enter referral employee name"
-                    size={isMobile ? "small" : "medium"}
+                    size={isMobile ? "small" : "small"}
                   />
                 </Grid>
               </>
@@ -781,15 +815,33 @@ const JobApplication = () => {
 
             {candidateType === 'tech' && (
               <Grid size={{ xs: 12 }}>
-                <Typography variant="h5" gutterBottom mt={2} mb={1} >
+                <Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
                   Technical Skills Self-Assessment (0-5 Scale)
                 </Typography>
-                <Typography variant="body2" color="text.secondary" paragraph>
-  <strong>Rating Scale:</strong>{" "}
-  {"0 – Can't do / Don't plan to do | 1 – No experience | 2 – Basic familiarity | "}
-  {"3 – Intermediate, can work with guidance | 4 – Advanced, can work independently | "}
-  {"5 – Expert, can mentor others"}
-</Typography>
+                <Box
+  sx={{
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 1,
+    mb: 2,
+  }}
+>
+  {[
+    "0 – Can’t do",
+    "1 – No experience",
+    "2 – Basic",
+    "3 – Intermediate",
+    "4 – Advanced",
+    "5 – Expert",
+  ].map((item) => (
+    <Chip
+      key={item}
+      label={item}
+      size="small"
+      variant="outlined"
+    />
+  ))}
+</Box>
 
                 <Divider sx={{ mb:{xs:1,md:3}}} />
 
@@ -818,15 +870,38 @@ const JobApplication = () => {
 
             {candidateType === 'non-tech' && (
               <Grid size={{ xs: 12 }}>
-                <Typography variant="h5" gutterBottom mt={2} mb={1} >
-                  Professional Skills Assessment (0-5 Scale)
-                </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
-  <strong>Rating Scale:</strong>{" "}
-  {"0 – Can't do / Don't plan to do | 1 – No experience | 2 – Basic familiarity | "}
-  {"3 – Intermediate, can work with guidance | 4 – Advanced, can work independently | "}
-  {"5 – Expert, can mentor others"}
-</Typography>
+           <Box display="flex" alignItems="center" mb={1}>
+ 
+<Typography variant="h5" gutterBottom mt={2} mb={1} sx={{fontWeight:"bold"}}>
+                Professional Skills Assessment (0-5 Scale)
+              </Typography>
+</Box>
+
+<Box
+  sx={{
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 1,
+    mb: 2,
+  }}
+>
+  {[
+    "0 – Can’t do",
+    "1 – No experience",
+    "2 – Basic",
+    "3 – Intermediate",
+    "4 – Advanced",
+    "5 – Expert",
+  ].map((item) => (
+    <Chip
+      key={item}
+      label={item}
+      size="small"
+      variant="outlined"
+    />
+  ))}
+</Box>
+
 
                 <Divider sx={{ mb:{xs:1,md:3}}} />
                 
